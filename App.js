@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Font } from 'expo';
+import { fonts, colors } from './config';
 
 export default class App extends React.Component {
   state = {
@@ -45,6 +46,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textContainer: {
-    fontFamily: 'nunito-regular'
+    ...fonts.regular,
+    color: colors.red
   }
 });
