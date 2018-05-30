@@ -9,6 +9,6 @@ export default {
     fontFamily: 'nunito-regular'
   },
   italic: {
-    fontFamily: 'italic'
+    fontFamily: 'nunito-italic'
   }
 }
