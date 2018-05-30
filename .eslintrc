@@ -11,11 +11,12 @@
     }
   },
   "extends" : [
-    "airbnb-base",
+    "airbnb",
     "eslint:recommended",
     "plugin:react/recommended"
   ],
   "rules": {
+    "react/jsx-filename-extension": ["off"],
     "comma-dangle": 0,
     "react/display-name": 0
   },

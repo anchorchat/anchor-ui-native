@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
-import { fonts, colors } from './config';
-import Text from './components/text';
-import ThemeProvider from './components/theme-provider';
+import { Text, ThemeProvider, Divider, ContentItem } from './lib';
+import { colors, fonts } from './lib/config';
 
 export default class App extends React.Component {
   state = {
@@ -48,6 +47,9 @@ export default class App extends React.Component {
           <Text type="tab-active">Shake your phone to open the developer menu.</Text>
           <Text type="time">Shake your phone to open the developer menu.</Text>
           <Text type="time-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
+          <Divider />
+          <Divider text="A" />
+          <ContentItem headerText="Mobile" bodyText="+ 31 6 37 40 52 93" divider />
         </View>
       </ThemeProvider>
     );
