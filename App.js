@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
-import { fonts, colors } from './config';
+import { fonts, colors } from './lib/config';
 import Text from './lib/text';
 import ThemeProvider from './lib/theme-provider';
 import Divider from './lib/divider';
