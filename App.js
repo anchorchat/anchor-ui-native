@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
 import { fonts, colors } from './config';
+import Text from './components/text';
 
 export default class App extends React.Component {
   state = {
@@ -28,11 +29,23 @@ export default class App extends React.Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.textContainer}>
-          <Text>Open up App.js to start working on your app!</Text>
-          <Text>Changes you make will automatically reload.</Text>
-          <Text>Shake your phone to open the developer menu.</Text>
-        </Text>
+        <Text>Open up App.js to start working on your app!</Text>
+        <Text type="body-light">Changes you make will automatically reload.</Text>
+        <Text type="body-placeholder">Shake your phone to open the developer menu.</Text>
+        <Text type="body-accent">Shake your phone to open the developer menu.</Text>
+        <Text type="body-contrast">Shake your phone to open the developer menu.</Text>
+        <Text type="button">Shake your phone to open the developer menu.</Text>
+        <Text type="divider">Shake your phone to open the developer menu.</Text>
+        <Text type="heading">Shake your phone to open the developer menu.</Text>
+        <Text type="heading-placeholder">Shake your phone to open the developer menu.</Text>
+        <Text type="heading-contrast">Shake your phone to open the developer menu.</Text>
+        <Text type="navigation">Shake your phone to open the developer menu.</Text>
+        <Text type="navigation-emphasized">Shake your phone to open the developer menu.</Text>
+        <Text type="navigation-secondary">Shake your phone to open the developer menu.</Text>
+        <Text type="tab">Shake your phone to open the developer menu.</Text>
+        <Text type="tab-active">Shake your phone to open the developer menu.</Text>
+        <Text type="time">Shake your phone to open the developer menu.</Text>
+        <Text type="time-contrast">Shake your phone to open the developer menu.</Text>
       </View>
     );
   }
@@ -41,7 +54,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F7A79F',
     alignItems: 'center',
     justifyContent: 'center',
   },
