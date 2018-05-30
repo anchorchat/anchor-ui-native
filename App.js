@@ -1,10 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
-import { fonts, colors } from './lib/config';
-import Text from './lib/text';
-import ThemeProvider from './lib/theme-provider';
-import Divider from './lib/divider';
+import { config, Text, ThemeProvider, Divider } from './lib';
 
 export default class App extends React.Component {
   state = {
@@ -36,19 +33,19 @@ export default class App extends React.Component {
           <Text type="body-light">Changes you make will automatically reload.</Text>
           <Text type="body-placeholder">Shake your phone to open the developer menu.</Text>
           <Text type="body-accent">Shake your phone to open the developer menu.</Text>
-          <Text type="body-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
+          <Text type="body-contrast" style={{ backgroundColor: config.colors.secondary }}>Shake your phone to open the developer menu.</Text>
           <Text type="button">Shake your phone to open the developer menu.</Text>
           <Text type="divider">Shake your phone to open the developer menu.</Text>
           <Text type="heading">Shake your phone to open the developer menu.</Text>
           <Text type="heading-placeholder">Shake your phone to open the developer menu.</Text>
-          <Text type="heading-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
+          <Text type="heading-contrast" style={{ backgroundColor: config.colors.secondary }}>Shake your phone to open the developer menu.</Text>
           <Text type="navigation">Shake your phone to open the developer menu.</Text>
           <Text type="navigation-emphasized">Shake your phone to open the developer menu.</Text>
           <Text type="navigation-secondary">Shake your phone to open the developer menu.</Text>
           <Text type="tab">Shake your phone to open the developer menu.</Text>
           <Text type="tab-active">Shake your phone to open the developer menu.</Text>
           <Text type="time">Shake your phone to open the developer menu.</Text>
-          <Text type="time-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
+          <Text type="time-contrast" style={{ backgroundColor: config.colors.secondary }}>Shake your phone to open the developer menu.</Text>
           <Divider />
           <Divider text="A" />
         </View>
@@ -65,7 +62,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textContainer: {
-    ...fonts.regular,
-    color: colors.primary
+    ...config.fonts.regular,
+    color: config.colors.primary
   }
 });
