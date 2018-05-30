@@ -1,0 +1,377 @@
+{
+  "lib/content-item/component.js": {
+    "description": "Display content with a header",
+    "displayName": "ContentItem",
+    "methods": [],
+    "props": {
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content header text"
+      },
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content body text"
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the body element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "divider": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Render a Divider underneath the bodyText",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "dividerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the divider element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/divider/component.js": {
+    "description": "Dividers group and separate content within lists and page layouts.",
+    "displayName": "Divider",
+    "methods": [],
+    "props": {
+      "text": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Render a Divider with text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/text/component.js": {
+    "description": "Text element with different types of styles.",
+    "displayName": "Text",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Text content"
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'body'",
+              "computed": false
+            },
+            {
+              "value": "'body-light'",
+              "computed": false
+            },
+            {
+              "value": "'body-placeholder'",
+              "computed": false
+            },
+            {
+              "value": "'body-accent'",
+              "computed": false
+            },
+            {
+              "value": "'body-contrast'",
+              "computed": false
+            },
+            {
+              "value": "'button'",
+              "computed": false
+            },
+            {
+              "value": "'divider'",
+              "computed": false
+            },
+            {
+              "value": "'heading'",
+              "computed": false
+            },
+            {
+              "value": "'heading-contrast'",
+              "computed": false
+            },
+            {
+              "value": "'heading-placeholder'",
+              "computed": false
+            },
+            {
+              "value": "'navigation'",
+              "computed": false
+            },
+            {
+              "value": "'navigation-emphasized'",
+              "computed": false
+            },
+            {
+              "value": "'navigation-secondary'",
+              "computed": false
+            },
+            {
+              "value": "'tab'",
+              "computed": false
+            },
+            {
+              "value": "'tab-active'",
+              "computed": false
+            },
+            {
+              "value": "'time'",
+              "computed": false
+            },
+            {
+              "value": "'time-contrast'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Type of style to render",
+        "defaultValue": {
+          "value": "'body'",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/theme-provider/index.js": {
+    "description": "Provide theme to all children using context",
+    "displayName": "ThemeProvider",
+    "methods": [],
+    "props": {
+      "colors": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "primary": {
+              "name": "string",
+              "required": false
+            },
+            "secondary": {
+              "name": "string",
+              "required": false
+            },
+            "black": {
+              "name": "string",
+              "required": false
+            },
+            "white": {
+              "name": "string",
+              "required": false
+            },
+            "darkGray": {
+              "name": "string",
+              "required": false
+            },
+            "gray": {
+              "name": "string",
+              "required": false
+            },
+            "lightGray": {
+              "name": "string",
+              "required": false
+            },
+            "lighterGray": {
+              "name": "string",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Your theme's colors",
+        "defaultValue": {
+          "value": "colors",
+          "computed": true
+        }
+      },
+      "fonts": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "regular": {
+              "name": "shape",
+              "value": {
+                "fontFamily": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              "required": false
+            },
+            "semiBold": {
+              "name": "shape",
+              "value": {
+                "fontFamily": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              "required": false
+            },
+            "bold": {
+              "name": "shape",
+              "value": {
+                "fontFamily": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              "required": false
+            },
+            "italic": {
+              "name": "shape",
+              "value": {
+                "fontFamily": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "fonts",
+          "computed": true
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Children to apply theme color to"
+      }
+    }
+  }
+}
