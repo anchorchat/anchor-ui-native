@@ -12,6 +12,7 @@
     "eslint-plugin-react-native": "^3.2.1",
     "eslint-watch": "^3.1.5",
     "jest-expo": "~27.0.0",
+    "react-docgen": "^2.20.1",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1"
   },
@@ -23,7 +24,8 @@
     "ios": "react-native-scripts ios",
     "test": "jest",
     "eslint": "esw lib/**",
-    "eslint-watch": "esw -w --changed lib/**"
+    "eslint-watch": "esw -w --changed lib/**",
+    "docs": "react-docgen lib --out docs/components.json --pretty"
   },
   "jest": {
     "preset": "jest-expo"
