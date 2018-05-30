@@ -1,7 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import { AppRegistry } from 'react-native';
-import './index.css';
+import './css/meyer-reset.css';
+import './css/index.css';
 import App from './App';
 
 AppRegistry.registerComponent('App', () => App);
