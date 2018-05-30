@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text as NativeText } from 'react-native';
 import PropTypes from 'prop-types';
-import styles from './styles';
+import getStyles from './styles';
 import withTheme from '../with-theme';
 
 const types = [
@@ -28,7 +28,10 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(types),
   style: PropTypes.object,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.shape({
+    colors: PropTypes.object.isRequired,
+    fonts: PropTypes.object.isRequired
+  }).isRequired
 };
 
 const defaultProps = {
@@ -36,11 +39,15 @@ const defaultProps = {
   style: {}
 };
 
-const Text = ({ children, type, style, theme }) => (
-  <NativeText style={[styles[type], style]}>
-    {children}
-  </NativeText>
-);
+const Text = ({ children, type, style, theme }) => {
+  const styles = getStyles(theme.colors, theme.fonts);
+
+  return (
+    <NativeText style={[styles[type], style]}>
+      {children}
+    </NativeText>
+  );
+};
 
 Text.propTypes = propTypes;
 Text.defaultProps = defaultProps;
