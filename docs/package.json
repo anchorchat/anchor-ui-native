@@ -4,11 +4,14 @@
   "private": true,
   "dependencies": {
     "anchor-ui": "^6.3.1",
+    "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-art": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-native": "^0.55.4",
     "react-native-web": "^0.7.3",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {
