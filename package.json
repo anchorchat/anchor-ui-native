@@ -25,7 +25,7 @@
     "test": "jest",
     "eslint": "esw lib/**",
     "eslint-watch": "esw -w --changed lib/**",
-    "docs": "react-docgen lib --out docs/components.json --pretty"
+    "docs": "react-docgen lib --out docs/src/components.json --pretty"
   },
   "jest": {
     "preset": "jest-expo"
@@ -34,7 +34,7 @@
     "expo": "^27.0.1",
     "prop-types": "^15.6.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2",
+    "react-native": "^0.55.4",
     "recompose": "^0.27.1"
   }
 }
