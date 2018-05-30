@@ -49,7 +49,7 @@ export default class App extends React.Component {
           <Text type="time-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
           <Divider />
           <Divider text="A" />
-          <ContentItem header="Mobile" text="+ 31 6 37 40 52 93" divider />
+          <ContentItem headerText="Mobile" bodyText="+ 31 6 37 40 52 93" divider />
         </View>
       </ThemeProvider>
     );
