@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
-import { config, Text, ThemeProvider, Divider } from './lib';
+import { Text, ThemeProvider, Divider, ContentItem } from './lib';
+import { colors, fonts } from './lib/config';
 
 export default class App extends React.Component {
   state = {
@@ -33,21 +34,22 @@ export default class App extends React.Component {
           <Text type="body-light">Changes you make will automatically reload.</Text>
           <Text type="body-placeholder">Shake your phone to open the developer menu.</Text>
           <Text type="body-accent">Shake your phone to open the developer menu.</Text>
-          <Text type="body-contrast" style={{ backgroundColor: config.colors.secondary }}>Shake your phone to open the developer menu.</Text>
+          <Text type="body-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
           <Text type="button">Shake your phone to open the developer menu.</Text>
           <Text type="divider">Shake your phone to open the developer menu.</Text>
           <Text type="heading">Shake your phone to open the developer menu.</Text>
           <Text type="heading-placeholder">Shake your phone to open the developer menu.</Text>
-          <Text type="heading-contrast" style={{ backgroundColor: config.colors.secondary }}>Shake your phone to open the developer menu.</Text>
+          <Text type="heading-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
           <Text type="navigation">Shake your phone to open the developer menu.</Text>
           <Text type="navigation-emphasized">Shake your phone to open the developer menu.</Text>
           <Text type="navigation-secondary">Shake your phone to open the developer menu.</Text>
           <Text type="tab">Shake your phone to open the developer menu.</Text>
           <Text type="tab-active">Shake your phone to open the developer menu.</Text>
           <Text type="time">Shake your phone to open the developer menu.</Text>
-          <Text type="time-contrast" style={{ backgroundColor: config.colors.secondary }}>Shake your phone to open the developer menu.</Text>
+          <Text type="time-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
           <Divider />
           <Divider text="A" />
+          <ContentItem header="Mobile" text="+ 31 6 37 40 52 93" divider />
         </View>
       </ThemeProvider>
     );
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textContainer: {
-    ...config.fonts.regular,
-    color: config.colors.primary
+    ...fonts.regular,
+    color: colors.primary
   }
 });
