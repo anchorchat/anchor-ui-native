@@ -17,3 +17,4 @@ yarn-debug.log*
 yarn-error.log*
 .DS_Store
 docs/src/anchor-ui-native
+examples/anchor-ui-native
