@@ -1,4 +1,134 @@
 {
+  "lib/avatar/component.js": {
+    "description": "",
+    "displayName": "Avatar",
+    "methods": [],
+    "props": {
+      "source": {
+        "type": {
+          "name": "custom",
+          "raw": "Image.propTypes.source"
+        },
+        "required": false,
+        "description": "Image source",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "text": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Avatar text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "content": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Custom content",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Avatar size",
+        "defaultValue": {
+          "value": "48",
+          "computed": false
+        }
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'circle'",
+              "computed": false
+            },
+            {
+              "value": "'square'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Avatar type",
+        "defaultValue": {
+          "value": "'circle'",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Background color for text Avatars",
+        "defaultValue": {
+          "value": "'#B2B2B2'",
+          "computed": false
+        }
+      },
+      "onPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Avatar is pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onLongPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Avatar is long pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/content-item/component.js": {
     "description": "Display content with a header",
     "displayName": "ContentItem",
@@ -220,6 +350,10 @@
             },
             {
               "value": "'time-contrast'",
+              "computed": false
+            },
+            {
+              "value": "'avatar'",
               "computed": false
             }
           ]

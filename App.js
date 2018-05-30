@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
-import { Text, ThemeProvider, Divider, ContentItem } from './lib';
+import { Text, ThemeProvider, Divider, ContentItem, Avatar } from './lib';
 import { colors, fonts } from './lib/config';
 
 export default class App extends React.Component {
@@ -50,6 +50,9 @@ export default class App extends React.Component {
           <Divider />
           <Divider text="A" />
           <ContentItem headerText="Mobile" bodyText="+ 31 6 37 40 52 93" divider />
+          <Avatar source={{ uri: 'https://source.unsplash.com/random/100x100' }} />
+          <Avatar text="BG" />
+          <Avatar text="MO" color="pink" />
         </View>
       </ThemeProvider>
     );
