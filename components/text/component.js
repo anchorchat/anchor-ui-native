@@ -28,7 +28,7 @@ const displayName = 'Text';
 const propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(types),
-  style: PropTypes.object,
+  style: NativeText.propTypes.style,
   theme: PropTypes.shape({
     colors: PropTypes.object.isRequired,
     fonts: PropTypes.object.isRequired
