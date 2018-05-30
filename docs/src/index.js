@@ -2,7 +2,7 @@
 import { AppRegistry } from 'react-native';
 import './css/meyer-reset.css';
 import './css/index.css';
-import App from './App';
+import App from './app';
 
 AppRegistry.registerComponent('App', () => App);
 

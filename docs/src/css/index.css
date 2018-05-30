@@ -4,3 +4,7 @@ body {
   font-family: Nunito, 'sans-serif';
   font-weight: 400;
 }
+
+main {
+  padding: 24px;
+}
