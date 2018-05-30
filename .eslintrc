@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "react-native"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+    }
+  },
+  "extends" : [
+    "airbnb-base",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    "comma-dangle": 0,
+    "react/display-name": 0
+  },
+  "globals": {
+    "window": true
+  }
+}
