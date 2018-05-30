@@ -1,6 +1,6 @@
 export default {
-  red: '#F00540',
-  orange: '#F26D5F',
+  primary: '#F00540',
+  secondary: '#F26D5F',
   black: '#000000',
   white: '#FFFFFF',
   darkGray: '#787878',

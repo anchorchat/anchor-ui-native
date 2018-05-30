@@ -19,7 +19,7 @@ export default StyleSheet.create({
   },
   'body-accent': {
     ...fonts.regular,
-    color: colors.red,
+    color: colors.primary,
     fontSize: 14
   },
   'body-contrast': {
@@ -29,7 +29,7 @@ export default StyleSheet.create({
   },
   button: {
     ...fonts.semiBold,
-    color: colors.red,
+    color: colors.primary,
     fontSize: 14
   },
   divider: {
@@ -54,12 +54,12 @@ export default StyleSheet.create({
   },
   navigation: {
     ...fonts.regular,
-    color: colors.red,
+    color: colors.primary,
     fontSize: 17
   },
   'navigation-emphasized': {
     ...fonts.bold,
-    color: colors.red,
+    color: colors.primary,
     fontSize: 17
   },
   'navigation-secondary': {
@@ -74,7 +74,7 @@ export default StyleSheet.create({
   },
   'tab-active': {
     ...fonts.semiBold,
-    color: colors.red,
+    color: colors.primary,
     fontSize: 10
   },
   time: {
