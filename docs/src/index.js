@@ -1,3 +1,4 @@
+/* global document */
 import { AppRegistry } from 'react-native';
 import './css/meyer-reset.css';
 import './css/index.css';
