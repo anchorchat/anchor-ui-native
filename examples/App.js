@@ -84,7 +84,7 @@ export default class App extends React.Component {
             }}
             iconStyle={{ marginTop: 8, marginBottom: 8 }}
           />
-          <Button labelText="Click me!" />
+          <Button labelText="Click me!" onPress={() => alert('You pressed me!')} />
         </View>
       </ThemeProvider>
     );
