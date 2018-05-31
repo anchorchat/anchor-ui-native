@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
-import { Text, ThemeProvider, Divider, ContentItem, Avatar, ListItem } from './anchor-ui-native';
+import { Text, ThemeProvider, Divider, ContentItem, Avatar, ListItem, Button } from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
 
 export default class App extends React.Component {
@@ -84,6 +84,7 @@ export default class App extends React.Component {
             }}
             iconStyle={{ marginTop: 8, marginBottom: 8 }}
           />
+          <Button labelText="Click me!" />
         </View>
       </ThemeProvider>
     );
