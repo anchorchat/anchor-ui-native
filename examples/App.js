@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
-import { Text, ThemeProvider, Divider, ContentItem, Avatar } from './lib';
-import { colors, fonts } from './lib/config';
+import { Text, ThemeProvider, Divider, ContentItem, Avatar } from './anchor-ui-native';
+import { colors, fonts } from './anchor-ui-native/config';
 
 export default class App extends React.Component {
   state = {
@@ -14,7 +14,7 @@ export default class App extends React.Component {
       'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
       'nunito-italic': require('./assets/fonts/Nunito-Italic.ttf'),
       'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
-      'nunito-semi-bold': require('./assets/fonts/Nunito-SemiBold.ttf'),
+      'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
     });
 
     this.setState({ fontLoaded: true });

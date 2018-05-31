@@ -4,7 +4,7 @@
 .expo/
 
 # dependencies
-/node_modules
+node_modules
 
 # misc
 .env.local
@@ -15,3 +15,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.DS_Store
+docs/src/anchor-ui-native
+examples/anchor-ui-native
+build
+yarn.lock
