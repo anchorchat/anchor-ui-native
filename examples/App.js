@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
-import { Text, ThemeProvider, Divider, ContentItem, Avatar } from './anchor-ui-native';
+import { Text, ThemeProvider, Divider, ContentItem, Avatar, ListItem } from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
 
 export default class App extends React.Component {
@@ -50,9 +50,40 @@ export default class App extends React.Component {
           <Divider />
           <Divider text="A" />
           <ContentItem headerText="Mobile" bodyText="+ 31 6 37 40 52 93" divider />
-          <Avatar source={{ uri: 'https://source.unsplash.com/random/100x100' }} />
-          <Avatar text="BG" />
-          <Avatar text="MO" color="pink" />
+          <View style={{ flexDirection: 'row' }}>
+            <Avatar source={{ uri: 'https://source.unsplash.com/random/100x100' }} />
+            <Avatar text="BG" />
+            <Avatar text="MO" color="pink" />
+          </View>
+          <ListItem
+            primaryText="Peter Kuiper"
+            divider
+          />
+          <ListItem
+            primaryText="Ian Stewart"
+            secondaryText="'Ie-an'"
+            divider
+          />
+          <ListItem
+            primaryText="Lars Tadema"
+            icon={<Avatar text="LT" color="hotpink" />}
+            divider
+            dividerStyle={{ left: 64 }}
+            rightButton={<Text type="body-accent">I&apos;m a button</Text>}
+          />
+          <ListItem
+            primaryText="Sjaak Luthart"
+            secondaryText="If we connect the monitor, we can get to the HDD monitor through the 1080p SMTP card! If we program the matrix, we can get to the SMTP application through the digital THX system!"
+            onPress={() => alert('herro')}
+            icon={<Avatar text="SL" color="purple" size={64} textStyle={{ fontSize: 32 }} />}
+            divider
+            dividerStyle={{ left: 64 }}
+            time="12:12"
+            secondaryTextProps={{
+              numberOfLines: 2
+            }}
+            iconStyle={{ marginTop: 8, marginBottom: 8 }}
+          />
         </View>
       </ThemeProvider>
     );

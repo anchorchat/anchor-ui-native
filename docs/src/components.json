@@ -1,9 +1,21 @@
 {
   "lib/avatar/component.js": {
-    "description": "",
+    "description": "Represent people or objects.",
     "displayName": "Avatar",
     "methods": [],
     "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "source": {
         "type": {
           "name": "custom",
@@ -26,6 +38,25 @@
           "value": "null",
           "computed": false
         }
+      },
+      "textStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the primary Text component"
       },
       "content": {
         "type": {
@@ -102,30 +133,6 @@
           "value": "null",
           "computed": false
         }
-      },
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "textStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "NativeText.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the text element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
       }
     }
   },
@@ -134,20 +141,6 @@
     "displayName": "ContentItem",
     "methods": [],
     "props": {
-      "headerText": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "Content header text"
-      },
-      "bodyText": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "Content body text"
-      },
       "style": {
         "type": {
           "name": "custom",
@@ -159,6 +152,13 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content header text"
       },
       "headerStyle": {
         "type": {
@@ -172,6 +172,24 @@
           "computed": false
         }
       },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the header Text component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content body text"
+      },
       "bodyStyle": {
         "type": {
           "name": "custom",
@@ -179,6 +197,17 @@
         },
         "required": false,
         "description": "Override the styles of the body element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the body Text component",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -214,17 +243,6 @@
     "displayName": "Divider",
     "methods": [],
     "props": {
-      "text": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Render a Divider with text",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "style": {
         "type": {
           "name": "custom",
@@ -234,6 +252,17 @@
         "description": "Override the styles of the root element",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "text": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Render a Divider with text",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
@@ -268,11 +297,225 @@
       }
     }
   },
+  "lib/list-item/component.js": {
+    "description": "ListItems are used to present multiple items vertically as a single element.",
+    "displayName": "ListItem",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "primaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "ListItem primary text"
+      },
+      "primaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the primary Text component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "ListItem secondary text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "secondaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the secondary Text component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Icon for the left hand side of the ListItem",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the icon container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "rightButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Button for the right hand side of the ListItem",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "rightButtonStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of right button container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "time": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Timestamp for the primary Text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "timeStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the time element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "timeProps": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Custom props for the secondary Text component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "divider": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Render a Divider underneath the ListItem",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "dividerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the Divider component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Avatar is pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onLongPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Avatar is long pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/text/component.js": {
     "description": "Text element with different types of styles.",
     "displayName": "Text",
     "methods": [],
     "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "children": {
         "type": {
           "name": "node"
@@ -362,18 +605,6 @@
         "description": "Type of style to render",
         "defaultValue": {
           "value": "'body'",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "NativeText.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
           "computed": false
         }
       },
