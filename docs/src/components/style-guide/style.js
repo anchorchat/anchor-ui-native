@@ -1,12 +1,13 @@
 import colors from '../../anchor-ui-native/config/colors';
 
 export default {
-  heading: {
+  rowHeading: {
     fontSize: '20px',
     marginBottom: '16px',
     textTransform: 'uppercase',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    color: '#201D1E'
   },
   divider: {
     marginLeft: '16px',
@@ -20,7 +21,7 @@ export default {
   column: {
     display: 'flex',
     flexDirection: 'column',
-    width: '150px'
+    width: '125px'
   },
   color: {
     width: '125px',
@@ -34,5 +35,17 @@ export default {
     height: '100%',
     display: 'block',
     margin: '0 auto'
+  },
+  heading: {
+    color: '#9E8D92',
+    fontWeight: 'bold',
+    fontSize: '14px',
+    marginBottom: '4px'
+  },
+  text: {
+    color: '#9E8D92',
+    fontWeight: 'normal',
+    fontSize: '12px',
+    marginBottom: '2px'
   }
 }
