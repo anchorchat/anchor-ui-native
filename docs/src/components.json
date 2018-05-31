@@ -51,6 +51,13 @@
           "computed": false
         }
       },
+      "textProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the primary Text component"
+      },
       "content": {
         "type": {
           "name": "node"
