@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
-import { Text, ThemeProvider, Divider, ContentItem, Avatar } from './anchor-ui-native';
+import { Text, ThemeProvider, Divider, ContentItem, Avatar, ListItem } from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
 
 export default class App extends React.Component {
@@ -50,9 +50,35 @@ export default class App extends React.Component {
           <Divider />
           <Divider text="A" />
           <ContentItem headerText="Mobile" bodyText="+ 31 6 37 40 52 93" divider />
-          <Avatar source={{ uri: 'https://source.unsplash.com/random/100x100' }} />
-          <Avatar text="BG" />
-          <Avatar text="MO" color="pink" />
+          <View style={{ flexDirection: 'row' }}>
+            <Avatar source={{ uri: 'https://source.unsplash.com/random/100x100' }} />
+            <Avatar text="BG" />
+            <Avatar text="MO" color="pink" />
+          </View>
+          <ListItem
+            primaryText="Peter Kuiper"
+            divider
+          />
+          <ListItem
+            primaryText="Ian Stewart"
+            secondaryText="'Ie-an'"
+            divider
+          />
+          <ListItem
+            primaryText="Lars Tadema"
+            icon={<Avatar text="LT" color="hotpink" />}
+            divider
+            dividerStyle={{ left: 64 }}
+            rightButton={<Text type="body-accent">I&apos;m a button</Text>}
+          />
+          <ListItem
+            primaryText="Sjaak Luthart"
+            secondaryText="last seen 2 hours ago"
+            onPress={() => alert('herro')}
+            icon={<Avatar text="SL" color="purple" />}
+            divider
+            dividerStyle={{ left: 64 }}
+          />
         </View>
       </ThemeProvider>
     );
