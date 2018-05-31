@@ -73,12 +73,16 @@ export default class App extends React.Component {
           />
           <ListItem
             primaryText="Sjaak Luthart"
-            secondaryText="last seen 2 hours ago"
+            secondaryText="If we connect the monitor, we can get to the HDD monitor through the 1080p SMTP card! If we program the matrix, we can get to the SMTP application through the digital THX system!"
             onPress={() => alert('herro')}
-            icon={<Avatar text="SL" color="purple" />}
+            icon={<Avatar text="SL" color="purple" size={64} textStyle={{ fontSize: 32 }} />}
             divider
             dividerStyle={{ left: 64 }}
             time="12:12"
+            secondaryTextProps={{
+              numberOfLines: 2
+            }}
+            iconStyle={{ marginTop: 8, marginBottom: 8 }}
           />
         </View>
       </ThemeProvider>
