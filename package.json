@@ -10,12 +10,14 @@
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-react-native": "^3.2.1",
     "eslint-watch": "^3.1.5",
+    "nodemon": "^1.17.5",
     "react-docgen": "^2.20.1"
   },
   "scripts": {
     "eslint": "esw lib/**",
     "eslint-watch": "esw -w --changed lib/**",
-    "docs": "react-docgen lib --out docs/src/components.json --pretty"
+    "docs": "react-docgen lib --out docs/src/components.json --pretty",
+    "watch": "nodemon --exec 'make build' --watch lib"
   },
   "dependencies": {
     "prop-types": "^15.6.1",
