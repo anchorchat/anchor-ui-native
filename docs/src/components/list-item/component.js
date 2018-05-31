@@ -5,7 +5,7 @@ import ListItem from '../../anchor-ui-native/list-item';
 import Avatar from '../../anchor-ui-native/avatar';
 import style from './style';
 
-const Home = () => (
+const ListItemDoc = () => (
   <section className="page">
     <h1 className="heading-large">ListItem</h1>
     <h2><Text type="heading">Examples</Text></h2>
@@ -33,4 +33,4 @@ const Home = () => (
   </section>
 );
 
-export default Home;
+export default ListItemDoc;
