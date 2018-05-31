@@ -78,6 +78,7 @@ export default class App extends React.Component {
             icon={<Avatar text="SL" color="purple" />}
             divider
             dividerStyle={{ left: 64 }}
+            time="12:12"
           />
         </View>
       </ThemeProvider>

@@ -393,6 +393,41 @@
           "computed": false
         }
       },
+      "time": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Timestamp for the primary Text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "timeStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the time element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "timeProps": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Custom props for the secondary Text component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "divider": {
         "type": {
           "name": "bool"
