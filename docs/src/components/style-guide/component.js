@@ -19,7 +19,7 @@ const StyleGuide = () => (
         </div>
         <p style={style.heading}>Gradient</p>
         <p style={style.text}>#F26D5F - #F00540</p>
-        <p style={style.text}>rbg(242, 109, 85) - rgb(140, 5, 64)</p>
+        <p style={style.text}>rgb(242, 109, 85) - rgb(140, 5, 64)</p>
       </section>
       <section style={style.column}>
         <div style={{ ...style.color, background: `linear-gradient(${colors.primary}, ${colors.secondary})` }}>
@@ -27,7 +27,7 @@ const StyleGuide = () => (
         </div>
         <p style={style.heading}>White</p>
         <p style={style.text}>#FFFFFF</p>
-        <p style={style.text}>rbg(255, 255, 255)</p>
+        <p style={style.text}>rgb(255, 255, 255)</p>
       </section>
     </section>
     <h2 style={style.rowHeading}>
@@ -39,37 +39,37 @@ const StyleGuide = () => (
         <div style={{ ...style.color, background: colors.white }} />
         <p style={style.heading}>White</p>
         <p style={style.text}>#FFFFFF</p>
-        <p style={style.text}>rbg(255, 255, 255)</p>
+        <p style={style.text}>rgb(255, 255, 255)</p>
       </section>
       <section style={style.column}>
         <div style={{ ...style.color, background: colors.lighterGray }} />
         <p style={style.heading}>Lighter gray</p>
         <p style={style.text}>#F8F8F8</p>
-        <p style={style.text}>rbg(248, 248, 248)</p>
+        <p style={style.text}>rgb(248, 248, 248)</p>
       </section>
       <section style={style.column}>
         <div style={{ ...style.color, background: colors.lightGray }} />
         <p style={style.heading}>Light gray</p>
         <p style={style.text}>#B2B2B2</p>
-        <p style={style.text}>rbg(178, 178, 178)</p>
+        <p style={style.text}>rgb(178, 178, 178)</p>
       </section>
       <section style={style.column}>
         <div style={{ ...style.color, background: colors.gray }} />
         <p style={style.heading}>Gray</p>
         <p style={style.text}>#8E8E93</p>
-        <p style={style.text}>rbg(142, 142, 147)</p>
+        <p style={style.text}>rgb(142, 142, 147)</p>
       </section>
       <section style={style.column}>
         <div style={{ ...style.color, background: colors.darkGray }} />
         <p style={style.heading}>Dark gray</p>
         <p style={style.text}>#787878</p>
-        <p style={style.text}>rbg(0, 0, 47)</p>
+        <p style={style.text}>rgb(0, 0, 47)</p>
       </section>
       <section style={style.column}>
         <div style={{ ...style.color, background: colors.black }} />
         <p style={style.heading}>Black</p>
         <p style={style.text}>#000000</p>
-        <p style={style.text}>rbg(0, 0, 0)</p>
+        <p style={style.text}>rgb(0, 0, 0)</p>
       </section>
     </section>
   </section>
