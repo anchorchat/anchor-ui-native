@@ -95,7 +95,7 @@ export default class App extends React.Component {
               <Button
                 style={styles.button}
                 labelText="Herro!"
-                icon={<Ionicons name="ios-analytics" size={22} color={colors.primary} />}
+                icon={<Ionicons name="ios-analytics" size={20} color={colors.primary} />}
                 onPress={() => alert('Button says no!')}
               />
             </View>
