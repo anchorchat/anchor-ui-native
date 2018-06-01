@@ -56,7 +56,11 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the primary Text component"
+        "description": "Custom props for the primary Text component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "content": {
         "type": {
@@ -133,6 +137,127 @@
           "value": "null",
           "computed": false
         }
+      },
+      "activeOpacity": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Determines what the opacity of the wrapped view should be when touch is active.",
+        "defaultValue": {
+          "value": "0.5",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/button/component.js": {
+    "description": "Button with optional icon",
+    "displayName": "Button",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "labelText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Label text"
+      },
+      "labelTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the label Text component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Icon for the left hand side of the Button",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "iconStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the icon container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Avatar is pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onLongPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Avatar is long pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "activeOpacity": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Determines what the opacity of the wrapped view should be when touch is active.",
+        "defaultValue": {
+          "value": "0.5",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
