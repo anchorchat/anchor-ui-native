@@ -5,5 +5,8 @@ export default {
   },
   button: {
     marginRight: 8
+  },
+  note: {
+    fontStyle: 'italic'
   }
 };
