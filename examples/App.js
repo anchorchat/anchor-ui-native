@@ -30,7 +30,7 @@ export default class App extends React.Component {
 
     return (
       <ThemeProvider>
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={styles.safeAreaContainer}>
           <ScrollView contentContainerStyle={styles.container}>
             <Text>Open up App.js to start working on your app!</Text>
             <Text type="body-light">Changes you make will automatically reload.</Text>
@@ -86,12 +86,19 @@ export default class App extends React.Component {
               }}
               iconStyle={{ marginTop: 8, marginBottom: 8 }}
             />
-            <Button labelText="Click me!" onPress={() => alert('You pressed me!')} />
-            <Button
-              labelText="Herro!"
-              icon={<Ionicons name="ios-analytics" size={22} color={colors.primary} />}
-              onPress={() => alert('Button says no!')}
-            />
+            <View style={styles.buttonContainer}>
+              <Button
+                style={styles.button}
+                labelText="Click me!"
+                onPress={() => alert('You pressed me!')}
+              />
+              <Button
+                style={styles.button}
+                labelText="Herro!"
+                icon={<Ionicons name="ios-analytics" size={22} color={colors.primary} />}
+                onPress={() => alert('Button says no!')}
+              />
+            </View>
           </ScrollView>
         </SafeAreaView>
       </ThemeProvider>
@@ -108,5 +115,8 @@ const styles = StyleSheet.create({
   textContainer: {
     ...fonts.regular,
     color: colors.primary
-  }
+  },
+  safeAreaContainer: { flex: 1 },
+  buttonContainer: { flexDirection: 'row' },
+  button: { margin: 4 }
 });
