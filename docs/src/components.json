@@ -864,7 +864,7 @@
           "raw": "View.propTypes.style"
         },
         "required": false,
-        "description": "Override the styles of the divider element",
+        "description": "Override the styles of the Divider component",
         "defaultValue": {
           "value": "{}",
           "computed": false
