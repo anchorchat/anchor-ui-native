@@ -27,7 +27,7 @@ const getPropType = (type) => {
     return 'function';
   }
 
-  console.log(type);
+  // TODO figure out how to display ReactNative component props, like View.propTypes.style
   return type.name;
 };
 
@@ -58,7 +58,8 @@ const Props = ({ props }) => {
 
   const style = {
     table: {
-      tableLayout: 'auto'
+      tableLayout: 'auto',
+      marginBottom: 16
     },
     column: {
       width: 1,

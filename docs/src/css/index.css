@@ -44,3 +44,7 @@ h2,
 p {
   margin-bottom: 4px;
 }
+
+a {
+  color: #F00540 !important;
+}
