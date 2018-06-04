@@ -56,7 +56,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the primary Text component",
+        "description": "Custom props for the Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -180,7 +180,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the label Text component",
+        "description": "Custom props for the label Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -302,7 +302,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the header Text component",
+        "description": "Custom props for the header Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -332,7 +332,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the body Text component",
+        "description": "Custom props for the body Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -451,7 +451,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the primary Text component",
+        "description": "Custom props for the primary Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -473,7 +473,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the secondary Text component",
+        "description": "Custom props for the secondary Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -554,7 +554,7 @@
           "raw": "NativeText.propTypes.style"
         },
         "required": false,
-        "description": "Custom props for the secondary Text component",
+        "description": "Custom props for the time Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -807,7 +807,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the label Text component",
+        "description": "Custom props for the TextInput component\n\nSee https://facebook.github.io/react-native/docs/textinput.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -841,7 +841,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the label Text component",
+        "description": "Custom props for the label Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
