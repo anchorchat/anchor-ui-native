@@ -1,9 +1,14 @@
 import React from 'react';
+import find from 'lodash/find';
 import IconHome from 'anchor-ui/icons/icon-home';
 import Text from '../../anchor-ui-native/text';
 import Button from '../../anchor-ui-native/button';
 import colors from '../../anchor-ui-native/config/colors';
 import style from './style';
+import components from '../../components.json';
+import Props from '../props';
+
+const componentData = find(components, { displayName: 'Button' });
 
 const ButtonDoc = () => (
   <section className="page">
@@ -14,6 +19,7 @@ const ButtonDoc = () => (
       <Button labelText="I have an icon" icon={<IconHome color={colors.primary} width={22} height={22} />} style={style.button} />
       <Button labelText="Hi! I'm a button" />
     </section>
+    <Props props={componentData.props} />
   </section>
 );
 
