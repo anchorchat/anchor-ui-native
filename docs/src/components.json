@@ -214,7 +214,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when Avatar is pressed\n\nfunction(event: object) => void",
+        "description": "Callback fired when Button is pressed\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -225,7 +225,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when Avatar is long pressed\n\nfunction(event: object) => void",
+        "description": "Callback fired when Button is long pressed\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -730,6 +730,143 @@
         "description": "Type of style to render",
         "defaultValue": {
           "value": "'body'",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/text-input/component.js": {
+    "description": "",
+    "displayName": "TextInput",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The string that will be rendered before text input has been entered."
+      },
+      "onChangeText": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired Input's text is changed\n\nfunction(text: string) => void"
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "TextInput value"
+      },
+      "inputStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeTextInput.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the input element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inputProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the label Text component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "labelText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Content label text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "labelStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the label element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "labelTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the label Text component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "divider": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Render a Divider underneath the bodyText",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "dividerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the divider element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
