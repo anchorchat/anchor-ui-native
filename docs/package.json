@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "anchor-ui": "^6.3.1",
+    "escape-html": "^1.0.3",
     "faker": "^4.1.0",
+    "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-art": "^16.4.0",
