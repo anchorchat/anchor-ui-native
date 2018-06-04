@@ -1,10 +1,10 @@
 export default {
-  container: {
-    display: 'flex',
-    alignItems: 'flex-start'
-  },
   button: {
-    marginRight: 8
+    height: '38px',
+    marginRight: '8px'
+  },
+  buttonIcon: {
+    height: '38px'
   },
   note: {
     fontStyle: 'italic'

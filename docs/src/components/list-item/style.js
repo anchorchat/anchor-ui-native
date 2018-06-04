@@ -1,12 +1,10 @@
 export default {
-  divider: {
-    height: 1
+  container: {
+    maxWidth: '414px',
+    display: 'flex',
+    flexDirection: 'column'
   },
-  dividerAvatar: {
-    height: 1,
-    left: 64
-  },
-  list: {
-    maxWidth: '360px'
+  image: {
+    width: '100%'
   }
 };
