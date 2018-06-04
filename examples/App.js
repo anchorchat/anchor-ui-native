@@ -1,13 +1,24 @@
+/* global alert */
 import React from 'react';
 import { StyleSheet, View, SafeAreaView, ScrollView } from 'react-native';
 import { Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
-import { Text, ThemeProvider, Divider, ContentItem, Avatar, ListItem, Button } from './anchor-ui-native';
+import {
+  Text,
+  ThemeProvider,
+  Divider,
+  ContentItem,
+  Avatar,
+  ListItem,
+  Button,
+  TextInput
+} from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
 
 export default class App extends React.Component {
   state = {
    fontLoaded: false,
+   text: ''
  }
 
   async componentDidMount() {
@@ -21,8 +32,14 @@ export default class App extends React.Component {
     this.setState({ fontLoaded: true });
   }
 
+  handleTextChange = (text) => {
+    this.setState({
+      text
+    });
+  }
+
   render() {
-    const { fontLoaded } = this.state;
+    const { fontLoaded, text } = this.state;
 
     if (!fontLoaded) {
       return null;
@@ -79,7 +96,7 @@ export default class App extends React.Component {
               onPress={() => alert('herro')}
               icon={<Avatar text="SL" color="purple" size={64} textStyle={{ fontSize: 32 }} />}
               divider
-              dividerStyle={{ left: 64 }}
+              dividerStyle={{ left: 80 }}
               time="12:12"
               secondaryTextProps={{
                 numberOfLines: 2
@@ -99,6 +116,13 @@ export default class App extends React.Component {
                 onPress={() => alert('Button says no!')}
               />
             </View>
+            <TextInput
+              labelText="Text"
+              placeholder="Jot something down..."
+              onChangeText={this.handleTextChange}
+              value={text}
+              divider
+            />
           </ScrollView>
         </SafeAreaView>
       </ThemeProvider>
