@@ -852,7 +852,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "Render a Divider underneath the bodyText",
+        "description": "Render a Divider underneath the TextInput",
         "defaultValue": {
           "value": "null",
           "computed": false
