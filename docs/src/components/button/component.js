@@ -12,7 +12,7 @@ const componentData = find(components, { displayName: 'Button' });
 
 const ButtonDoc = () => (
   <section className="page">
-    <h1 className="heading-large">ListItem</h1>
+    <h1 className="heading-large">Button</h1>
     <h2><Text type="heading">Examples</Text></h2>
     <p><Text type="body-light" style={style.note}>*Note: Make sure icons are `22x22` of size; If using `Ionicons` from `@expo/vector-icons` use `size={20}`</Text></p>
     <section style={style.container}>
