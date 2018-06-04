@@ -19,6 +19,29 @@ Start the development server:
 yarn start
 ```
 
+## Starting Android emulator
+First check if the emulator command is registered in the terminal:
+```bash
+which emulator
+```
+
+If this is not the case add the following to your `~/.zshrc` config:
+```bash
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+```
+
+Open Android Studio and make sure a sdk is installed. see: https://developer.android.com/studio/intro/update
+
+Create an emulator, Pixel_2_XL_API_27 recommended. see: https://developer.android.com/studio/run/managing-avds
+
+Start your emulator with:
+```sh
+$ emulator @Pixel_2_XL_API_27
+```
+
+For more information: https://developer.android.com/studio/run/emulator-commandline
+
 ## Running with debugger enabled
 Install [React Native Debugger](https://github.com/jhen0409/react-native-debugger) `brew update && brew cask install react-native-debugger`
 
