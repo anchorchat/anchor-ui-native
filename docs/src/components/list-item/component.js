@@ -1,12 +1,12 @@
 import React from 'react';
-import faker from 'faker';
 import find from 'lodash/find';
 import Text from '../../anchor-ui-native/text';
-import ListItem from '../../anchor-ui-native/list-item';
-import Avatar from '../../anchor-ui-native/avatar';
 import style from './style';
 import components from '../../components.json';
 import Props from '../props';
+import listItem from './images/list-item.jpg';
+import listItemLarge from './images/list-item-large.jpg';
+import listItemSettings from './images/list-item-settings.jpg';
 
 const componentData = find(components, { displayName: 'ListItem' });
 
@@ -15,26 +15,10 @@ const ListItemDoc = () => (
     <h1 className="heading-large">ListItem</h1>
     <span><Text type="body-light">{componentData.description}</Text></span>
     <h2><Text type="heading">Examples</Text></h2>
-    <section style={style.list}>
-      <ListItem
-        primaryText={faker.internet.userName()}
-        divider
-        dividerStyle={style.divider}
-      />
-      <ListItem
-        primaryText={faker.internet.userName()}
-        secondaryText={faker.hacker.phrase()}
-        divider
-        dividerStyle={style.divider}
-      />
-      <ListItem
-        primaryText={`${faker.name.firstName()} ${faker.name.lastName()}`}
-        secondaryText={`${faker.hacker.phrase()} ${faker.hacker.phrase()}`}
-        divider
-        dividerStyle={style.dividerAvatar}
-        icon={<Avatar text="LI" color="blue" />}
-        time="14:41"
-      />
+    <section style={style.container}>
+      <img style={style.image} src={listItem} alt="ListItem" />
+      <img style={style.image} src={listItemLarge} alt="large ListItem" />
+      <img style={style.image} src={listItemSettings} alt="ListItem with icon" />
     </section>
     <Props props={componentData.props} />
     <span>
