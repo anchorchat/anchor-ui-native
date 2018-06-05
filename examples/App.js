@@ -1,29 +1,58 @@
-/* global alert */
-import React from 'react';
-import { StyleSheet, View, SafeAreaView, ScrollView } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
-import {
-  Text,
-  ThemeProvider,
-  Divider,
-  ContentItem,
-  Avatar,
-  ListItem,
-  Button,
-  TextInput,
-  MessageInput
-} from './anchor-ui-native';
+import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
+import { ThemeProvider } from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
-import Attachment from './icons/attachment';
-import Send from './icons/send';
-import Camera from './icons/camera';
+import Avatar from './src/avatar';
+import Button from './src/button';
+import ContentItem from './src/content-item';
+import Divider from './src/divider';
+import Home from './src/home';
+import ListItem from './src/list-item';
+import MessageInput from './src/message-input';
+import Text from './src/text';
+import TextInput from './src/text-input';
 
-export default class App extends React.Component {
+const Navigator = createStackNavigator({
+  drawerStack: createDrawerNavigator({
+    Home: { screen: Home },
+    Avatar: { screen: Avatar },
+    Button: { screen: Button },
+    ContentItem: { screen: ContentItem },
+    Divider: { screen: Divider },
+    ListItem: { screen: ListItem },
+    MessageInput: { screen: MessageInput },
+    Text: { screen: Text },
+    TextInput: { screen: TextInput },
+  }, {
+    contentOptions: {
+      activeTintColor: colors.secondary
+    },
+    initialRouteName: 'Home'
+  })
+}, {
+  navigationOptions: ({ navigation }) => {
+    const headerLeft = (
+      <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
+        <Ionicons name="md-menu" size={32} color={colors.white} />
+      </TouchableOpacity>
+    );
+
+    return {
+      headerLeft,
+      headerStyle: { backgroundColor: colors.secondary, paddingLeft: 15},
+      title: 'Anchor UI - native',
+      headerTintColor: colors.white
+    };
+  },
+  initialRouteName: 'drawerStack'
+});
+
+export default class App extends Component {
   state = {
-   fontLoaded: false,
-   text: '',
-   message: ''
+   fontLoaded: false
  }
 
   async componentDidMount() {
@@ -37,20 +66,8 @@ export default class App extends React.Component {
     this.setState({ fontLoaded: true });
   }
 
-  handleTextChange = (text) => {
-    this.setState({
-      text
-    });
-  }
-
-  handleMessageChange = (text) => {
-    this.setState({
-      message: text
-    });
-  }
-
   render() {
-    const { fontLoaded, text, message } = this.state;
+    const { fontLoaded } = this.state;
 
     if (!fontLoaded) {
       return null;
@@ -59,89 +76,7 @@ export default class App extends React.Component {
     return (
       <ThemeProvider>
         <SafeAreaView style={styles.safeAreaContainer}>
-          <ScrollView contentContainerStyle={styles.container}>
-            <Text>Open up App.js to start working on your app!</Text>
-            <Text type="body-light">Changes you make will automatically reload.</Text>
-            <Text type="body-placeholder">Shake your phone to open the developer menu.</Text>
-            <Text type="body-accent">Shake your phone to open the developer menu.</Text>
-            <Text type="body-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
-            <Text type="button">Shake your phone to open the developer menu.</Text>
-            <Text type="divider">Shake your phone to open the developer menu.</Text>
-            <Text type="heading">Shake your phone to open the developer menu.</Text>
-            <Text type="heading-placeholder">Shake your phone to open the developer menu.</Text>
-            <Text type="heading-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
-            <Text type="navigation">Shake your phone to open the developer menu.</Text>
-            <Text type="navigation-emphasized">Shake your phone to open the developer menu.</Text>
-            <Text type="navigation-secondary">Shake your phone to open the developer menu.</Text>
-            <Text type="tab">Shake your phone to open the developer menu.</Text>
-            <Text type="tab-active">Shake your phone to open the developer menu.</Text>
-            <Text type="time">Shake your phone to open the developer menu.</Text>
-            <Text type="time-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
-            <Divider />
-            <Divider text="A" />
-            <ContentItem headerText="Mobile" bodyText="+ 31 6 37 40 52 93" divider />
-            <View style={{ flexDirection: 'row' }}>
-              <Avatar source={{ uri: 'https://source.unsplash.com/random/100x100' }} />
-              <Avatar text="BG" />
-              <Avatar text="MO" color="pink" />
-            </View>
-            <ListItem
-              primaryText="Peter Kuiper"
-              divider
-            />
-            <ListItem
-              primaryText="Ian Stewart"
-              secondaryText="'Ie-an'"
-              divider
-            />
-            <ListItem
-              primaryText="Lars Tadema"
-              icon={<Avatar text="LT" color="hotpink" />}
-              divider
-              dividerStyle={{ left: 64 }}
-              rightButton={<Text type="body-accent">I&apos;m a button</Text>}
-            />
-            <ListItem
-              primaryText="Sjaak Luthart"
-              secondaryText="If we connect the monitor, we can get to the HDD monitor through the 1080p SMTP card! If we program the matrix, we can get to the SMTP application through the digital THX system!"
-              onPress={() => alert('herro')}
-              icon={<Avatar text="SL" color="purple" size={64} textStyle={{ fontSize: 32 }} />}
-              divider
-              dividerStyle={{ left: 80 }}
-              time="12:12"
-              secondaryTextProps={{
-                numberOfLines: 2
-              }}
-              iconStyle={{ marginTop: 8, marginBottom: 8 }}
-            />
-            <View style={styles.buttonContainer}>
-              <Button
-                style={styles.button}
-                labelText="Click me!"
-                onPress={() => alert('You pressed me!')}
-              />
-              <Button
-                style={styles.button}
-                labelText="Herro!"
-                icon={<Ionicons name="ios-analytics" size={20} color={colors.primary} />}
-                onPress={() => alert('Button says no!')}
-              />
-            </View>
-            <TextInput
-              labelText="Text"
-              placeholder="Jot something down..."
-              onChangeText={this.handleTextChange}
-              value={text}
-              divider
-            />
-            <MessageInput
-              placeholder="Message..."
-              onChangeText={this.handleMessageChange}
-              value={message}
-              leftIcon={<Attachment />}
-              rightIcon={message ? <Send color={colors.primary} /> : <Camera />}
-            />
-          </ScrollView>
+          <Navigator />
         </SafeAreaView>
       </ThemeProvider>
     );
@@ -158,7 +93,7 @@ const styles = StyleSheet.create({
     ...fonts.regular,
     color: colors.primary
   },
-  safeAreaContainer: { flex: 1 },
+  safeAreaContainer: { flex: 1, backgroundColor: colors.secondary },
   buttonContainer: { flexDirection: 'row' },
   button: { margin: 4 }
 });
