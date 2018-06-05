@@ -139,14 +139,14 @@ export default class App extends React.Component {
             value={text}
             divider
           />
-          <MessageInput
-            placeholder="Message..."
-            onChangeText={this.handleMessageChange}
-            value={message}
-            leftIcon={<Attachment />}
-            rightIcon={message ? <Send color={colors.primary} /> : <Camera />}
-          />
         </ScrollView>
+        <MessageInput
+          placeholder="Message..."
+          onChangeText={this.handleMessageChange}
+          value={message}
+          leftIcon={<Attachment />}
+          rightIcon={message ? <Send color={colors.primary} /> : <Camera />}
+        />
       </ThemeProvider>
     );
   }
@@ -154,9 +154,7 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#FFF'
   },
   textContainer: {
     ...fonts.regular,
