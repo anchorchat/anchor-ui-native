@@ -17,6 +17,7 @@ import {
 import { colors, fonts } from './anchor-ui-native/config';
 import Attachment from './icons/attachment';
 import Send from './icons/send';
+import Camera from './icons/camera';
 
 export default class App extends React.Component {
   state = {
@@ -137,8 +138,8 @@ export default class App extends React.Component {
               placeholder="Message..."
               onChangeText={this.handleMessageChange}
               value={message}
-              leftIcon={<Attachment color={colors.primary} />}
-              rightIcon={<Send color={colors.gray} />}
+              leftIcon={<Attachment />}
+              rightIcon={message ? <Send color={colors.primary} /> : <Camera />}
             />
           </ScrollView>
         </SafeAreaView>
