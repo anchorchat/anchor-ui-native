@@ -666,7 +666,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired Input's text is changed\n\nfunction(text: string) => void"
+        "description": "Callback fired when Input's text is changed\n\nfunction(text: string) => void"
       },
       "value": {
         "type": {
@@ -920,7 +920,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired Input's text is changed\n\nfunction(text: string) => void"
+        "description": "Callback fired when Input's text is changed\n\nfunction(text: string) => void"
       },
       "value": {
         "type": {
