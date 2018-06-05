@@ -1,0 +1,22 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import Svg, { Path } from 'react-native-svg';
+
+const propTypes = {
+  color: PropTypes.string
+};
+
+const defaultProps = {
+  color: '#8E8E93'
+};
+
+const Send = ({ color, ...custom }) => (
+  <Svg height="28" viewBox="0 0 28 28" width="28" {...custom}>
+    <Path d="m25.7120489 1.55598384-23.9018465 10.41758496c-.42321439.2018407-.41019241.8073628.01953297.9961816l6.46541367 3.6526657c.38414844.2148627.85945076.1692857 1.19151128-.1171978l12.74851958-10.99055217c.0846429-.0716209.2864836-.2083517.3646155-.13021981.0846429.08464287-.045577.27997259-.1171978.36461547l-11.0296181 12.42297011c-.3060166.3450825-.3515935.8529397-.1041759 1.2435992l4.2256329 6.7779412c.2083517.4101924.8008519.4036814.9896706-.013022l9.8836837-23.9018465c.2148627-.46879132-.2734616-.94409364-.7357419-.72271996z" fill={color} />
+  </Svg>
+);
+
+Send.propTypes = propTypes;
+Send.defaultProps = defaultProps;
+
+export default Send;
