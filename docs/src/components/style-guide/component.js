@@ -71,6 +71,24 @@ const StyleGuide = () => (
         <p style={style.text}>#000000</p>
         <p style={style.text}>rgb(0, 0, 0)</p>
       </section>
+      <section style={style.column}>
+        <div style={{ ...style.color, background: colors.primary }} />
+        <p style={style.heading}>Primary</p>
+        <p style={style.text}>#F00540</p>
+        <p style={style.text}>rgb(240, 5, 64)</p>
+      </section>
+      <section style={style.column}>
+        <div style={{ ...style.color, background: colors.lightPrimary }} />
+        <p style={style.heading}>Primary light</p>
+        <p style={style.text}>#FAF7F8</p>
+        <p style={style.text}>rgb(250, 247, 248)</p>
+      </section>
+      <section style={style.column}>
+        <div style={{ ...style.color, background: colors.secondary }} />
+        <p style={style.heading}>Secondary</p>
+        <p style={style.text}>#F26D5F</p>
+        <p style={style.text}>rgb(242, 109, 58)</p>
+      </section>
     </section>
   </section>
 );

@@ -21,7 +21,8 @@ export default {
   column: {
     display: 'flex',
     flexDirection: 'column',
-    width: '125px'
+    width: '125px',
+    marginBottom: '8px'
   },
   color: {
     width: '125px',
