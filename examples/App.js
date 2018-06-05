@@ -11,14 +11,19 @@ import {
   Avatar,
   ListItem,
   Button,
-  TextInput
+  TextInput,
+  MessageInput
 } from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
+import Attachment from './icons/attachment';
+import Send from './icons/send';
+import Camera from './icons/camera';
 
 export default class App extends React.Component {
   state = {
    fontLoaded: false,
-   text: ''
+   text: '',
+   message: ''
  }
 
   async componentDidMount() {
@@ -38,8 +43,14 @@ export default class App extends React.Component {
     });
   }
 
+  handleMessageChange = (text) => {
+    this.setState({
+      message: text
+    });
+  }
+
   render() {
-    const { fontLoaded, text } = this.state;
+    const { fontLoaded, text, message } = this.state;
 
     if (!fontLoaded) {
       return null;
@@ -122,6 +133,13 @@ export default class App extends React.Component {
               onChangeText={this.handleTextChange}
               value={text}
               divider
+            />
+            <MessageInput
+              placeholder="Message..."
+              onChangeText={this.handleMessageChange}
+              value={message}
+              leftIcon={<Attachment />}
+              rightIcon={message ? <Send color={colors.primary} /> : <Camera />}
             />
           </ScrollView>
         </SafeAreaView>

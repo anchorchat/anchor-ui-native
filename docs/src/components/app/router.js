@@ -5,6 +5,7 @@ import StyleGuide from '../style-guide';
 import ListItem from '../list-item';
 import Button from '../button';
 import TextInput from '../text-input';
+import MessageInput from '../message-input';
 
 const Router = () => (
   <Switch>
@@ -12,6 +13,7 @@ const Router = () => (
     <Route exact path="/button" component={Button} />
     <Route exact path="/list-item" component={ListItem} />
     <Route exact path="/text-input" component={TextInput} />
+    <Route exact path="/message-input" component={MessageInput} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>

@@ -4,21 +4,20 @@ import Text from '../../anchor-ui-native/text';
 import style from './style';
 import components from '../../components.json';
 import Props from '../props';
-import textInput from './images/text-input.jpg';
-import textInputPlaceholder from './images/text-input-placeholder.jpg';
-import textInputNoLabel from './images/text-input-no-label.jpg';
+import messageInput from './images/message-input.jpg';
+import messageInputPlaceholder from './images/message-input-placeholder.jpg';
 
-const componentData = find(components, { displayName: 'TextInput' });
+const componentData = find(components, { displayName: 'MessageInput' });
 
-const TextInputDoc = () => (
+const MessageInputDoc = () => (
   <section className="page">
-    <h1 className="heading-large">TextInput</h1>
+    <h1 className="heading-large">MessageInput</h1>
     <span><Text type="body-light">{componentData.description}</Text></span>
     <h2><Text type="heading">Examples</Text></h2>
     <section style={style.container}>
-      <img style={style.image} src={textInput} alt="TextInput" />
-      <img style={style.image} src={textInputPlaceholder} alt="TextInput with placeholder" />
-      <img style={style.image} src={textInputNoLabel} alt="TextInput without label" />
+      <img style={style.image} src={messageInput} alt="MessageInput" />
+      &nbsp;
+      <img style={style.image} src={messageInputPlaceholder} alt="MessageInput with placeholder" />
     </section>
     <Props props={componentData.props} />
     <span>
@@ -29,4 +28,4 @@ const TextInputDoc = () => (
   </section>
 );
 
-export default TextInputDoc;
+export default MessageInputDoc;
