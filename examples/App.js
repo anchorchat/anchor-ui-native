@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
 import { ThemeProvider } from './anchor-ui-native';
-import { colors, fonts } from './anchor-ui-native/config';
+import { colors } from './anchor-ui-native/config';
 import Avatar from './src/avatar';
 import Button from './src/button';
 import ContentItem from './src/content-item';
@@ -28,7 +28,7 @@ const Navigator = createStackNavigator({
     TextInput: { screen: TextInput },
   }, {
     contentOptions: {
-      activeTintColor: colors.secondary
+      activeTintColor: colors.primary
     },
     initialRouteName: 'Home'
   })
@@ -36,21 +36,21 @@ const Navigator = createStackNavigator({
   navigationOptions: ({ navigation }) => {
     const headerLeft = (
       <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-        <Ionicons name="md-menu" size={32} color={colors.white} />
+        <Ionicons name="md-menu" size={32} color={colors.gray} />
       </TouchableOpacity>
     );
 
     return {
       headerLeft,
-      headerStyle: { backgroundColor: colors.secondary, paddingLeft: 15},
-      title: 'Anchor UI - native',
-      headerTintColor: colors.white
+      headerStyle: { backgroundColor: colors.lighterGray, paddingLeft: 17 },
+      title: 'AnchorUI Native',
+      headerTintColor: colors.black
     };
   },
   initialRouteName: 'drawerStack'
 });
 
-export default class App extends Component {
+class App extends Component {
   state = {
    fontLoaded: false
  }
@@ -63,7 +63,9 @@ export default class App extends Component {
       'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
     });
 
-    this.setState({ fontLoaded: true });
+    this.setState({ // eslint-disable-line react/no-did-mount-set-state
+      fontLoaded: true
+    });
   }
 
   render() {
@@ -75,25 +77,10 @@ export default class App extends Component {
 
     return (
       <ThemeProvider>
-        <SafeAreaView style={styles.safeAreaContainer}>
-          <Navigator />
-        </SafeAreaView>
+        <Navigator />
       </ThemeProvider>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#FFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textContainer: {
-    ...fonts.regular,
-    color: colors.primary
-  },
-  safeAreaContainer: { flex: 1, backgroundColor: colors.secondary },
-  buttonContainer: { flexDirection: 'row' },
-  button: { margin: 4 }
-});
+export default App;
