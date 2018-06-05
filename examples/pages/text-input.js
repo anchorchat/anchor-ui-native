@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
 import { Text, TextInput } from '../anchor-ui-native';
+import { colors } from '../anchor-ui-native/config';
 
 export default class TextInputExample extends Component {
   state = {
@@ -13,11 +14,12 @@ export default class TextInputExample extends Component {
 
   render() {
     const { defaultText, dividerText, labelText } = this.state;
-    
+
     return (
-      <ScrollView style={[styles.wrapper]}>
+      <ScrollView style={styles.wrapper}>
+        <Text type="heading" style={styles.headingLarge}>TextInput</Text>
         <View style={styles.item}>
-          <Text>Default TextInput</Text>
+          <Text type="heading" style={styles.heading}>Default</Text>
           <TextInput
             placeholder="Jot something down..."
             onChangeText={(value) => this.handleTextChange('defaultText', value)}
@@ -25,7 +27,7 @@ export default class TextInputExample extends Component {
           />
         </View>
         <View style={styles.item}>
-          <Text>TextInput with divider</Text>
+          <Text type="heading" style={styles.heading}>With divider</Text>
           <TextInput
             placeholder="Jot something down..."
             onChangeText={(value) => this.handleTextChange('dividerText', value)}
@@ -34,7 +36,7 @@ export default class TextInputExample extends Component {
           />
         </View>
         <View style={styles.item}>
-          <Text>TextInput with label</Text>
+          <Text type="heading" style={styles.heading}>With label</Text>
           <TextInput
             labelText="Label"
             placeholder="Jot something down..."
@@ -49,9 +51,19 @@ export default class TextInputExample extends Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    padding: 8
+    padding: 16,
+    backgroundColor: colors.white,
+    flex: 1
   },
   item: {
-    margin: 8
+    marginBottom: 8,
+    alignItems: 'flex-start'
+  },
+  heading: {
+    marginBottom: 8
+  },
+  headingLarge: {
+    fontSize: 20,
+    marginBottom: 16
   }
 });

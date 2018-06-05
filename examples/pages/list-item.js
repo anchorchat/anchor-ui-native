@@ -1,23 +1,21 @@
-/* global alert */
 import React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
 import { Avatar, ListItem, Text } from '../anchor-ui-native';
+import { colors } from '../anchor-ui-native/config';
 
 export default () => (
-  <ScrollView style={[styles.wrapper]}>
+  <ScrollView style={styles.wrapper}>
+    <Text type="heading" style={styles.headingLarge}>ListItem</Text>
     <View style={styles.item}>
-      <Text>Default ListItem</Text>
+      <Text type="heading" style={styles.heading}>Default</Text>
       <ListItem primaryText="Peter Kuiper" />
     </View>
     <View style={styles.item}>
-      <Text>ListItem with divider</Text>
-      <ListItem
-        primaryText="Peter Kuiper"
-        divider
-      />
+      <Text type="heading" style={styles.heading}>With divider</Text>
+      <ListItem primaryText="Charlotte Uithoven" divider />
     </View>
     <View style={styles.item}>
-      <Text>ListItem with secondaryText</Text>
+      <Text type="heading" style={styles.heading}>With secondaryText</Text>
       <ListItem
         primaryText="Ian Stewart"
         secondaryText="'Ie-an'"
@@ -25,7 +23,7 @@ export default () => (
       />
     </View>
     <View style={styles.item}>
-      <Text>ListItem with rightButton and custom divider style</Text>
+      <Text type="heading" style={styles.heading}>With rightButton, icon and divider style</Text>
       <ListItem
         primaryText="Lars Tadema"
         icon={<Avatar text="LT" color="hotpink" />}
@@ -35,11 +33,10 @@ export default () => (
       />
     </View>
     <View style={styles.item}>
-      <Text>ListItem with time and multiple lines</Text>
+      <Text type="heading" style={styles.heading}>With time and multiple lines</Text>
       <ListItem
         primaryText="Sjaak Luthart"
         secondaryText="If we connect the monitor, we can get to the HDD monitor through the 1080p SMTP card! If we program the matrix, we can get to the SMTP application through the digital THX system!"
-        onPress={() => alert('herro')}
         icon={<Avatar text="SL" color="purple" size={64} textStyle={{ fontSize: 32 }} />}
         divider
         dividerStyle={{ left: 80 }}
@@ -55,9 +52,19 @@ export default () => (
 
 const styles = StyleSheet.create({
   wrapper: {
-    padding: 8
+    padding: 16,
+    backgroundColor: colors.white,
+    flex: 1
   },
   item: {
-    margin: 8
+    marginBottom: 8,
+    alignItems: 'flex-start'
+  },
+  heading: {
+    marginBottom: 8
+  },
+  headingLarge: {
+    fontSize: 20,
+    marginBottom: 16
   }
 });

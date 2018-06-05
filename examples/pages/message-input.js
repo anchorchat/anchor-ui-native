@@ -18,11 +18,12 @@ export default class MessageInputExample extends Component {
 
   render() {
     const { defaultMessage, leftIconMessage, rightIconMessage, bothIconsMessage } = this.state;
-    
+
     return (
-      <ScrollView style={[styles.wrapper]}>
+      <ScrollView style={styles.wrapper}>
+        <Text type="heading" style={styles.headingLarge}>MessageInput</Text>
         <View style={styles.item}>
-          <Text>Default MessageInput</Text>
+          <Text type="heading" style={styles.heading}>Default</Text>
           <MessageInput
             placeholder="Message..."
             onChangeText={(value) => this.handleMessageChange('defaultMessage', value)}
@@ -30,7 +31,7 @@ export default class MessageInputExample extends Component {
           />
         </View>
         <View style={styles.item}>
-          <Text>MessageInput with leftIcon</Text>
+          <Text type="heading" style={styles.heading}>With leftIcon</Text>
           <MessageInput
             placeholder="Message..."
             onChangeText={(value) => this.handleMessageChange('leftIconMessage', value)}
@@ -39,7 +40,7 @@ export default class MessageInputExample extends Component {
           />
         </View>
         <View style={styles.item}>
-          <Text>MessageInput with rightIcon</Text>
+          <Text type="heading" style={styles.heading}>With rightIcon</Text>
           <MessageInput
             placeholder="Message..."
             onChangeText={(value) => this.handleMessageChange('rightIconMessage', value)}
@@ -48,7 +49,7 @@ export default class MessageInputExample extends Component {
           />
         </View>
         <View style={styles.item}>
-          <Text>MessageInput with left- and rightIcon</Text>
+          <Text type="heading" style={styles.heading}>With left- and rightIcon</Text>
           <MessageInput
             placeholder="Message..."
             onChangeText={(value) => this.handleMessageChange('bothIconsMessage', value)}
@@ -64,9 +65,19 @@ export default class MessageInputExample extends Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    padding: 8
+    padding: 16,
+    backgroundColor: colors.white,
+    flex: 1
   },
   item: {
-    margin: 8
+    marginBottom: 8,
+    alignItems: 'flex-start'
+  },
+  heading: {
+    marginBottom: 8
+  },
+  headingLarge: {
+    fontSize: 20,
+    marginBottom: 16
   }
 });

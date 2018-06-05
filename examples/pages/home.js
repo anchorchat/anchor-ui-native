@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from '../anchor-ui-native';
+import { colors } from '../anchor-ui-native/config';
 
 const navigationOptions = () => ({
   title: 'Home'
@@ -8,7 +9,8 @@ const navigationOptions = () => ({
 
 const Home = () => (
   <View style={styles.wrapper}>
-    <Text>Welcome in the anchor-ui-native example</Text>
+    <Text type="heading" style={styles.headingLarge}>AnchorUI Native</Text>
+    <Text>Welcome in the AnchorUI Native examples. View the components by using the drawer navigation.</Text>
   </View>
 );
 
@@ -16,7 +18,13 @@ Home.navigationOptions = navigationOptions;
 
 const styles = StyleSheet.create({
   wrapper: {
-    padding: 8
+    padding: 16,
+    backgroundColor: colors.white,
+    flex: 1
+  },
+  headingLarge: {
+    fontSize: 20,
+    marginBottom: 16
   }
 });
 

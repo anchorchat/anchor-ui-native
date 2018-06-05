@@ -5,15 +5,15 @@ import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
 import { ThemeProvider } from './anchor-ui-native';
 import { colors } from './anchor-ui-native/config';
-import Avatar from './src/avatar';
-import Button from './src/button';
-import ContentItem from './src/content-item';
-import Divider from './src/divider';
-import Home from './src/home';
-import ListItem from './src/list-item';
-import MessageInput from './src/message-input';
-import Text from './src/text';
-import TextInput from './src/text-input';
+import Avatar from './pages/avatar';
+import Button from './pages/button';
+import ContentItem from './pages/content-item';
+import Divider from './pages/divider';
+import Home from './pages/home';
+import ListItem from './pages/list-item';
+import MessageInput from './pages/message-input';
+import Text from './pages/text';
+import TextInput from './pages/text-input';
 
 const Navigator = createStackNavigator({
   drawerStack: createDrawerNavigator({
