@@ -1,3 +1,3 @@
-import TextInput from './component';
+import MessageInput from './component';
 
-export default TextInput;
+export default MessageInput;
