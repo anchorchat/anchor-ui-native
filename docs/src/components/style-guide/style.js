@@ -16,7 +16,11 @@ export default {
   row: {
     display: 'flex',
     flexWrap: 'wrap',
-    marginBottom: '16px'
+    marginBottom: '16px',
+    maxWidth: '900px'
+  },
+  maxWidth: {
+    maxWidth: '900px'
   },
   column: {
     display: 'flex',
@@ -48,5 +52,23 @@ export default {
     fontWeight: 'normal',
     fontSize: '12px',
     marginBottom: '2px'
+  },
+  table: {
+    tableLayout: 'auto',
+    marginTop: 16,
+    maxWidth: 1000
+  },
+  tableText: {
+    color: '#9E8D92',
+    fontSize: '12px',
+    padding: '8px'
+  },
+  tableTextContrast: {
+    color: colors.white,
+    fontSize: '12px',
+    padding: '8px'
+  },
+  contrastRow: {
+    backgroundColor: colors.secondary
   }
 }
