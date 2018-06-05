@@ -23,7 +23,7 @@ const TextInputDoc = () => (
     <Props props={componentData.props} />
     <span>
       <Text type="body-light">
-        Other properties are applied to the root element. See <a href="https://facebook.github.io/react-native/docs/view.html#props" target="blank" rel="noopener noreferrer">https://facebook.github.io/react-native/docs/view.html#props</a> for all available props.
+        Other properties are applied to the root element. See <a href="https://facebook.github.io/react-native/docs/view.html#props" target="blank" rel="noopener noreferrer">https://facebook.github.io/react-native/docs/view.html#props</a> for available props.
       </Text>
     </span>
   </section>
