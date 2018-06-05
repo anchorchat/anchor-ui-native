@@ -624,6 +624,145 @@
       }
     }
   },
+  "lib/message-input/component.js": {
+    "description": "Component for inputting messages using a keyboard.",
+    "displayName": "MessageInput",
+    "methods": [
+      {
+        "name": "handleContentSizeChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The string that will be rendered before text input has been entered."
+      },
+      "onChangeText": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired Input's text is changed\n\nfunction(text: string) => void"
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "TextInput value"
+      },
+      "inputStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "TextInput.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the input element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inputProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the TextInput component\n\nSee https://facebook.github.io/react-native/docs/textinput.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "leftIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Icon for the left hand side of the TextInput",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "leftIconStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the icon container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "rightIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Icon for the right hand side of the TextInput",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "rightIconStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the icon container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/text/component.js": {
     "description": "Text element with different types of styles.",
     "displayName": "Text",
