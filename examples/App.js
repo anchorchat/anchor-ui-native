@@ -11,7 +11,8 @@ import {
   Avatar,
   ListItem,
   Button,
-  TextInput
+  TextInput,
+  Message
 } from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
 
@@ -123,6 +124,20 @@ export default class App extends React.Component {
               value={text}
               divider
             />
+            <View style={styles.messageContainer}>
+              <Message
+                type="text"
+                bodyText="Tremblant is based in Canada and has over 90 runs millions of skiers each year bliep."
+                time="12:32"
+              />
+              <Message
+                type="text"
+                align="right"
+                bodyText="Tremblant is based in Canada and has over 90 runs millions of skiers each year."
+                time="12:32"
+                statusIcon={<Ionicons style={{ paddingLeft: 2 }} name="ios-checkmark" size={16} color={colors.white} />}
+              />
+            </View>
           </ScrollView>
         </SafeAreaView>
       </ThemeProvider>
@@ -142,5 +157,6 @@ const styles = StyleSheet.create({
   },
   safeAreaContainer: { flex: 1 },
   buttonContainer: { flexDirection: 'row' },
-  button: { margin: 4 }
+  button: { margin: 4 },
+  messageContainer: { backgroundColor: 'steelblue', width: '100%' }
 });
