@@ -12,18 +12,20 @@ import {
   ListItem,
   Button,
   TextInput,
-  MessageInput
+  MessageInput,
+  MessageHighlight
 } from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
 import Attachment from './icons/attachment';
 import Send from './icons/send';
 import Camera from './icons/camera';
+import Close from './icons/close';
 
 export default class App extends React.Component {
   state = {
    fontLoaded: false,
    text: '',
-   message: ''
+   message: 'I think my strongest asset is my temperament.'
  }
 
   async componentDidMount() {
@@ -133,6 +135,11 @@ export default class App extends React.Component {
               onChangeText={this.handleTextChange}
               value={text}
               divider
+            />
+            <MessageHighlight
+              headerText="Christina Buchanan"
+              bodyText="Tremblant is based in Canada and has over 90 runs servicing millions of skiers each year."
+              closeIcon={<Close width={14} height={14} />}
             />
             <MessageInput
               placeholder="Message..."
