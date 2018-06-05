@@ -624,6 +624,128 @@
       }
     }
   },
+  "lib/message/component.js": {
+    "description": "Message with optional icon",
+    "displayName": "Message",
+    "methods": [],
+    "props": {
+      "type": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The type of message"
+      },
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Body text of the message"
+      },
+      "time": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Time that the message was sent"
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Side which the message is on"
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Icon to show whether a message is sent/read. This icon renders besides the time"
+      }
+    }
+  },
+  "lib/message/text-message/component.js": {
+    "description": "",
+    "displayName": "TextMessage",
+    "methods": [],
+    "props": {
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "time": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'left'",
+          "computed": false
+        }
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/text/component.js": {
     "description": "Text element with different types of styles.",
     "displayName": "Text",

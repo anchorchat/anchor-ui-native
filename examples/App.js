@@ -127,13 +127,13 @@ export default class App extends React.Component {
             <View style={styles.messageContainer}>
               <Message
                 type="text"
-                bodyText="Tremblant is based in Canada and has over 90 runs millions of skiers each year bliep."
+                bodyText="Tremblant is based in Canada and has over 90 runs millions of skiers each year."
                 time="12:32"
               />
               <Message
                 type="text"
                 align="right"
-                bodyText="Tremblant is based in Canada and has over 90 runs millions of skiers each year."
+                bodyText="It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds"
                 time="12:32"
                 statusIcon={<Ionicons style={{ paddingLeft: 2 }} name="ios-checkmark" size={16} color={colors.white} />}
               />
