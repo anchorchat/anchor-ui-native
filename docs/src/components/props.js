@@ -59,7 +59,8 @@ const Props = ({ props }) => {
   const style = {
     table: {
       tableLayout: 'auto',
-      marginBottom: 16
+      marginBottom: 16,
+      maxWidth: 1000
     },
     column: {
       width: 1,
