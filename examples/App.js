@@ -14,6 +14,7 @@ import ListItem from './pages/list-item';
 import MessageInput from './pages/message-input';
 import Text from './pages/text';
 import TextInput from './pages/text-input';
+import HeaderExample from './pages/header';
 
 const Navigator = createStackNavigator({
   drawerStack: createDrawerNavigator({
@@ -22,6 +23,7 @@ const Navigator = createStackNavigator({
     Button: { screen: Button },
     ContentItem: { screen: ContentItem },
     Divider: { screen: Divider },
+    Header: { screen: HeaderExample },
     ListItem: { screen: ListItem },
     MessageInput: { screen: MessageInput },
     Text: { screen: Text },
