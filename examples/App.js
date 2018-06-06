@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
 import _ from 'lodash';
 import { ThemeProvider, Header } from './anchor-ui-native';
-import { colors } from './anchor-ui-native/config';
+import { colors, fonts } from './anchor-ui-native/config';
 import Avatar from './pages/avatar';
 import Button from './pages/button';
 import ContentItem from './pages/content-item';
@@ -45,7 +45,14 @@ const Navigator = createStackNavigator({
     TextInput: { screen: TextInput },
   }, {
     contentOptions: {
-      activeTintColor: colors.primary
+      labelStyle: {
+        ...fonts.regular,
+        color: colors.black,
+        fontSize: 14
+      },
+      activeLabelStyle: {
+        color: colors.primary
+      }
     },
     initialRouteName: 'Home'
   })
