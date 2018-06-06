@@ -18,6 +18,7 @@ const Nav = ({ history }) => (
     <MenuItem text="Getting started" onClick={() => pushRoute(history, '/')} />
     <MenuItem text="Styleguide" onClick={() => pushRoute(history, '/style-guide')} />
     <MenuItem text="Button" onClick={() => pushRoute(history, '/button')} />
+    <MenuItem text="Header" onClick={() => pushRoute(history, '/header')} />
     <MenuItem text="ListItem" onClick={() => pushRoute(history, '/list-item')} />
     <MenuItem text="MessageHighlight" onClick={() => pushRoute(history, '/message-highlight')} />
     <MenuItem text="MessageInput" onClick={() => pushRoute(history, '/message-input')} />

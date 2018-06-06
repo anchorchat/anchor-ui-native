@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { TouchableOpacity } from 'react-native';
-import { Font } from 'expo';
+import { TouchableOpacity, Image } from 'react-native';
+import { Font, Asset, AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
-import { ThemeProvider } from './anchor-ui-native';
+import _ from 'lodash';
+import { ThemeProvider, Header } from './anchor-ui-native';
 import { colors } from './anchor-ui-native/config';
 import Avatar from './pages/avatar';
 import Button from './pages/button';
@@ -14,7 +15,20 @@ import ListItem from './pages/list-item';
 import MessageInput from './pages/message-input';
 import Text from './pages/text';
 import TextInput from './pages/text-input';
+import HeaderExample from './pages/header';
 import MessageHighlight from './pages/message-highlight';
+
+const cacheImages = (images) => {
+  return _.map(images, image => {
+    if (_.isString(image)) {
+      return Image.prefetch(image);
+    } else {
+      return Asset.fromModule(image).downloadAsync();
+    }
+  });
+}
+
+const cacheFonts = fonts => _.map(fonts, Font.loadAsync);
 
 const Navigator = createStackNavigator({
   drawerStack: createDrawerNavigator({
@@ -23,6 +37,7 @@ const Navigator = createStackNavigator({
     Button: { screen: Button },
     ContentItem: { screen: ContentItem },
     Divider: { screen: Divider },
+    Header: { screen: HeaderExample },
     ListItem: { screen: ListItem },
     MessageHighlight: { screen: MessageHighlight },
     MessageInput: { screen: MessageInput },
@@ -35,46 +50,58 @@ const Navigator = createStackNavigator({
     initialRouteName: 'Home'
   })
 }, {
-  navigationOptions: ({ navigation }) => {
-    const headerLeft = (
-      <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-        <Ionicons name="md-menu" size={32} color={colors.gray} />
-      </TouchableOpacity>
-    );
-
-    return {
-      headerLeft,
-      headerStyle: { backgroundColor: colors.lighterGray, paddingLeft: 17 },
-      title: 'AnchorUI Native',
-      headerTintColor: colors.black
-    };
-  },
+  navigationOptions: ({ navigation }) => ({
+    header: (
+      <Header
+        primaryText="AnchorUI Native"
+        secondaryText="UI kit for Chat Engines"
+        leftButton={
+          <TouchableOpacity
+            onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+            style={{ marginLeft: 11 }}
+          >
+            <Ionicons name="md-menu" size={32} color={colors.gray} />
+          </TouchableOpacity>
+        }
+      />
+    )
+  }),
   initialRouteName: 'drawerStack'
 });
 
 class App extends Component {
   state = {
-   fontLoaded: false
- }
+   assetsLoaded: false
+  }
 
-  async componentDidMount() {
-    await Font.loadAsync({
-      'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
-      'nunito-italic': require('./assets/fonts/Nunito-Italic.ttf'),
-      'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
-      'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
-    });
+  loadAssetsAsync = async () => {
+    const fontAssets = cacheFonts([
+      {
+        'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
+        'nunito-italic': require('./assets/fonts/Nunito-Italic.ttf'),
+        'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
+        'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
+      }
+    ])
+    const imageAssets = cacheImages([
+      require('./assets/images/avatar.jpg'),
+      require('./assets/images/background.jpg')
+    ]);
 
-    this.setState({ // eslint-disable-line react/no-did-mount-set-state
-      fontLoaded: true
-    });
+    return Promise.all([...imageAssets, ...fontAssets]);
   }
 
   render() {
-    const { fontLoaded } = this.state;
+    const { assetsLoaded } = this.state;
 
-    if (!fontLoaded) {
-      return null;
+    if (!assetsLoaded) {
+      return (
+        <AppLoading
+          startAsync={this.loadAssetsAsync}
+          onFinish={() => this.setState({ assetsLoaded: true })}
+          onError={console.warn}
+        />
+      );
     }
 
     return (

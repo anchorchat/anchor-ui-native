@@ -422,6 +422,177 @@
       }
     }
   },
+  "lib/header/component.js": {
+    "description": "View Header with safeArea.",
+    "displayName": "Header",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "primaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Header primary text"
+      },
+      "primaryTextStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the primaryText element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "primaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the primary Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Header secondary text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "secondaryTextStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the primaryText element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the secondary Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "leftButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Button for the left hand side of the Header",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "leftButtonStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the leftButton element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "rightButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Button for the right hand side of the Header",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "rightButtonStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the rightButton element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/list-item/component.js": {
     "description": "ListItems are used to present multiple items vertically as a single element.",
     "displayName": "ListItem",
@@ -848,6 +1019,31 @@
             },
             "fonts": {
               "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
               "required": true
             }
           }

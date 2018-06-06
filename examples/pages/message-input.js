@@ -1,83 +1,80 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, View } from 'react-native';
-import { Text, MessageInput } from '../anchor-ui-native';
+import PropTypes from 'prop-types';
+import { StyleSheet, ScrollView, KeyboardAvoidingView, ImageBackground } from 'react-native';
+import { Text, MessageInput, withSafeArea } from '../anchor-ui-native';
 import Attachment from '../icons/attachment';
 import Send from '../icons/send';
 import Camera from '../icons/camera';
 import { colors } from '../anchor-ui-native/config';
 
-export default class MessageInputExample extends Component {
+const propTypes = {
+  safeArea: PropTypes.shape({
+    top: PropTypes.number.isRequired,
+    right: PropTypes.number.isRequired,
+    bottom: PropTypes.number.isRequired,
+    left: PropTypes.number.isRequired,
+  }).isRequired
+};
+
+const getStyles = (safeArea) => (
+  StyleSheet.create({
+    wrapper: {
+      backgroundColor: colors.white,
+      flex: 1
+    },
+    content: {
+      paddingTop: 16,
+      paddingLeft: 16 + safeArea.left,
+      paddingRight: 16 + safeArea.right,
+      paddingBottom: 16,
+      flex: 1
+    },
+    item: {
+      marginBottom: 8,
+      alignItems: 'flex-start'
+    },
+    heading: {
+      marginBottom: 8
+    },
+    headingLarge: {
+      fontSize: 20,
+      marginBottom: 16,
+      color: colors.white
+    }
+  })
+);
+
+class MessageInputExample extends Component {
   state = {
-    defaultMessage: '',
-    leftIconMessage: '',
-    rightIconMessage: '',
-    bothIconsMessage: ''
+    message: ''
   }
 
-  handleMessageChange = (name, value) => this.setState({ [name]: value })
+  handleMessageChange = (value) => this.setState({ message: value })
 
   render() {
-    const { defaultMessage, leftIconMessage, rightIconMessage, bothIconsMessage } = this.state;
+    const { message } = this.state;
+    const { safeArea } = this.props;
+    const styles = getStyles(safeArea);
 
     return (
-      <ScrollView style={styles.wrapper}>
-        <Text type="heading" style={styles.headingLarge}>MessageInput</Text>
-        <View style={styles.item}>
-          <Text type="heading" style={styles.heading}>Default</Text>
-          <MessageInput
-            placeholder="Message..."
-            onChangeText={(value) => this.handleMessageChange('defaultMessage', value)}
-            value={defaultMessage}
-          />
-        </View>
-        <View style={styles.item}>
-          <Text type="heading" style={styles.heading}>With leftIcon</Text>
-          <MessageInput
-            placeholder="Message..."
-            onChangeText={(value) => this.handleMessageChange('leftIconMessage', value)}
-            value={leftIconMessage}
-            leftIcon={<Attachment />}
-          />
-        </View>
-        <View style={styles.item}>
-          <Text type="heading" style={styles.heading}>With rightIcon</Text>
-          <MessageInput
-            placeholder="Message..."
-            onChangeText={(value) => this.handleMessageChange('rightIconMessage', value)}
-            value={rightIconMessage}
-            rightIcon={rightIconMessage ? <Send color={colors.primary} /> : <Camera />}
-          />
-        </View>
-        <View style={styles.item}>
-          <Text type="heading" style={styles.heading}>With left- and rightIcon</Text>
-          <MessageInput
-            placeholder="Message..."
-            onChangeText={(value) => this.handleMessageChange('bothIconsMessage', value)}
-            value={bothIconsMessage}
-            leftIcon={<Attachment />}
-            rightIcon={bothIconsMessage ? <Send color={colors.primary} /> : <Camera />}
-          />
-        </View>
-      </ScrollView>
+      <KeyboardAvoidingView style={styles.wrapper} behavior="padding" keyboardVerticalOffset={45 + safeArea.top}>
+        <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={{ flex: 1 }}>
+          <ScrollView contentContainerStyle={styles.content}>
+            <Text type="heading" style={styles.headingLarge}>MessageInput</Text>
+          </ScrollView>
+        </ImageBackground>
+        <MessageInput
+          placeholder="Message..."
+          onChangeText={this.handleMessageChange}
+          value={message}
+          leftIcon={<Attachment />}
+          rightIcon={message ? <Send color={colors.primary} /> : <Camera />}
+        />
+      </KeyboardAvoidingView>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  wrapper: {
-    padding: 16,
-    backgroundColor: colors.white,
-    flex: 1
-  },
-  item: {
-    marginBottom: 8,
-    alignItems: 'flex-start'
-  },
-  heading: {
-    marginBottom: 8
-  },
-  headingLarge: {
-    fontSize: 20,
-    marginBottom: 16
-  }
-});
+MessageInputExample.propTypes = propTypes;
+
+export default withSafeArea(MessageInputExample);
