@@ -3,7 +3,7 @@ import { TouchableOpacity } from 'react-native';
 import { Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
-import { ThemeProvider } from './anchor-ui-native';
+import { ThemeProvider, Header } from './anchor-ui-native';
 import { colors } from './anchor-ui-native/config';
 import Avatar from './pages/avatar';
 import Button from './pages/button';
@@ -33,20 +33,22 @@ const Navigator = createStackNavigator({
     initialRouteName: 'Home'
   })
 }, {
-  navigationOptions: ({ navigation }) => {
-    const headerLeft = (
-      <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-        <Ionicons name="md-menu" size={32} color={colors.gray} />
-      </TouchableOpacity>
-    );
-
-    return {
-      headerLeft,
-      headerStyle: { backgroundColor: colors.lighterGray, paddingLeft: 17 },
-      title: 'AnchorUI Native',
-      headerTintColor: colors.black
-    };
-  },
+  navigationOptions: ({ navigation }) => ({
+    header: (
+      <Header
+        primaryText="AnchorUI Native"
+        secondaryText="UI kit for Chat Engines"
+        leftButton={
+          <TouchableOpacity
+            onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+            style={{ marginLeft: 11 }}
+          >
+            <Ionicons name="md-menu" size={32} color={colors.gray} />
+          </TouchableOpacity>
+        }
+      />
+    )
+  }),
   initialRouteName: 'drawerStack'
 });
 
