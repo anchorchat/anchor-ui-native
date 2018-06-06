@@ -795,6 +795,121 @@
       }
     }
   },
+  "lib/message-highlight/component.js": {
+    "description": "Highlight a selected message",
+    "displayName": "MessageHighlight",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content header text"
+      },
+      "headerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the header Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content body text"
+      },
+      "bodyStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the body element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the body Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "closeIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Icon to close the highlight with"
+      },
+      "closeIconStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the icon container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/message-input/component.js": {
     "description": "Component for inputting messages using a keyboard.",
     "displayName": "MessageInput",
@@ -860,12 +975,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "Icon for the left hand side of the TextInput",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "Icon for the left hand side of the TextInput"
       },
       "leftIconStyle": {
         "type": {
@@ -883,12 +994,8 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": "Icon for the right hand side of the TextInput",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
+        "required": true,
+        "description": "Icon for the right hand side of the TextInput"
       },
       "rightIconStyle": {
         "type": {

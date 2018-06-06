@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
 import _ from 'lodash';
 import { ThemeProvider, Header } from './anchor-ui-native';
-import { colors } from './anchor-ui-native/config';
+import { colors, fonts } from './anchor-ui-native/config';
 import Avatar from './pages/avatar';
 import Button from './pages/button';
 import ContentItem from './pages/content-item';
@@ -16,6 +16,7 @@ import MessageInput from './pages/message-input';
 import Text from './pages/text';
 import TextInput from './pages/text-input';
 import HeaderExample from './pages/header';
+import MessageHighlight from './pages/message-highlight';
 
 const cacheImages = (images) => {
   return _.map(images, image => {
@@ -38,12 +39,20 @@ const Navigator = createStackNavigator({
     Divider: { screen: Divider },
     Header: { screen: HeaderExample },
     ListItem: { screen: ListItem },
+    MessageHighlight: { screen: MessageHighlight },
     MessageInput: { screen: MessageInput },
     Text: { screen: Text },
     TextInput: { screen: TextInput },
   }, {
     contentOptions: {
-      activeTintColor: colors.primary
+      labelStyle: {
+        ...fonts.regular,
+        color: colors.black,
+        fontSize: 14
+      },
+      activeLabelStyle: {
+        color: colors.primary
+      }
     },
     initialRouteName: 'Home'
   })
