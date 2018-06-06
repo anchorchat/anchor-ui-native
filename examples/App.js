@@ -1,162 +1,122 @@
-/* global alert */
-import React from 'react';
-import { StyleSheet, View, SafeAreaView, ScrollView } from 'react-native';
-import { Font } from 'expo';
+import React, { Component } from 'react';
+import { TouchableOpacity, Image } from 'react-native';
+import { Font, Asset, AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
-import {
-  Text,
-  ThemeProvider,
-  Divider,
-  ContentItem,
-  Avatar,
-  ListItem,
-  Button,
-  TextInput,
-  Message
-} from './anchor-ui-native';
+import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
+import _ from 'lodash';
+import { ThemeProvider, Header } from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
+import Avatar from './pages/avatar';
+import Button from './pages/button';
+import ContentItem from './pages/content-item';
+import Divider from './pages/divider';
+import Home from './pages/home';
+import ListItem from './pages/list-item';
+import MessageInput from './pages/message-input';
+import Text from './pages/text';
+import TextInput from './pages/text-input';
+import HeaderExample from './pages/header';
+import MessageHighlight from './pages/message-highlight';
 
-export default class App extends React.Component {
+const cacheImages = (images) => {
+  return _.map(images, image => {
+    if (_.isString(image)) {
+      return Image.prefetch(image);
+    } else {
+      return Asset.fromModule(image).downloadAsync();
+    }
+  });
+}
+
+const cacheFonts = fonts => _.map(fonts, Font.loadAsync);
+
+const Navigator = createStackNavigator({
+  drawerStack: createDrawerNavigator({
+    Home: { screen: Home },
+    Avatar: { screen: Avatar },
+    Button: { screen: Button },
+    ContentItem: { screen: ContentItem },
+    Divider: { screen: Divider },
+    Header: { screen: HeaderExample },
+    ListItem: { screen: ListItem },
+    MessageHighlight: { screen: MessageHighlight },
+    MessageInput: { screen: MessageInput },
+    Text: { screen: Text },
+    TextInput: { screen: TextInput },
+  }, {
+    contentOptions: {
+      labelStyle: {
+        ...fonts.regular,
+        color: colors.black,
+        fontSize: 14
+      },
+      activeLabelStyle: {
+        color: colors.primary
+      }
+    },
+    initialRouteName: 'Home'
+  })
+}, {
+  navigationOptions: ({ navigation }) => ({
+    header: (
+      <Header
+        primaryText="AnchorUI Native"
+        secondaryText="UI kit for Chat Engines"
+        leftButton={
+          <TouchableOpacity
+            onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+            style={{ marginLeft: 11 }}
+          >
+            <Ionicons name="md-menu" size={32} color={colors.gray} />
+          </TouchableOpacity>
+        }
+      />
+    )
+  }),
+  initialRouteName: 'drawerStack'
+});
+
+class App extends Component {
   state = {
-   fontLoaded: false,
-   text: ''
- }
-
-  async componentDidMount() {
-    await Font.loadAsync({
-      'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
-      'nunito-italic': require('./assets/fonts/Nunito-Italic.ttf'),
-      'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
-      'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
-    });
-
-    this.setState({ fontLoaded: true });
+   assetsLoaded: false
   }
 
-  handleTextChange = (text) => {
-    this.setState({
-      text
-    });
+  loadAssetsAsync = async () => {
+    const fontAssets = cacheFonts([
+      {
+        'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
+        'nunito-italic': require('./assets/fonts/Nunito-Italic.ttf'),
+        'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
+        'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
+      }
+    ])
+    const imageAssets = cacheImages([
+      require('./assets/images/avatar.jpg'),
+      require('./assets/images/background.jpg')
+    ]);
+
+    return Promise.all([...imageAssets, ...fontAssets]);
   }
 
   render() {
-    const { fontLoaded, text } = this.state;
+    const { assetsLoaded } = this.state;
 
-    if (!fontLoaded) {
-      return null;
+    if (!assetsLoaded) {
+      return (
+        <AppLoading
+          startAsync={this.loadAssetsAsync}
+          onFinish={() => this.setState({ assetsLoaded: true })}
+          onError={console.warn}
+        />
+      );
     }
 
     return (
       <ThemeProvider>
-        <SafeAreaView style={styles.safeAreaContainer}>
-          <ScrollView contentContainerStyle={styles.container}>
-            <Text>Open up App.js to start working on your app!</Text>
-            <Text type="body-light">Changes you make will automatically reload.</Text>
-            <Text type="body-placeholder">Shake your phone to open the developer menu.</Text>
-            <Text type="body-accent">Shake your phone to open the developer menu.</Text>
-            <Text type="body-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
-            <Text type="button">Shake your phone to open the developer menu.</Text>
-            <Text type="divider">Shake your phone to open the developer menu.</Text>
-            <Text type="heading">Shake your phone to open the developer menu.</Text>
-            <Text type="heading-placeholder">Shake your phone to open the developer menu.</Text>
-            <Text type="heading-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
-            <Text type="navigation">Shake your phone to open the developer menu.</Text>
-            <Text type="navigation-emphasized">Shake your phone to open the developer menu.</Text>
-            <Text type="navigation-secondary">Shake your phone to open the developer menu.</Text>
-            <Text type="tab">Shake your phone to open the developer menu.</Text>
-            <Text type="tab-active">Shake your phone to open the developer menu.</Text>
-            <Text type="time">Shake your phone to open the developer menu.</Text>
-            <Text type="time-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
-            <Divider />
-            <Divider text="A" />
-            <ContentItem headerText="Mobile" bodyText="+ 31 6 37 40 52 93" divider />
-            <View style={{ flexDirection: 'row' }}>
-              <Avatar source={{ uri: 'https://source.unsplash.com/random/100x100' }} />
-              <Avatar text="BG" />
-              <Avatar text="MO" color="pink" />
-            </View>
-            <ListItem
-              primaryText="Peter Kuiper"
-              divider
-            />
-            <ListItem
-              primaryText="Ian Stewart"
-              secondaryText="'Ie-an'"
-              divider
-            />
-            <ListItem
-              primaryText="Lars Tadema"
-              icon={<Avatar text="LT" color="hotpink" />}
-              divider
-              dividerStyle={{ left: 64 }}
-              rightButton={<Text type="body-accent">I&apos;m a button</Text>}
-            />
-            <ListItem
-              primaryText="Sjaak Luthart"
-              secondaryText="If we connect the monitor, we can get to the HDD monitor through the 1080p SMTP card! If we program the matrix, we can get to the SMTP application through the digital THX system!"
-              onPress={() => alert('herro')}
-              icon={<Avatar text="SL" color="purple" size={64} textStyle={{ fontSize: 32 }} />}
-              divider
-              dividerStyle={{ left: 80 }}
-              time="12:12"
-              secondaryTextProps={{
-                numberOfLines: 2
-              }}
-              iconStyle={{ marginTop: 8, marginBottom: 8 }}
-            />
-            <View style={styles.buttonContainer}>
-              <Button
-                style={styles.button}
-                labelText="Click me!"
-                onPress={() => alert('You pressed me!')}
-              />
-              <Button
-                style={styles.button}
-                labelText="Herro!"
-                icon={<Ionicons name="ios-analytics" size={20} color={colors.primary} />}
-                onPress={() => alert('Button says no!')}
-              />
-            </View>
-            <TextInput
-              labelText="Text"
-              placeholder="Jot something down..."
-              onChangeText={this.handleTextChange}
-              value={text}
-              divider
-            />
-            <View style={styles.messageContainer}>
-              <Message
-                type="text"
-                bodyText="Tremblant is based in Canada and has over 90 runs millions of skiers each year."
-                time="12:32"
-              />
-              <Message
-                type="text"
-                align="right"
-                bodyText="It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds"
-                time="12:32"
-                statusIcon={<Ionicons style={{ paddingLeft: 2 }} name="ios-checkmark" size={16} color={colors.white} />}
-              />
-            </View>
-          </ScrollView>
-        </SafeAreaView>
+        <Navigator />
       </ThemeProvider>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#FFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textContainer: {
-    ...fonts.regular,
-    color: colors.primary
-  },
-  safeAreaContainer: { flex: 1 },
-  buttonContainer: { flexDirection: 'row' },
-  button: { margin: 4 },
-  messageContainer: { backgroundColor: 'steelblue', width: '100%' }
-});
+export default App;

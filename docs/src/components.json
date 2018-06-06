@@ -422,6 +422,177 @@
       }
     }
   },
+  "lib/header/component.js": {
+    "description": "View Header with safeArea.",
+    "displayName": "Header",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "primaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Header primary text"
+      },
+      "primaryTextStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the primaryText element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "primaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the primary Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Header secondary text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "secondaryTextStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the primaryText element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the secondary Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "leftButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Button for the left hand side of the Header",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "leftButtonStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the leftButton element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "rightButton": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Button for the right hand side of the Header",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "rightButtonStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the rightButton element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/list-item/component.js": {
     "description": "ListItems are used to present multiple items vertically as a single element.",
     "displayName": "ListItem",
@@ -746,6 +917,289 @@
       }
     }
   },
+  "lib/message-highlight/component.js": {
+    "description": "Highlight a selected message",
+    "displayName": "MessageHighlight",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content header text"
+      },
+      "headerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the header element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the header Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Content body text"
+      },
+      "bodyStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the body element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the body Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "closeIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Icon to close the highlight with"
+      },
+      "closeIconStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the icon container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message-input/component.js": {
+    "description": "Component for inputting messages using a keyboard.",
+    "displayName": "MessageInput",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The string that will be rendered before text input has been entered."
+      },
+      "onChangeText": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when TextInput's text is changed\n\nfunction(text: string) => void"
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "TextInput value"
+      },
+      "inputStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "TextInput.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the input element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "inputProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the TextInput component\n\nSee https://facebook.github.io/react-native/docs/textinput.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "leftIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Icon for the left hand side of the TextInput"
+      },
+      "leftIconStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the icon container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "rightIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Icon for the right hand side of the TextInput"
+      },
+      "rightIconStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the icon container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/text/component.js": {
     "description": "Text element with different types of styles.",
     "displayName": "Text",
@@ -903,7 +1357,7 @@
           "name": "func"
         },
         "required": true,
-        "description": "Callback fired Input's text is changed\n\nfunction(text: string) => void"
+        "description": "Callback fired when TextInput's text is changed\n\nfunction(text: string) => void"
       },
       "value": {
         "type": {

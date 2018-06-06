@@ -1,15 +1,17 @@
 import React from 'react';
 import Divider from 'anchor-ui/divider';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 import logoGradient from '../../assets/images/logo-gradient.svg';
 import style from './style';
 import colors from '../../anchor-ui-native/config/colors';
+import Text from '../../anchor-ui-native/text';
 
 const StyleGuide = () => (
   <section className="page">
     <h1 className="heading-large">Styleguide</h1>
     <h2 style={style.rowHeading}>
-      <p>Logo</p>
+      <div>Logo</div>
       <Divider style={style.divider} />
     </h2>
     <section style={style.row}>
@@ -31,7 +33,7 @@ const StyleGuide = () => (
       </section>
     </section>
     <h2 style={style.rowHeading}>
-      <p>Color Palette</p>
+      <div>Color Palette</div>
       <Divider style={style.divider} />
     </h2>
     <section style={style.row}>
@@ -71,6 +73,125 @@ const StyleGuide = () => (
         <p style={style.text}>#000000</p>
         <p style={style.text}>rgb(0, 0, 0)</p>
       </section>
+      <section style={style.column}>
+        <div style={{ ...style.color, background: colors.primary }} />
+        <p style={style.heading}>Primary</p>
+        <p style={style.text}>#F00540</p>
+        <p style={style.text}>rgb(240, 5, 64)</p>
+      </section>
+      <section style={style.column}>
+        <div style={{ ...style.color, background: colors.lightPrimary }} />
+        <p style={style.heading}>Primary light</p>
+        <p style={style.text}>#FAF7F8</p>
+        <p style={style.text}>rgb(250, 247, 248)</p>
+      </section>
+      <section style={style.column}>
+        <div style={{ ...style.color, background: colors.secondary }} />
+        <p style={style.heading}>Secondary</p>
+        <p style={style.text}>#F26D5F</p>
+        <p style={style.text}>rgb(242, 109, 58)</p>
+      </section>
+    </section>
+    <h2 style={style.rowHeading}>
+      <div>Typography</div>
+      <Divider style={style.divider} />
+    </h2>
+    <section style={style.maxWidth}>
+      <Text>AnchorUI Native uses the <a href="https://fonts.google.com/specimen/Nunito">Nunito</a> font family which can be downloaded for free from <a href="https://fonts.google.com/specimen/Nunito">Google Fonts</a>. See the <Link to="/">Getting started</Link> page on how to use custom fonts with React Native. The following styles are used in the UI kit, see the <Link to="/text">Text</Link> component on how to implement them.</Text>
+      <table style={style.table}>
+        <tbody>
+          <tr>
+            <td style={style.tableText}>Body</td>
+            <td style={style.tableText}><Text>The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>14pt Regular {colors.black}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Body light</td>
+            <td style={style.tableText}><Text type="body-light">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>14pt Regular {colors.darkGray}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Body placeholder</td>
+            <td style={style.tableText}><Text type="body-placeholder">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>14pt Regular {colors.lightGray}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Body accent</td>
+            <td style={style.tableText}><Text type="body-accent">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>14pt Regular {colors.primary}</td>
+          </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Body contrast</td>
+            <td style={style.tableTextContrast}><Text type="body-contrast">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>14pt Regular {colors.white}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Button</td>
+            <td style={style.tableText}><Text type="button">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>14pt SemiBold {colors.primary}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Divider</td>
+            <td style={style.tableText}><Text type="divider">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>14pt Bold {colors.darkGray}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Heading</td>
+            <td style={style.tableText}><Text type="heading">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>17pt SemiBold {colors.black}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Heading placeholder</td>
+            <td style={style.tableText}><Text type="heading-placeholder">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>17pt SemiBold {colors.lightGray}</td>
+          </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Heading contrast</td>
+            <td style={style.tableTextContrast}><Text type="heading-contrast">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>17pt SemiBold {colors.white}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Navigation</td>
+            <td style={style.tableText}><Text type="navigation">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>17pt Regular {colors.primary}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Navigation emphasized</td>
+            <td style={style.tableText}><Text type="navigation-emphasized">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>17pt Bold {colors.primary}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Navigation secondary</td>
+            <td style={style.tableText}><Text type="navigation-secondary">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>14pt Bold {colors.darkGray}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Tab</td>
+            <td style={style.tableText}><Text type="tab">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>10pt SemiBold {colors.gray}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Tab active</td>
+            <td style={style.tableText}><Text type="tab-active">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>10pt SemiBold {colors.gray}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Time</td>
+            <td style={style.tableText}><Text type="time">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>10pt Italic {colors.lightGray}</td>
+          </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Time contrast</td>
+            <td style={style.tableTextContrast}><Text type="time-contrast">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>10pt Italic {colors.white}</td>
+          </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Avatar</td>
+            <td style={style.tableTextContrast}><Text type="avatar">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>24pt Bold {colors.white}</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </section>
 );
