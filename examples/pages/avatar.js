@@ -7,8 +7,8 @@ export default () => (
   <View style={styles.wrapper}>
     <Text type="heading" style={styles.headingLarge}>Avatar</Text>
     <View style={styles.item}>
-      <Text type="heading" style={styles.heading}>With uri</Text>
-      <Avatar source={{ uri: 'https://source.unsplash.com/random/100x100' }} />
+      <Text type="heading" style={styles.heading}>With image</Text>
+      <Avatar source={require('../assets/images/avatar.jpg')} />
     </View>
     <View style={styles.item}>
       <Text type="heading" style={styles.heading}>With text</Text>

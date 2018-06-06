@@ -54,7 +54,7 @@ const createMarkup = (text) => {
 };
 
 const Props = ({ props }) => {
-  const propsWithoutTheme = omit(props, 'theme');
+  const propsWithoutHocProps = omit(props, ['theme', 'safeArea']);
 
   const style = {
     table: {
@@ -89,7 +89,7 @@ const Props = ({ props }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {map(propsWithoutTheme, (prop, name) => (
+          {map(propsWithoutHocProps, (prop, name) => (
             <TableRow key={name} style={style.row}>
               <TableColumn style={style.column}><Text type="body-light">{name}</Text></TableColumn>
               <TableColumn style={style.column}><Text type="body-accent">{getPropType(prop.type)}</Text></TableColumn>
