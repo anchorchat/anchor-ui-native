@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, ScrollView, View } from 'react-native';
+import { StyleSheet, ScrollView, KeyboardAvoidingView, ImageBackground } from 'react-native';
 import { Text, MessageInput, withSafeArea } from '../anchor-ui-native';
 import Attachment from '../icons/attachment';
 import Send from '../icons/send';
@@ -26,7 +26,8 @@ const getStyles = (safeArea) => (
       paddingTop: 16,
       paddingLeft: 16 + safeArea.left,
       paddingRight: 16 + safeArea.right,
-      paddingBottom: 16
+      paddingBottom: 16,
+      flex: 1
     },
     item: {
       marginBottom: 8,
@@ -37,7 +38,8 @@ const getStyles = (safeArea) => (
     },
     headingLarge: {
       fontSize: 20,
-      marginBottom: 16
+      marginBottom: 16,
+      color: colors.white
     }
   })
 );
@@ -55,10 +57,12 @@ class MessageInputExample extends Component {
     const styles = getStyles(safeArea);
 
     return (
-      <View style={styles.wrapper}>
-        <ScrollView contentContainerStyle={styles.content}>
-          <Text type="heading" style={styles.headingLarge}>MessageInput</Text>
-        </ScrollView>
+      <KeyboardAvoidingView style={styles.wrapper} behavior="padding" keyboardVerticalOffset={45 + safeArea.top}>
+        <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={{ flex: 1 }}>
+          <ScrollView contentContainerStyle={styles.content}>
+            <Text type="heading" style={styles.headingLarge}>MessageInput</Text>
+          </ScrollView>
+        </ImageBackground>
         <MessageInput
           placeholder="Message..."
           onChangeText={(value) => this.handleMessageChange('bothIconsMessage', value)}
@@ -66,7 +70,7 @@ class MessageInputExample extends Component {
           leftIcon={<Attachment />}
           rightIcon={message ? <Send color={colors.primary} /> : <Camera />}
         />
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }

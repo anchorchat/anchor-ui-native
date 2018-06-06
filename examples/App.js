@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { TouchableOpacity } from 'react-native';
-import { Font } from 'expo';
+import { TouchableOpacity, Image } from 'react-native';
+import { Font, Asset, AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
+import _ from 'lodash';
 import { ThemeProvider, Header } from './anchor-ui-native';
 import { colors } from './anchor-ui-native/config';
 import Avatar from './pages/avatar';
@@ -15,6 +16,18 @@ import MessageInput from './pages/message-input';
 import Text from './pages/text';
 import TextInput from './pages/text-input';
 import HeaderExample from './pages/header';
+
+const cacheImages = (images) => {
+  return _.map(images, image => {
+    if (_.isString(image)) {
+      return Image.prefetch(image);
+    } else {
+      return Asset.fromModule(image).downloadAsync();
+    }
+  });
+}
+
+const cacheFonts = fonts => _.map(fonts, Font.loadAsync);
 
 const Navigator = createStackNavigator({
   drawerStack: createDrawerNavigator({
@@ -56,27 +69,37 @@ const Navigator = createStackNavigator({
 
 class App extends Component {
   state = {
-   fontLoaded: false
- }
+   assetsLoaded: false
+  }
 
-  async componentDidMount() {
-    await Font.loadAsync({
-      'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
-      'nunito-italic': require('./assets/fonts/Nunito-Italic.ttf'),
-      'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
-      'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
-    });
+  loadAssetsAsync = async () => {
+    const fontAssets = cacheFonts([
+      {
+        'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
+        'nunito-italic': require('./assets/fonts/Nunito-Italic.ttf'),
+        'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
+        'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
+      }
+    ])
+    const imageAssets = cacheImages([
+      'https://source.unsplash.com/random/100x100',
+      require('./assets/images/background.jpg')
+    ]);
 
-    this.setState({ // eslint-disable-line react/no-did-mount-set-state
-      fontLoaded: true
-    });
+    return Promise.all([...imageAssets, ...fontAssets]);
   }
 
   render() {
-    const { fontLoaded } = this.state;
+    const { assetsLoaded } = this.state;
 
-    if (!fontLoaded) {
-      return null;
+    if (!assetsLoaded) {
+      return (
+        <AppLoading
+          startAsync={this.loadAssetsAsync}
+          onFinish={() => this.setState({ assetsLoaded: true })}
+          onError={console.warn}
+        />
+      );
     }
 
     return (
