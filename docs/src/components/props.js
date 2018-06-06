@@ -60,7 +60,7 @@ const Props = ({ props }) => {
     table: {
       tableLayout: 'auto',
       marginBottom: 16,
-      maxWidth: 1000
+      maxWidth: 900
     },
     column: {
       width: 1,
@@ -81,11 +81,11 @@ const Props = ({ props }) => {
       <Table style={style.table}>
         <TableHeader>
           <TableRow style={style.row}>
-            <TableHeaderColumn style={style.column}><Text type="heading-contrast">Name</Text></TableHeaderColumn>
-            <TableHeaderColumn style={style.column}><Text type="heading-contrast">Type</Text></TableHeaderColumn>
-            <TableHeaderColumn style={style.column}><Text type="heading-contrast">Description</Text></TableHeaderColumn>
-            <TableHeaderColumn style={style.column}><Text type="heading-contrast">Default value</Text></TableHeaderColumn>
-            <TableHeaderColumn style={style.column}><Text type="heading-contrast">Required</Text></TableHeaderColumn>
+            <TableHeaderColumn style={style.column}><Text type="body-contrast">Name</Text></TableHeaderColumn>
+            <TableHeaderColumn style={style.column}><Text type="body-contrast">Type</Text></TableHeaderColumn>
+            <TableHeaderColumn style={style.column}><Text type="body-contrast">Description</Text></TableHeaderColumn>
+            <TableHeaderColumn style={style.column}><Text type="body-contrast">Default value</Text></TableHeaderColumn>
+            <TableHeaderColumn style={style.column}><Text type="body-contrast">Required</Text></TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody>
