@@ -49,7 +49,7 @@ class MessageInputExample extends Component {
     message: ''
   }
 
-  handleMessageChange = (name, value) => this.setState({ [name]: value })
+  handleMessageChange = (value) => this.setState({ message: value })
 
   render() {
     const { message } = this.state;
@@ -65,7 +65,7 @@ class MessageInputExample extends Component {
         </ImageBackground>
         <MessageInput
           placeholder="Message..."
-          onChangeText={(value) => this.handleMessageChange('bothIconsMessage', value)}
+          onChangeText={this.handleMessageChange}
           value={message}
           leftIcon={<Attachment />}
           rightIcon={message ? <Send color={colors.primary} /> : <Camera />}
