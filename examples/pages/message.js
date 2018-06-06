@@ -54,7 +54,7 @@ const INITIAL_STATE = [
     align: 'right',
     image: {
       source: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg' },
-      thumbnailSource: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg?&w=1000' },
+      thumbnailSource: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg?&w=48' },
       ratio: 2 / 3
     }
   },
@@ -73,7 +73,7 @@ const INITIAL_STATE = [
     align: 'left',
     image: {
       source: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg' },
-      thumbnailSource: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg?&w=1000' },
+      thumbnailSource: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg?&w=48' },
       ratio: 3 / 2
     }
   },
