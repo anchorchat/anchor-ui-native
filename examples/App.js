@@ -82,7 +82,7 @@ class App extends Component {
       }
     ])
     const imageAssets = cacheImages([
-      'https://source.unsplash.com/random/100x100',
+      require('./assets/images/avatar.jpg'),
       require('./assets/images/background.jpg')
     ]);
 
