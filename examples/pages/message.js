@@ -28,8 +28,7 @@ const getStyles = (safeArea) => (
       paddingTop: 4,
       paddingLeft: safeArea.left,
       paddingRight: safeArea.right,
-      paddingBottom: 4,
-      flex: 1
+      paddingBottom: 4
     },
     item: {
       marginBottom: 8,
@@ -49,10 +48,34 @@ const getStyles = (safeArea) => (
 const INITIAL_STATE = [
   {
     key: uuid.v4(),
+    type: 'image',
+    time: subMinutes(new Date(), '10'),
+    body: 'The night sky looks amazing in this picture!',
+    align: 'right',
+    image: {
+      source: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg' },
+      thumbnailSource: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg?&w=1000' },
+      ratio: 2 / 3
+    }
+  },
+  {
+    key: uuid.v4(),
     type: 'text',
     time: subMinutes(new Date(), '5'),
     body: 'It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds.',
     align: 'right'
+  },
+  {
+    key: uuid.v4(),
+    type: 'image',
+    time: subMinutes(new Date(), '10'),
+    body: 'The weather was really nice yesterday!',
+    align: 'left',
+    image: {
+      source: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg' },
+      thumbnailSource: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg?&w=1000' },
+      ratio: 3 / 2
+    }
   },
   {
     key: uuid.v4(),
@@ -98,6 +121,7 @@ class MessageHighlightExample extends Component {
       type={item.type}
       bodyText={item.body}
       align={item.align}
+      image={item.image}
       time={format(item.time, 'HH:mm')}
     />
   )
@@ -110,24 +134,10 @@ class MessageHighlightExample extends Component {
     return (
       <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={{ flex: 1 }}>
         <KeyboardAvoidingView style={styles.wrapper} behavior="padding" keyboardVerticalOffset={45 + safeArea.top}>
-          {/* <ScrollView contentContainerStyle={styles.content}>
-            <Message
-              type="text"
-              bodyText="Tremblant is based in Canada and has over 90 runs millions of skiers each year."
-              time="12:32"
-            />
-            <Message
-              type="text"
-              align="right"
-              bodyText="It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds"
-              time="12:32"
-              statusIcon={<Ionicons style={{ paddingLeft: 2 }} name="ios-checkmark" size={16} color={colors.white} />}
-            />
-          </ScrollView> */}
           <FlatList
             data={messages}
             renderItem={this.renderMessage}
-            contentContainerStyle={{ paddingTop: 4, paddingBottom: 4 }}
+            contentContainerStyle={styles.content}
             inverted
           />
           <MessageInput
