@@ -4,7 +4,7 @@ import { StyleSheet, KeyboardAvoidingView, ImageBackground, FlatList, TouchableO
 import uuid from 'uuid';
 import format from 'date-fns/format';
 import subMinutes from 'date-fns/sub_minutes';
-import { MessageInput, withSafeArea, Message } from '../anchor-ui-native';
+import { MessageInput, withSafeArea, Message, Avatar } from '../anchor-ui-native';
 import Attachment from '../icons/attachment';
 import Send from '../icons/send';
 import Camera from '../icons/camera';
@@ -48,8 +48,19 @@ const getStyles = (safeArea) => (
 const INITIAL_STATE = [
   {
     key: uuid.v4(),
+    type: 'contact',
+    time: subMinutes(new Date(), '1'),
+    align: 'right',
+    contact: {
+      avatar: <Avatar size={32} text="MT" textStyle={{ fontSize: 16 }} color="green" />,
+      primaryText: 'Marvin Timothy',
+      secondaryText: '+31 6 12345678'
+    }
+  },
+  {
+    key: uuid.v4(),
     type: 'image',
-    time: subMinutes(new Date(), '10'),
+    time: subMinutes(new Date(), '3'),
     body: 'The night sky looks amazing in this picture!',
     align: 'right',
     image: {
@@ -60,15 +71,26 @@ const INITIAL_STATE = [
   },
   {
     key: uuid.v4(),
-    type: 'text',
+    type: 'contact',
     time: subMinutes(new Date(), '5'),
+    align: 'left',
+    contact: {
+      avatar: <Avatar size={32} text="CA" textStyle={{ fontSize: 16 }} color="purple" />,
+      primaryText: 'Curtis Adams',
+      secondaryText: '+32 412345678'
+    }
+  },
+  {
+    key: uuid.v4(),
+    type: 'text',
+    time: subMinutes(new Date(), '10'),
     body: 'It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds.',
     align: 'right'
   },
   {
     key: uuid.v4(),
     type: 'image',
-    time: subMinutes(new Date(), '10'),
+    time: subMinutes(new Date(), '15'),
     body: 'The weather was really nice yesterday!',
     align: 'left',
     image: {
@@ -80,7 +102,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'text',
-    time: subMinutes(new Date(), '15'),
+    time: subMinutes(new Date(), '20'),
     body: 'Tremblant is based in Canada and has over 90 runs millions of skiers each year.',
     align: 'left'
   }
@@ -122,6 +144,7 @@ class MessageHighlightExample extends Component {
       bodyText={item.body}
       align={item.align}
       image={item.image}
+      contact={item.contact}
       time={format(item.time, 'HH:mm')}
     />
   )
