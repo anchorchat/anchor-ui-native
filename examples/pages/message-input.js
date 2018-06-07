@@ -19,7 +19,6 @@ const propTypes = {
 const getStyles = (safeArea) => (
   StyleSheet.create({
     wrapper: {
-      backgroundColor: colors.white,
       flex: 1
     },
     content: {
@@ -49,7 +48,7 @@ class MessageInputExample extends Component {
     message: ''
   }
 
-  handleMessageChange = (value) => this.setState({ message: value })
+  handleMessageChange = (value) => this.setState({ message: value });
 
   render() {
     const { message } = this.state;
@@ -57,20 +56,20 @@ class MessageInputExample extends Component {
     const styles = getStyles(safeArea);
 
     return (
-      <KeyboardAvoidingView style={styles.wrapper} behavior="padding" keyboardVerticalOffset={45 + safeArea.top}>
-        <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={{ flex: 1 }}>
+      <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={{ flex: 1 }}>
+        <KeyboardAvoidingView style={styles.wrapper} behavior="padding" keyboardVerticalOffset={45 + safeArea.top}>
           <ScrollView contentContainerStyle={styles.content}>
             <Text type="heading" style={styles.headingLarge}>MessageInput</Text>
           </ScrollView>
-        </ImageBackground>
-        <MessageInput
-          placeholder="Message..."
-          onChangeText={this.handleMessageChange}
-          value={message}
-          leftIcon={<Attachment />}
-          rightIcon={message ? <Send color={colors.primary} /> : <Camera />}
-        />
-      </KeyboardAvoidingView>
+          <MessageInput
+            placeholder="Message..."
+            onChangeText={this.handleMessageChange}
+            value={message}
+            leftIcon={<Attachment />}
+            rightIcon={message ? <Send color={colors.primary} /> : <Camera />}
+          />
+        </KeyboardAvoidingView>
+      </ImageBackground>
     );
   }
 }
