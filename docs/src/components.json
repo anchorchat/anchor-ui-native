@@ -1062,7 +1062,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the primary Text component for 'contact' messages\n\nSee https://facebook.github.io/react-native/docs/image.html#props for available props.",
+        "description": "Custom props for the primary Text component for 'contact' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1073,7 +1073,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the secondary Text component for 'contact' messages\n\nSee https://facebook.github.io/react-native/docs/image.html#props for available props.",
+        "description": "Custom props for the secondary Text component for 'contact' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
