@@ -907,6 +907,31 @@
         },
         "required": true,
         "description": ""
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -1090,7 +1115,7 @@
               "computed": false
             },
             {
-              "value": "'body-placeholder'",
+              "value": "'body-lighter'",
               "computed": false
             },
             {
@@ -1118,7 +1143,11 @@
               "computed": false
             },
             {
-              "value": "'heading-placeholder'",
+              "value": "'heading-light'",
+              "computed": false
+            },
+            {
+              "value": "'heading-secondary'",
               "computed": false
             },
             {
@@ -1127,10 +1156,6 @@
             },
             {
               "value": "'navigation-emphasized'",
-              "computed": false
-            },
-            {
-              "value": "'navigation-secondary'",
               "computed": false
             },
             {
