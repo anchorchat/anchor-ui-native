@@ -422,6 +422,107 @@
       }
     }
   },
+  "lib/full-width-image/component.js": {
+    "description": "Full width image with placeholder and optional thumbnail",
+    "displayName": "FullWidthImage",
+    "methods": [
+      {
+        "name": "onLayout",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onThumbnailLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "onImageLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "source": {
+        "type": {
+          "name": "custom",
+          "raw": "Image.propTypes.source.isRequired"
+        },
+        "required": false,
+        "description": "The image source (either a remote URL or a local file resource)"
+      },
+      "thumbnailSource": {
+        "type": {
+          "name": "custom",
+          "raw": "Image.propTypes.source"
+        },
+        "required": false,
+        "description": "Optional thumbnail source",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "ratio": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "The image ratio"
+      },
+      "fadeDuration": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Duration of the cross fade animations",
+        "defaultValue": {
+          "value": "300",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/header/component.js": {
     "description": "View Header with safeArea.",
     "displayName": "Header",
@@ -584,107 +685,6 @@
             },
             "left": {
               "name": "number",
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      }
-    }
-  },
-  "lib/image/component.js": {
-    "description": "Full width image with placeholder and optional thumbnail",
-    "displayName": "FullWidthImage",
-    "methods": [
-      {
-        "name": "onLayout",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "event",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "onThumbnailLoad",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "onImageLoad",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
-    "props": {
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "source": {
-        "type": {
-          "name": "custom",
-          "raw": "Image.propTypes.source.isRequired"
-        },
-        "required": false,
-        "description": "The image source (either a remote URL or a local file resource)"
-      },
-      "thumbnailSource": {
-        "type": {
-          "name": "custom",
-          "raw": "Image.propTypes.source"
-        },
-        "required": false,
-        "description": "Optional thumbnail source",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "ratio": {
-        "type": {
-          "name": "number"
-        },
-        "required": true,
-        "description": "The image ratio"
-      },
-      "fadeDuration": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Duration of the cross fade animations",
-        "defaultValue": {
-          "value": "300",
-          "computed": false
-        }
-      },
-      "theme": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "colors": {
-              "name": "object",
-              "required": true
-            },
-            "fonts": {
-              "name": "object",
               "required": true
             }
           }
@@ -1287,12 +1287,12 @@
           "value": {
             "source": {
               "name": "custom",
-              "raw": "NativeImage.propTypes.source.isRequired",
+              "raw": "Image.propTypes.source.isRequired",
               "required": true
             },
             "thumbnailSource": {
               "name": "custom",
-              "raw": "NativeImage.propTypes.source",
+              "raw": "Image.propTypes.source",
               "required": false
             },
             "ratio": {
