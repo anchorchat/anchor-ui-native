@@ -60,7 +60,7 @@ const Props = ({ props }) => {
     table: {
       tableLayout: 'auto',
       marginBottom: 16,
-      maxWidth: 900
+      maxWidth: 925
     },
     column: {
       width: 1,
