@@ -364,7 +364,7 @@
     }
   },
   "lib/context-menu/component.js": {
-    "description": "ContextMenu",
+    "description": "Display a menu of buttons based on an array of items",
     "displayName": "ContextMenu",
     "methods": [],
     "props": {
