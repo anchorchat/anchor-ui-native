@@ -17,6 +17,7 @@ import Text from './pages/text';
 import TextInput from './pages/text-input';
 import HeaderExample from './pages/header';
 import MessageHighlight from './pages/message-highlight';
+import ContextMenu from './pages/context-menu';
 
 const cacheImages = (images) => {
   return _.map(images, image => {
@@ -36,6 +37,7 @@ const Navigator = createStackNavigator({
     Avatar: { screen: Avatar },
     Button: { screen: Button },
     ContentItem: { screen: ContentItem },
+    ContextMenu: { screen: ContextMenu },
     Divider: { screen: Divider },
     Header: { screen: HeaderExample },
     ListItem: { screen: ListItem },
@@ -106,7 +108,7 @@ class App extends Component {
         <AppLoading
           startAsync={this.loadAssetsAsync}
           onFinish={() => this.setState({ assetsLoaded: true })}
-          onError={console.warn}
+          onError={console.warn} // eslint-disable-line no-console
         />
       );
     }
