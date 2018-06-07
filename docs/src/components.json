@@ -1315,7 +1315,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Content label text",
+        "description": "TextInput label text",
         "defaultValue": {
           "value": "null",
           "computed": false
