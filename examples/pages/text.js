@@ -17,8 +17,8 @@ export default () => (
         <Text type="body-light">Changes you make will automatically reload.</Text>
       </View>
       <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>body-placeholder</Text>
-        <Text type="body-placeholder">Shake your phone to open the developer menu.</Text>
+        <Text type="heading" style={styles.heading}>body-lighter</Text>
+        <Text type="body-lighter">Shake your phone to open the developer menu.</Text>
       </View>
       <View style={styles.item}>
         <Text type="heading" style={styles.heading}>body-accent</Text>
@@ -41,8 +41,8 @@ export default () => (
         <Text type="heading">Shake your phone to open the developer menu.</Text>
       </View>
       <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>heading-placeholder</Text>
-        <Text type="heading-placeholder">Shake your phone to open the developer menu.</Text>
+        <Text type="heading" style={styles.heading}>heading-light</Text>
+        <Text type="heading-light">Shake your phone to open the developer menu.</Text>
       </View>
       <View style={styles.item}>
         <Text type="heading" style={styles.heading}>heading-contrast</Text>
@@ -57,8 +57,8 @@ export default () => (
         <Text type="navigation-emphasized">Shake your phone to open the developer menu.</Text>
       </View>
       <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>navigation-secondary</Text>
-        <Text type="navigation-secondary">Shake your phone to open the developer menu.</Text>
+        <Text type="heading" style={styles.heading}>heading-secondary</Text>
+        <Text type="heading-secondary">Shake your phone to open the developer menu.</Text>
       </View>
       <View style={styles.item}>
         <Text type="heading" style={styles.heading}>tab</Text>

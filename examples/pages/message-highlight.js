@@ -49,7 +49,7 @@ class MessageHighlightExample extends Component {
     message: ''
   }
 
-  handleMessageChange = (value) => this.setState({ message: value })
+  handleMessageChange = (value) => this.setState({ message: value });
 
   render() {
     const { message } = this.state;

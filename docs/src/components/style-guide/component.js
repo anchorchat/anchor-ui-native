@@ -103,32 +103,32 @@ const StyleGuide = () => (
           <tr>
             <td style={style.tableText}>Body</td>
             <td style={style.tableText}><Text>The quick brown fox jumps over the lazy dog</Text></td>
-            <td style={style.tableText}>14pt Regular {colors.black}</td>
+            <td style={style.tableText}>15pt Regular {colors.black}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Body light</td>
             <td style={style.tableText}><Text type="body-light">The quick brown fox jumps over the lazy dog</Text></td>
-            <td style={style.tableText}>14pt Regular {colors.darkGray}</td>
+            <td style={style.tableText}>15pt Regular {colors.darkGray}</td>
           </tr>
           <tr>
-            <td style={style.tableText}>Body placeholder</td>
-            <td style={style.tableText}><Text type="body-placeholder">The quick brown fox jumps over the lazy dog</Text></td>
-            <td style={style.tableText}>14pt Regular {colors.lightGray}</td>
+            <td style={style.tableText}>Body lighter</td>
+            <td style={style.tableText}><Text type="body-lighter">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>15pt Regular {colors.lightGray}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Body accent</td>
             <td style={style.tableText}><Text type="body-accent">The quick brown fox jumps over the lazy dog</Text></td>
-            <td style={style.tableText}>14pt Regular {colors.primary}</td>
+            <td style={style.tableText}>15pt Regular {colors.primary}</td>
           </tr>
           <tr style={style.contrastRow}>
             <td style={style.tableTextContrast}>Body contrast</td>
             <td style={style.tableTextContrast}><Text type="body-contrast">The quick brown fox jumps over the lazy dog</Text></td>
-            <td style={style.tableTextContrast}>14pt Regular {colors.white}</td>
+            <td style={style.tableTextContrast}>15pt Regular {colors.white}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Button</td>
             <td style={style.tableText}><Text type="button">The quick brown fox jumps over the lazy dog</Text></td>
-            <td style={style.tableText}>14pt SemiBold {colors.primary}</td>
+            <td style={style.tableText}>15pt SemiBold {colors.primary}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Divider</td>
@@ -141,14 +141,19 @@ const StyleGuide = () => (
             <td style={style.tableText}>17pt SemiBold {colors.black}</td>
           </tr>
           <tr>
-            <td style={style.tableText}>Heading placeholder</td>
-            <td style={style.tableText}><Text type="heading-placeholder">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>Heading light</td>
+            <td style={style.tableText}><Text type="heading-light">The quick brown fox jumps over the lazy dog</Text></td>
             <td style={style.tableText}>17pt SemiBold {colors.lightGray}</td>
           </tr>
           <tr style={style.contrastRow}>
             <td style={style.tableTextContrast}>Heading contrast</td>
             <td style={style.tableTextContrast}><Text type="heading-contrast">The quick brown fox jumps over the lazy dog</Text></td>
             <td style={style.tableTextContrast}>17pt SemiBold {colors.white}</td>
+          </tr>
+          <tr>
+            <td style={style.tableText}>Heading secondary</td>
+            <td style={style.tableText}><Text type="heading-secondary">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>14pt Bold {colors.darkGray}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Navigation</td>
@@ -159,11 +164,6 @@ const StyleGuide = () => (
             <td style={style.tableText}>Navigation emphasized</td>
             <td style={style.tableText}><Text type="navigation-emphasized">The quick brown fox jumps over the lazy dog</Text></td>
             <td style={style.tableText}>17pt Bold {colors.primary}</td>
-          </tr>
-          <tr>
-            <td style={style.tableText}>Navigation secondary</td>
-            <td style={style.tableText}><Text type="navigation-secondary">The quick brown fox jumps over the lazy dog</Text></td>
-            <td style={style.tableText}>14pt Bold {colors.darkGray}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Tab</td>

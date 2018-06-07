@@ -1434,7 +1434,50 @@
   "lib/message-input/component.js": {
     "description": "Component for inputting messages using a keyboard.",
     "displayName": "MessageInput",
-    "methods": [],
+    "methods": [
+      {
+        "name": "getDerivedStateFromProps",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          },
+          {
+            "name": "state",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "keyboardWillShow",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "keyboardWillHide",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "style": {
         "type": {
@@ -1611,7 +1654,7 @@
               "computed": false
             },
             {
-              "value": "'body-placeholder'",
+              "value": "'body-lighter'",
               "computed": false
             },
             {
@@ -1639,7 +1682,11 @@
               "computed": false
             },
             {
-              "value": "'heading-placeholder'",
+              "value": "'heading-light'",
+              "computed": false
+            },
+            {
+              "value": "'heading-secondary'",
               "computed": false
             },
             {
@@ -1648,10 +1695,6 @@
             },
             {
               "value": "'navigation-emphasized'",
-              "computed": false
-            },
-            {
-              "value": "'navigation-secondary'",
               "computed": false
             },
             {
