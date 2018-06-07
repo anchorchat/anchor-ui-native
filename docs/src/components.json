@@ -897,10 +897,22 @@
     }
   },
   "lib/message/component.js": {
-    "description": "Message with optional icon",
+    "description": "Message with three types: 'text', 'image' and 'contact'",
     "displayName": "Message",
     "methods": [],
     "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "type": {
         "type": {
           "name": "enum",
@@ -929,12 +941,34 @@
         "required": false,
         "description": "Message body text"
       },
-      "time": {
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the body Text component for 'text' and 'image' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "timeText": {
         "type": {
           "name": "node"
         },
         "required": true,
         "description": "Time the message was sent"
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the time Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "align": {
         "type": {
@@ -991,6 +1025,17 @@
         "required": false,
         "description": "Message image; source, thumbnailSource and ratio"
       },
+      "imageProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Image component for 'image' messages\n\nSee https://facebook.github.io/react-native/docs/image.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "contact": {
         "type": {
           "name": "shape",
@@ -1011,6 +1056,28 @@
         },
         "required": false,
         "description": "Message contact; avatar, primaryText and secondaryText"
+      },
+      "primaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the primary Text component for 'contact' messages\n\nSee https://facebook.github.io/react-native/docs/image.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the secondary Text component for 'contact' messages\n\nSee https://facebook.github.io/react-native/docs/image.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -1019,7 +1086,21 @@
     "displayName": "ContactMessage",
     "methods": [],
     "props": {
-      "time": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
         "type": {
           "name": "node"
         },
@@ -1075,6 +1156,20 @@
         "required": true,
         "description": ""
       },
+      "primaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "secondaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
       "theme": {
         "type": {
           "name": "shape",
@@ -1106,7 +1201,35 @@
         "required": true,
         "description": ""
       },
-      "time": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "imageProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
         "type": {
           "name": "node"
         },
@@ -1188,9 +1311,16 @@
     "displayName": "MessageTime",
     "methods": [],
     "props": {
-      "time": {
+      "timeText": {
         "type": {
           "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
         },
         "required": true,
         "description": ""
@@ -1237,7 +1367,28 @@
         "required": true,
         "description": ""
       },
-      "time": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
         "type": {
           "name": "node"
         },
