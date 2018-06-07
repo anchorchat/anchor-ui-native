@@ -20,6 +20,7 @@
     "watch": "nodemon --exec 'make build' --watch lib"
   },
   "dependencies": {
+    "color": "^3.0.0",
     "prop-types": "^15.6.1",
     "react": "16.3.1",
     "react-native": "^0.55.4",
