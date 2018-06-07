@@ -145,7 +145,7 @@ class MessageHighlightExample extends Component {
       align={item.align}
       image={item.image}
       contact={item.contact}
-      time={format(item.time, 'HH:mm')}
+      timeText={format(item.time, 'HH:mm')}
     />
   )
 
