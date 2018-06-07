@@ -903,7 +903,21 @@
     "props": {
       "type": {
         "type": {
-          "name": "string"
+          "name": "enum",
+          "value": [
+            {
+              "value": "'text'",
+              "computed": false
+            },
+            {
+              "value": "'image'",
+              "computed": false
+            },
+            {
+              "value": "'contact'",
+              "computed": false
+            }
+          ]
         },
         "required": true,
         "description": "The type of message"
@@ -912,15 +926,15 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "Body text of the message"
+        "required": false,
+        "description": "Message body text"
       },
       "time": {
         "type": {
           "name": "node"
         },
         "required": true,
-        "description": "Time that the message was sent"
+        "description": "Time the message was sent"
       },
       "align": {
         "type": {
@@ -948,7 +962,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Icon to show whether a message is sent/read. This icon renders besides the time",
+        "description": "Icon to show whether a message is sent or read. This icon renders on the right hand side of the time",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -956,10 +970,126 @@
       },
       "image": {
         "type": {
-          "name": "custom",
-          "raw": "Image.propTypes.source"
+          "name": "shape",
+          "value": {
+            "source": {
+              "name": "custom",
+              "raw": "Image.propTypes.source.isRequired",
+              "required": true
+            },
+            "thumbnailSource": {
+              "name": "custom",
+              "raw": "Image.propTypes.source",
+              "required": false
+            },
+            "ratio": {
+              "name": "number",
+              "required": true
+            }
+          }
         },
         "required": false,
+        "description": "Message image; source, thumbnailSource and ratio"
+      },
+      "contact": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "avatar": {
+              "name": "node",
+              "required": true
+            },
+            "primaryText": {
+              "name": "node",
+              "required": true
+            },
+            "secondaryText": {
+              "name": "node",
+              "required": true
+            }
+          }
+        },
+        "required": false,
+        "description": "Message contact; avatar, primaryText and secondaryText"
+      }
+    }
+  },
+  "lib/message/contact-message/component.js": {
+    "description": "",
+    "displayName": "ContactMessage",
+    "methods": [],
+    "props": {
+      "time": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "contact": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "avatar": {
+              "name": "node",
+              "required": true
+            },
+            "primaryText": {
+              "name": "node",
+              "required": true
+            },
+            "secondaryText": {
+              "name": "node",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
         "description": ""
       }
     }
@@ -1050,6 +1180,48 @@
         },
         "required": true,
         "description": ""
+      }
+    }
+  },
+  "lib/message/message-time/component.js": {
+    "description": "",
+    "displayName": "MessageTime",
+    "methods": [],
+    "props": {
+      "time": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
