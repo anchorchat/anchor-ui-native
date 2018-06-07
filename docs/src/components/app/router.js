@@ -8,6 +8,7 @@ import TextInput from '../text-input';
 import MessageInput from '../message-input';
 import Header from '../header';
 import MessageHighlight from '../message-highlight';
+import ContextMenu from '../context-menu';
 
 const Router = () => (
   <Switch>
@@ -18,6 +19,7 @@ const Router = () => (
     <Route exact path="/message-input" component={MessageInput} />
     <Route exact path="/header" component={Header} />
     <Route exact path="/message-highlight" component={MessageHighlight} />
+    <Route exact path="/context-menu" component={ContextMenu} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>
