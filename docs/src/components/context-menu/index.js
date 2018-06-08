@@ -1,3 +1,3 @@
-import Button from './component';
+import ContextMenu from './component';
 
-export default Button;
+export default ContextMenu;

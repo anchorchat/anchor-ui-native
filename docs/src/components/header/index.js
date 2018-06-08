@@ -1,3 +1,3 @@
-import ListItem from './component';
+import Header from './component';
 
-export default ListItem;
+export default Header;
