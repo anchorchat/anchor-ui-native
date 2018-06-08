@@ -13,6 +13,17 @@ export default withSafeArea(MyComponent);
 \`\`\`
 `;
 
+const safeAreaProp = `
+\`\`\`js
+const safeArea = {
+  top: <safeAreaTop>,
+  right: <safeAreaRight>,
+  bottom: <safeAreaBottom>,
+  left: <safeAreaLeft>
+};
+\`\`\`
+`;
+
 const WithSafeAreaDoc = () => (
   <section className="page">
     <section style={style.container}>
@@ -25,6 +36,8 @@ const WithSafeAreaDoc = () => (
       <h2><Text type="heading">Returns</Text></h2>
       <span><Text type="body-light" style={style.name}>SafeAreaComponent</Text><Text>Component with safeArea</Text></span>
       <Markdown title="Usage" markdown={withSafeArea} />
+      <span><Text>The safeArea prop is an object containing the following values.</Text></span>
+      <Markdown title="safeArea" markdown={safeAreaProp} />
     </section>
   </section>
 );
