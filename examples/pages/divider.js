@@ -3,20 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import { Divider, Text } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
 
-export default () => (
-  <View style={styles.wrapper}>
-    <Text type="heading" style={styles.headingLarge}>Divider</Text>
-    <View style={styles.item}>
-      <Text type="heading" style={styles.heading}>Default</Text>
-      <Divider />
-    </View>
-    <View style={styles.item}>
-      <Text type="heading" style={styles.heading}>With text</Text>
-      <Divider text="A" />
-    </View>
-  </View>
-);
-
 const styles = StyleSheet.create({
   wrapper: {
     padding: 16,
@@ -35,3 +21,17 @@ const styles = StyleSheet.create({
     marginBottom: 16
   }
 });
+
+export default () => (
+  <View style={styles.wrapper}>
+    <Text type="heading" style={styles.headingLarge}>Divider</Text>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>Default</Text>
+      <Divider />
+    </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>With text</Text>
+      <Divider text="A" />
+    </View>
+  </View>
+);

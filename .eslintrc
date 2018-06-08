@@ -11,14 +11,15 @@
     }
   },
   "extends" : [
-    "airbnb",
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "airbnb"
   ],
   "rules": {
     "react/jsx-filename-extension": ["off"],
     "comma-dangle": 0,
-    "react/display-name": 0
+    "react/display-name": 0,
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }]
   },
   "globals": {
     "window": true

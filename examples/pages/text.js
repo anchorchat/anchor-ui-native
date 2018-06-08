@@ -3,6 +3,24 @@ import { StyleSheet, ScrollView, View } from 'react-native';
 import { Text } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
 
+const styles = StyleSheet.create({
+  wrapper: {
+    padding: 16,
+    backgroundColor: colors.white
+  },
+  item: {
+    marginBottom: 8,
+    alignItems: 'flex-start'
+  },
+  heading: {
+    marginBottom: 8
+  },
+  headingLarge: {
+    fontSize: 20,
+    marginBottom: 16
+  }
+});
+
 // TODO: Randomise text
 export default () => (
   <ScrollView>
@@ -79,21 +97,3 @@ export default () => (
     </View>
   </ScrollView>
 );
-
-const styles = StyleSheet.create({
-  wrapper: {
-    padding: 16,
-    backgroundColor: colors.white
-  },
-  item: {
-    marginBottom: 8,
-    alignItems: 'flex-start'
-  },
-  heading: {
-    marginBottom: 8
-  },
-  headingLarge: {
-    fontSize: 20,
-    marginBottom: 16
-  }
-});

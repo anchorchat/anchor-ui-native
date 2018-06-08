@@ -13,7 +13,7 @@ const propTypes = {
   }).isRequired
 };
 
-const getStyles = (safeArea) => (
+const getStyles = safeArea => (
   StyleSheet.create({
     wrapper: {
       backgroundColor: colors.white,
@@ -45,7 +45,7 @@ const HeaderExample = ({ safeArea }) => {
       <Text type="heading" style={styles.headingLarge}>Header</Text>
     </ScrollView>
   );
-}
+};
 
 HeaderExample.propTypes = propTypes;
 

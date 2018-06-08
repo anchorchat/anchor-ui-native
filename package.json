@@ -14,12 +14,13 @@
     "react-docgen": "^2.20.1"
   },
   "scripts": {
-    "eslint": "esw lib/**",
-    "eslint-watch": "esw -w --changed lib/**",
+    "eslint": "esw '{lib,docs/src,examples}/**/**/*.js'",
+    "eslint:watch": "esw -w --changed '{lib,docs/src,examples}/**/**/*.js'",
     "docs": "react-docgen lib --out docs/src/components.json --pretty",
     "watch": "nodemon --exec 'make build' --watch lib"
   },
   "dependencies": {
+    "color": "^3.0.0",
     "prop-types": "^15.6.1",
     "react": "16.3.1",
     "react-native": "^0.55.4",
