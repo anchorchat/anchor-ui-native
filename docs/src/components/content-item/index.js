@@ -1,3 +1,3 @@
-import Button from './component';
+import ContentItem from './component';
 
-export default Button;
+export default ContentItem;

@@ -1,3 +1,3 @@
-import Button from './component';
+import Avatar from './component';
 
-export default Button;
+export default Avatar;
