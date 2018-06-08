@@ -1,3 +1,4 @@
+/* eslint jsx-a11y/anchor-is-valid: [0] */
 import React from 'react';
 import Divider from 'anchor-ui/divider';
 import { Link } from 'react-router-dom';
@@ -97,12 +98,14 @@ const StyleGuide = () => (
       <Divider style={style.divider} />
     </h2>
     <section style={style.maxWidth}>
-      <Text>AnchorUI Native uses the <a href="https://fonts.google.com/specimen/Nunito">Nunito</a> font family which can be downloaded for free from <a href="https://fonts.google.com/specimen/Nunito">Google Fonts</a>. See the <Link to="/">Getting started</Link> page on how to use custom fonts with React Native. The following styles are used in the UI kit, see the <Link to="/text">Text</Link> component on how to implement them.</Text>
+      <Text>AnchorUI Native uses the <a href="https://fonts.google.com/specimen/Nunito" target="blank" rel="noopener noreferrer">Nunito</a> font family which can be downloaded for free from <a href="https://fonts.google.com/specimen/Nunito" target="blank" rel="noopener noreferrer">Google Fonts</a>. See the <Link to="/">Getting started</Link> page on how to use custom fonts with React Native. The following styles are used in the UI kit, see the <Link to="/text">Text</Link> component on how to implement them.</Text>
       <table style={style.table}>
         <tbody>
           <tr>
             <td style={style.tableText}>Body</td>
-            <td style={style.tableText}><Text>The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text>The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>15pt Regular {colors.black}</td>
           </tr>
           <tr>

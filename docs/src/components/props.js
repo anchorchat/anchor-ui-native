@@ -60,7 +60,7 @@ const Props = ({ props }) => {
     table: {
       tableLayout: 'auto',
       marginBottom: 16,
-      maxWidth: 900
+      maxWidth: 925
     },
     column: {
       width: 1,
@@ -93,7 +93,13 @@ const Props = ({ props }) => {
             <TableRow key={name} style={style.row}>
               <TableColumn style={style.column}><Text type="body-light">{name}</Text></TableColumn>
               <TableColumn style={style.column}><Text type="body-accent">{getPropType(prop.type)}</Text></TableColumn>
-              <TableColumn style={style.column}><Text><span dangerouslySetInnerHTML={createMarkup(prop.description)} /></Text></TableColumn>
+              <TableColumn style={style.column}>
+                <Text>
+                  <span
+                    dangerouslySetInnerHTML={createMarkup(prop.description)} // eslint-disable-line react/no-danger, max-len
+                  />
+                </Text>
+              </TableColumn>
               <TableColumn style={style.column}><Text type="body-accent">{get(prop, 'defaultValue.value') || ''}</Text></TableColumn>
               <TableColumn style={style.column}><Text>{prop.required ? 'Yes' : 'No'}</Text></TableColumn>
             </TableRow>

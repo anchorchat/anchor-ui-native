@@ -99,7 +99,7 @@
           ]
         },
         "required": false,
-        "description": "Avatar type",
+        "description": "Avatar type; 'circle' or 'square'",
         "defaultValue": {
           "value": "'circle'",
           "computed": false
@@ -363,6 +363,113 @@
       }
     }
   },
+  "lib/context-menu/component.js": {
+    "description": "Display a menu of buttons based on an array of items",
+    "displayName": "ContextMenu",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textContainerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the textContainer element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "itemStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the textContainer element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "itemTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the item Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "items": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "key": {
+                "name": "string",
+                "required": true
+              },
+              "text": {
+                "name": "node",
+                "required": true
+              },
+              "onPress": {
+                "name": "func",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "ContextMenu items. Must be an array of objects containing the following:\n\n{\n  key: String,\n  text: Node,\n  onPress: Function\n}"
+      },
+      "notchStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the notch element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/divider/component.js": {
     "description": "Dividers group and separate content within lists and page layouts.",
     "displayName": "Divider",
@@ -398,6 +505,17 @@
         },
         "required": false,
         "description": "Override the styles of the text element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -491,7 +609,7 @@
           "name": "number"
         },
         "required": true,
-        "description": "The image ratio"
+        "description": "The image ratio (imageWidth/imageHeight)"
       },
       "fadeDuration": {
         "type": {
@@ -897,7 +1015,7 @@
     }
   },
   "lib/message/component.js": {
-    "description": "Message with three types: 'text', 'image' and 'contact'",
+    "description": "Message with three types",
     "displayName": "Message",
     "methods": [],
     "props": {
@@ -932,7 +1050,7 @@
           ]
         },
         "required": true,
-        "description": "The type of message"
+        "description": "The type of message; 'text', 'image' or 'contact'"
       },
       "bodyText": {
         "type": {
@@ -996,7 +1114,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Icon to show whether a message is sent or read. This icon renders on the right hand side of the time",
+        "description": "Icon to show whether a message is sent or read.\nThis icon renders on the right hand side of the time",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1795,80 +1913,8 @@
       "type": {
         "type": {
           "name": "enum",
-          "value": [
-            {
-              "value": "'body'",
-              "computed": false
-            },
-            {
-              "value": "'body-light'",
-              "computed": false
-            },
-            {
-              "value": "'body-lighter'",
-              "computed": false
-            },
-            {
-              "value": "'body-accent'",
-              "computed": false
-            },
-            {
-              "value": "'body-contrast'",
-              "computed": false
-            },
-            {
-              "value": "'button'",
-              "computed": false
-            },
-            {
-              "value": "'divider'",
-              "computed": false
-            },
-            {
-              "value": "'heading'",
-              "computed": false
-            },
-            {
-              "value": "'heading-contrast'",
-              "computed": false
-            },
-            {
-              "value": "'heading-light'",
-              "computed": false
-            },
-            {
-              "value": "'heading-secondary'",
-              "computed": false
-            },
-            {
-              "value": "'navigation'",
-              "computed": false
-            },
-            {
-              "value": "'navigation-emphasized'",
-              "computed": false
-            },
-            {
-              "value": "'tab'",
-              "computed": false
-            },
-            {
-              "value": "'tab-active'",
-              "computed": false
-            },
-            {
-              "value": "'time'",
-              "computed": false
-            },
-            {
-              "value": "'time-contrast'",
-              "computed": false
-            },
-            {
-              "value": "'avatar'",
-              "computed": false
-            }
-          ]
+          "computed": true,
+          "value": "types"
         },
         "required": false,
         "description": "Type of style to render",
@@ -2079,7 +2125,7 @@
         "required": false,
         "description": "Your theme's colors",
         "defaultValue": {
-          "value": "colors",
+          "value": "defaultColors",
           "computed": true
         }
       },
@@ -2130,9 +2176,9 @@
           }
         },
         "required": false,
-        "description": "",
+        "description": "Your theme's fonts",
         "defaultValue": {
-          "value": "fonts",
+          "value": "defaultFonts",
           "computed": true
         }
       },
@@ -2141,7 +2187,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "Children to apply theme color to"
+        "description": "Children to apply theme to"
       }
     }
   }

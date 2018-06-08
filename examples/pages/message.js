@@ -1,3 +1,4 @@
+/* eslint global-require: [0] */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, KeyboardAvoidingView, ImageBackground, FlatList, TouchableOpacity } from 'react-native';
@@ -19,7 +20,7 @@ const propTypes = {
   }).isRequired
 };
 
-const getStyles = (safeArea) => (
+const getStyles = safeArea => (
   StyleSheet.create({
     wrapper: {
       flex: 1
@@ -114,7 +115,7 @@ class MessageHighlightExample extends Component {
     messages: INITIAL_STATE
   }
 
-  handleMessageChange = (value) => this.setState({ message: value })
+  handleMessageChange = value => this.setState({ message: value })
 
   handleMessageSend = () => {
     const { message, messages } = this.state;
@@ -135,7 +136,7 @@ class MessageHighlightExample extends Component {
         ...messages
       ],
       message: ''
-    })
+    });
   }
 
   renderMessage = ({ item }) => (
@@ -168,7 +169,15 @@ class MessageHighlightExample extends Component {
             onChangeText={this.handleMessageChange}
             value={message}
             leftIcon={<Attachment />}
-            rightIcon={message ? <TouchableOpacity onPress={this.handleMessageSend}><Send color={colors.primary} /></TouchableOpacity> : <Camera />}
+            rightIcon={
+              message
+              ? (
+                <TouchableOpacity onPress={this.handleMessageSend}>
+                  <Send color={colors.primary} />
+                </TouchableOpacity>
+              )
+              : <Camera />
+            }
           />
         </KeyboardAvoidingView>
       </ImageBackground>
