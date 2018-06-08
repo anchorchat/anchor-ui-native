@@ -422,6 +422,107 @@
       }
     }
   },
+  "lib/full-width-image/component.js": {
+    "description": "Full width image with placeholder and optional thumbnail",
+    "displayName": "FullWidthImage",
+    "methods": [
+      {
+        "name": "onLayout",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onThumbnailLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "onImageLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "source": {
+        "type": {
+          "name": "custom",
+          "raw": "Image.propTypes.source.isRequired"
+        },
+        "required": false,
+        "description": "The image source (either a remote URL or a local file resource)"
+      },
+      "thumbnailSource": {
+        "type": {
+          "name": "custom",
+          "raw": "Image.propTypes.source"
+        },
+        "required": false,
+        "description": "Optional thumbnail source",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "ratio": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "The image ratio"
+      },
+      "fadeDuration": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Duration of the cross fade animations",
+        "defaultValue": {
+          "value": "300",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/header/component.js": {
     "description": "View Header with safeArea.",
     "displayName": "Header",
@@ -771,6 +872,552 @@
         },
         "required": false,
         "description": "Callback fired when Avatar is long pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message/component.js": {
+    "description": "Message with three types: 'text', 'image' and 'contact'",
+    "displayName": "Message",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'text'",
+              "computed": false
+            },
+            {
+              "value": "'image'",
+              "computed": false
+            },
+            {
+              "value": "'contact'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": "The type of message"
+      },
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Message body text"
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the body Text component for 'text' and 'image' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Time the message was sent"
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the time Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "Side which the message is on",
+        "defaultValue": {
+          "value": "'left'",
+          "computed": false
+        }
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Icon to show whether a message is sent or read. This icon renders on the right hand side of the time",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "image": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "source": {
+              "name": "custom",
+              "raw": "Image.propTypes.source.isRequired",
+              "required": true
+            },
+            "thumbnailSource": {
+              "name": "custom",
+              "raw": "Image.propTypes.source",
+              "required": false
+            },
+            "ratio": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": false,
+        "description": "Message image; source, thumbnailSource and ratio"
+      },
+      "imageProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Image component for 'image' messages\n\nSee https://facebook.github.io/react-native/docs/image.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contact": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "avatar": {
+              "name": "node",
+              "required": true
+            },
+            "primaryText": {
+              "name": "node",
+              "required": true
+            },
+            "secondaryText": {
+              "name": "node",
+              "required": true
+            }
+          }
+        },
+        "required": false,
+        "description": "Message contact; avatar, primaryText and secondaryText"
+      },
+      "primaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the primary Text component for 'contact' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the secondary Text component for 'contact' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/message/contact-message/component.js": {
+    "description": "",
+    "displayName": "ContactMessage",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "contact": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "avatar": {
+              "name": "node",
+              "required": true
+            },
+            "primaryText": {
+              "name": "node",
+              "required": true
+            },
+            "secondaryText": {
+              "name": "node",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "primaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "secondaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message/image-message/component.js": {
+    "description": "",
+    "displayName": "ImageMessage",
+    "methods": [],
+    "props": {
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "imageProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "image": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "source": {
+              "name": "custom",
+              "raw": "Image.propTypes.source.isRequired",
+              "required": true
+            },
+            "thumbnailSource": {
+              "name": "custom",
+              "raw": "Image.propTypes.source",
+              "required": false
+            },
+            "ratio": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message/message-time/component.js": {
+    "description": "",
+    "displayName": "MessageTime",
+    "methods": [],
+    "props": {
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/message/text-message/component.js": {
+    "description": "",
+    "displayName": "TextMessage",
+    "methods": [],
+    "props": {
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
         "defaultValue": {
           "value": "null",
           "computed": false
