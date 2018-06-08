@@ -16,7 +16,8 @@ import Avatar from '../avatar';
 import ContentItem from '../content-item';
 import Divider from '../divider';
 import ThemeProvider from '../theme-provider';
-import withTheme from '../with-theme';
+import WithTheme from '../with-theme';
+import WithSafeArea from '../with-safe-area';
 
 const Router = () => (
   <Switch>
@@ -35,7 +36,8 @@ const Router = () => (
     <Route exact path="/content-item" component={ContentItem} />
     <Route exact path="/divider" component={Divider} />
     <Route exact path="/theme-provider" component={ThemeProvider} />
-    <Route exact path="/with-theme" component={withTheme} />
+    <Route exact path="/with-theme" component={WithTheme} />
+    <Route exact path="/with-safe-area" component={WithSafeArea} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>
