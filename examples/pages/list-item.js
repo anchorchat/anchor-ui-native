@@ -3,6 +3,25 @@ import { StyleSheet, ScrollView, View } from 'react-native';
 import { Avatar, ListItem, Text } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
 
+const styles = StyleSheet.create({
+  wrapper: {
+    padding: 16,
+    backgroundColor: colors.white,
+    flex: 1
+  },
+  item: {
+    marginBottom: 8,
+    alignItems: 'flex-start'
+  },
+  heading: {
+    marginBottom: 8
+  },
+  headingLarge: {
+    fontSize: 20,
+    marginBottom: 16
+  }
+});
+
 export default () => (
   <ScrollView style={styles.wrapper}>
     <Text type="heading" style={styles.headingLarge}>ListItem</Text>
@@ -49,22 +68,3 @@ export default () => (
     </View>
   </ScrollView>
 );
-
-const styles = StyleSheet.create({
-  wrapper: {
-    padding: 16,
-    backgroundColor: colors.white,
-    flex: 1
-  },
-  item: {
-    marginBottom: 8,
-    alignItems: 'flex-start'
-  },
-  heading: {
-    marginBottom: 8
-  },
-  headingLarge: {
-    fontSize: 20,
-    marginBottom: 16
-  }
-});

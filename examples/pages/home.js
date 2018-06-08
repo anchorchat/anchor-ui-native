@@ -7,15 +7,6 @@ const navigationOptions = () => ({
   title: 'Home'
 });
 
-const Home = () => (
-  <View style={styles.wrapper}>
-    <Text type="heading" style={styles.headingLarge}>AnchorUI Native</Text>
-    <Text>Welcome in the AnchorUI Native examples. View the components by using the drawer navigation.</Text>
-  </View>
-);
-
-Home.navigationOptions = navigationOptions;
-
 const styles = StyleSheet.create({
   wrapper: {
     padding: 16,
@@ -27,5 +18,16 @@ const styles = StyleSheet.create({
     marginBottom: 16
   }
 });
+
+const Home = () => (
+  <View style={styles.wrapper}>
+    <Text type="heading" style={styles.headingLarge}>AnchorUI Native</Text>
+    <Text>
+      Welcome in the AnchorUI Native examples. View the components by using the drawer navigation.
+    </Text>
+  </View>
+);
+
+Home.navigationOptions = navigationOptions;
 
 export default Home;

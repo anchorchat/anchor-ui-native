@@ -1,3 +1,4 @@
+/* eslint jsx-a11y/anchor-is-valid: [0] */
 import React from 'react';
 import Divider from 'anchor-ui/divider';
 import { Link } from 'react-router-dom';
@@ -102,7 +103,9 @@ const StyleGuide = () => (
         <tbody>
           <tr>
             <td style={style.tableText}>Body</td>
-            <td style={style.tableText}><Text>The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text>The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>15pt Regular {colors.black}</td>
           </tr>
           <tr>
