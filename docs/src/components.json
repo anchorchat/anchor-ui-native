@@ -99,7 +99,7 @@
           ]
         },
         "required": false,
-        "description": "Avatar type",
+        "description": "Avatar type; 'cicle' or 'square'",
         "defaultValue": {
           "value": "'circle'",
           "computed": false
@@ -609,7 +609,7 @@
           "name": "number"
         },
         "required": true,
-        "description": "The image ratio"
+        "description": "The image ratio (imageWidth/imageHeight)"
       },
       "fadeDuration": {
         "type": {
@@ -1015,7 +1015,7 @@
     }
   },
   "lib/message/component.js": {
-    "description": "Message with three types: 'text', 'image' and 'contact'",
+    "description": "Message with three types",
     "displayName": "Message",
     "methods": [],
     "props": {
@@ -1050,7 +1050,7 @@
           ]
         },
         "required": true,
-        "description": "The type of message"
+        "description": "The type of message; 'text', 'image' or 'contact'"
       },
       "bodyText": {
         "type": {
