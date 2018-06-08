@@ -36,8 +36,18 @@ main > article {
   display: block;
 }
 
+.language-js span,
+.language-jsx span {
+  display: inline;
+}
+
 h2,
 .page span {
+  margin-bottom: 8px;
+}
+
+.language-js span,
+.language-jsx span  {
   margin-bottom: 8px;
 }
 
