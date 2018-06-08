@@ -10,6 +10,7 @@ import Header from '../header';
 import MessageHighlight from '../message-highlight';
 import Message from '../message';
 import FullWidthImage from '../full-width-image';
+import Text from '../text';
 
 const Router = () => (
   <Switch>
@@ -22,6 +23,7 @@ const Router = () => (
     <Route exact path="/message-highlight" component={MessageHighlight} />
     <Route exact path="/message" component={Message} />
     <Route exact path="/full-width-image" component={FullWidthImage} />
+    <Route exact path="/text" component={Text} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>
