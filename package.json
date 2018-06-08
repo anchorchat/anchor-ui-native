@@ -14,8 +14,8 @@
     "react-docgen": "^2.20.1"
   },
   "scripts": {
-    "eslint": "esw lib/**",
-    "eslint-watch": "esw -w --changed lib/**",
+    "eslint": "esw '{lib,docs/src,examples}/**/**/*.js'",
+    "eslint:watch": "esw -w --changed '{lib,docs/src,examples}/**/**/*.js'",
     "docs": "react-docgen lib --out docs/src/components.json --pretty",
     "watch": "nodemon --exec 'make build' --watch lib"
   },
