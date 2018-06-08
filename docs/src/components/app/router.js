@@ -12,6 +12,7 @@ import Message from '../message';
 import FullWidthImage from '../full-width-image';
 import Text from '../text';
 import Avatar from '../avatar';
+import ContentItem from '../content-item';
 
 const Router = () => (
   <Switch>
@@ -26,6 +27,7 @@ const Router = () => (
     <Route exact path="/full-width-image" component={FullWidthImage} />
     <Route exact path="/text" component={Text} />
     <Route exact path="/avatar" component={Avatar} />
+    <Route exact path="/content-item" component={ContentItem} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>
