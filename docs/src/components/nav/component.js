@@ -30,6 +30,7 @@ const Nav = ({ history }) => (
     <MenuItem text="MessageInput" onClick={() => pushRoute(history, '/message-input')} />
     <MenuItem text="Text" onClick={() => pushRoute(history, '/text')} />
     <MenuItem text="TextInput" onClick={() => pushRoute(history, '/text-input')} />
+    <MenuItem text="ThemeProvider" onClick={() => pushRoute(history, '/theme-provider')} />
   </Menu>
 );
 
