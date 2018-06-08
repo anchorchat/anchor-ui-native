@@ -36,6 +36,7 @@ main > article {
   display: block;
 }
 
+.language-bash span,
 .language-js span,
 .language-jsx span {
   display: inline;
@@ -46,6 +47,7 @@ h2,
   margin-bottom: 8px;
 }
 
+.language-bash span,
 .language-js span,
 .language-jsx span  {
   margin-bottom: 8px;

@@ -5,6 +5,12 @@ import Text from '../../anchor-ui-native/text';
 import style from './style';
 import Markdown from '../markdown';
 
+const install = `
+\`\`\`bash
+npm i -S anchor-ui-native
+\`\`\`
+`;
+
 const fonts = `
 \`\`\`js
 Font.loadAsync({
@@ -36,8 +42,7 @@ const Home = () => (
     <section style={style.container}>
       <h1 className="heading-large">React Native UI kit for Chat Engines</h1>
       <h2><Text type="heading">Getting started</Text></h2>
-      <span><Text>Install from npm</Text></span>
-      <span><Text type="body-accent">npm i -S anchor-ui-native</Text></span>
+      <Markdown markdown={install} title="Install from npm" />
       <h2><Text type="heading">Fonts</Text></h2>
       <span><Text>AnchorUI Native is designed with <a href="https://fonts.google.com/specimen/Nunito" target="blank" rel="noopener noreferrer">Nunito</a> but you can also supply your own font using the <Link to="/style-guide">ThemeProvider</Link> component.</Text></span>
       <span><Text>See the Expo documentation on how to <a href="https://docs.expo.io/versions/latest/guides/using-custom-fonts" target="blank" rel="noopener noreferrer">install custom fonts</a>.</Text></span>
