@@ -5,14 +5,16 @@ import Text from '../../anchor-ui-native/text';
 import style from './style';
 
 const WithThemeDoc = () => (
-  <section className="page" style={style.container}>
-    <h1 className="heading-large">withTheme</h1>
-    <span><Text type="body-light">A higher order component which applies theme to your component by passing the theme prop.</Text></span>
-    <span><Text type="body-light">Theme contains a colors and a fonts object. See <Link to="/theme-provider">ThemeProvider</Link>.</Text></span>
-    <h2><Text type="heading">Arguments</Text></h2>
-    <span><Text type="body-light" style={style.name}>Component</Text><Text>Component to apply theme to</Text></span>
-    <h2><Text type="heading">Returns</Text></h2>
-    <span><Text type="body-light" style={style.name}>ThemedComponent</Text><Text>Component with theme</Text></span>
+  <section className="page">
+    <section style={style.container}>
+      <h1 className="heading-large">withTheme</h1>
+      <span><Text type="body-light">A higher order component which applies theme to your component by passing the theme prop.</Text></span>
+      <span><Text type="body-light">Theme contains a colors and a fonts object. See <Link to="/theme-provider">ThemeProvider</Link>.</Text></span>
+      <h2><Text type="heading">Arguments</Text></h2>
+      <span><Text type="body-light" style={style.name}>Component</Text><Text>Component to apply theme to</Text></span>
+      <h2><Text type="heading">Returns</Text></h2>
+      <span><Text type="body-light" style={style.name}>ThemedComponent</Text><Text>Component with theme</Text></span>
+    </section>
   </section>
 );
 
