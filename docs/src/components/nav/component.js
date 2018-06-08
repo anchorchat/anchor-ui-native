@@ -14,7 +14,7 @@ const propTypes = {
 };
 
 const Nav = ({ history }) => (
-  <Menu>
+  <Menu style={{ width: '200px' }}>
     <MenuItem text="Getting started" onClick={() => pushRoute(history, '/')} />
     <MenuItem text="Styleguide" onClick={() => pushRoute(history, '/style-guide')} />
     <MenuItem text="Avatar" onClick={() => pushRoute(history, '/avatar')} />
