@@ -363,6 +363,113 @@
       }
     }
   },
+  "lib/context-menu/component.js": {
+    "description": "Display a menu of buttons based on an array of items",
+    "displayName": "ContextMenu",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textContainerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the textContainer element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "itemStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the textContainer element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "itemTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the item Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "items": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "key": {
+                "name": "string",
+                "required": true
+              },
+              "text": {
+                "name": "node",
+                "required": true
+              },
+              "onPress": {
+                "name": "func",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "ContextMenu items. Must be an array of objects containing the following:\n\n{\n  key: String,\n  text: Node,\n  onPress: Function\n}"
+      },
+      "notchStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the notch element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/divider/component.js": {
     "description": "Dividers group and separate content within lists and page layouts.",
     "displayName": "Divider",

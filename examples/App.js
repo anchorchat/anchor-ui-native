@@ -19,6 +19,7 @@ import TextInput from './pages/text-input';
 import HeaderExample from './pages/header';
 import MessageHighlight from './pages/message-highlight';
 import Message from './pages/message';
+import ContextMenu from './pages/context-menu';
 
 const cacheImages = images => (
   _.map(images, (image) => {
@@ -38,6 +39,7 @@ const Navigator = createStackNavigator({
     Avatar: { screen: Avatar },
     Button: { screen: Button },
     ContentItem: { screen: ContentItem },
+    ContextMenu: { screen: ContextMenu },
     Divider: { screen: Divider },
     Header: { screen: HeaderExample },
     ListItem: { screen: ListItem },
