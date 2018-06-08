@@ -14,7 +14,7 @@ const HeaderExample = () => (
     thumbnailSource={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?&w=48' }}
     primaryFooterText="Sjaak Luthart"
     secondaryFooterText="Today at 09:34"
-    descriptionFooterText="The home screen of a samsung s9"
+    descriptionFooterText="House up in the mountains."
     leftFooterButton={<Ionicons name="ios-share-outline" size={32} color={colors.white} style={styles.leftFooterButton} />}
     rightFooterButton={<Ionicons name="ios-trash-outline" size={32} color={colors.white} style={styles.rightFooterButton} />}
   />
