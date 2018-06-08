@@ -20,13 +20,17 @@ marked.setOptions({
 
 const style = {
   container: {
+    display: 'inline-block',
     marginBottom: '8px'
+  },
+  title: {
+    fontFamily: 'nunito-semibold'
   }
 };
 
 const Markdown = ({ markdown, title }) => (
   <section style={style.container}>
-    <span><Text type="body-lighter">{title}</Text></span>
+    <span><Text type="body" style={style.title}>{title}</Text></span>
     <div
       dangerouslySetInnerHTML={{ __html: marked(markdown) }} // eslint-disable-line react/no-danger
     />
