@@ -10,7 +10,8 @@ const HeaderExample = () => (
       primaryText: '1 Of 1',
       leftButton: <Text type="navigation-emphasized" style={styles.leftHeaderButton}>Done</Text>
     }}
-    imageUri="https://img.gadgethacks.com/img/97/67/63657326555041/0/10-awesome-free-dark-themes-for-your-galaxy-s9.w1456.jpg"
+    source={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg' }}
+    thumbnailSource={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?&w=48' }}
     primaryFooterText="Sjaak Luthart"
     secondaryFooterText="Today at 09:34"
     descriptionFooterText="The home screen of a samsung s9"
