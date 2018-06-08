@@ -3,6 +3,25 @@ import { StyleSheet, ScrollView, View } from 'react-native';
 import { Text, TextInput } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
 
+const styles = StyleSheet.create({
+  wrapper: {
+    padding: 16,
+    backgroundColor: colors.white,
+    flex: 1
+  },
+  item: {
+    marginBottom: 8,
+    alignItems: 'flex-start'
+  },
+  heading: {
+    marginBottom: 8
+  },
+  headingLarge: {
+    fontSize: 20,
+    marginBottom: 16
+  }
+});
+
 export default class TextInputExample extends Component {
   state = {
     defaultText: '',
@@ -22,7 +41,7 @@ export default class TextInputExample extends Component {
           <Text type="heading" style={styles.heading}>Default</Text>
           <TextInput
             placeholder="Jot something down..."
-            onChangeText={(value) => this.handleTextChange('defaultText', value)}
+            onChangeText={value => this.handleTextChange('defaultText', value)}
             value={defaultText}
           />
         </View>
@@ -30,7 +49,7 @@ export default class TextInputExample extends Component {
           <Text type="heading" style={styles.heading}>With divider</Text>
           <TextInput
             placeholder="Jot something down..."
-            onChangeText={(value) => this.handleTextChange('dividerText', value)}
+            onChangeText={value => this.handleTextChange('dividerText', value)}
             value={dividerText}
             divider
           />
@@ -40,7 +59,7 @@ export default class TextInputExample extends Component {
           <TextInput
             labelText="Label"
             placeholder="Jot something down..."
-            onChangeText={(value) => this.handleTextChange('labelText', value)}
+            onChangeText={value => this.handleTextChange('labelText', value)}
             value={labelText}
           />
         </View>
@@ -48,22 +67,3 @@ export default class TextInputExample extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  wrapper: {
-    padding: 16,
-    backgroundColor: colors.white,
-    flex: 1
-  },
-  item: {
-    marginBottom: 8,
-    alignItems: 'flex-start'
-  },
-  heading: {
-    marginBottom: 8
-  },
-  headingLarge: {
-    fontSize: 20,
-    marginBottom: 16
-  }
-});

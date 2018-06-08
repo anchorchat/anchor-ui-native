@@ -1,3 +1,4 @@
+/* eslint global-require: [0] */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, ScrollView, KeyboardAvoidingView, ImageBackground } from 'react-native';
@@ -6,7 +7,7 @@ import Attachment from '../icons/attachment';
 import Send from '../icons/send';
 import Camera from '../icons/camera';
 import { colors } from '../anchor-ui-native/config';
-import Close from '../icons/close'
+import Close from '../icons/close';
 
 const propTypes = {
   safeArea: PropTypes.shape({
@@ -17,7 +18,7 @@ const propTypes = {
   }).isRequired
 };
 
-const getStyles = (safeArea) => (
+const getStyles = safeArea => (
   StyleSheet.create({
     wrapper: {
       flex: 1
@@ -49,7 +50,7 @@ class MessageHighlightExample extends Component {
     message: ''
   }
 
-  handleMessageChange = (value) => this.setState({ message: value });
+  handleMessageChange = value => this.setState({ message: value });
 
   render() {
     const { message } = this.state;

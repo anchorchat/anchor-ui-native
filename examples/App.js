@@ -1,3 +1,4 @@
+/* eslint global-require: [0] */
 import React, { Component } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 import { Font, Asset, AppLoading } from 'expo';
@@ -17,19 +18,20 @@ import Text from './pages/text';
 import TextInput from './pages/text-input';
 import HeaderExample from './pages/header';
 import MessageHighlight from './pages/message-highlight';
+import Message from './pages/message';
 import ContextMenu from './pages/context-menu';
 
-const cacheImages = (images) => {
-  return _.map(images, image => {
+const cacheImages = images => (
+  _.map(images, (image) => {
     if (_.isString(image)) {
       return Image.prefetch(image);
-    } else {
-      return Asset.fromModule(image).downloadAsync();
     }
-  });
-}
 
-const cacheFonts = fonts => _.map(fonts, Font.loadAsync);
+    return Asset.fromModule(image).downloadAsync();
+  })
+);
+
+const cacheFonts = f => _.map(f, Font.loadAsync);
 
 const Navigator = createStackNavigator({
   drawerStack: createDrawerNavigator({
@@ -41,6 +43,7 @@ const Navigator = createStackNavigator({
     Divider: { screen: Divider },
     Header: { screen: HeaderExample },
     ListItem: { screen: ListItem },
+    Message: { screen: Message },
     MessageHighlight: { screen: MessageHighlight },
     MessageInput: { screen: MessageInput },
     Text: { screen: Text },
@@ -80,7 +83,7 @@ const Navigator = createStackNavigator({
 
 class App extends Component {
   state = {
-   assetsLoaded: false
+    assetsLoaded: false
   }
 
   loadAssetsAsync = async () => {
@@ -91,7 +94,7 @@ class App extends Component {
         'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
         'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
       }
-    ])
+    ]);
     const imageAssets = cacheImages([
       require('./assets/images/avatar.jpg'),
       require('./assets/images/background.jpg')
