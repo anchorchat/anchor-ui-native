@@ -5,6 +5,25 @@ import { Ionicons } from '@expo/vector-icons';
 import { Button, Text } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
 
+const styles = StyleSheet.create({
+  wrapper: {
+    padding: 16,
+    backgroundColor: colors.white,
+    flex: 1
+  },
+  item: {
+    marginBottom: 8,
+    alignItems: 'flex-start'
+  },
+  heading: {
+    marginBottom: 8
+  },
+  headingLarge: {
+    fontSize: 20,
+    marginBottom: 16
+  }
+});
+
 export default () => (
   <View style={styles.wrapper}>
     <Text type="heading" style={styles.headingLarge}>Button</Text>
@@ -25,22 +44,3 @@ export default () => (
     </View>
   </View>
 );
-
-const styles = StyleSheet.create({
-  wrapper: {
-    padding: 16,
-    backgroundColor: colors.white,
-    flex: 1
-  },
-  item: {
-    marginBottom: 8,
-    alignItems: 'flex-start'
-  },
-  heading: {
-    marginBottom: 8
-  },
-  headingLarge: {
-    fontSize: 20,
-    marginBottom: 16
-  }
-});

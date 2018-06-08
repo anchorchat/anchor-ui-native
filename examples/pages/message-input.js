@@ -1,3 +1,4 @@
+/* eslint global-require: [0] */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, ScrollView, KeyboardAvoidingView, ImageBackground } from 'react-native';
@@ -16,7 +17,7 @@ const propTypes = {
   }).isRequired
 };
 
-const getStyles = (safeArea) => (
+const getStyles = safeArea => (
   StyleSheet.create({
     wrapper: {
       flex: 1
@@ -48,7 +49,7 @@ class MessageInputExample extends Component {
     message: ''
   }
 
-  handleMessageChange = (value) => this.setState({ message: value });
+  handleMessageChange = value => this.setState({ message: value });
 
   render() {
     const { message } = this.state;
