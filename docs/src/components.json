@@ -2176,7 +2176,7 @@
           }
         },
         "required": false,
-        "description": "",
+        "description": "Your theme's fonts",
         "defaultValue": {
           "value": "fonts",
           "computed": true
@@ -2187,7 +2187,7 @@
           "name": "node"
         },
         "required": true,
-        "description": "Children to apply theme color to"
+        "description": "Children to apply theme to"
       }
     }
   }
