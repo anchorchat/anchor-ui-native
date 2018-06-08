@@ -2125,7 +2125,7 @@
         "required": false,
         "description": "Your theme's colors",
         "defaultValue": {
-          "value": "colors",
+          "value": "defaultColors",
           "computed": true
         }
       },
@@ -2178,7 +2178,7 @@
         "required": false,
         "description": "Your theme's fonts",
         "defaultValue": {
-          "value": "fonts",
+          "value": "defaultFonts",
           "computed": true
         }
       },
