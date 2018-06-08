@@ -99,7 +99,7 @@
           ]
         },
         "required": false,
-        "description": "Avatar type; 'cicle' or 'square'",
+        "description": "Avatar type; 'circle' or 'square'",
         "defaultValue": {
           "value": "'circle'",
           "computed": false
