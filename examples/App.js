@@ -61,7 +61,7 @@ const Navigator = createStackNavigator({
         color: colors.primary
       }
     },
-    initialRouteName: 'Lightbox'
+    initialRouteName: 'Home'
   })
 }, {
   navigationOptions: ({ navigation }) => ({
