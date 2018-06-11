@@ -43,7 +43,7 @@ class LightboxExample extends Component {
             primaryText: '1 Of 1',
             leftButton: <TouchableOpacity onPress={this.hideLightbox}><Text type="navigation-emphasized" style={styles.leftHeaderButton}>Done</Text></TouchableOpacity>
           }}
-          source={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg' }}
+          source={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?w=1500' }}
           thumbnailSource={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?&w=48' }}
           primaryFooterText="Sjaak Luthart"
           secondaryFooterText="Today at 09:34"
