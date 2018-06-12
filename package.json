@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "files": [
-    "lib"
+    "/*"
   ],
   "devDependencies": {
     "babel-eslint": "^8.2.3",
@@ -21,7 +21,9 @@
     "eslint": "esw '{lib,docs/src,examples}/**/**/*.js'",
     "eslint:watch": "esw -w --changed '{lib,docs/src,examples}/**/**/*.js'",
     "docs": "react-docgen lib --out docs/src/components.json --pretty",
-    "watch": "nodemon --exec 'make build' --watch lib"
+    "watch": "nodemon --exec 'make build' --watch lib",
+    "copy": "rm -rf dist && mkdir dist && cp -R lib/ package.json README.md dist",
+    "dist": "cd dist && npm publish"
   },
   "dependencies": {
     "color": "^3.0.0",
