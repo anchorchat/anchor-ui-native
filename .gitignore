@@ -20,3 +20,4 @@ docs/src/anchor-ui-native
 examples/anchor-ui-native
 build
 yarn.lock
+dist
