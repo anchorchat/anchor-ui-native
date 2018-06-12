@@ -23,7 +23,8 @@
     "docs": "react-docgen lib --out docs/src/components.json --pretty",
     "watch": "nodemon --exec 'make build' --watch lib",
     "copy": "rm -rf dist && mkdir dist && cp -R lib/ package.json README.md dist",
-    "dist": "cd dist && npm publish"
+    "dist": "cd dist && npm publish",
+    "test": "echo 'No test scripts available'"
   },
   "dependencies": {
     "color": "^3.0.0",

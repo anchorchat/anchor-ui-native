@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+  - "8"
+jobs:
+  include:
+    - stage: 🚨 Testing
+      install:
+        - yarn install
+        - cd docs && yarn install && cd ../
+        - cd examples && yarn install && cd ../
+        - make build
+      script: yarn run eslint
+    - script: yarn run test
+    - stage: 🚢 to Github Pages
+      install:
+        - make build
+        - cd docs && yarn install && cd ../
+      before_deploy: cd docs && yarn run build && cd ../
+      script: echo "Deploying to GitHub releases ..."
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+        local_dir: docs/build
+        email: ian.stewart@anchor.chat
+        name: IanCStewart
+        on:
+          branch: master
+notifications:
+  email: false
