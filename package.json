@@ -1,6 +1,10 @@
 {
   "name": "anchor-ui-native",
   "version": "0.1.0",
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
