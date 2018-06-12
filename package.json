@@ -17,7 +17,8 @@
     "eslint": "esw '{lib,docs/src,examples}/**/**/*.js'",
     "eslint:watch": "esw -w --changed '{lib,docs/src,examples}/**/**/*.js'",
     "docs": "react-docgen lib --out docs/src/components.json --pretty",
-    "watch": "nodemon --exec 'make build' --watch lib"
+    "watch": "nodemon --exec 'make build' --watch lib",
+    "test": "echo 'No test scripts available'"
   },
   "dependencies": {
     "color": "^3.0.0",
