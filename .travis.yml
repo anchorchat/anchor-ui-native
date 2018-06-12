@@ -1,21 +1,22 @@
 language: node_js
 node_js:
   - "8"
-install:
-  - yarn install
-  - cd docs && yarn install && cd ../
-  - cd examples && yarn install && cd ../
-  - make build
-before_deploy:
-  cd docs && yarn run build && cd ../
 jobs:
   include:
-    - stage: Linting Time
+    - stage: 🚨 Testing
+      install:
+        - yarn install
+        - cd docs && yarn install && cd ../
+        - cd examples && yarn install && cd ../
+        - make build
       script: yarn run eslint
-    - stage: Testing Time
       script: yarn run test
     - stage: 🚢 to Github Pages
-      script: skip
+      install:
+        - make build
+        - cd docs && yarn install && cd ../
+      before_deploy: cd docs && yarn run build && cd ../
+      script: echo "Deploying to GitHub releases ..."
       deploy:
         provider: pages
         skip_cleanup: true
