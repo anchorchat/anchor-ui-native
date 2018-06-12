@@ -22,32 +22,6 @@ const items = [
   }
 ];
 
-export default () => (
-  <View style={styles.wrapper}>
-    <Text type="heading" style={styles.headingLarge}>ContextMenu</Text>
-    <View style={styles.item}>
-      <Text type="heading" style={styles.heading}>Default</Text>
-      <ContextMenu items={items} />
-    </View>
-    <View style={styles.item}>
-      <Text type="heading" style={styles.heading}>Left aligned notch</Text>
-      <ContextMenu
-        items={items}
-        style={styles.itemLeft}
-        notchStyle={styles.notchLeft}
-      />
-    </View>
-    <View style={styles.item}>
-      <Text type="heading" style={styles.heading}>Right aligned notch</Text>
-      <ContextMenu
-        items={items}
-        style={styles.itemRight}
-        notchStyle={styles.notchRight}
-      />
-    </View>
-  </View>
-);
-
 const styles = StyleSheet.create({
   wrapper: {
     padding: 16,
@@ -80,3 +54,29 @@ const styles = StyleSheet.create({
     right: 25
   }
 });
+
+export default () => (
+  <View style={styles.wrapper}>
+    <Text type="heading" style={styles.headingLarge}>ContextMenu</Text>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>Default</Text>
+      <ContextMenu items={items} />
+    </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>Left aligned notch</Text>
+      <ContextMenu
+        items={items}
+        style={styles.itemLeft}
+        notchStyle={styles.notchLeft}
+      />
+    </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>Right aligned notch</Text>
+      <ContextMenu
+        items={items}
+        style={styles.itemRight}
+        notchStyle={styles.notchRight}
+      />
+    </View>
+  </View>
+);
