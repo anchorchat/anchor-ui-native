@@ -622,6 +622,17 @@
           "computed": false
         }
       },
+      "onPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when FullWidthImage is pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "theme": {
         "type": {
           "name": "shape",
@@ -836,7 +847,7 @@
     }
   },
   "lib/lightbox/component.js": {
-    "description": "Lightboxs group and separate content within lists and page layouts.",
+    "description": "Lightboxes display highlighted images",
     "displayName": "Lightbox",
     "methods": [
       {
@@ -866,6 +877,20 @@
       },
       {
         "name": "onImageLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "hideInterface",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "showInterface",
         "docblock": null,
         "modifiers": [],
         "params": [],
@@ -950,81 +975,16 @@
           "computed": false
         }
       },
-      "primaryFooterText": {
+      "footer": {
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "Primary text for the footer element"
-      },
-      "primaryFooterTextStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "NativeText.propTypes.style"
-        },
         "required": false,
-        "description": "Override the styles of the primaryFooterText element",
+        "description": "Lightbox footer, useful for rendering buttons or text in.",
         "defaultValue": {
-          "value": "{}",
+          "value": "null",
           "computed": false
         }
-      },
-      "secondaryFooterText": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "Secondary text for the footer element"
-      },
-      "secondaryFooterTextStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "NativeText.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the secondaryFooterText element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "leftFooterButton": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "Left button for the footer element"
-      },
-      "leftFooterButtonStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the leftFooterButton element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "rightFooterButtonStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the rightFooterButton element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "rightFooterButton": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "Right button for the footer element"
       },
       "footerStyle": {
         "type": {
@@ -1033,25 +993,6 @@
         },
         "required": false,
         "description": "Override the styles of the footer element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "descriptionFooterText": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "Description text for the footer element"
-      },
-      "descriptionFooterTextStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "NativeText.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the primaryText element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -1461,6 +1402,17 @@
           "computed": false
         }
       },
+      "onImagePress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Message image is pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "contact": {
         "type": {
           "name": "shape",
@@ -1728,6 +1680,17 @@
         },
         "required": true,
         "description": ""
+      },
+      "onImagePress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
