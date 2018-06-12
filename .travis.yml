@@ -10,7 +10,7 @@ jobs:
         - cd examples && yarn install && cd ../
         - make build
       script: yarn run eslint
-      script: yarn run test
+    - script: yarn run test
     - stage: 🚢 to Github Pages
       install:
         - make build
