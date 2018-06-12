@@ -9,11 +9,23 @@ const styles = StyleSheet.create({
     paddingLeft: 17,
     color: colors.white
   },
-  leftFooterButton: {
-    marginLeft: 11
+  footer: {
+    paddingLeft: 11,
+    paddingRight: 11,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
-  rightFooterButton: {
-    marginRight: 11
+  lightboxHeading: {
+    textAlign: 'center'
+  },
+  time: {
+    color: colors.white,
+    textAlign: 'center'
+  },
+  description: {
+    marginLeft: 17,
+    marginBottom: 4,
+    marginTop: 8
   }
 });
 
@@ -45,13 +57,21 @@ class LightboxExample extends Component {
           }}
           source={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?w=1500' }}
           thumbnailSource={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?&w=48' }}
-          primaryFooterText="Sjaak Luthart"
-          secondaryFooterText="Today at 09:34"
-          descriptionFooterText="House up in the mountains."
-          leftFooterButton={<Ionicons name="ios-share-outline" size={32} color={colors.white} style={styles.leftFooterButton} />}
-          rightFooterButton={<Ionicons name="ios-trash-outline" size={32} color={colors.white} style={styles.rightFooterButton} />}
           visible={this.state.visible}
           onRequestClose={this.hideLightbox}
+          footer={
+            <View>
+              <Text type="body-contrast" style={styles.description}>House up in the mountains.</Text>
+              <View style={styles.footer}>
+                <Ionicons name="ios-share-outline" size={32} color={colors.white} />
+                <View>
+                  <Text type="heading-contrast" style={styles.lightboxHeading}>Sjaak Luthart</Text>
+                  <Text type="heading-secondary" style={styles.time}>Today at 09:34</Text>
+                </View>
+                <Ionicons name="ios-trash-outline" size={32} color={colors.white} />
+              </View>
+            </View>
+          }
         />
       </View>
     );
