@@ -1,6 +1,10 @@
 {
   "name": "anchor-ui-native",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "files": [
+    "/*"
+  ],
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
@@ -18,7 +22,12 @@
     "eslint:watch": "esw -w --changed '{lib,docs/src,examples}/**/**/*.js'",
     "docs": "react-docgen lib --out docs/src/components.json --pretty",
     "watch": "nodemon --exec 'make build' --watch lib",
+<<<<<<< HEAD
     "test": "echo 'No test scripts available'"
+=======
+    "copy": "rm -rf dist && mkdir dist && cp -R lib/ package.json README.md dist",
+    "dist": "cd dist && npm publish"
+>>>>>>> master
   },
   "dependencies": {
     "color": "^3.0.0",
