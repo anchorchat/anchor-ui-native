@@ -18,6 +18,7 @@ import Divider from '../divider';
 import ThemeProvider from '../theme-provider';
 import WithTheme from '../with-theme';
 import WithSafeArea from '../with-safe-area';
+import Lightbox from '../lightbox';
 
 const Router = () => (
   <Switch>
@@ -38,6 +39,7 @@ const Router = () => (
     <Route exact path="/theme-provider" component={ThemeProvider} />
     <Route exact path="/with-theme" component={WithTheme} />
     <Route exact path="/with-safe-area" component={WithSafeArea} />
+    <Route exact path="/lightbox" component={Lightbox} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>

@@ -12,6 +12,7 @@ import Button from './pages/button';
 import ContentItem from './pages/content-item';
 import Divider from './pages/divider';
 import Home from './pages/home';
+import Lightbox from './pages/lightbox';
 import ListItem from './pages/list-item';
 import MessageInput from './pages/message-input';
 import Text from './pages/text';
@@ -42,6 +43,7 @@ const Navigator = createStackNavigator({
     ContextMenu: { screen: ContextMenu },
     Divider: { screen: Divider },
     Header: { screen: HeaderExample },
+    Lightbox: { screen: Lightbox },
     ListItem: { screen: ListItem },
     Message: { screen: Message },
     MessageHighlight: { screen: MessageHighlight },

@@ -1,11 +1,13 @@
 /* eslint global-require: [0] */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, KeyboardAvoidingView, ImageBackground, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, ImageBackground, FlatList, TouchableOpacity, View } from 'react-native';
 import uuid from 'uuid';
 import format from 'date-fns/format';
 import subMinutes from 'date-fns/sub_minutes';
-import { MessageInput, withSafeArea, Message, Avatar } from '../anchor-ui-native';
+import _ from 'lodash';
+import { Ionicons } from '@expo/vector-icons';
+import { MessageInput, withSafeArea, Message, Avatar, Lightbox, Text } from '../anchor-ui-native';
 import Attachment from '../icons/attachment';
 import Send from '../icons/send';
 import Camera from '../icons/camera';
@@ -42,6 +44,28 @@ const getStyles = safeArea => (
       fontSize: 20,
       marginBottom: 16,
       color: colors.white
+    },
+    footer: {
+      paddingLeft: 11,
+      paddingRight: 11,
+      flexDirection: 'row',
+      justifyContent: 'space-between'
+    },
+    leftHeaderButton: {
+      paddingLeft: 17,
+      color: colors.white
+    },
+    lightboxHeading: {
+      textAlign: 'center'
+    },
+    time: {
+      color: colors.white,
+      textAlign: 'center'
+    },
+    description: {
+      marginLeft: 17,
+      marginBottom: 4,
+      marginTop: 8
     }
   })
 );
@@ -112,7 +136,33 @@ const INITIAL_STATE = [
 class MessageHighlightExample extends Component {
   state = {
     message: '',
-    messages: INITIAL_STATE
+    messages: INITIAL_STATE,
+    lightbox: {
+      visible: false,
+      data: {}
+    }
+  }
+
+  showLightbox = (key) => {
+    const { messages } = this.state;
+
+    const message = _.find(messages, { key });
+
+    this.setState({
+      lightbox: {
+        visible: true,
+        data: message
+      }
+    });
+  }
+
+  hideLightbox = () => {
+    this.setState({
+      lightbox: {
+        visible: false,
+        data: {}
+      }
+    });
   }
 
   handleMessageChange = value => this.setState({ message: value })
@@ -147,11 +197,12 @@ class MessageHighlightExample extends Component {
       image={item.image}
       contact={item.contact}
       timeText={format(item.time, 'HH:mm')}
+      onImagePress={() => this.showLightbox(item.key)}
     />
   )
 
   render() {
-    const { message, messages } = this.state;
+    const { message, messages, lightbox } = this.state;
     const { safeArea } = this.props;
     const styles = getStyles(safeArea);
 
@@ -180,6 +231,35 @@ class MessageHighlightExample extends Component {
             }
           />
         </KeyboardAvoidingView>
+        <Lightbox
+          headerProps={{
+            primaryText: 'Lightbox',
+            leftButton: (
+              <TouchableOpacity onPress={this.hideLightbox}>
+                <Text type="navigation-emphasized" style={styles.leftHeaderButton}>Done</Text>
+              </TouchableOpacity>
+            )
+          }}
+          source={(lightbox.data && lightbox.data.image && lightbox.data.image.source) || {}}
+          thumbnailSource={
+            (lightbox.data && lightbox.data.image && lightbox.data.image.thumbnailSource) || {}
+          }
+          visible={lightbox.visible}
+          footer={
+            <View>
+              <Text type="body-contrast" style={styles.description}>{lightbox.data && lightbox.data.body}</Text>
+              <View style={styles.footer}>
+                <Ionicons name="ios-share-outline" size={32} color={colors.white} style={styles.leftFooterButton} />
+                <View>
+                  <Text type="heading-contrast" style={styles.lightboxHeading}>Christina Buchanan</Text>
+                  <Text type="heading-secondary" style={styles.time}>{lightbox.data && format(lightbox.data.time, 'HH:mm')}</Text>
+                </View>
+                <Ionicons name="ios-trash-outline" size={32} color={colors.white} style={styles.rightFooterButton} />
+              </View>
+            </View>
+          }
+          onRequestClose={this.hideLightbox}
+        />
       </ImageBackground>
     );
   }

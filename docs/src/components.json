@@ -622,6 +622,17 @@
           "computed": false
         }
       },
+      "onPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when FullWidthImage is pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "theme": {
         "type": {
           "name": "shape",
@@ -653,6 +664,18 @@
         },
         "required": false,
         "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "containerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the container element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -767,6 +790,231 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "inModal": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Remove safeArea padding for Android if Header is rendered inside a Modal",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/lightbox/component.js": {
+    "description": "Lightboxes display highlighted images",
+    "displayName": "Lightbox",
+    "methods": [
+      {
+        "name": "getDerivedStateFromProps",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          },
+          {
+            "name": "state",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onThumbnailLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "onImageLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "hideInterface",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "showInterface",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Header component\n\nSee Header page for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "source": {
+        "type": {
+          "name": "custom",
+          "raw": "Image.propTypes.source.isRequired"
+        },
+        "required": false,
+        "description": "The image source (either a remote URL or a local file resource)"
+      },
+      "thumbnailSource": {
+        "type": {
+          "name": "custom",
+          "raw": "Image.propTypes.source"
+        },
+        "required": false,
+        "description": "Optional thumbnail source",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "imageProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Image component\n\nSee https://facebook.github.io/react-native/docs/image.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "imageContainerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the image contianer element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "fadeDuration": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Duration of the cross fade animations",
+        "defaultValue": {
+          "value": "300",
+          "computed": false
+        }
+      },
+      "footer": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Lightbox footer, useful for rendering buttons or text in.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "footerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the footer element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "visible": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Determine whether Lighbox is visible.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "onRequestClose": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "The onRequestClose callback is called when the user taps the back button on Android"
       },
       "theme": {
         "type": {
@@ -1154,6 +1402,17 @@
           "computed": false
         }
       },
+      "onImagePress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Message image is pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "contact": {
         "type": {
           "name": "shape",
@@ -1421,6 +1680,17 @@
         },
         "required": true,
         "description": ""
+      },
+      "onImagePress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
