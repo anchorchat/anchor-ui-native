@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "8"
 before_install:
-  cd docs && yarn install && cd ..
+  cd docs && yarn install && cd ../
 before_script:
   yarn run eslint
 before_deploy:
