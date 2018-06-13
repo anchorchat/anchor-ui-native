@@ -33,7 +33,7 @@ const ContactListDoc = () => (
     <section style={style.container}>
       <img style={style.image} src={picker} alt="picker" />
     </section>
-    <Markdown title="contacts" markdown={contactsProp} />
+    <Markdown title="Contacts" markdown={contactsProp} />
     <Props props={componentData.props} />
     <span>
       <Text type="body-light">
