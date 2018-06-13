@@ -17,8 +17,10 @@ const Nav = ({ history }) => (
   <Menu style={{ width: '200px' }}>
     <MenuItem text="Getting started" onClick={() => pushRoute(history, '/')} />
     <MenuItem text="Styleguide" onClick={() => pushRoute(history, '/style-guide')} />
+    <MenuItem text="AlphabetPicker" onClick={() => pushRoute(history, '/alphabet-picker')} />
     <MenuItem text="Avatar" onClick={() => pushRoute(history, '/avatar')} />
     <MenuItem text="Button" onClick={() => pushRoute(history, '/button')} />
+    <MenuItem text="ContactList" onClick={() => pushRoute(history, '/contact-list')} />
     <MenuItem text="ContentItem" onClick={() => pushRoute(history, '/content-item')} />
     <MenuItem text="ContextMenu" onClick={() => pushRoute(history, '/context-menu')} />
     <MenuItem text="Divider" onClick={() => pushRoute(history, '/divider')} />

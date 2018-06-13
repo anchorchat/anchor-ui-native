@@ -1,4 +1,189 @@
 {
+  "lib/alphabet-picker/component.js": {
+    "description": "Alphabet picker",
+    "displayName": "AlphabetPicker",
+    "methods": [
+      {
+        "name": "getDerivedStateFromProps",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          },
+          {
+            "name": "state",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onPanResponderGrant",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          },
+          {
+            "name": "gestureState",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onPanResponderMove",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          },
+          {
+            "name": "gestureState",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onPanResponderEnd",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "onLayout",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "findTouchedLetter",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "y",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "alphabet": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "Override the alphabet\n\nDefaults to: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onTouchStart": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when touch event is fired\n\nfunction() => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "onTouchLetter": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when a letter is touched\n\nfunction(letter: string) => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "onTouchEnd": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when touch event has ended\n\nfunction() => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/avatar/component.js": {
     "description": "Represent people or objects.",
     "displayName": "Avatar",
@@ -241,6 +426,230 @@
           "value": "0.5",
           "computed": false
         }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/contact-list/component.js": {
+    "description": "View ContactList with safeArea.",
+    "displayName": "ContactList",
+    "methods": [
+      {
+        "name": "onTouchLetter",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "letter",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "keyExtractor",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "item",
+            "type": null
+          },
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderItem",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "{ item }",
+            "type": null
+          },
+          {
+            "name": "styles",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderSectionHeader",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "{ section }",
+            "type": null
+          },
+          {
+            "name": "styles",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contacts": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "title": {
+                "name": "node",
+                "required": true
+              },
+              "data": {
+                "name": "arrayOf",
+                "value": {
+                  "name": "object"
+                },
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "Sorted contact data"
+      },
+      "containerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the container element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "listStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the list element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "itemHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "56",
+          "computed": false
+        }
+      },
+      "keyExtractor": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Avatar is pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "renderItem": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "renderSectionHeader": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
       },
       "theme": {
         "type": {
@@ -2215,7 +2624,15 @@
   "lib/text-input/component.js": {
     "description": "Component for inputting text using a keyboard.",
     "displayName": "TextInput",
-    "methods": [],
+    "methods": [
+      {
+        "name": "focusInput",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "style": {
         "type": {
