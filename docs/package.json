@@ -2,6 +2,7 @@
   "name": "docs",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "anchor-ui": "^6.3.1",
     "escape-html": "^1.0.3",
