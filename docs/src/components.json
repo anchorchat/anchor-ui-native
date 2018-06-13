@@ -2429,6 +2429,86 @@
           "computed": false
         }
       },
+      "textStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the text element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Text component, iOS only\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "modalProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Modal component, iOS only\n\nSee https://facebook.github.io/react-native/docs/modal.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the header element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Header button text, iOS only",
+        "defaultValue": {
+          "value": "'Done'",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the button element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the button Text component, iOS only\n\nSee https://facebook.github.io/react-native/docs/button.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "safeArea": {
         "type": {
           "name": "shape",
