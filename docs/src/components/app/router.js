@@ -20,6 +20,7 @@ import WithTheme from '../with-theme';
 import WithSafeArea from '../with-safe-area';
 import Lightbox from '../lightbox';
 import Icons from '../icons';
+import Picker from '../picker';
 
 const Router = () => (
   <Switch>
@@ -42,6 +43,7 @@ const Router = () => (
     <Route exact path="/with-safe-area" component={WithSafeArea} />
     <Route exact path="/lightbox" component={Lightbox} />
     <Route exact path="/icons" component={Icons} />
+    <Route exact path="/picker" component={Picker} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>
