@@ -29,9 +29,11 @@
   "dependencies": {
     "color": "^3.0.0",
     "hoist-non-react-statics": "^2.5.4",
+    "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
     "react": "16.3.1",
     "react-native": "^0.55.4",
+    "react-native-svg": "^6.3.1",
     "recompose": "^0.27.1"
   }
 }
