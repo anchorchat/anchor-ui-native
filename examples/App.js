@@ -45,6 +45,7 @@ const Navigator = createStackNavigator({
     ContextMenu: { screen: ContextMenu },
     Divider: { screen: Divider },
     Header: { screen: HeaderExample },
+    Icons: { screen: Icons },
     Lightbox: { screen: Lightbox },
     ListItem: { screen: ListItem },
     Message: { screen: Message },

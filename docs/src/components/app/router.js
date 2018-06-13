@@ -21,6 +21,7 @@ import WithSafeArea from '../with-safe-area';
 import Lightbox from '../lightbox';
 import AlphabetPicker from '../alphabet-picker';
 import ContactList from '../contact-list';
+import Icons from '../icons';
 
 const Router = () => (
   <Switch>
@@ -44,6 +45,7 @@ const Router = () => (
     <Route exact path="/lightbox" component={Lightbox} />
     <Route exact path="/alphabet-picker" component={AlphabetPicker} />
     <Route exact path="/contact-list" component={ContactList} />
+    <Route exact path="/icons" component={Icons} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>
