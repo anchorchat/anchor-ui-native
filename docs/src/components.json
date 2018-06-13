@@ -2374,7 +2374,7 @@
           }
         },
         "required": true,
-        "description": "Picker items"
+        "description": "Picker items. Must be an array of objects containing the following:\n\n{\n  label: String,\n  value: String\n}"
       },
       "onValueChange": {
         "type": {
