@@ -2337,18 +2337,6 @@
       }
     ],
     "props": {
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
       "selectedValue": {
         "type": {
           "name": "string"
@@ -2383,6 +2371,41 @@
         "required": true,
         "description": "Callback fired when an item is selected\n\nfunction(itemValue: string, itemPosition: number) => void"
       },
+      "pickerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativePicker.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the picker element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "pickerItemStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativePicker.Item.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the picker item element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "pickerProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Picker component\n\nSee https://facebook.github.io/react-native/docs/picker.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "divider": {
         "type": {
           "name": "bool"
@@ -2391,6 +2414,18 @@
         "description": "Render a Divider underneath the Picker",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "dividerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the divider element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -2497,7 +2532,15 @@
   "lib/text-input/component.js": {
     "description": "Component for inputting text using a keyboard.",
     "displayName": "TextInput",
-    "methods": [],
+    "methods": [
+      {
+        "name": "focusInput",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "style": {
         "type": {
