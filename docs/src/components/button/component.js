@@ -14,7 +14,6 @@ const ButtonDoc = () => (
     <h1 className="heading-large">Button</h1>
     <span><Text type="body-light">{componentData.description}</Text></span>
     <h2><Text type="heading">Examples</Text></h2>
-    <span><Text type="body-light" style={style.note}>*Note: Make sure icons are `22x22` of size; If using `Ionicons` from `@expo/vector-icons` use `size={20}`</Text></span>
     <section>
       <img style={style.button} src={button} alt="Button" />
       <img style={style.buttonIcon} src={buttonIcon} alt="Button with icon" />

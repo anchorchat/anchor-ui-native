@@ -22,6 +22,7 @@ import Lightbox from '../lightbox';
 import AlphabetPicker from '../alphabet-picker';
 import ContactList from '../contact-list';
 import Icons from '../icons';
+import Picker from '../picker';
 
 const Router = () => (
   <Switch>
@@ -46,6 +47,7 @@ const Router = () => (
     <Route exact path="/alphabet-picker" component={AlphabetPicker} />
     <Route exact path="/contact-list" component={ContactList} />
     <Route exact path="/icons" component={Icons} />
+    <Route exact path="/picker" component={Picker} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>

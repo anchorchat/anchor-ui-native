@@ -2138,7 +2138,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when Avatar is pressed\n\nfunction(event: object) => void",
+        "description": "Callback fired when ListItem is pressed\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -2149,7 +2149,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when Avatar is long pressed\n\nfunction(event: object) => void",
+        "description": "Callback fired when ListItem is long pressed\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -3059,6 +3059,258 @@
             },
             "left": {
               "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/picker/component.js": {
+    "description": "Pick a value from a list of items",
+    "displayName": "Picker",
+    "methods": [
+      {
+        "name": "showPicker",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "hidePicker",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleValueChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          },
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "selectedValue": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Value matching the value of one of the items"
+      },
+      "items": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "label": {
+                "name": "string",
+                "required": true
+              },
+              "value": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "Picker items. Must be an array of objects containing the following:\n\n{\n  label: String,\n  value: String\n}"
+      },
+      "onValueChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when an item is selected\n\nfunction(itemValue: string, itemPosition: number) => void"
+      },
+      "pickerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativePicker.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the picker element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "pickerItemStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativePicker.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the picker item element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "pickerProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Picker component\n\nSee https://facebook.github.io/react-native/docs/picker.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "divider": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Render a Divider underneath the Picker",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "dividerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the divider element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the text element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Text component, iOS only\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "modalProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Modal component, iOS only\n\nSee https://facebook.github.io/react-native/docs/modal.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the header element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Header button text, iOS only",
+        "defaultValue": {
+          "value": "'Done'",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the button element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the button Text component, iOS only\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
               "required": true
             }
           }
