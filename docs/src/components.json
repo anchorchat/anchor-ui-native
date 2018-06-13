@@ -2503,7 +2503,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the button Text component, iOS only\n\nSee https://facebook.github.io/react-native/docs/button.html#props for available props.",
+        "description": "Custom props for the button Text component, iOS only\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
