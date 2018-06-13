@@ -16,6 +16,7 @@
     "airbnb"
   ],
   "rules": {
+    "max-len": [2, { "code": 100, "ignoreComments": true, "ignoreTemplateLiterals": true }],
     "react/jsx-filename-extension": ["off"],
     "comma-dangle": 0,
     "react/display-name": 0,
