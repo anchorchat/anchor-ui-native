@@ -27,7 +27,7 @@
         "modifiers": [],
         "params": [
           {
-            "name": "e",
+            "name": "event",
             "type": null
           },
           {
@@ -43,7 +43,7 @@
         "modifiers": [],
         "params": [
           {
-            "name": "e",
+            "name": "event",
             "type": null
           },
           {
