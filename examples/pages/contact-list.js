@@ -1,3 +1,4 @@
+/* global alert */
 import React from 'react';
 import _ from 'lodash';
 import { StyleSheet } from 'react-native';
@@ -29,5 +30,10 @@ const contacts = _.map(ALPHABET, letter => ({
 }));
 
 export default () => (
-  <ContactList style={styles.wrapper} contacts={contacts} />
+  <ContactList
+    alphabetPicker
+    contacts={contacts}
+    onItemPress={item => alert(`Pressed: ${item.name}`)}
+    style={styles.wrapper}
+  />
 );

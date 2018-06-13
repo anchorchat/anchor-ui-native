@@ -95,12 +95,12 @@
           "computed": false
         }
       },
-      "onTouchStart": {
+      "onTouchEnd": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when touch event is fired\n\nfunction() => void",
+        "description": "Callback fired when touch event has ended\n\nfunction() => void",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -117,12 +117,12 @@
           "computed": false
         }
       },
-      "onTouchEnd": {
+      "onTouchStart": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when touch event has ended\n\nfunction() => void",
+        "description": "Callback fired when touch event is fired\n\nfunction() => void",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -512,15 +512,14 @@
       }
     ],
     "props": {
-      "style": {
+      "alphabetPicker": {
         "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
+          "name": "bool"
         },
         "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Render the alphabet picker",
         "defaultValue": {
-          "value": "{}",
+          "value": "false",
           "computed": false
         }
       },
@@ -559,6 +558,28 @@
           "computed": false
         }
       },
+      "itemHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "56",
+          "computed": false
+        }
+      },
+      "keyExtractor": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Override keyExtractor\n\nfunction(item: object, index: number) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "listStyle": {
         "type": {
           "name": "custom",
@@ -571,34 +592,12 @@
           "computed": false
         }
       },
-      "itemHeight": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "56",
-          "computed": false
-        }
-      },
-      "keyExtractor": {
+      "onItemPress": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "onPress": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback fired when Avatar is pressed\n\nfunction(event: object) => void",
+        "description": "Callback fired when item is pressed\n\nIf custom renderItem method is supplied, implement your own onPress event.\n\nfunction(item: object) => void",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -609,7 +608,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "",
+        "description": "Override renderItem\nif used make sure to adjust the itemHeight prop aswell\n\nfunction(item: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -620,7 +619,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "",
+        "description": "Override renderSectionHeader\nif used make sure to adjust the sectionHeaderHeight prop aswell\n\nfunction(section: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -650,6 +649,29 @@
         },
         "required": true,
         "description": ""
+      },
+      "sectionHeaderHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "24",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "theme": {
         "type": {
