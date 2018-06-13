@@ -1743,7 +1743,7 @@
   },
   "lib/icons/verified.js": {
     "description": "",
-    "displayName": "Verifed",
+    "displayName": "Verified",
     "methods": [],
     "props": {
       "color": {
