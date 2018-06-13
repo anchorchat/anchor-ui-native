@@ -447,7 +447,7 @@
     }
   },
   "lib/contact-list/component.js": {
-    "description": "View ContactList with safeArea.",
+    "description": "Sorted and separated ContactList",
     "displayName": "ContactList",
     "methods": [
       {
@@ -512,14 +512,27 @@
       }
     ],
     "props": {
-      "alphabetPicker": {
+      "style": {
         "type": {
-          "name": "bool"
+          "name": "custom",
+          "raw": "View.propTypes.style"
         },
         "required": false,
-        "description": "Render the alphabet picker",
+        "description": "Override the styles of the root element",
         "defaultValue": {
-          "value": "false",
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "listStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the list element",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -546,15 +559,14 @@
         "required": true,
         "description": "Sorted contact data"
       },
-      "containerStyle": {
+      "alphabetPicker": {
         "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
+          "name": "bool"
         },
         "required": false,
-        "description": "Override the styles of the container element",
+        "description": "Render the alphabet picker",
         "defaultValue": {
-          "value": "{}",
+          "value": "false",
           "computed": false
         }
       },
@@ -563,32 +575,9 @@
           "name": "number"
         },
         "required": false,
-        "description": "Override the styles of the root element",
+        "description": "Contact item height",
         "defaultValue": {
           "value": "56",
-          "computed": false
-        }
-      },
-      "keyExtractor": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Override keyExtractor\n\nfunction(item: object, index: number) => void",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "listStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the list element",
-        "defaultValue": {
-          "value": "{}",
           "computed": false
         }
       },
@@ -608,9 +597,20 @@
           "name": "func"
         },
         "required": false,
-        "description": "Override renderItem\nif used make sure to adjust the itemHeight prop aswell\n\nfunction(item: object) => void",
+        "description": "Override renderItem\nIf used make sure to adjust the itemHeight prop aswell\n\nfunction(item: object) => void",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "sectionHeaderHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Contact divider height",
+        "defaultValue": {
+          "value": "24",
           "computed": false
         }
       },
@@ -619,7 +619,18 @@
           "name": "func"
         },
         "required": false,
-        "description": "Override renderSectionHeader\nif used make sure to adjust the sectionHeaderHeight prop aswell\n\nfunction(section: object) => void",
+        "description": "Override renderSectionHeader\nIf used make sure to adjust the sectionHeaderHeight prop aswell\n\nfunction(section: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "keyExtractor": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Override keyExtractor\n\nfunction(item: object, index: number) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -649,29 +660,6 @@
         },
         "required": true,
         "description": ""
-      },
-      "sectionHeaderHeight": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "24",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
       },
       "theme": {
         "type": {
