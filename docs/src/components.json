@@ -846,6 +846,151 @@
       }
     }
   },
+  "lib/icons/attachment.js": {
+    "description": "",
+    "displayName": "Attachment",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/camera.js": {
+    "description": "",
+    "displayName": "Camera",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/chevron-right.js": {
+    "description": "",
+    "displayName": "ChevronRight",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/close.js": {
+    "description": "",
+    "displayName": "Close",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/send.js": {
+    "description": "",
+    "displayName": "Send",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/lightbox/component.js": {
     "description": "Lightboxes display highlighted images",
     "displayName": "Lightbox",
@@ -1226,7 +1371,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when Avatar is pressed\n\nfunction(event: object) => void",
+        "description": "Callback fired when ListItem is pressed\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1237,7 +1382,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when Avatar is long pressed\n\nfunction(event: object) => void",
+        "description": "Callback fired when ListItem is long pressed\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -2147,6 +2292,143 @@
             },
             "left": {
               "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/picker/component.js": {
+    "description": "Pick a value from a list of items",
+    "displayName": "Picker",
+    "methods": [
+      {
+        "name": "showPicker",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "hidePicker",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleValueChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          },
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "selectedValue": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Value matching the value of one of the items"
+      },
+      "items": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "label": {
+                "name": "string",
+                "required": true
+              },
+              "value": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "Picker items"
+      },
+      "onValueChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when an item is selected\n\nfunction(itemValue: string, itemPosition: number) => void"
+      },
+      "divider": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Render a Divider underneath the Picker",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
               "required": true
             }
           }
