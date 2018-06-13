@@ -81,6 +81,18 @@
       }
     ],
     "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "alphabet": {
         "type": {
           "name": "arrayOf",
@@ -92,6 +104,17 @@
         "description": "Override the alphabet\n\nDefaults to: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "onTouchStart": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when touch event is fired\n\nfunction() => void",
+        "defaultValue": {
+          "value": "() => {}",
           "computed": false
         }
       },
@@ -112,17 +135,6 @@
         },
         "required": false,
         "description": "Callback fired when a letter is touched\n\nfunction(letter: string) => void",
-        "defaultValue": {
-          "value": "() => {}",
-          "computed": false
-        }
-      },
-      "onTouchStart": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback fired when touch event is fired\n\nfunction() => void",
         "defaultValue": {
           "value": "() => {}",
           "computed": false
@@ -152,18 +164,6 @@
         },
         "required": true,
         "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
       },
       "theme": {
         "type": {
