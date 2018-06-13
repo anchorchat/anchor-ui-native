@@ -21,6 +21,7 @@ import HeaderExample from './pages/header';
 import MessageHighlight from './pages/message-highlight';
 import Message from './pages/message';
 import ContextMenu from './pages/context-menu';
+import Icons from './pages/icons';
 
 const cacheImages = images => (
   _.map(images, (image) => {
@@ -43,6 +44,7 @@ const Navigator = createStackNavigator({
     ContextMenu: { screen: ContextMenu },
     Divider: { screen: Divider },
     Header: { screen: HeaderExample },
+    Icons: { screen: Icons },
     Lightbox: { screen: Lightbox },
     ListItem: { screen: ListItem },
     Message: { screen: Message },

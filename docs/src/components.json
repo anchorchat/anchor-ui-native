@@ -846,6 +846,499 @@
       }
     }
   },
+  "lib/icons/attachment.js": {
+    "description": "",
+    "displayName": "IconAttachment",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/camera.js": {
+    "description": "",
+    "displayName": "Camera",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/chats.js": {
+    "description": "",
+    "displayName": "Chats",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/checkmark.js": {
+    "description": "",
+    "displayName": "Checkmark",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/chevron-right.js": {
+    "description": "",
+    "displayName": "IconChevronRight",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/close.js": {
+    "description": "",
+    "displayName": "IconClose",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/compose.js": {
+    "description": "",
+    "displayName": "Compose",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/contacts.js": {
+    "description": "",
+    "displayName": "Contacts",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/delete.js": {
+    "description": "",
+    "displayName": "Delete",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/invite.js": {
+    "description": "",
+    "displayName": "Invite",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/lock.js": {
+    "description": "",
+    "displayName": "Lock",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/notifications.js": {
+    "description": "",
+    "displayName": "Notifications",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/people.js": {
+    "description": "",
+    "displayName": "People",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/send.js": {
+    "description": "",
+    "displayName": "IconSend",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/settings.js": {
+    "description": "",
+    "displayName": "Settings",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/share.js": {
+    "description": "",
+    "displayName": "Share",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/verified.js": {
+    "description": "",
+    "displayName": "Verifed",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/lightbox/component.js": {
     "description": "Lightboxes display highlighted images",
     "displayName": "Lightbox",
@@ -2215,7 +2708,15 @@
   "lib/text-input/component.js": {
     "description": "Component for inputting text using a keyboard.",
     "displayName": "TextInput",
-    "methods": [],
+    "methods": [
+      {
+        "name": "focusInput",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "style": {
         "type": {
