@@ -2386,7 +2386,7 @@
       "pickerItemStyle": {
         "type": {
           "name": "custom",
-          "raw": "NativePicker.Item.propTypes.style"
+          "raw": "NativePicker.propTypes.style"
         },
         "required": false,
         "description": "Override the styles of the picker item element, iOS only",
