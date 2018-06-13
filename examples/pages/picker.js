@@ -66,7 +66,12 @@ export default class extends Component {
     return (
       <View style={styles.wrapper}>
         <Text type="heading" style={styles.headingLarge}>Picker</Text>
-        <Picker divider items={items} selectedValue={value} onValueChange={this.handleValueChange} />
+        <Picker
+          divider
+          items={items}
+          selectedValue={value}
+          onValueChange={this.handleValueChange}
+        />
       </View>
     );
   }
