@@ -619,7 +619,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Override renderItem\nIf used make sure to adjust the itemHeight prop aswell\n\nfunction(item: object) => void",
+        "description": "Override renderItem\nIf used make sure to adjust the itemHeight prop as well\n\nfunction(item: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -641,7 +641,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Override renderSectionHeader\nIf used make sure to adjust the sectionHeaderHeight prop aswell\n\nfunction(section: object) => void",
+        "description": "Override renderSectionHeader\nIf used make sure to adjust the sectionHeaderHeight prop as well\n\nfunction(section: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
