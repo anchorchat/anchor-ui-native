@@ -541,7 +541,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the Header component\n\nSee Header page for available props.",
+        "description": "Custom props for the SectionList component\n\nSee Header page for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -552,7 +552,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the Header component\n\nSee https://facebook.github.io/react-native/docs/sectionlist.html#props for available props.",
+        "description": "Custom props for the AlphabetPicker component\n\nSee https://facebook.github.io/react-native/docs/sectionlist.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -619,7 +619,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Override renderItem\nIf used make sure to adjust the itemHeight prop aswell\n\nfunction(item: object) => void",
+        "description": "Override renderItem\nIf used make sure to adjust the itemHeight prop as well\n\nfunction(item: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -641,7 +641,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Override renderSectionHeader\nIf used make sure to adjust the sectionHeaderHeight prop aswell\n\nfunction(section: object) => void",
+        "description": "Override renderSectionHeader\nIf used make sure to adjust the sectionHeaderHeight prop as well\n\nfunction(section: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
