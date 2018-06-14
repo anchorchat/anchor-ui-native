@@ -17,18 +17,22 @@ const Nav = ({ history }) => (
   <Menu style={{ width: '200px' }}>
     <MenuItem text="Getting started" onClick={() => pushRoute(history, '/')} />
     <MenuItem text="Styleguide" onClick={() => pushRoute(history, '/style-guide')} />
+    <MenuItem text="AlphabetPicker" onClick={() => pushRoute(history, '/alphabet-picker')} />
     <MenuItem text="Avatar" onClick={() => pushRoute(history, '/avatar')} />
     <MenuItem text="Button" onClick={() => pushRoute(history, '/button')} />
+    <MenuItem text="ContactList" onClick={() => pushRoute(history, '/contact-list')} />
     <MenuItem text="ContentItem" onClick={() => pushRoute(history, '/content-item')} />
     <MenuItem text="ContextMenu" onClick={() => pushRoute(history, '/context-menu')} />
     <MenuItem text="Divider" onClick={() => pushRoute(history, '/divider')} />
     <MenuItem text="FullWidthImage" onClick={() => pushRoute(history, '/full-width-image')} />
     <MenuItem text="Header" onClick={() => pushRoute(history, '/header')} />
+    <MenuItem text="Icons" onClick={() => pushRoute(history, '/icons')} />
     <MenuItem text="Lightbox" onClick={() => pushRoute(history, '/lightbox')} />
     <MenuItem text="ListItem" onClick={() => pushRoute(history, '/list-item')} />
     <MenuItem text="Message" onClick={() => pushRoute(history, '/message')} />
     <MenuItem text="MessageHighlight" onClick={() => pushRoute(history, '/message-highlight')} />
     <MenuItem text="MessageInput" onClick={() => pushRoute(history, '/message-input')} />
+    <MenuItem text="Picker" onClick={() => pushRoute(history, '/picker')} />
     <MenuItem text="Text" onClick={() => pushRoute(history, '/text')} />
     <MenuItem text="TextInput" onClick={() => pushRoute(history, '/text-input')} />
     <MenuItem text="ThemeProvider" onClick={() => pushRoute(history, '/theme-provider')} />

@@ -28,6 +28,7 @@
     "prop-types": "^15.6.1",
     "react": "16.3.1",
     "react-native": "~0.55.2",
+    "react-native-section-list-get-item-layout": "^2.2.3",
     "react-native-svg": "^6.3.1",
     "react-navigation": "^2.1.0",
     "recompose": "^0.27.1",

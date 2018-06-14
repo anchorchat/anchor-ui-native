@@ -1,4 +1,189 @@
 {
+  "lib/alphabet-picker/component.js": {
+    "description": "Alphabet picker",
+    "displayName": "AlphabetPicker",
+    "methods": [
+      {
+        "name": "getDerivedStateFromProps",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          },
+          {
+            "name": "state",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onPanResponderGrant",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "gestureState",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onPanResponderMove",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          },
+          {
+            "name": "gestureState",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onPanResponderEnd",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "onLayout",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "findTouchedLetter",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "y",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "alphabet": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "Override the alphabet\n\nDefaults to: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onTouchStart": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when touch event is fired\n\nfunction() => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "onTouchEnd": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when touch event has ended\n\nfunction() => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "onTouchLetter": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when a letter is touched\n\nfunction(letter: string) => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/avatar/component.js": {
     "description": "Represent people or objects.",
     "displayName": "Avatar",
@@ -241,6 +426,240 @@
           "value": "0.5",
           "computed": false
         }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/contact-list/component.js": {
+    "description": "Sorted and separated ContactList",
+    "displayName": "ContactList",
+    "methods": [
+      {
+        "name": "onTouchLetter",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "letter",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "keyExtractor",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "item",
+            "type": null
+          },
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderItem",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "{ item }",
+            "type": null
+          },
+          {
+            "name": "styles",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderSectionHeader",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "{ section }",
+            "type": null
+          },
+          {
+            "name": "styles",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "listStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the list element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "contacts": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "title": {
+                "name": "node",
+                "required": true
+              },
+              "data": {
+                "name": "arrayOf",
+                "value": {
+                  "name": "object"
+                },
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "Sorted contact data"
+      },
+      "alphabetPicker": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Render the alphabet picker",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "itemHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Contact item height",
+        "defaultValue": {
+          "value": "56",
+          "computed": false
+        }
+      },
+      "onItemPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when item is pressed\n\nIf custom renderItem method is supplied, implement your own onPress event.\n\nfunction(item: object) => void",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "renderItem": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Override renderItem\nIf used make sure to adjust the itemHeight prop aswell\n\nfunction(item: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "sectionHeaderHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Contact divider height",
+        "defaultValue": {
+          "value": "24",
+          "computed": false
+        }
+      },
+      "renderSectionHeader": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Override renderSectionHeader\nIf used make sure to adjust the sectionHeaderHeight prop aswell\n\nfunction(section: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "keyExtractor": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Override keyExtractor\n\nfunction(item: object, index: number) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
       },
       "theme": {
         "type": {
@@ -846,6 +1265,499 @@
       }
     }
   },
+  "lib/icons/attachment.js": {
+    "description": "",
+    "displayName": "IconAttachment",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/camera.js": {
+    "description": "",
+    "displayName": "Camera",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/chats.js": {
+    "description": "",
+    "displayName": "Chats",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/checkmark.js": {
+    "description": "",
+    "displayName": "Checkmark",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/chevron-right.js": {
+    "description": "",
+    "displayName": "IconChevronRight",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/close.js": {
+    "description": "",
+    "displayName": "IconClose",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/compose.js": {
+    "description": "",
+    "displayName": "Compose",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/contacts.js": {
+    "description": "",
+    "displayName": "Contacts",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/delete.js": {
+    "description": "",
+    "displayName": "Delete",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/invite.js": {
+    "description": "",
+    "displayName": "Invite",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/lock.js": {
+    "description": "",
+    "displayName": "Lock",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/notifications.js": {
+    "description": "",
+    "displayName": "Notifications",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/people.js": {
+    "description": "",
+    "displayName": "People",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/send.js": {
+    "description": "",
+    "displayName": "IconSend",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/settings.js": {
+    "description": "",
+    "displayName": "Settings",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/share.js": {
+    "description": "",
+    "displayName": "Share",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/verified.js": {
+    "description": "",
+    "displayName": "Verified",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/lightbox/component.js": {
     "description": "Lightboxes display highlighted images",
     "displayName": "Lightbox",
@@ -1226,7 +2138,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when Avatar is pressed\n\nfunction(event: object) => void",
+        "description": "Callback fired when ListItem is pressed\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1237,7 +2149,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Callback fired when Avatar is long pressed\n\nfunction(event: object) => void",
+        "description": "Callback fired when ListItem is long pressed\n\nfunction(event: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -2156,6 +3068,258 @@
       }
     }
   },
+  "lib/picker/component.js": {
+    "description": "Pick a value from a list of items",
+    "displayName": "Picker",
+    "methods": [
+      {
+        "name": "showPicker",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "hidePicker",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleValueChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          },
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "selectedValue": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "Value matching the value of one of the items"
+      },
+      "items": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "label": {
+                "name": "string",
+                "required": true
+              },
+              "value": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": true,
+        "description": "Picker items. Must be an array of objects containing the following:\n\n{\n  label: String,\n  value: String\n}"
+      },
+      "onValueChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "Callback fired when an item is selected\n\nfunction(itemValue: string, itemPosition: number) => void"
+      },
+      "pickerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativePicker.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the picker element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "pickerItemStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativePicker.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the picker item element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "pickerProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Picker component\n\nSee https://facebook.github.io/react-native/docs/picker.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "divider": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Render a Divider underneath the Picker",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "dividerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the divider element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the text element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Text component, iOS only\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "modalProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Modal component, iOS only\n\nSee https://facebook.github.io/react-native/docs/modal.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the header element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Header button text, iOS only",
+        "defaultValue": {
+          "value": "'Done'",
+          "computed": false
+        }
+      },
+      "buttonStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the button element, iOS only",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "buttonProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the button Text component, iOS only\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "safeArea": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "top": {
+              "name": "number",
+              "required": true
+            },
+            "right": {
+              "name": "number",
+              "required": true
+            },
+            "bottom": {
+              "name": "number",
+              "required": true
+            },
+            "left": {
+              "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/text/component.js": {
     "description": "Text element with different types of styles.",
     "displayName": "Text",
@@ -2215,7 +3379,15 @@
   "lib/text-input/component.js": {
     "description": "Component for inputting text using a keyboard.",
     "displayName": "TextInput",
-    "methods": [],
+    "methods": [
+      {
+        "name": "focusInput",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "style": {
         "type": {

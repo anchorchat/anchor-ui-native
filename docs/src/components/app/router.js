@@ -19,6 +19,10 @@ import ThemeProvider from '../theme-provider';
 import WithTheme from '../with-theme';
 import WithSafeArea from '../with-safe-area';
 import Lightbox from '../lightbox';
+import AlphabetPicker from '../alphabet-picker';
+import ContactList from '../contact-list';
+import Icons from '../icons';
+import Picker from '../picker';
 
 const Router = () => (
   <Switch>
@@ -40,6 +44,10 @@ const Router = () => (
     <Route exact path="/with-theme" component={WithTheme} />
     <Route exact path="/with-safe-area" component={WithSafeArea} />
     <Route exact path="/lightbox" component={Lightbox} />
+    <Route exact path="/alphabet-picker" component={AlphabetPicker} />
+    <Route exact path="/contact-list" component={ContactList} />
+    <Route exact path="/icons" component={Icons} />
+    <Route exact path="/picker" component={Picker} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>
