@@ -541,7 +541,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the Header component\n\nSee Header page for available props.",
+        "description": "Custom props for the SectionList component\n\nSee Header page for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -552,7 +552,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the Header component\n\nSee https://facebook.github.io/react-native/docs/sectionlist.html#props for available props.",
+        "description": "Custom props for the AlphabetPicker component\n\nSee https://facebook.github.io/react-native/docs/sectionlist.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
