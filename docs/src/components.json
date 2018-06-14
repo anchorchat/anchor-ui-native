@@ -536,6 +536,28 @@
           "computed": false
         }
       },
+      "sectionListProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the SectionList component\n\nSee https://facebook.github.io/react-native/docs/sectionlist.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "alphabetPickerProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the AlphabetPicker component\n\nSee AlphabetPicker page for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "contacts": {
         "type": {
           "name": "arrayOf",
@@ -597,7 +619,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Override renderItem\nIf used make sure to adjust the itemHeight prop aswell\n\nfunction(item: object) => void",
+        "description": "Override renderItem\nIf used make sure to adjust the itemHeight prop as well\n\nfunction(item: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -619,7 +641,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Override renderSectionHeader\nIf used make sure to adjust the sectionHeaderHeight prop aswell\n\nfunction(section: object) => void",
+        "description": "Override renderSectionHeader\nIf used make sure to adjust the sectionHeaderHeight prop as well\n\nfunction(section: object) => void",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -1296,7 +1318,7 @@
   },
   "lib/icons/camera.js": {
     "description": "",
-    "displayName": "Camera",
+    "displayName": "IconCamera",
     "methods": [],
     "props": {
       "color": {
@@ -1325,7 +1347,7 @@
   },
   "lib/icons/chats.js": {
     "description": "",
-    "displayName": "Chats",
+    "displayName": "IconChats",
     "methods": [],
     "props": {
       "color": {
@@ -1354,7 +1376,36 @@
   },
   "lib/icons/checkmark.js": {
     "description": "",
-    "displayName": "Checkmark",
+    "displayName": "IconCheckmark",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/chevron-left.js": {
+    "description": "",
+    "displayName": "IconChevronLeft",
     "methods": [],
     "props": {
       "color": {
@@ -1441,7 +1492,7 @@
   },
   "lib/icons/compose.js": {
     "description": "",
-    "displayName": "Compose",
+    "displayName": "IconCompose",
     "methods": [],
     "props": {
       "color": {
@@ -1470,7 +1521,7 @@
   },
   "lib/icons/contacts.js": {
     "description": "",
-    "displayName": "Contacts",
+    "displayName": "IconContacts",
     "methods": [],
     "props": {
       "color": {
@@ -1499,7 +1550,7 @@
   },
   "lib/icons/delete.js": {
     "description": "",
-    "displayName": "Delete",
+    "displayName": "IconDelete",
     "methods": [],
     "props": {
       "color": {
@@ -1528,7 +1579,7 @@
   },
   "lib/icons/invite.js": {
     "description": "",
-    "displayName": "Invite",
+    "displayName": "IconInvite",
     "methods": [],
     "props": {
       "color": {
@@ -1557,7 +1608,7 @@
   },
   "lib/icons/lock.js": {
     "description": "",
-    "displayName": "Lock",
+    "displayName": "IconLock",
     "methods": [],
     "props": {
       "color": {
@@ -1586,7 +1637,7 @@
   },
   "lib/icons/notifications.js": {
     "description": "",
-    "displayName": "Notifications",
+    "displayName": "IconNotifications",
     "methods": [],
     "props": {
       "color": {
@@ -1615,7 +1666,7 @@
   },
   "lib/icons/people.js": {
     "description": "",
-    "displayName": "People",
+    "displayName": "IconPeople",
     "methods": [],
     "props": {
       "color": {
@@ -1673,7 +1724,7 @@
   },
   "lib/icons/settings.js": {
     "description": "",
-    "displayName": "Settings",
+    "displayName": "IconSettings",
     "methods": [],
     "props": {
       "color": {
@@ -1702,7 +1753,7 @@
   },
   "lib/icons/share.js": {
     "description": "",
-    "displayName": "Share",
+    "displayName": "IconShare",
     "methods": [],
     "props": {
       "color": {
@@ -1731,7 +1782,7 @@
   },
   "lib/icons/verified.js": {
     "description": "",
-    "displayName": "Verified",
+    "displayName": "IconVerified",
     "methods": [],
     "props": {
       "color": {

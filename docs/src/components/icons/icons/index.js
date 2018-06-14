@@ -2,6 +2,7 @@ import Attachment from './attachment.svg';
 import Camera from './camera.svg';
 import Chats from './chats.svg';
 import Checkmark from './checkmark.svg';
+import ChevronLeft from './chevron-left.svg';
 import ChevronRight from './chevron-right.svg';
 import Close from './close.svg';
 import Compose from './compose.svg';
@@ -19,6 +20,7 @@ export {
   Camera,
   Chats,
   Checkmark,
+  ChevronLeft,
   ChevronRight,
   Close,
   Compose,
