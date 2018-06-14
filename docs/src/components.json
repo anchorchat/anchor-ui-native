@@ -536,6 +536,28 @@
           "computed": false
         }
       },
+      "sectionListProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "alphabetPickerProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "contacts": {
         "type": {
           "name": "arrayOf",
@@ -1296,7 +1318,7 @@
   },
   "lib/icons/camera.js": {
     "description": "",
-    "displayName": "Camera",
+    "displayName": "IconCamera",
     "methods": [],
     "props": {
       "color": {
@@ -1325,7 +1347,7 @@
   },
   "lib/icons/chats.js": {
     "description": "",
-    "displayName": "Chats",
+    "displayName": "IconChats",
     "methods": [],
     "props": {
       "color": {
@@ -1354,7 +1376,7 @@
   },
   "lib/icons/checkmark.js": {
     "description": "",
-    "displayName": "Checkmark",
+    "displayName": "IconCheckmark",
     "methods": [],
     "props": {
       "color": {
@@ -1441,7 +1463,7 @@
   },
   "lib/icons/compose.js": {
     "description": "",
-    "displayName": "Compose",
+    "displayName": "IconCompose",
     "methods": [],
     "props": {
       "color": {
@@ -1470,7 +1492,7 @@
   },
   "lib/icons/contacts.js": {
     "description": "",
-    "displayName": "Contacts",
+    "displayName": "IconContacts",
     "methods": [],
     "props": {
       "color": {
@@ -1499,7 +1521,7 @@
   },
   "lib/icons/delete.js": {
     "description": "",
-    "displayName": "Delete",
+    "displayName": "IconDelete",
     "methods": [],
     "props": {
       "color": {
@@ -1528,7 +1550,7 @@
   },
   "lib/icons/invite.js": {
     "description": "",
-    "displayName": "Invite",
+    "displayName": "IconInvite",
     "methods": [],
     "props": {
       "color": {
@@ -1557,7 +1579,7 @@
   },
   "lib/icons/lock.js": {
     "description": "",
-    "displayName": "Lock",
+    "displayName": "IconLock",
     "methods": [],
     "props": {
       "color": {
@@ -1586,7 +1608,7 @@
   },
   "lib/icons/notifications.js": {
     "description": "",
-    "displayName": "Notifications",
+    "displayName": "IconNotifications",
     "methods": [],
     "props": {
       "color": {
@@ -1615,7 +1637,7 @@
   },
   "lib/icons/people.js": {
     "description": "",
-    "displayName": "People",
+    "displayName": "IconPeople",
     "methods": [],
     "props": {
       "color": {
@@ -1673,7 +1695,7 @@
   },
   "lib/icons/settings.js": {
     "description": "",
-    "displayName": "Settings",
+    "displayName": "IconSettings",
     "methods": [],
     "props": {
       "color": {
@@ -1702,7 +1724,7 @@
   },
   "lib/icons/share.js": {
     "description": "",
-    "displayName": "Share",
+    "displayName": "IconShare",
     "methods": [],
     "props": {
       "color": {
@@ -1731,7 +1753,7 @@
   },
   "lib/icons/verified.js": {
     "description": "",
-    "displayName": "Verified",
+    "displayName": "IconVerified",
     "methods": [],
     "props": {
       "color": {
