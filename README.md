@@ -1,5 +1,17 @@
 # AnchorUI Native
 
+## Install using npm
+
+```bash
+npm i -S anchor-ui-native
+```
+
+## Or install using yarn
+
+```bash
+yarn add anchor-ui-native
+```
+
 ## Requirements
 
 - [Node](https://github.com/creationix/nvm) ^4.8.0 || ^5.7.0 || ^6.2.2 || >=8.0.0
