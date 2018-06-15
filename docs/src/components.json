@@ -218,7 +218,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Avatar text",
+        "description": "Avatar text, styling is optimized for two characters. If you want to render more than two characters, you should decrease fontSize using textStyle.",
         "defaultValue": {
           "value": "null",
           "computed": false
