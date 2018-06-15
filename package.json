@@ -15,7 +15,10 @@
     "eslint-plugin-react-native": "^3.2.1",
     "eslint-watch": "^3.1.5",
     "nodemon": "^1.17.5",
-    "react-docgen": "^2.20.1"
+    "prop-types": "^15.6.1",
+    "react": "^16.4.1",
+    "react-docgen": "^2.20.1",
+    "react-native": "^0.55.4"
   },
   "scripts": {
     "eslint": "esw '{lib,docs/src,examples}/**/**/*.js'",
@@ -30,11 +33,13 @@
     "color": "^3.0.0",
     "hoist-non-react-statics": "^2.5.4",
     "lodash": "^4.17.10",
-    "prop-types": "^15.6.1",
-    "react": "16.3.1",
-    "react-native": "^0.55.4",
     "react-native-section-list-get-item-layout": "^2.2.3",
     "react-native-svg": "^6.3.1",
     "recompose": "^0.27.1"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.4.1",
+    "react": "^16.3.0",
+    "react-native": "^0.50.0"
   }
 }
