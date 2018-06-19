@@ -3,10 +3,6 @@ import { StyleSheet, View } from 'react-native';
 import { Text, FullScreenImage } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
 
-const navigationOptions = () => ({
-  title: 'Full Width Image'
-});
-
 const styles = StyleSheet.create({
   wrapper: {
     padding: 16,
@@ -23,7 +19,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const FullWidthImage = () => (
+export default () => (
   <View style={styles.wrapper}>
     <Text type="heading" style={styles.headingLarge}>Full Width Image</Text>
     <View style={styles.imageWrapper}>
@@ -36,7 +32,3 @@ const FullWidthImage = () => (
     </View>
   </View>
 );
-
-FullWidthImage.navigationOptions = navigationOptions;
-
-export default FullWidthImage;
