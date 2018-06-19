@@ -1,7 +1,7 @@
 /* eslint global-require: [0] */
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Avatar, Text, Counter } from '../anchor-ui-native';
+import { Text, Counter } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
 
 const styles = StyleSheet.create({
