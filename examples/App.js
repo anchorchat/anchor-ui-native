@@ -11,6 +11,7 @@ import Avatar from './pages/avatar';
 import Button from './pages/button';
 import ContentItem from './pages/content-item';
 import Divider from './pages/divider';
+import FullScreenImage from './pages/full-screen-image';
 import Home from './pages/home';
 import Lightbox from './pages/lightbox';
 import ListItem from './pages/list-item';
@@ -46,6 +47,7 @@ const Navigator = createStackNavigator({
     ContentItem: { screen: ContentItem },
     ContextMenu: { screen: ContextMenu },
     Divider: { screen: Divider },
+    FullScreenImage: { screen: FullScreenImage },
     Header: { screen: HeaderExample },
     Icons: { screen: Icons },
     Lightbox: { screen: Lightbox },
