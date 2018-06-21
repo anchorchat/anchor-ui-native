@@ -25,6 +25,7 @@ const Nav = ({ history }) => (
     <MenuItem text="ContextMenu" onClick={() => pushRoute(history, '/context-menu')} />
     <MenuItem text="Counter" onClick={() => pushRoute(history, '/counter')} />
     <MenuItem text="Divider" onClick={() => pushRoute(history, '/divider')} />
+    <MenuItem text="FullScreenImage" onClick={() => pushRoute(history, '/full-screen-image')} />
     <MenuItem text="FullWidthImage" onClick={() => pushRoute(history, '/full-width-image')} />
     <MenuItem text="Header" onClick={() => pushRoute(history, '/header')} />
     <MenuItem text="Icons" onClick={() => pushRoute(history, '/icons')} />

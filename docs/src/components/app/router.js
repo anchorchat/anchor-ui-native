@@ -9,6 +9,7 @@ import MessageInput from '../message-input';
 import Header from '../header';
 import MessageHighlight from '../message-highlight';
 import Message from '../message';
+import FullScreenImage from '../full-screen-image';
 import FullWidthImage from '../full-width-image';
 import ContextMenu from '../context-menu';
 import Text from '../text';
@@ -35,6 +36,7 @@ const Router = () => (
     <Route exact path="/header" component={Header} />
     <Route exact path="/message-highlight" component={MessageHighlight} />
     <Route exact path="/message" component={Message} />
+    <Route exact path="/full-screen-image" component={FullScreenImage} />
     <Route exact path="/full-width-image" component={FullWidthImage} />
     <Route exact path="/context-menu" component={ContextMenu} />
     <Route exact path="/text" component={Text} />
