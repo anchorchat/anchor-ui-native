@@ -333,6 +333,17 @@
           "value": "0.5",
           "computed": false
         }
+      },
+      "linearGradientProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Props for LinearGradient component. Passing this wil make the text avatar background a gradient\n\nSee https://docs.expo.io/versions/latest/sdk/linear-gradient#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
