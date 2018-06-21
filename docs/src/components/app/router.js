@@ -23,6 +23,7 @@ import AlphabetPicker from '../alphabet-picker';
 import ContactList from '../contact-list';
 import Icons from '../icons';
 import Picker from '../picker';
+import Counter from '../counter';
 
 const Router = () => (
   <Switch>
@@ -48,6 +49,7 @@ const Router = () => (
     <Route exact path="/contact-list" component={ContactList} />
     <Route exact path="/icons" component={Icons} />
     <Route exact path="/picker" component={Picker} />
+    <Route exact path="/counter" component={Counter} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>

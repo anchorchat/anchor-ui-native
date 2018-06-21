@@ -24,6 +24,7 @@ import ContextMenu from './pages/context-menu';
 import ContactList from './pages/contact-list';
 import Picker from './pages/picker';
 import Icons from './pages/icons';
+import Counter from './pages/counter';
 
 const cacheImages = images => (
   _.map(images, (image) => {
@@ -45,6 +46,7 @@ const Navigator = createStackNavigator({
     ContactList: { screen: ContactList },
     ContentItem: { screen: ContentItem },
     ContextMenu: { screen: ContextMenu },
+    Counter: { screen: Counter },
     Divider: { screen: Divider },
     Header: { screen: HeaderExample },
     Icons: { screen: Icons },

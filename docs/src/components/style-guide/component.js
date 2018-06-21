@@ -133,6 +133,11 @@ const StyleGuide = () => (
             <td style={style.tableText}><Text type="button">The quick brown fox jumps over the lazy dog</Text></td>
             <td style={style.tableText}>15pt SemiBold {colors.primary}</td>
           </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Counter</td>
+            <td style={style.tableTextContrast}><Text type="counter">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>10pt SemiBold {colors.white}</td>
+          </tr>
           <tr>
             <td style={style.tableText}>Divider</td>
             <td style={style.tableText}><Text type="divider">The quick brown fox jumps over the lazy dog</Text></td>

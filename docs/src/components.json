@@ -333,6 +333,17 @@
           "value": "0.5",
           "computed": false
         }
+      },
+      "linearGradientProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Props for LinearGradient component. Passing this wil make the text avatar background a gradient\n\nSee https://docs.expo.io/versions/latest/sdk/linear-gradient#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -887,6 +898,83 @@
         },
         "required": false,
         "description": "Override the styles of the notch element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/counter/component.js": {
+    "description": "Display a (notification) counter",
+    "displayName": "Counter",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "backgroundStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the background element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "value": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "Counter value"
+      },
+      "maxValue": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Counter max value, will render `<maxValue>+` if value exceeds maxValue",
+        "defaultValue": {
+          "value": "9",
+          "computed": false
+        }
+      },
+      "textProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the value Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3135,22 +3223,6 @@
         "docblock": null,
         "modifiers": [],
         "params": [],
-        "returns": null
-      },
-      {
-        "name": "handleValueChange",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "value",
-            "type": null
-          },
-          {
-            "name": "index",
-            "type": null
-          }
-        ],
         "returns": null
       }
     ],
