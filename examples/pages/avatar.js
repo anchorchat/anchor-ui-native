@@ -38,5 +38,12 @@ export default () => (
       <Text type="heading" style={styles.heading}>With text and color</Text>
       <Avatar text="MO" color="pink" />
     </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>With text and gradient</Text>
+      <Avatar
+        text="LG"
+        linearGradientProps={{ colors: ['#FF9173', '#E57859'] }}
+      />
+    </View>
   </View>
 );
