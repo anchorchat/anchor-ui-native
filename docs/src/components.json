@@ -982,7 +982,7 @@
     }
   },
   "lib/full-screen-image/component.js": {
-    "description": "Full width image with placeholder and optional thumbnail",
+    "description": "Image component which resizes to the full width or height of it's parent.\nWhen given zoomable={true} the image component will become zoomable.",
     "displayName": "FullScreenImage",
     "methods": [
       {
@@ -1006,13 +1006,6 @@
       },
       {
         "name": "onImageLoad",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "renderImageContent",
         "docblock": null,
         "modifiers": [],
         "params": [],
@@ -1100,7 +1093,7 @@
           ]
         },
         "required": false,
-        "description": "What type of screen filling is needed",
+        "description": "The type of resizing the image component will handle.\n\nBy adjusting this, this component can be used as full width or height image.\n\nValid types: ['width', 'height', 'auto']",
         "defaultValue": {
           "value": "'auto'",
           "computed": false
@@ -1117,7 +1110,7 @@
           "computed": false
         }
       },
-      "maxZoom": {
+      "maximumZoomScale": {
         "type": {
           "name": "number"
         },
@@ -1128,7 +1121,7 @@
           "computed": false
         }
       },
-      "minZoom": {
+      "minimumZoomScale": {
         "type": {
           "name": "number"
         },
