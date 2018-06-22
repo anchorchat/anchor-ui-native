@@ -15,6 +15,7 @@ const ThemeProviderDoc = () => (
   <section className="page">
     <h1 className="heading-large">ThemeProvider</h1>
     <span><Text type="body-light">{componentData.description}</Text></span>
+    <span><Text type="body">Use the <Link to="/with-theme">withTheme</Link> to pass theme to your components.</Text></span>
     <h2><Text type="heading">Defaults</Text></h2>
     <h2><Text type="heading-secondary">Colors</Text></h2>
     {map(colors, (color, name) => <span key={name}><Text type="body-light" style={style.name}>{name}:</Text> <Text>{color}</Text></span>)}
