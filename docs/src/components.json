@@ -2219,7 +2219,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Timestamp for the primary Text",
+        "description": "Render a timestamp next to primaryText",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -2267,6 +2267,29 @@
         },
         "required": false,
         "description": "Override the styles of the Divider component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "counter": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Render a counter next to secondaryText",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "counterStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the Counter component",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3437,6 +3460,31 @@
               "required": true
             }
           }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/resizeable-svg/index.js": {
+    "description": "",
+    "displayName": "ResizeableSvg",
+    "methods": [],
+    "props": {
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
         },
         "required": true,
         "description": ""
