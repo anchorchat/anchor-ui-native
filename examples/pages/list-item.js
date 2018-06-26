@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
-import { Avatar, ListItem, Text } from '../anchor-ui-native';
+import { Avatar, ListItem, Text, Counter } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
 
 const styles = StyleSheet.create({
@@ -64,6 +64,7 @@ export default () => (
           numberOfLines: 2
         }}
         iconStyle={{ marginTop: 8, marginBottom: 8 }}
+        counter={<Counter value={1} />}
       />
     </View>
   </ScrollView>
