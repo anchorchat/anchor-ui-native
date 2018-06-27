@@ -364,6 +364,18 @@
           "computed": false
         }
       },
+      "containerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the container element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "labelText": {
         "type": {
           "name": "node"
