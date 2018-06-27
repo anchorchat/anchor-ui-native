@@ -26,7 +26,8 @@ const theme = {
     darkGray: 'darkGrayColor',
     gray: 'grayColor',
     lightGray: 'lightGrayColor',
-    lighterGray: 'lighterGrayColor'
+    lighterGray: 'lighterGrayColor',
+    divider: 'dividerColor'
   },
   fonts: {
     bold: fontFamily: { 'fontFamily-bold' }
