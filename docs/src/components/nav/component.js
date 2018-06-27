@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Menu from 'anchor-ui/menu';
 import MenuItem from 'anchor-ui/menu-item';
 import pushRoute from '../../utils/push-route';
+import anchorUiNative from '../../anchor-ui-native/package.json';
 
 const propTypes = {
   history: PropTypes.shape({
@@ -14,7 +15,7 @@ const propTypes = {
 };
 
 const Nav = ({ history }) => (
-  <Menu style={{ width: '200px' }}>
+  <Menu header={`Version: ${anchorUiNative.version}`} style={{ width: '200px' }}>
     <MenuItem text="Getting started" onClick={() => pushRoute(history, '/')} />
     <MenuItem text="Styleguide" onClick={() => pushRoute(history, '/style-guide')} />
     <MenuItem text="AlphabetPicker" onClick={() => pushRoute(history, '/alphabet-picker')} />
