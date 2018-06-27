@@ -51,6 +51,12 @@ const StyleGuide = () => (
         <p style={style.text}>rgb(248, 248, 248)</p>
       </section>
       <section style={style.column}>
+        <div style={{ ...style.color, background: colors.divider }} />
+        <p style={style.heading}>Divider</p>
+        <p style={style.text}>#C8C7CC</p>
+        <p style={style.text}>rgb(200, 199, 204)</p>
+      </section>
+      <section style={style.column}>
         <div style={{ ...style.color, background: colors.lightGray }} />
         <p style={style.heading}>Light gray</p>
         <p style={style.text}>#B2B2B2</p>
