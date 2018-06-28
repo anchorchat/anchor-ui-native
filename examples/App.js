@@ -71,7 +71,7 @@ const Navigator = createStackNavigator({
         color: colors.primary
       }
     },
-    initialRouteName: 'DateSeparator'
+    initialRouteName: 'Home'
   })
 }, {
   navigationOptions: ({ navigation }) => ({
