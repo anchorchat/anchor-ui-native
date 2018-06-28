@@ -25,6 +25,7 @@ const Nav = ({ history }) => (
     <MenuItem text="ContentItem" onClick={() => pushRoute(history, '/content-item')} />
     <MenuItem text="ContextMenu" onClick={() => pushRoute(history, '/context-menu')} />
     <MenuItem text="Counter" onClick={() => pushRoute(history, '/counter')} />
+    <MenuItem text="DateSeparator" onClick={() => pushRoute(history, '/date-separator')} />
     <MenuItem text="Divider" onClick={() => pushRoute(history, '/divider')} />
     <MenuItem text="FullWidthImage" onClick={() => pushRoute(history, '/full-width-image')} />
     <MenuItem text="Header" onClick={() => pushRoute(history, '/header')} />

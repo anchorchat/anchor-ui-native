@@ -24,6 +24,7 @@ import ContactList from '../contact-list';
 import Icons from '../icons';
 import Picker from '../picker';
 import Counter from '../counter';
+import DateSeparator from '../date-separator';
 
 const Router = () => (
   <Switch>
@@ -50,6 +51,7 @@ const Router = () => (
     <Route exact path="/icons" component={Icons} />
     <Route exact path="/picker" component={Picker} />
     <Route exact path="/counter" component={Counter} />
+    <Route exact path="/date-separator" component={DateSeparator} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>

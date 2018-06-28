@@ -1011,6 +1011,60 @@
       }
     }
   },
+  "lib/date-separator/component.js": {
+    "description": "Separate Messages by date",
+    "displayName": "DateSeparator",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "date": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Date to be displayed"
+      },
+      "textProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the value Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/divider/component.js": {
     "description": "Dividers group and separate content within lists and page layouts.",
     "displayName": "Divider",
