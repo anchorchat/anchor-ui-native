@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Menu from 'anchor-ui/menu';
 import MenuItem from 'anchor-ui/menu-item';
 import pushRoute from '../../utils/push-route';
+import anchorUiNative from '../../anchor-ui-native/package.json';
 
 const propTypes = {
   history: PropTypes.shape({
@@ -14,7 +15,7 @@ const propTypes = {
 };
 
 const Nav = ({ history }) => (
-  <Menu style={{ width: '200px' }}>
+  <Menu header={`Version: ${anchorUiNative.version}`} style={{ width: '200px' }}>
     <MenuItem text="Getting started" onClick={() => pushRoute(history, '/')} />
     <MenuItem text="Styleguide" onClick={() => pushRoute(history, '/style-guide')} />
     <MenuItem text="AlphabetPicker" onClick={() => pushRoute(history, '/alphabet-picker')} />
@@ -24,8 +25,8 @@ const Nav = ({ history }) => (
     <MenuItem text="ContentItem" onClick={() => pushRoute(history, '/content-item')} />
     <MenuItem text="ContextMenu" onClick={() => pushRoute(history, '/context-menu')} />
     <MenuItem text="Counter" onClick={() => pushRoute(history, '/counter')} />
+    <MenuItem text="DateSeparator" onClick={() => pushRoute(history, '/date-separator')} />
     <MenuItem text="Divider" onClick={() => pushRoute(history, '/divider')} />
-    <MenuItem text="FullWidthImage" onClick={() => pushRoute(history, '/full-width-image')} />
     <MenuItem text="Header" onClick={() => pushRoute(history, '/header')} />
     <MenuItem text="Icons" onClick={() => pushRoute(history, '/icons')} />
     <MenuItem text="Lightbox" onClick={() => pushRoute(history, '/lightbox')} />

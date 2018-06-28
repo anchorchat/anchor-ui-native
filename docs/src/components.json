@@ -1011,6 +1011,60 @@
       }
     }
   },
+  "lib/date-separator/component.js": {
+    "description": "Separate Messages by date",
+    "displayName": "DateSeparator",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "date": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Date to be displayed"
+      },
+      "textProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the value Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/divider/component.js": {
     "description": "Dividers group and separate content within lists and page layouts.",
     "displayName": "Divider",
@@ -1059,118 +1113,6 @@
         "description": "Custom props for the Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
-          "computed": false
-        }
-      },
-      "theme": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "colors": {
-              "name": "object",
-              "required": true
-            },
-            "fonts": {
-              "name": "object",
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      }
-    }
-  },
-  "lib/full-width-image/component.js": {
-    "description": "Full width image with placeholder and optional thumbnail",
-    "displayName": "FullWidthImage",
-    "methods": [
-      {
-        "name": "onLayout",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "event",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "onThumbnailLoad",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "onImageLoad",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
-    "props": {
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "View.propTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "source": {
-        "type": {
-          "name": "custom",
-          "raw": "Image.propTypes.source.isRequired"
-        },
-        "required": false,
-        "description": "The image source (either a remote URL or a local file resource)"
-      },
-      "thumbnailSource": {
-        "type": {
-          "name": "custom",
-          "raw": "Image.propTypes.source"
-        },
-        "required": false,
-        "description": "Optional thumbnail source",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "ratio": {
-        "type": {
-          "name": "number"
-        },
-        "required": true,
-        "description": "The image ratio (imageWidth/imageHeight)"
-      },
-      "fadeDuration": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Duration of the cross fade animations",
-        "defaultValue": {
-          "value": "300",
-          "computed": false
-        }
-      },
-      "onPress": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback fired when FullWidthImage is pressed\n\nfunction(event: object) => void",
-        "defaultValue": {
-          "value": "null",
           "computed": false
         }
       },
@@ -2477,6 +2419,17 @@
         "required": false,
         "description": "Message image; source, thumbnailSource and ratio"
       },
+      "imageSize": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Width for landscape images and height for portrait images",
+        "defaultValue": {
+          "value": "210",
+          "computed": false
+        }
+      },
       "imageProps": {
         "type": {
           "name": "object"
@@ -2750,12 +2703,12 @@
           "value": {
             "source": {
               "name": "custom",
-              "raw": "Image.propTypes.source.isRequired",
+              "raw": "NativeImage.propTypes.source.isRequired",
               "required": true
             },
             "thumbnailSource": {
               "name": "custom",
-              "raw": "Image.propTypes.source",
+              "raw": "NativeImage.propTypes.source",
               "required": false
             },
             "ratio": {
@@ -2777,6 +2730,142 @@
           "value": "null",
           "computed": false
         }
+      },
+      "imageSize": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message/image-message/image/component.js": {
+    "description": "",
+    "displayName": "Image",
+    "methods": [
+      {
+        "name": "getDerivedStateFromProps",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          },
+          {
+            "name": "state",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onThumbnailLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "onImageLoad",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "View.propTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "source": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeImage.propTypes.source.isRequired"
+        },
+        "required": false,
+        "description": ""
+      },
+      "thumbnailSource": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeImage.propTypes.source"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "ratio": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": ""
+      },
+      "fadeDuration": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "300",
+          "computed": false
+        }
+      },
+      "onPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "210",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3164,8 +3253,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "Icon for the left hand side of the TextInput"
+        "required": false,
+        "description": "Icon for the left hand side of the TextInput",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "leftIconStyle": {
         "type": {

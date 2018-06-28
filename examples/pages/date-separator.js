@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import { StyleSheet, KeyboardAvoidingView, ImageBackground, FlatList, TouchableOpacity, View } from 'react-native';
 import uuid from 'uuid';
 import format from 'date-fns/format';
+import subDays from 'date-fns/sub_days';
 import subMinutes from 'date-fns/sub_minutes';
 import _ from 'lodash';
 import { Ionicons } from '@expo/vector-icons';
-import { MessageInput, withSafeArea, Message, Avatar, Lightbox, Text } from '../anchor-ui-native';
+import { MessageInput, withSafeArea, Message, Avatar, Lightbox, Text, DateSeparator } from '../anchor-ui-native';
 import Attachment from '../icons/attachment';
 import Send from '../icons/send';
 import Camera from '../icons/camera';
@@ -94,6 +95,7 @@ const INITIAL_STATE = [
       ratio: 2 / 3
     }
   },
+  { date: format(new Date(), 'MMMM D'), key: uuid.v4() },
   {
     key: uuid.v4(),
     type: 'contact',
@@ -112,6 +114,7 @@ const INITIAL_STATE = [
     body: 'It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds.',
     align: 'right'
   },
+  { date: format(subDays(new Date(), 14), 'MMMM D'), key: uuid.v4() },
   {
     key: uuid.v4(),
     type: 'image',
@@ -130,10 +133,11 @@ const INITIAL_STATE = [
     time: subMinutes(new Date(), '20'),
     body: 'Tremblant is based in Canada and has over 90 runs millions of skiers each year.',
     align: 'left'
-  }
+  },
+  { date: format(subDays(new Date(), 32), 'MMMM D'), key: uuid.v4() }
 ];
 
-class MessageExample extends Component {
+class DateSeparatorExample extends Component {
   state = {
     message: '',
     messages: INITIAL_STATE,
@@ -189,17 +193,23 @@ class MessageExample extends Component {
     });
   }
 
-  renderMessage = ({ item }) => (
-    <Message
-      type={item.type}
-      bodyText={item.body}
-      align={item.align}
-      image={item.image}
-      contact={item.contact}
-      timeText={format(item.time, 'HH:mm')}
-      onImagePress={() => this.showLightbox(item.key)}
-    />
-  )
+  renderMessage = ({ item }) => {
+    if (item.date) {
+      return <DateSeparator date={item.date} />;
+    }
+
+    return (
+      <Message
+        type={item.type}
+        bodyText={item.body}
+        align={item.align}
+        image={item.image}
+        contact={item.contact}
+        timeText={format(item.time, 'HH:mm')}
+        onImagePress={() => this.showLightbox(item.key)}
+      />
+    );
+  }
 
   render() {
     const { message, messages, lightbox } = this.state;
@@ -265,6 +275,6 @@ class MessageExample extends Component {
   }
 }
 
-MessageExample.propTypes = propTypes;
+DateSeparatorExample.propTypes = propTypes;
 
-export default withSafeArea(MessageExample);
+export default withSafeArea(DateSeparatorExample);

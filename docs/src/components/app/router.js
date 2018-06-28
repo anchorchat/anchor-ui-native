@@ -9,7 +9,6 @@ import MessageInput from '../message-input';
 import Header from '../header';
 import MessageHighlight from '../message-highlight';
 import Message from '../message';
-import FullWidthImage from '../full-width-image';
 import ContextMenu from '../context-menu';
 import Text from '../text';
 import Avatar from '../avatar';
@@ -24,6 +23,7 @@ import ContactList from '../contact-list';
 import Icons from '../icons';
 import Picker from '../picker';
 import Counter from '../counter';
+import DateSeparator from '../date-separator';
 
 const Router = () => (
   <Switch>
@@ -35,7 +35,6 @@ const Router = () => (
     <Route exact path="/header" component={Header} />
     <Route exact path="/message-highlight" component={MessageHighlight} />
     <Route exact path="/message" component={Message} />
-    <Route exact path="/full-width-image" component={FullWidthImage} />
     <Route exact path="/context-menu" component={ContextMenu} />
     <Route exact path="/text" component={Text} />
     <Route exact path="/avatar" component={Avatar} />
@@ -50,6 +49,7 @@ const Router = () => (
     <Route exact path="/icons" component={Icons} />
     <Route exact path="/picker" component={Picker} />
     <Route exact path="/counter" component={Counter} />
+    <Route exact path="/date-separator" component={DateSeparator} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>
