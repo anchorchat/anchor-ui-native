@@ -3218,8 +3218,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "Icon for the left hand side of the TextInput"
+        "required": false,
+        "description": "Icon for the left hand side of the TextInput",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "leftIconStyle": {
         "type": {
