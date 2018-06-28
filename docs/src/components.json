@@ -1012,7 +1012,7 @@
     }
   },
   "lib/date-separator/component.js": {
-    "description": "A component to separate Message components by date",
+    "description": "Separate Messages by date",
     "displayName": "DateSeparator",
     "methods": [],
     "props": {
