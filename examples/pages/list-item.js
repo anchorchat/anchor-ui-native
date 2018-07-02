@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
 import { Avatar, ListItem, Text, Counter } from '../anchor-ui-native';
+import Checkmark from '../anchor-ui-native/icons/checkmark';
 import { colors } from '../anchor-ui-native/config';
 
 const styles = StyleSheet.create({
   wrapper: {
-    padding: 16,
     backgroundColor: colors.white,
     flex: 1
   },
@@ -14,11 +14,15 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start'
   },
   heading: {
-    marginBottom: 8
+    marginBottom: 8,
+    paddingLeft: 16,
+    paddingRight: 16
   },
   headingLarge: {
     fontSize: 20,
-    marginBottom: 16
+    marginBottom: 16,
+    paddingLeft: 16,
+    paddingRight: 16
   }
 });
 
@@ -65,6 +69,16 @@ export default () => (
         }}
         iconStyle={{ marginTop: 8, marginBottom: 8 }}
         counter={<Counter value={1} />}
+      />
+    </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>With leftButton</Text>
+      <ListItem
+        primaryText="Henk de Vries"
+        icon={<Avatar text="HV" color="lightsteelblue" />}
+        divider
+        dividerStyle={{ left: 100 }}
+        leftButton={<Checkmark color={colors.primary} />}
       />
     </View>
   </ScrollView>
