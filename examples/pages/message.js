@@ -86,7 +86,6 @@ const INITIAL_STATE = [
     key: uuid.v4(),
     type: 'image',
     time: subMinutes(new Date(), '3'),
-    body: 'The night sky looks amazing in this picture!',
     align: 'right',
     image: {
       source: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg' },
