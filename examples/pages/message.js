@@ -99,11 +99,12 @@ const INITIAL_STATE = [
     time: subMinutes(new Date(), '5'),
     align: 'left',
     contact: {
-      avatar: <Avatar size={32} text="CA" textStyle={{ fontSize: 16 }} color="purple" />,
+      avatar: <Avatar size={32} text="CA" textStyle={{ fontSize: 16 }} color="mediumpurple" />,
       primaryText: 'Curtis Adams',
       secondaryText: '+32 412345678'
     },
-    username: 'Benjamin Grant'
+    username: 'Benjamin Grant',
+    avatar: <Avatar size={32} text="BG" textStyle={{ fontSize: 16 }} color="lightsteelblue" />
   },
   {
     key: uuid.v4(),
@@ -122,7 +123,8 @@ const INITIAL_STATE = [
       source: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg' },
       thumbnailSource: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg?&w=48' },
       ratio: 3 / 2
-    }
+    },
+    avatar: <Avatar size={32} text="CB" textStyle={{ fontSize: 16 }} color="mediumaquamarine" />
   },
   {
     key: uuid.v4(),
@@ -130,7 +132,17 @@ const INITIAL_STATE = [
     time: subMinutes(new Date(), '20'),
     body: 'Tremblant is based in Canada and has over 90 runs millions of skiers each year.',
     align: 'left',
-    username: 'Christina Buchanan'
+    username: 'Christina Buchanan',
+    avatar: <Avatar size={32} text="CB" textStyle={{ fontSize: 16 }} color="mediumaquamarine" />
+  },
+  {
+    key: uuid.v4(),
+    type: 'text',
+    time: subMinutes(new Date(), '20'),
+    body: 'Hello!',
+    align: 'left',
+    username: 'Harvey Brock',
+    avatar: <Avatar size={32} text="HB" textStyle={{ fontSize: 16 }} color="mediumvioletred" />
   }
 ];
 
@@ -200,6 +212,7 @@ class MessageExample extends Component {
       timeText={format(item.time, 'HH:mm')}
       headerText={item.username}
       onImagePress={() => this.showLightbox(item.key)}
+      avatar={item.avatar}
     />
   )
 
