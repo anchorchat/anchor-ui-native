@@ -102,7 +102,8 @@ const INITIAL_STATE = [
       avatar: <Avatar size={32} text="CA" textStyle={{ fontSize: 16 }} color="purple" />,
       primaryText: 'Curtis Adams',
       secondaryText: '+32 412345678'
-    }
+    },
+    username: 'Benjamin Grant'
   },
   {
     key: uuid.v4(),
@@ -128,7 +129,8 @@ const INITIAL_STATE = [
     type: 'text',
     time: subMinutes(new Date(), '20'),
     body: 'Tremblant is based in Canada and has over 90 runs millions of skiers each year.',
-    align: 'left'
+    align: 'left',
+    username: 'Christina Buchanan'
   }
 ];
 
@@ -196,6 +198,7 @@ class MessageExample extends Component {
       image={item.image}
       contact={item.contact}
       timeText={format(item.time, 'HH:mm')}
+      headerText={item.username}
       onImagePress={() => this.showLightbox(item.key)}
     />
   )
