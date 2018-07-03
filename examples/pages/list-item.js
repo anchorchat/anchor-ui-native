@@ -34,24 +34,24 @@ export default () => (
       <ListItem primaryText="Peter Kuiper" />
     </View>
     <View style={styles.item}>
-      <Text type="heading" style={styles.heading}>With divider</Text>
-      <ListItem primaryText="Charlotte Uithoven" divider />
+      <Text type="heading" style={styles.heading}>With dividerBottom</Text>
+      <ListItem primaryText="Charlotte Uithoven" dividerBottom />
     </View>
     <View style={styles.item}>
       <Text type="heading" style={styles.heading}>With secondaryText</Text>
       <ListItem
         primaryText="Ian Stewart"
         secondaryText="'Ie-an'"
-        divider
+        dividerBottom
       />
     </View>
     <View style={styles.item}>
-      <Text type="heading" style={styles.heading}>With rightButton, icon and divider style</Text>
+      <Text type="heading" style={styles.heading}>With rightButton, icon and dividerBottom style</Text>
       <ListItem
         primaryText="Lars Tadema"
         icon={<Avatar text="LT" color="hotpink" />}
-        divider
-        dividerStyle={{ left: 64, borderColor: 'hotpink' }}
+        dividerBottom
+        dividerBottomStyle={{ left: 64, borderColor: 'hotpink' }}
         rightButton={<Text type="body-accent">I&apos;m a button</Text>}
       />
     </View>
@@ -61,8 +61,8 @@ export default () => (
         primaryText="Sjaak Luthart"
         secondaryText="If we connect the monitor, we can get to the HDD monitor through the 1080p SMTP card! If we program the matrix, we can get to the SMTP application through the digital THX system!"
         icon={<Avatar text="SL" color="purple" size={64} textStyle={{ fontSize: 32 }} />}
-        divider
-        dividerStyle={{ left: 80 }}
+        dividerBottom
+        dividerBottomStyle={{ left: 80 }}
         time="12:12"
         secondaryTextProps={{
           numberOfLines: 2
@@ -76,9 +76,18 @@ export default () => (
       <ListItem
         primaryText="Henk de Vries"
         icon={<Avatar text="HV" color="lightsteelblue" />}
-        divider
-        dividerStyle={{ left: 100 }}
+        dividerBottom
+        dividerBottomStyle={{ left: 100 }}
         leftButton={<Checkmark color={colors.primary} />}
+      />
+    </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>With Top & Bottom divider</Text>
+      <ListItem
+        primaryText="Piet Heijn"
+        icon={<Avatar text="PH" color="darkkhaki" />}
+        dividerBottom
+        dividerTop
       />
     </View>
   </ScrollView>
