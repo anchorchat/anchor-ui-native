@@ -84,7 +84,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -192,7 +192,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -355,7 +355,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -367,7 +367,7 @@
       "containerStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the container element",
@@ -408,7 +408,7 @@
       "iconStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the icon container",
@@ -538,7 +538,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -550,7 +550,7 @@
       "listStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the list element",
@@ -733,7 +733,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -816,7 +816,7 @@
       "dividerStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the divider element",
@@ -835,7 +835,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -847,7 +847,7 @@
       "textContainerStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the textContainer element",
@@ -859,7 +859,7 @@
       "itemStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the textContainer element",
@@ -906,7 +906,7 @@
       "notchStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the notch element",
@@ -942,7 +942,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -954,7 +954,7 @@
       "backgroundStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the background element",
@@ -1019,7 +1019,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1073,7 +1073,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1143,7 +1143,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1155,7 +1155,7 @@
       "containerStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the container element",
@@ -1906,7 +1906,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -1960,7 +1960,7 @@
       "imageContainerStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the image contianer element",
@@ -1994,7 +1994,7 @@
       "footerStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the footer element",
@@ -2073,7 +2073,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -2136,7 +2136,7 @@
       "iconStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the icon container",
@@ -2159,7 +2159,7 @@
       "rightButtonStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of right button container",
@@ -2217,7 +2217,7 @@
       "dividerStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the Divider component",
@@ -2240,7 +2240,7 @@
       "counterStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the Counter component",
@@ -2298,7 +2298,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -2333,7 +2333,11 @@
           "name": "node"
         },
         "required": false,
-        "description": "Message body text"
+        "description": "Message body text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "bodyTextProps": {
         "type": {
@@ -2341,6 +2345,28 @@
         },
         "required": false,
         "description": "Custom props for the body Text component for 'text' and 'image' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Message header text, will only render in 'left' aligned messages",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the header Text component for 'text', 'contact' and 'image' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2602,6 +2628,24 @@
         },
         "required": true,
         "description": ""
+      },
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -2614,8 +2658,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": ""
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "style": {
         "type": {
@@ -2781,7 +2829,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "",
@@ -2915,6 +2963,18 @@
           "value": "null",
           "computed": false
         }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -2930,6 +2990,17 @@
         "required": true,
         "description": ""
       },
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "style": {
         "type": {
           "name": "object"
@@ -2938,6 +3009,13 @@
         "description": ""
       },
       "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "headerTextProps": {
         "type": {
           "name": "object"
         },
@@ -3013,7 +3091,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -3092,7 +3170,7 @@
       "closeIconStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the icon container",
@@ -3196,7 +3274,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -3263,7 +3341,7 @@
       "leftIconStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the icon container",
@@ -3282,7 +3360,7 @@
       "rightIconStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the icon container",
@@ -3438,7 +3516,7 @@
       "dividerStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the divider element",
@@ -3668,7 +3746,7 @@
       "style": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the root element",
@@ -3769,7 +3847,7 @@
       "dividerStyle": {
         "type": {
           "name": "custom",
-          "raw": "View.propTypes.style"
+          "raw": "ViewPropTypes.style"
         },
         "required": false,
         "description": "Override the styles of the Divider component",
