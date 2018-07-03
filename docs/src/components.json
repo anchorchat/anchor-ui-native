@@ -2356,7 +2356,11 @@
           "name": "node"
         },
         "required": false,
-        "description": "Message body text"
+        "description": "Message body text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "bodyTextProps": {
         "type": {
@@ -2364,6 +2368,28 @@
         },
         "required": false,
         "description": "Custom props for the body Text component for 'text' and 'image' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Message header text, will only render in 'left' aligned messages",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the header Text component for 'text', 'contact' and 'image' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2386,6 +2412,33 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "avatar": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Message avatar, will only render in 'left' aligned messages",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "avatarStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the avatar element"
+      },
+      "avatarContainerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the avatar container element"
       },
       "align": {
         "type": {
@@ -2625,6 +2678,24 @@
         },
         "required": true,
         "description": ""
+      },
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -2637,8 +2708,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": ""
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "style": {
         "type": {
@@ -2938,6 +3013,18 @@
           "value": "null",
           "computed": false
         }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -2953,6 +3040,17 @@
         "required": true,
         "description": ""
       },
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "style": {
         "type": {
           "name": "object"
@@ -2961,6 +3059,13 @@
         "description": ""
       },
       "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "headerTextProps": {
         "type": {
           "name": "object"
         },
