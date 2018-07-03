@@ -2226,7 +2226,7 @@
           "computed": false
         }
       },
-      "divider": {
+      "dividerBottom": {
         "type": {
           "name": "bool"
         },
@@ -2237,13 +2237,36 @@
           "computed": false
         }
       },
-      "dividerStyle": {
+      "dividerBottomStyle": {
         "type": {
           "name": "custom",
           "raw": "ViewPropTypes.style"
         },
         "required": false,
-        "description": "Override the styles of the Divider component",
+        "description": "Override the styles of the bottom Divider component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "dividerTop": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Render a Divider above the ListItem",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "dividerTopStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the top Divider component",
         "defaultValue": {
           "value": "{}",
           "computed": false
