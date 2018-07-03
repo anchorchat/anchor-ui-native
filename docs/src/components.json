@@ -2390,6 +2390,33 @@
           "computed": false
         }
       },
+      "avatar": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Message avatar, will only render in 'left' aligned messages",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "avatarStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the avatar element"
+      },
+      "avatarContainerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the avatar container element"
+      },
       "align": {
         "type": {
           "name": "enum",
