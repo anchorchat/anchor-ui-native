@@ -165,9 +165,14 @@ const StyleGuide = () => (
             <td style={style.tableTextContrast}>17pt SemiBold {colors.white}</td>
           </tr>
           <tr>
+            <td style={style.tableText}>Heading message</td>
+            <td style={style.tableText}><Text type="heading-message">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>12pt Bold {colors.primary}</td>
+          </tr>
+          <tr>
             <td style={style.tableText}>Heading secondary</td>
             <td style={style.tableText}><Text type="heading-secondary">The quick brown fox jumps over the lazy dog</Text></td>
-            <td style={style.tableText}>14pt Bold {colors.darkGray}</td>
+            <td style={style.tableText}>14pt Regular {colors.darkGray}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Navigation</td>
