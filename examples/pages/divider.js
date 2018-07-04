@@ -33,5 +33,17 @@ export default () => (
       <Text type="heading" style={styles.heading}>With text</Text>
       <Divider text="A" />
     </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>With offset left</Text>
+      <Divider offset={64} />
+    </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>With offset right</Text>
+      <Divider offset={64} offsetSide="right" />
+    </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>With offset color hotpink</Text>
+      <Divider offset={64} offsetColor="hotpink" />
+    </View>
   </View>
 );
