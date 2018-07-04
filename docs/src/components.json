@@ -1082,6 +1082,49 @@
           "computed": false
         }
       },
+      "offset": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Offset for the divider on either the right or the left",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "offsetSide": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'left'",
+              "computed": false
+            },
+            {
+              "value": "'right'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The side which the offset gets computed from",
+        "defaultValue": {
+          "value": "'left'",
+          "computed": false
+        }
+      },
+      "offsetColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The color for the offset",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "text": {
         "type": {
           "name": "node"
