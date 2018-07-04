@@ -802,6 +802,17 @@
           "computed": false
         }
       },
+      "dividerProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the Divider component\n\nSee Divider for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "divider": {
         "type": {
           "name": "bool"
@@ -810,18 +821,6 @@
         "description": "Render a Divider underneath the bodyText",
         "defaultValue": {
           "value": "false",
-          "computed": false
-        }
-      },
-      "dividerStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the divider element",
-        "defaultValue": {
-          "value": "{}",
           "computed": false
         }
       }
@@ -1077,6 +1076,18 @@
         },
         "required": false,
         "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "lineStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the line element",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2280,13 +2291,12 @@
           "computed": false
         }
       },
-      "dividerBottomStyle": {
+      "dividerBottomProps": {
         "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
+          "name": "object"
         },
         "required": false,
-        "description": "Override the styles of the bottom Divider component",
+        "description": "Custom props for the bottom Divider component\n\nSee Divider for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -2303,13 +2313,12 @@
           "computed": false
         }
       },
-      "dividerTopStyle": {
+      "dividerTopProps": {
         "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
+          "name": "object"
         },
         "required": false,
-        "description": "Override the styles of the top Divider component",
+        "description": "Custom props for the top Divider component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3629,13 +3638,12 @@
           "computed": false
         }
       },
-      "dividerStyle": {
+      "dividerProps": {
         "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
+          "name": "object"
         },
         "required": false,
-        "description": "Override the styles of the divider element",
+        "description": "Custom props for the Divider component\n\nSee Divider for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3960,13 +3968,12 @@
           "computed": false
         }
       },
-      "dividerStyle": {
+      "dividerProps": {
         "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
+          "name": "object"
         },
         "required": false,
-        "description": "Override the styles of the Divider component",
+        "description": "Custom props for the Divider component\n\nSee Divider for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
