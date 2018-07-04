@@ -7,22 +7,19 @@ import { colors } from '../anchor-ui-native/config';
 const styles = StyleSheet.create({
   wrapper: {
     backgroundColor: colors.white,
-    flex: 1
+    flex: 1,
+    padding: 16
   },
   item: {
     marginBottom: 8,
     alignItems: 'flex-start'
   },
   heading: {
-    marginBottom: 8,
-    paddingLeft: 16,
-    paddingRight: 16
+    marginBottom: 8
   },
   headingLarge: {
     fontSize: 20,
-    marginBottom: 16,
-    paddingLeft: 16,
-    paddingRight: 16
+    marginBottom: 16
   }
 });
 
@@ -51,7 +48,8 @@ export default () => (
         primaryText="Lars Tadema"
         icon={<Avatar text="LT" color="hotpink" />}
         dividerBottom
-        dividerBottomStyle={{ left: 64, borderColor: 'hotpink' }}
+        dividerBottomStyle={{ borderColor: 'hotpink' }}
+        dividerBottomProps={{ offset: 64 }}
         rightButton={<Text type="body-accent">I&apos;m a button</Text>}
       />
     </View>
@@ -62,7 +60,7 @@ export default () => (
         secondaryText="If we connect the monitor, we can get to the HDD monitor through the 1080p SMTP card! If we program the matrix, we can get to the SMTP application through the digital THX system!"
         icon={<Avatar text="SL" color="purple" size={64} textStyle={{ fontSize: 32 }} />}
         dividerBottom
-        dividerBottomStyle={{ left: 80 }}
+        dividerBottomProps={{ offset: 80 }}
         time="12:12"
         secondaryTextProps={{
           numberOfLines: 2
@@ -77,7 +75,7 @@ export default () => (
         primaryText="Henk de Vries"
         icon={<Avatar text="HV" color="lightsteelblue" />}
         dividerBottom
-        dividerBottomStyle={{ left: 100 }}
+        dividerBottomProps={{ offset: 100 }}
         leftButton={<Checkmark color={colors.primary} />}
       />
     </View>
