@@ -2318,7 +2318,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Custom props for the top Divider component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "description": "Custom props for the top Divider component\n\nSee Divider for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -3489,6 +3489,28 @@
         },
         "required": false,
         "description": "Override the styles of the icon container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "divider": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Render a Divider above the MessageInput",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "dividerProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the top Divider component\n\nSee Divider for available props.",
         "defaultValue": {
           "value": "{}",
           "computed": false
