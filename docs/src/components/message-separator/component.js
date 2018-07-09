@@ -4,17 +4,17 @@ import Text from '../../anchor-ui-native/text';
 import style from './style';
 import components from '../../components.json';
 import Props from '../props';
-import DateSparator from './images/date-separator.jpg';
+import dateSeparator from './images/message-separator.jpg';
 
-const componentData = find(components, { displayName: 'DateSeparator' });
+const componentData = find(components, { displayName: 'MessageSeparator' });
 
-const DateSeparatorDoc = () => (
+const MessageSeparatorDoc = () => (
   <section className="page">
-    <h1 className="heading-large">DateSeparator</h1>
+    <h1 className="heading-large">MessageSeparator</h1>
     <span><Text type="body-light">{componentData.description}</Text></span>
     <h2><Text type="heading">Examples</Text></h2>
     <section style={style.container}>
-      <img style={style.image} src={DateSparator} alt="DateSeparator" />
+      <img style={style.image} src={dateSeparator} alt="MessageSeparator" />
     </section>
     <Props props={componentData.props} />
     <span>
@@ -25,4 +25,4 @@ const DateSeparatorDoc = () => (
   </section>
 );
 
-export default DateSeparatorDoc;
+export default MessageSeparatorDoc;

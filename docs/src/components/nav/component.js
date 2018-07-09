@@ -25,7 +25,6 @@ const Nav = ({ history }) => (
     <MenuItem text="ContentItem" onClick={() => pushRoute(history, '/content-item')} />
     <MenuItem text="ContextMenu" onClick={() => pushRoute(history, '/context-menu')} />
     <MenuItem text="Counter" onClick={() => pushRoute(history, '/counter')} />
-    <MenuItem text="DateSeparator" onClick={() => pushRoute(history, '/date-separator')} />
     <MenuItem text="Divider" onClick={() => pushRoute(history, '/divider')} />
     <MenuItem text="Header" onClick={() => pushRoute(history, '/header')} />
     <MenuItem text="Icons" onClick={() => pushRoute(history, '/icons')} />
@@ -34,6 +33,7 @@ const Nav = ({ history }) => (
     <MenuItem text="Message" onClick={() => pushRoute(history, '/message')} />
     <MenuItem text="MessageHighlight" onClick={() => pushRoute(history, '/message-highlight')} />
     <MenuItem text="MessageInput" onClick={() => pushRoute(history, '/message-input')} />
+    <MenuItem text="MessageSeparator" onClick={() => pushRoute(history, '/message-separator')} />
     <MenuItem text="Picker" onClick={() => pushRoute(history, '/picker')} />
     <MenuItem text="Text" onClick={() => pushRoute(history, '/text')} />
     <MenuItem text="TextInput" onClick={() => pushRoute(history, '/text-input')} />
