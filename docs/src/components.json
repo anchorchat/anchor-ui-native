@@ -1010,60 +1010,6 @@
       }
     }
   },
-  "lib/date-separator/component.js": {
-    "description": "Separate Messages by date",
-    "displayName": "DateSeparator",
-    "methods": [],
-    "props": {
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the root element",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "date": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": "Date to be displayed"
-      },
-      "textProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Custom props for the value Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "theme": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "colors": {
-              "name": "object",
-              "required": true
-            },
-            "fonts": {
-              "name": "object",
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      }
-    }
-  },
   "lib/divider/component.js": {
     "description": "Dividers group and separate content within lists and page layouts.",
     "displayName": "Divider",
@@ -2655,10 +2601,15 @@
     "props": {
       "style": {
         "type": {
-          "name": "object"
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
         },
-        "required": true,
-        "description": ""
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "timeTextProps": {
         "type": {
@@ -2792,10 +2743,15 @@
       },
       "style": {
         "type": {
-          "name": "object"
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
         },
-        "required": true,
-        "description": ""
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "bodyTextProps": {
         "type": {
@@ -3128,10 +3084,15 @@
       },
       "style": {
         "type": {
-          "name": "object"
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
         },
-        "required": true,
-        "description": ""
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "bodyTextProps": {
         "type": {
@@ -3551,6 +3512,60 @@
             },
             "left": {
               "name": "number",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message-separator/component.js": {
+    "description": "Separate messages",
+    "displayName": "MessageSeparator",
+    "methods": [],
+    "props": {
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the root element",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "text": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Separator text"
+      },
+      "textProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the value Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
               "required": true
             }
           }
