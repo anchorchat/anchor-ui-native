@@ -8,7 +8,7 @@ import subDays from 'date-fns/sub_days';
 import subMinutes from 'date-fns/sub_minutes';
 import _ from 'lodash';
 import { Ionicons } from '@expo/vector-icons';
-import { MessageInput, withSafeArea, Message, Avatar, Lightbox, Text, DateSeparator } from '../anchor-ui-native';
+import { MessageInput, withSafeArea, Message, Avatar, Lightbox, Text, MessageSeparator } from '../anchor-ui-native';
 import Attachment from '../icons/attachment';
 import Send from '../icons/send';
 import Camera from '../icons/camera';
@@ -137,7 +137,7 @@ const INITIAL_STATE = [
   { date: format(subDays(new Date(), 32), 'MMMM D'), key: uuid.v4() }
 ];
 
-class DateSeparatorExample extends Component {
+class MessageSeparatorExample extends Component {
   state = {
     message: '',
     messages: INITIAL_STATE,
@@ -195,7 +195,7 @@ class DateSeparatorExample extends Component {
 
   renderMessage = ({ item }) => {
     if (item.date) {
-      return <DateSeparator date={item.date} />;
+      return <MessageSeparator text={item.date} />;
     }
 
     return (
@@ -275,6 +275,6 @@ class DateSeparatorExample extends Component {
   }
 }
 
-DateSeparatorExample.propTypes = propTypes;
+MessageSeparatorExample.propTypes = propTypes;
 
-export default withSafeArea(DateSeparatorExample);
+export default withSafeArea(MessageSeparatorExample);

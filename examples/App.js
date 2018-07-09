@@ -10,7 +10,7 @@ import { colors, fonts } from './anchor-ui-native/config';
 import Avatar from './pages/avatar';
 import Button from './pages/button';
 import ContentItem from './pages/content-item';
-import DateSeparator from './pages/date-separator';
+import MessageSeparator from './pages/message-separator';
 import Divider from './pages/divider';
 import Home from './pages/home';
 import Lightbox from './pages/lightbox';
@@ -48,7 +48,6 @@ const Navigator = createStackNavigator({
     ContentItem: { screen: ContentItem },
     ContextMenu: { screen: ContextMenu },
     Counter: { screen: Counter },
-    DateSeparator: { screen: DateSeparator },
     Divider: { screen: Divider },
     Header: { screen: HeaderExample },
     Icons: { screen: Icons },
@@ -57,6 +56,7 @@ const Navigator = createStackNavigator({
     Message: { screen: Message },
     MessageHighlight: { screen: MessageHighlight },
     MessageInput: { screen: MessageInput },
+    MessageSeparator: { screen: MessageSeparator },
     Picker: { screen: Picker },
     Text: { screen: Text },
     TextInput: { screen: TextInput },
