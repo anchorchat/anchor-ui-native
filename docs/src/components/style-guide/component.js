@@ -184,6 +184,11 @@ const StyleGuide = () => (
             <td style={style.tableText}><Text type="navigation-emphasized">The quick brown fox jumps over the lazy dog</Text></td>
             <td style={style.tableText}>17pt Bold {colors.primary}</td>
           </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Message separator</td>
+            <td style={style.tableTextContrast}><Text type="message-separator">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>14pt SemiBold {colors.white}</td>
+          </tr>
           <tr>
             <td style={style.tableText}>Tab</td>
             <td style={style.tableText}><Text type="tab">The quick brown fox jumps over the lazy dog</Text></td>
