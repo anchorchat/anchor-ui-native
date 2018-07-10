@@ -99,20 +99,12 @@ class App extends Component {
   }
 
   loadAssetsAsync = async () => {
-    const fontAssets = cacheFonts([
-      {
-        'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
-        'nunito-italic': require('./assets/fonts/Nunito-Italic.ttf'),
-        'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
-        'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
-      }
-    ]);
     const imageAssets = cacheImages([
       require('./assets/images/avatar.jpg'),
       require('./assets/images/background.jpg')
     ]);
 
-    return Promise.all([...imageAssets, ...fontAssets]);
+    return Promise.all([...imageAssets]);
   }
 
   render() {
