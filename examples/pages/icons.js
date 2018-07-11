@@ -41,11 +41,18 @@ const getStyles = safeArea => (
     },
     label: {
       fontSize: 12
+    },
+    button: {
+      margin: 4
+    },
+    buttons: {
+      flexDirection: 'row',
+      flexWrap: 'wrap'
     }
   })
 );
 
-class HeaderExample extends Component {
+class IconExample extends Component {
   state = {
     size: 28,
     checkColor: 'transparent'
@@ -55,16 +62,17 @@ class HeaderExample extends Component {
     size
   });
 
-  toggleSize = () => {
+  toggleCheckColor = () => {
     const { checkColor } = this.state;
 
     return this.setState({
-      checkColor: checkColor === 'transparent' ? 'hotpink' : 'transparent'
+      checkColor: checkColor === 'transparent' ? '#3D3D46' : 'transparent'
     });
   };
 
   render() {
     const { safeArea } = this.props;
+    const { size, checkColor } = this.state;
     const styles = getStyles(safeArea);
 
     return (
@@ -73,22 +81,22 @@ class HeaderExample extends Component {
         <View style={styles.row}>
           {map(icons, (Icon, name) => (
             <View key={name} style={styles.icon}>
-              <Icon size={this.state.size} checkColor={this.state.checkColor} />
+              <Icon size={size} checkColor={checkColor} />
               <Text type="body-lighter" style={styles.label}>{name}</Text>
             </View>
           ))}
         </View>
-        <View style={styles.row}>
-          <Button labelText="Icons @ 14" onPress={() => this.toggleSize(14)} />
-          <Button labelText="Icons @ 28" onPress={() => this.toggleSize(28)} />
-          <Button labelText="Icons @ 56" onPress={() => this.toggleSize(56)} />
-          <Button labelText="CheckColor @ hotpink" onPress={this.toggleCheckColor} />
+        <View style={styles.buttons}>
+          <Button style={styles.button} labelText="Icons @ 14" onPress={() => this.toggleSize(14)} />
+          <Button style={styles.button} labelText="Icons @ 28" onPress={() => this.toggleSize(28)} />
+          <Button style={styles.button} labelText="Icons @ 56" onPress={() => this.toggleSize(56)} />
+          <Button style={styles.button} labelText={`CheckColor @ ${checkColor}`} onPress={this.toggleCheckColor} />
         </View>
       </View>
     );
   }
 }
 
-HeaderExample.propTypes = propTypes;
+IconExample.propTypes = propTypes;
 
-export default withSafeArea(HeaderExample);
+export default withSafeArea(IconExample);
