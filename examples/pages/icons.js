@@ -47,12 +47,21 @@ const getStyles = safeArea => (
 
 class HeaderExample extends Component {
   state = {
-    size: 28
+    size: 28,
+    checkColor: 'transparent'
   };
 
   toggleSize = size => this.setState({
     size
   });
+
+  toggleSize = () => {
+    const { checkColor } = this.state;
+
+    return this.setState({
+      checkColor: checkColor === 'transparent' ? 'hotpink' : 'transparent'
+    });
+  };
 
   render() {
     const { safeArea } = this.props;
@@ -64,7 +73,7 @@ class HeaderExample extends Component {
         <View style={styles.row}>
           {map(icons, (Icon, name) => (
             <View key={name} style={styles.icon}>
-              <Icon size={this.state.size} />
+              <Icon size={this.state.size} checkColor={this.state.checkColor} />
               <Text type="body-lighter" style={styles.label}>{name}</Text>
             </View>
           ))}
@@ -73,6 +82,7 @@ class HeaderExample extends Component {
           <Button labelText="Icons @ 14" onPress={() => this.toggleSize(14)} />
           <Button labelText="Icons @ 28" onPress={() => this.toggleSize(28)} />
           <Button labelText="Icons @ 56" onPress={() => this.toggleSize(56)} />
+          <Button labelText="CheckColor @ hotpink" onPress={this.toggleCheckColor} />
         </View>
       </View>
     );
