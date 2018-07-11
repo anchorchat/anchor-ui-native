@@ -1443,6 +1443,17 @@
           "computed": false
         }
       },
+      "checkColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Check color",
+        "defaultValue": {
+          "value": "'transparent'",
+          "computed": false
+        }
+      },
       "size": {
         "type": {
           "name": "number"
@@ -1846,6 +1857,17 @@
         "description": "Icon color",
         "defaultValue": {
           "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "checkColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Check color",
+        "defaultValue": {
+          "value": "'transparent'",
           "computed": false
         }
       },
