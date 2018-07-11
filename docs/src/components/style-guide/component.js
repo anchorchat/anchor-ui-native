@@ -104,7 +104,7 @@ const StyleGuide = () => (
       <Divider style={style.divider} />
     </h2>
     <section style={style.maxWidth}>
-      <Text>AnchorUI Native uses the <a href="https://fonts.google.com/specimen/Nunito" target="blank" rel="noopener noreferrer">Nunito</a> font family which can be downloaded for free from <a href="https://fonts.google.com/specimen/Nunito" target="blank" rel="noopener noreferrer">Google Fonts</a>. See the <Link to="/">Getting started</Link> page on how to use custom fonts with React Native. The following styles are used in the UI kit, see the <Link to="/text">Text</Link> component on how to implement them.</Text>
+      <Text>The following styles are used in the UI kit, see the <Link to="/text">Text</Link> component on how to implement them.</Text>
       <table style={style.table}>
         <tbody>
           <tr>
@@ -183,6 +183,11 @@ const StyleGuide = () => (
             <td style={style.tableText}>Navigation emphasized</td>
             <td style={style.tableText}><Text type="navigation-emphasized">The quick brown fox jumps over the lazy dog</Text></td>
             <td style={style.tableText}>17pt Bold {colors.primary}</td>
+          </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Message separator</td>
+            <td style={style.tableTextContrast}><Text type="message-separator">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>14pt SemiBold {colors.white}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Tab</td>
