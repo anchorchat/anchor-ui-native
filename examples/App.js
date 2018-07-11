@@ -1,7 +1,7 @@
 /* eslint global-require: [0] */
 import React, { Component } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
-import { Font, Asset, AppLoading } from 'expo';
+import { Asset, AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
 import _ from 'lodash';
@@ -36,8 +36,6 @@ const cacheImages = images => (
     return Asset.fromModule(image).downloadAsync();
   })
 );
-
-const cacheFonts = f => _.map(f, Font.loadAsync);
 
 const Navigator = createStackNavigator({
   drawerStack: createDrawerNavigator({
