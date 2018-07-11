@@ -24,7 +24,7 @@ const style = {
     marginBottom: '8px'
   },
   title: {
-    fontFamily: 'nunito-semibold'
+    fontWeight: '500'
   }
 };
 

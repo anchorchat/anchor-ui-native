@@ -30,10 +30,10 @@ const theme = {
     divider: 'dividerColor'
   },
   fonts: {
-    bold: fontFamily: { 'fontFamily-bold' }
-    semiBold: fontFamily: { 'fontFamily-semibold' }
-    regular: fontFamily: { 'fontFamily-regular' }
-    italic: fontFamily: { 'fontFamily-italic' }
+    bold: { ... }
+    semiBold: { ... }
+    regular: { ... }
+    italic: { ... }
   }
 };
 \`\`\`
