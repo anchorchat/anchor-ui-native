@@ -1757,6 +1757,35 @@
       }
     }
   },
+  "lib/icons/search.js": {
+    "description": "",
+    "displayName": "IconSearch",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/icons/send.js": {
     "description": "",
     "displayName": "IconSend",
@@ -2639,6 +2668,28 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "enableHyperlinks": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Make urls, fuzzy links, emails etc. clickable using https://github.com/obipawan/react-native-hyperlink",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "hyperlinkProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Props for the Hyperlink component, see https://github.com/obipawan/react-native-hyperlink#props for available props",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -2937,6 +2988,20 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "hyperlinkProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "enableHyperlinks": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3234,6 +3299,20 @@
               "required": true
             }
           }
+        },
+        "required": true,
+        "description": ""
+      },
+      "hyperlinkProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "enableHyperlinks": {
+        "type": {
+          "name": "bool"
         },
         "required": true,
         "description": ""
