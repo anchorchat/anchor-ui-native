@@ -439,28 +439,6 @@
           "computed": false
         }
       },
-      "activeOpacity": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Determines what the opacity of the wrapped view should be when touch is active.",
-        "defaultValue": {
-          "value": "0.5",
-          "computed": false
-        }
-      },
-      "component": {
-        "type": {
-          "name": "any"
-        },
-        "required": false,
-        "description": "Component for enclosing element (eg: TouchableHighlight, View, etc)",
-        "defaultValue": {
-          "value": "TouchableOpacity",
-          "computed": true
-        }
-      },
       "theme": {
         "type": {
           "name": "shape",
@@ -4294,6 +4272,75 @@
         },
         "required": true,
         "description": "Children to apply theme to"
+      }
+    }
+  },
+  "lib/touchable/index.js": {
+    "description": "",
+    "displayName": "Touchable",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Touchable content"
+      },
+      "rippleColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Android ripple color. See https://facebook.github.io/react-native/docs/touchablenativefeedback#ripple",
+        "defaultValue": {
+          "value": "'#B2B2B2'",
+          "computed": false
+        }
+      },
+      "borderlessRipple": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Android borderless ripple. See https://facebook.github.io/react-native/docs/touchablenativefeedback#ripple",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "underlayColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The color of the underlay that will show through when the touch is active.",
+        "defaultValue": {
+          "value": "'#F8F8F8'",
+          "computed": false
+        }
+      },
+      "opacity": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Use TouchableOpacity",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "activeOpacity": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Determines what the opacity of the wrapped view should be when touch is active.",
+        "defaultValue": {
+          "value": "0.5",
+          "computed": false
+        }
       }
     }
   }
