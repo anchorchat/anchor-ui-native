@@ -4265,7 +4265,7 @@
     }
   },
   "lib/touchable/index.js": {
-    "description": "",
+    "description": "A platform specific wrapper for making views respond properly to touches.\nUses TouchableNativeFeedback for Android and TouchableHighlight for iOS.",
     "displayName": "Touchable",
     "methods": [],
     "props": {
