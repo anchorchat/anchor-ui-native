@@ -24,6 +24,7 @@ import Icons from '../icons';
 import Picker from '../picker';
 import Counter from '../counter';
 import MessageSeparator from '../message-separator';
+import Touchable from '../touchable';
 
 const Router = () => (
   <Switch>
@@ -50,6 +51,7 @@ const Router = () => (
     <Route exact path="/picker" component={Picker} />
     <Route exact path="/counter" component={Counter} />
     <Route exact path="/message-separator" component={MessageSeparator} />
+    <Route exact path="/touchable" component={Touchable} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>
