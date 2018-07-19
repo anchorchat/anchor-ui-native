@@ -38,6 +38,7 @@ const Nav = ({ history }) => (
     <MenuItem text="Text" onClick={() => pushRoute(history, '/text')} />
     <MenuItem text="TextInput" onClick={() => pushRoute(history, '/text-input')} />
     <MenuItem text="ThemeProvider" onClick={() => pushRoute(history, '/theme-provider')} />
+    <MenuItem text="Touchable" onClick={() => pushRoute(history, '/touchable')} />
     <MenuItem text="withSafeArea" onClick={() => pushRoute(history, '/with-safe-area')} />
     <MenuItem text="withTheme" onClick={() => pushRoute(history, '/with-theme')} />
   </Menu>
