@@ -4319,17 +4319,6 @@
           "value": "false",
           "computed": false
         }
-      },
-      "activeOpacity": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Determines what the opacity of the wrapped view should be when touch is active.",
-        "defaultValue": {
-          "value": "0.5",
-          "computed": false
-        }
       }
     }
   }
