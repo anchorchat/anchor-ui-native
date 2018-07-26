@@ -1,7 +1,12 @@
 /* eslint global-require: [0] */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, ScrollView, KeyboardAvoidingView, ImageBackground } from 'react-native';
+import {
+  StyleSheet,
+  ScrollView,
+  KeyboardAvoidingView,
+  ImageBackground
+} from 'react-native';
 import { Text, MessageInput, withSafeArea } from '../anchor-ui-native';
 import Attachment from '../icons/attachment';
 import Send from '../icons/send';
