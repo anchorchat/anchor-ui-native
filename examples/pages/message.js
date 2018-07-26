@@ -1,13 +1,27 @@
 /* eslint global-require: [0] */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, KeyboardAvoidingView, ImageBackground, FlatList, TouchableOpacity, View } from 'react-native';
+import {
+  StyleSheet,
+  KeyboardAvoidingView,
+  ImageBackground,
+  FlatList,
+  TouchableOpacity,
+  View
+} from 'react-native';
 import uuid from 'uuid';
 import format from 'date-fns/format';
 import subMinutes from 'date-fns/sub_minutes';
 import _ from 'lodash';
 import { Ionicons } from '@expo/vector-icons';
-import { MessageInput, withSafeArea, Message, Avatar, Lightbox, Text } from '../anchor-ui-native';
+import {
+  MessageInput,
+  withSafeArea,
+  Message,
+  Avatar,
+  Lightbox,
+  Text
+} from '../anchor-ui-native';
 import Attachment from '../icons/attachment';
 import Send from '../icons/send';
 import Camera from '../icons/camera';
@@ -237,12 +251,12 @@ class MessageExample extends Component {
             leftIcon={<Attachment />}
             rightIcon={
               message
-              ? (
-                <TouchableOpacity onPress={this.handleMessageSend}>
-                  <Send color={colors.primary} />
-                </TouchableOpacity>
-              )
-              : <Camera />
+                ? (
+                  <TouchableOpacity onPress={this.handleMessageSend}>
+                    <Send color={colors.primary} />
+                  </TouchableOpacity>
+                )
+                : <Camera />
             }
           />
         </KeyboardAvoidingView>
@@ -260,7 +274,7 @@ class MessageExample extends Component {
             (lightbox.data && lightbox.data.image && lightbox.data.image.thumbnailSource) || {}
           }
           visible={lightbox.visible}
-          footer={
+          footer={(
             <View>
               <Text type="body-contrast" style={styles.description}>{lightbox.data && lightbox.data.body}</Text>
               <View style={styles.footer}>
@@ -272,7 +286,7 @@ class MessageExample extends Component {
                 <Ionicons name="ios-trash-outline" size={32} color={colors.white} style={styles.rightFooterButton} />
               </View>
             </View>
-          }
+          )}
           onRequestClose={this.hideLightbox}
         />
       </ImageBackground>
