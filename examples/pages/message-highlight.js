@@ -13,11 +13,11 @@ import {
   withSafeArea,
   MessageHighlight
 } from '../anchor-ui-native';
-import Attachment from '../icons/attachment';
-import Send from '../icons/send';
-import Camera from '../icons/camera';
+import Attachment from '../anchor-ui-native/icons/attachment';
+import Send from '../anchor-ui-native/icons/send';
+import Camera from '../anchor-ui-native/icons/camera';
 import { colors } from '../anchor-ui-native/config';
-import Close from '../icons/close';
+import Close from '../anchor-ui-native/icons/close';
 
 const propTypes = {
   safeArea: PropTypes.shape({
