@@ -20,6 +20,7 @@
     "comma-dangle": 0,
     "react/display-name": 0,
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
+    "react/jsx-one-expression-per-line": 0,
     "react/sort-comp": ['error', {
       "order": [
         "static-methods",
