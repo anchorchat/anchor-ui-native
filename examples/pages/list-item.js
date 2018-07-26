@@ -1,6 +1,11 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
-import { Avatar, ListItem, Text, Counter } from '../anchor-ui-native';
+import {
+  Avatar,
+  ListItem,
+  Text,
+  Counter
+} from '../anchor-ui-native';
 import Checkmark from '../anchor-ui-native/icons/checkmark';
 import { colors } from '../anchor-ui-native/config';
 
