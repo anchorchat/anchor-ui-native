@@ -87,10 +87,26 @@ class IconExample extends Component {
           ))}
         </View>
         <View style={styles.buttons}>
-          <Button style={styles.button} labelText="Icons @ 14" onPress={() => this.toggleSize(14)} />
-          <Button style={styles.button} labelText="Icons @ 28" onPress={() => this.toggleSize(28)} />
-          <Button style={styles.button} labelText="Icons @ 56" onPress={() => this.toggleSize(56)} />
-          <Button style={styles.button} labelText={`CheckColor @ ${checkColor}`} onPress={this.toggleCheckColor} />
+          <Button
+            style={styles.button}
+            labelText="Icons @ 14"
+            onPress={() => this.toggleSize(14)}
+          />
+          <Button
+            style={styles.button}
+            labelText="Icons @ 28"
+            onPress={() => this.toggleSize(28)}
+          />
+          <Button
+            style={styles.button}
+            labelText="Icons @ 56"
+            onPress={() => this.toggleSize(56)}
+          />
+          <Button
+            style={styles.button}
+            labelText={`CheckColor @ ${checkColor}`}
+            onPress={this.toggleCheckColor}
+          />
         </View>
       </View>
     );

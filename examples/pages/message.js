@@ -103,7 +103,7 @@ const INITIAL_STATE = [
     align: 'right',
     image: {
       source: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg' },
-      thumbnailSource: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg?&w=48' },
+      thumbnailSource: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg?&w=48' }, // eslint-disable-line max-len
       ratio: 2 / 3
     }
   },
@@ -124,7 +124,7 @@ const INITIAL_STATE = [
     key: uuid.v4(),
     type: 'text',
     time: subMinutes(new Date(), '10'),
-    body: 'It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds.',
+    body: 'It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds.', // eslint-disable-line max-len
     align: 'right'
   },
   {
@@ -135,7 +135,7 @@ const INITIAL_STATE = [
     align: 'left',
     image: {
       source: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg' },
-      thumbnailSource: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg?&w=48' },
+      thumbnailSource: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg?&w=48' }, // eslint-disable-line max-len
       ratio: 3 / 2
     },
     avatar: <Avatar size={32} text="CB" textStyle={{ fontSize: 16 }} color="mediumaquamarine" />
@@ -236,8 +236,16 @@ class MessageExample extends Component {
     const styles = getStyles(safeArea);
 
     return (
-      <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={{ flex: 1 }}>
-        <KeyboardAvoidingView style={styles.wrapper} behavior="padding" keyboardVerticalOffset={45 + safeArea.top}>
+      <ImageBackground
+        source={require('../assets/images/background.jpg')}
+        resizeMode="cover"
+        style={{ flex: 1 }}
+      >
+        <KeyboardAvoidingView
+          style={styles.wrapper}
+          behavior="padding"
+          keyboardVerticalOffset={45 + safeArea.top}
+        >
           <FlatList
             data={messages}
             renderItem={this.renderMessage}
@@ -276,14 +284,30 @@ class MessageExample extends Component {
           visible={lightbox.visible}
           footer={(
             <View>
-              <Text type="body-contrast" style={styles.description}>{lightbox.data && lightbox.data.body}</Text>
+              <Text type="body-contrast" style={styles.description}>
+                {lightbox.data && lightbox.data.body}
+              </Text>
               <View style={styles.footer}>
-                <Ionicons name="ios-share-outline" size={32} color={colors.white} style={styles.leftFooterButton} />
+                <Ionicons
+                  name="ios-share-outline"
+                  size={32}
+                  color={colors.white}
+                  style={styles.leftFooterButton}
+                />
                 <View>
-                  <Text type="heading-contrast" style={styles.lightboxHeading}>Christina Buchanan</Text>
-                  <Text type="heading-secondary" style={styles.time}>{lightbox.data && format(lightbox.data.time, 'HH:mm')}</Text>
+                  <Text type="heading-contrast" style={styles.lightboxHeading}>
+                    Christina Buchanan
+                  </Text>
+                  <Text type="heading-secondary" style={styles.time}>
+                    {lightbox.data && format(lightbox.data.time, 'HH:mm')}
+                  </Text>
                 </View>
-                <Ionicons name="ios-trash-outline" size={32} color={colors.white} style={styles.rightFooterButton} />
+                <Ionicons
+                  name="ios-trash-outline"
+                  size={32}
+                  color={colors.white}
+                  style={styles.rightFooterButton}
+                />
               </View>
             </View>
           )}

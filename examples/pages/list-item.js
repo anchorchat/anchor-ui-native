@@ -48,7 +48,9 @@ export default () => (
       />
     </View>
     <View style={styles.item}>
-      <Text type="heading" style={styles.heading}>With rightButton, icon and dividerBottom style</Text>
+      <Text type="heading" style={styles.heading}>
+        With rightButton, icon and dividerBottom style
+      </Text>
       <ListItem
         primaryText="Lars Tadema"
         icon={<Avatar text="LT" color="hotpink" />}
@@ -62,7 +64,7 @@ export default () => (
       <Text type="heading" style={styles.heading}>With time and multiple lines</Text>
       <ListItem
         primaryText="Sjaak Luthart"
-        secondaryText="If we connect the monitor, we can get to the HDD monitor through the 1080p SMTP card! If we program the matrix, we can get to the SMTP application through the digital THX system!"
+        secondaryText="If we connect the monitor, we can get to the HDD monitor through the 1080p SMTP card! If we program the matrix, we can get to the SMTP application through the digital THX system!" // eslint-disable-line max-len
         icon={<Avatar text="SL" color="purple" size={64} textStyle={{ fontSize: 32 }} />}
         dividerBottom
         dividerBottomProps={{ offset: 80 }}

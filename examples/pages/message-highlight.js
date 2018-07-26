@@ -68,14 +68,22 @@ class MessageHighlightExample extends Component {
     const styles = getStyles(safeArea);
 
     return (
-      <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={{ flex: 1 }}>
-        <KeyboardAvoidingView style={styles.wrapper} behavior="padding" keyboardVerticalOffset={45 + safeArea.top}>
+      <ImageBackground
+        source={require('../assets/images/background.jpg')}
+        resizeMode="cover"
+        style={{ flex: 1 }}
+      >
+        <KeyboardAvoidingView
+          style={styles.wrapper}
+          behavior="padding"
+          keyboardVerticalOffset={45 + safeArea.top}
+        >
           <ScrollView contentContainerStyle={styles.content}>
             <Text type="heading" style={styles.headingLarge}>MessageHighlight</Text>
           </ScrollView>
           <MessageHighlight
             headerText="Christina Buchanan"
-            bodyText="Tremblant is based in Canada and has over 90 runs servicing millions of skiers each year."
+            bodyText="Tremblant is based in Canada and has over 90 runs servicing millions of skiers each year." // eslint-disable-line max-len
             closeIcon={<Close width={14} height={14} />}
           />
           <MessageInput
