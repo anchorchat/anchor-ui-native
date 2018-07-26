@@ -21,7 +21,7 @@ const ButtonDoc = () => (
     <Props props={componentData.props} />
     <span>
       <Text type="body-light">
-        Other properties are applied to the root element. See <a href="https://facebook.github.io/react-native/docs/touchableopacity.html#props" target="blank" rel="noopener noreferrer">https://facebook.github.io/react-native/docs/touchableopacity.html#props</a> for all available props.
+        Other properties are applied to the root element. See <a href="https://facebook.github.io/react-native/docs/touchableopacity.html#props" target="blank" rel="noopener noreferrer">https://facebook.github.io/react-native/docs/touchableopacity.html#props</a> for all available props. {/* eslint-disable-line max-len */}
       </Text>
     </span>
   </section>
