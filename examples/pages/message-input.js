@@ -1,11 +1,16 @@
 /* eslint global-require: [0] */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, ScrollView, KeyboardAvoidingView, ImageBackground } from 'react-native';
+import {
+  StyleSheet,
+  ScrollView,
+  KeyboardAvoidingView,
+  ImageBackground
+} from 'react-native';
 import { Text, MessageInput, withSafeArea } from '../anchor-ui-native';
-import Attachment from '../icons/attachment';
-import Send from '../icons/send';
-import Camera from '../icons/camera';
+import Attachment from '../anchor-ui-native/icons/attachment';
+import Send from '../anchor-ui-native/icons/send';
+import Camera from '../anchor-ui-native/icons/camera';
 import { colors } from '../anchor-ui-native/config';
 
 const propTypes = {
@@ -57,8 +62,16 @@ class MessageInputExample extends Component {
     const styles = getStyles(safeArea);
 
     return (
-      <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={{ flex: 1 }}>
-        <KeyboardAvoidingView style={styles.wrapper} behavior="padding" keyboardVerticalOffset={45 + safeArea.top}>
+      <ImageBackground
+        source={require('../assets/images/background.jpg')}
+        resizeMode="cover"
+        style={{ flex: 1 }}
+      >
+        <KeyboardAvoidingView
+          style={styles.wrapper}
+          behavior="padding"
+          keyboardVerticalOffset={45 + safeArea.top}
+        >
           <ScrollView contentContainerStyle={styles.content}>
             <Text type="heading" style={styles.headingLarge}>MessageInput</Text>
           </ScrollView>

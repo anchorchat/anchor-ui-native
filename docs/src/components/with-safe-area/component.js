@@ -28,13 +28,31 @@ const WithSafeAreaDoc = () => (
   <section className="page">
     <section style={style.container}>
       <h1 className="heading-large">withSafeArea</h1>
-      <span><Text type="body-light">A higher order component which applies safe area and device orientation to your component by passing the safeArea and orientation props.</Text></span>
-      <span><Text type="body-light">Listens to the device&apos;s dimensions using the <a href="https://facebook.github.io/react-native/docs/dimensions.html" target="blank" rel="noopener noreferrer">Dimensions API</a> and recomputes safeArea when it changes.</Text></span>
-      <span><Text type="body-light">Safe area is computed based on the <a href="https://facebook.github.io/react-native/docs/platform-specific-code.html#platform-module" target="blank" rel="noopener noreferrer">Platform module</a> and the <a href="https://facebook.github.io/react-native/docs/dimensions.html" target="blank" rel="noopener noreferrer">Dimensions API</a>.</Text></span>
+      <span>
+        <Text type="body-light">
+          A higher order component which applies safe area and device orientation to your component by passing the safeArea and orientation props. {/* eslint-disable-line */}
+        </Text>
+      </span>
+      <span>
+        <Text type="body-light">
+          Listens to the device&apos;s dimensions using the <a href="https://facebook.github.io/react-native/docs/dimensions.html" target="blank" rel="noopener noreferrer">Dimensions API</a> and recomputes safeArea when it changes. {/* eslint-disable-line */}
+        </Text>
+      </span>
+      <span>
+        <Text type="body-light">
+          Safe area is computed based on the <a href="https://facebook.github.io/react-native/docs/platform-specific-code.html#platform-module" target="blank" rel="noopener noreferrer">Platform module</a> and the <a href="https://facebook.github.io/react-native/docs/dimensions.html" target="blank" rel="noopener noreferrer">Dimensions API</a>. {/* eslint-disable-line */}
+        </Text>
+      </span>
       <h2><Text type="heading">Arguments</Text></h2>
-      <span><Text type="body-light" style={style.name}>Component</Text><Text>Component to apply safe area to</Text></span>
+      <span>
+        <Text type="body-light" style={style.name}>Component</Text>
+        <Text>Component to apply safe area to</Text>
+      </span>
       <h2><Text type="heading">Returns</Text></h2>
-      <span><Text type="body-light" style={style.name}>SafeAreaComponent</Text><Text>Component with safeArea</Text></span>
+      <span>
+        <Text type="body-light" style={style.name}>SafeAreaComponent</Text>
+        <Text>Component with safeArea</Text>
+      </span>
       <Markdown title="Usage" markdown={withSafeArea} />
       <span><Text>The safeArea prop is an object containing the following values.</Text></span>
       <Markdown title="safeArea" markdown={safeAreaProp} />

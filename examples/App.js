@@ -77,14 +77,14 @@ const Navigator = createStackNavigator({
       <Header
         primaryText="AnchorUI Native"
         secondaryText="UI kit for Chat Engines"
-        leftButton={
+        leftButton={(
           <TouchableOpacity
             onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
             style={{ marginLeft: 11 }}
           >
             <Ionicons name="md-menu" size={32} color={colors.gray} />
           </TouchableOpacity>
-        }
+        )}
       />
     )
   }),

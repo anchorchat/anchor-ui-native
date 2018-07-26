@@ -44,7 +44,9 @@ export default () => (
       </View>
       <View style={styles.item}>
         <Text>body-contrast</Text>
-        <Text type="body-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
+        <Text type="body-contrast" style={{ backgroundColor: colors.secondary }}>
+          Shake your phone to open the developer menu.
+        </Text>
       </View>
       <View style={styles.item}>
         <Text type="heading" style={styles.heading}>button</Text>
@@ -64,7 +66,9 @@ export default () => (
       </View>
       <View style={styles.item}>
         <Text type="heading" style={styles.heading}>heading-contrast</Text>
-        <Text type="heading-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
+        <Text type="heading-contrast" style={{ backgroundColor: colors.secondary }}>
+          Shake your phone to open the developer menu.
+        </Text>
       </View>
       <View style={styles.item}>
         <Text type="heading" style={styles.heading}>navigation</Text>
@@ -92,7 +96,9 @@ export default () => (
       </View>
       <View style={styles.item}>
         <Text type="heading" style={styles.heading}>time-contrast</Text>
-        <Text type="time-contrast" style={{ backgroundColor: colors.secondary }}>Shake your phone to open the developer menu.</Text>
+        <Text type="time-contrast" style={{ backgroundColor: colors.secondary }}>
+          Shake your phone to open the developer menu.
+        </Text>
       </View>
     </View>
   </ScrollView>

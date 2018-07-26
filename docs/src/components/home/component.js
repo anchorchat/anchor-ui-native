@@ -33,7 +33,11 @@ const Home = () => (
       <h2><Text type="heading">Getting started</Text></h2>
       <Markdown markdown={install} title="Install from npm" />
       <h2><Text type="heading">Theme</Text></h2>
-      <span><Text>Your application needs to be wrapped in <Link to="/style-guide">ThemeProvider</Link> for the components to work.</Text></span>
+      <span>
+        <Text>
+          Your application needs to be wrapped in <Link to="/style-guide">ThemeProvider</Link> for the components to work. {/* eslint-disable-line max-len */}
+        </Text>
+      </span>
       <Markdown markdown={theme} title="Using ThemeProvider" />
     </section>
   </section>

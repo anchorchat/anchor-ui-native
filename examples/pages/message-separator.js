@@ -1,17 +1,32 @@
 /* eslint global-require: [0] */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, KeyboardAvoidingView, ImageBackground, FlatList, TouchableOpacity, View } from 'react-native';
+import {
+  StyleSheet,
+  KeyboardAvoidingView,
+  ImageBackground,
+  FlatList,
+  TouchableOpacity,
+  View
+} from 'react-native';
 import uuid from 'uuid';
 import format from 'date-fns/format';
 import subDays from 'date-fns/sub_days';
 import subMinutes from 'date-fns/sub_minutes';
 import _ from 'lodash';
 import { Ionicons } from '@expo/vector-icons';
-import { MessageInput, withSafeArea, Message, Avatar, Lightbox, Text, MessageSeparator } from '../anchor-ui-native';
-import Attachment from '../icons/attachment';
-import Send from '../icons/send';
-import Camera from '../icons/camera';
+import {
+  MessageInput,
+  withSafeArea,
+  Message,
+  Avatar,
+  Lightbox,
+  Text,
+  MessageSeparator
+} from '../anchor-ui-native';
+import Attachment from '../anchor-ui-native/icons/attachment';
+import Send from '../anchor-ui-native/icons/send';
+import Camera from '../anchor-ui-native/icons/camera';
 import { colors } from '../anchor-ui-native/config';
 
 const propTypes = {
@@ -91,7 +106,7 @@ const INITIAL_STATE = [
     align: 'right',
     image: {
       source: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg' },
-      thumbnailSource: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg?&w=48' },
+      thumbnailSource: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg?&w=48' }, // eslint-disable-line max-len
       ratio: 2 / 3
     }
   },
@@ -111,7 +126,7 @@ const INITIAL_STATE = [
     key: uuid.v4(),
     type: 'text',
     time: subMinutes(new Date(), '10'),
-    body: 'It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds.',
+    body: 'It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds.', // eslint-disable-line max-len
     align: 'right'
   },
   { date: format(subDays(new Date(), 14), 'MMMM D'), key: uuid.v4() },
@@ -123,7 +138,7 @@ const INITIAL_STATE = [
     align: 'left',
     image: {
       source: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg' },
-      thumbnailSource: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg?&w=48' },
+      thumbnailSource: { uri: 'https://images.pexels.com/photos/365341/pexels-photo-365341.jpeg?&w=48' }, // eslint-disable-line max-len
       ratio: 3 / 2
     }
   },
@@ -217,8 +232,16 @@ class MessageSeparatorExample extends Component {
     const styles = getStyles(safeArea);
 
     return (
-      <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={{ flex: 1 }}>
-        <KeyboardAvoidingView style={styles.wrapper} behavior="padding" keyboardVerticalOffset={45 + safeArea.top}>
+      <ImageBackground
+        source={require('../assets/images/background.jpg')}
+        resizeMode="cover"
+        style={{ flex: 1 }}
+      >
+        <KeyboardAvoidingView
+          style={styles.wrapper}
+          behavior="padding"
+          keyboardVerticalOffset={45 + safeArea.top}
+        >
           <FlatList
             data={messages}
             renderItem={this.renderMessage}
@@ -232,12 +255,12 @@ class MessageSeparatorExample extends Component {
             leftIcon={<Attachment />}
             rightIcon={
               message
-              ? (
-                <TouchableOpacity onPress={this.handleMessageSend}>
-                  <Send color={colors.primary} />
-                </TouchableOpacity>
-              )
-              : <Camera />
+                ? (
+                  <TouchableOpacity onPress={this.handleMessageSend}>
+                    <Send color={colors.primary} />
+                  </TouchableOpacity>
+                )
+                : <Camera />
             }
           />
         </KeyboardAvoidingView>
@@ -255,19 +278,35 @@ class MessageSeparatorExample extends Component {
             (lightbox.data && lightbox.data.image && lightbox.data.image.thumbnailSource) || {}
           }
           visible={lightbox.visible}
-          footer={
+          footer={(
             <View>
-              <Text type="body-contrast" style={styles.description}>{lightbox.data && lightbox.data.body}</Text>
+              <Text type="body-contrast" style={styles.description}>
+                {lightbox.data && lightbox.data.body}
+              </Text>
               <View style={styles.footer}>
-                <Ionicons name="ios-share-outline" size={32} color={colors.white} style={styles.leftFooterButton} />
+                <Ionicons
+                  name="ios-share-outline"
+                  size={32}
+                  color={colors.white}
+                  style={styles.leftFooterButton}
+                />
                 <View>
-                  <Text type="heading-contrast" style={styles.lightboxHeading}>Christina Buchanan</Text>
-                  <Text type="heading-secondary" style={styles.time}>{lightbox.data && format(lightbox.data.time, 'HH:mm')}</Text>
+                  <Text type="heading-contrast" style={styles.lightboxHeading}>
+                    Christina Buchanan
+                  </Text>
+                  <Text type="heading-secondary" style={styles.time}>
+                    {lightbox.data && format(lightbox.data.time, 'HH:mm')}
+                  </Text>
                 </View>
-                <Ionicons name="ios-trash-outline" size={32} color={colors.white} style={styles.rightFooterButton} />
+                <Ionicons
+                  name="ios-trash-outline"
+                  size={32}
+                  color={colors.white}
+                  style={styles.rightFooterButton}
+                />
               </View>
             </View>
-          }
+          )}
           onRequestClose={this.hideLightbox}
         />
       </ImageBackground>
