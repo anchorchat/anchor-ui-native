@@ -47,6 +47,7 @@ class LightboxExample extends Component {
   }
 
   render() {
+    const { visible } = this.state;
     return (
       <View>
         <Button labelText="Open Lightbox" onPress={this.showLightbox} />
@@ -57,9 +58,9 @@ class LightboxExample extends Component {
           }}
           source={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?w=1500' }}
           thumbnailSource={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?&w=48' }}
-          visible={this.state.visible}
+          visible={visible}
           onRequestClose={this.hideLightbox}
-          footer={
+          footer={(
             <View>
               <Text type="body-contrast" style={styles.description}>House up in the mountains.</Text>
               <View style={styles.footer}>
@@ -71,7 +72,7 @@ class LightboxExample extends Component {
                 <Ionicons name="ios-trash-outline" size={32} color={colors.white} />
               </View>
             </View>
-          }
+          )}
         />
       </View>
     );
