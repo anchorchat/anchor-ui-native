@@ -51,6 +51,12 @@ const StyleGuide = () => (
         <p style={style.text}>rgb(248, 248, 248)</p>
       </section>
       <section style={style.column}>
+        <div style={{ ...style.color, background: colors.divider }} />
+        <p style={style.heading}>Divider</p>
+        <p style={style.text}>#C8C7CC</p>
+        <p style={style.text}>rgb(200, 199, 204)</p>
+      </section>
+      <section style={style.column}>
         <div style={{ ...style.color, background: colors.lightGray }} />
         <p style={style.heading}>Light gray</p>
         <p style={style.text}>#B2B2B2</p>
@@ -98,7 +104,9 @@ const StyleGuide = () => (
       <Divider style={style.divider} />
     </h2>
     <section style={style.maxWidth}>
-      <Text>AnchorUI Native uses the <a href="https://fonts.google.com/specimen/Nunito" target="blank" rel="noopener noreferrer">Nunito</a> font family which can be downloaded for free from <a href="https://fonts.google.com/specimen/Nunito" target="blank" rel="noopener noreferrer">Google Fonts</a>. See the <Link to="/">Getting started</Link> page on how to use custom fonts with React Native. The following styles are used in the UI kit, see the <Link to="/text">Text</Link> component on how to implement them.</Text>
+      <Text>
+        The following styles are used in the UI kit, see the <Link to="/text">Text</Link> component on how to implement them. {/* eslint-disable-line max-len */}
+      </Text>
       <table style={style.table}>
         <tbody>
           <tr>
@@ -110,87 +118,142 @@ const StyleGuide = () => (
           </tr>
           <tr>
             <td style={style.tableText}>Body light</td>
-            <td style={style.tableText}><Text type="body-light">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="body-light">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>15pt Regular {colors.darkGray}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Body lighter</td>
-            <td style={style.tableText}><Text type="body-lighter">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="body-lighter">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>15pt Regular {colors.lightGray}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Body accent</td>
-            <td style={style.tableText}><Text type="body-accent">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="body-accent">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>15pt Regular {colors.primary}</td>
           </tr>
           <tr style={style.contrastRow}>
             <td style={style.tableTextContrast}>Body contrast</td>
-            <td style={style.tableTextContrast}><Text type="body-contrast">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>
+              <Text type="body-contrast">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableTextContrast}>15pt Regular {colors.white}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Button</td>
-            <td style={style.tableText}><Text type="button">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="button">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>15pt SemiBold {colors.primary}</td>
+          </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Counter</td>
+            <td style={style.tableTextContrast}>
+              <Text type="counter">The quick brown fox jumps over the lazy dog</Text>
+            </td>
+            <td style={style.tableTextContrast}>10pt SemiBold {colors.white}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Divider</td>
-            <td style={style.tableText}><Text type="divider">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="divider">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>14pt Bold {colors.darkGray}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Heading</td>
-            <td style={style.tableText}><Text type="heading">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="heading">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>17pt SemiBold {colors.black}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Heading light</td>
-            <td style={style.tableText}><Text type="heading-light">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="heading-light">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>17pt SemiBold {colors.lightGray}</td>
           </tr>
           <tr style={style.contrastRow}>
             <td style={style.tableTextContrast}>Heading contrast</td>
-            <td style={style.tableTextContrast}><Text type="heading-contrast">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>
+              <Text type="heading-contrast">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableTextContrast}>17pt SemiBold {colors.white}</td>
           </tr>
           <tr>
+            <td style={style.tableText}>Heading message</td>
+            <td style={style.tableText}>
+              <Text type="heading-message">The quick brown fox jumps over the lazy dog</Text>
+            </td>
+            <td style={style.tableText}>12pt Bold {colors.primary}</td>
+          </tr>
+          <tr>
             <td style={style.tableText}>Heading secondary</td>
-            <td style={style.tableText}><Text type="heading-secondary">The quick brown fox jumps over the lazy dog</Text></td>
-            <td style={style.tableText}>14pt Bold {colors.darkGray}</td>
+            <td style={style.tableText}>
+              <Text type="heading-secondary">The quick brown fox jumps over the lazy dog</Text>
+            </td>
+            <td style={style.tableText}>14pt Regular {colors.darkGray}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Navigation</td>
-            <td style={style.tableText}><Text type="navigation">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="navigation">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>17pt Regular {colors.primary}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Navigation emphasized</td>
-            <td style={style.tableText}><Text type="navigation-emphasized">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="navigation-emphasized">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>17pt Bold {colors.primary}</td>
+          </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Message separator</td>
+            <td style={style.tableTextContrast}>
+              <Text type="message-separator">The quick brown fox jumps over the lazy dog</Text>
+            </td>
+            <td style={style.tableTextContrast}>14pt SemiBold {colors.white}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Tab</td>
-            <td style={style.tableText}><Text type="tab">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="tab">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>10pt SemiBold {colors.gray}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Tab active</td>
-            <td style={style.tableText}><Text type="tab-active">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="tab-active">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>10pt SemiBold {colors.gray}</td>
           </tr>
           <tr>
             <td style={style.tableText}>Time</td>
-            <td style={style.tableText}><Text type="time">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableText}>
+              <Text type="time">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableText}>10pt Italic {colors.lightGray}</td>
           </tr>
           <tr style={style.contrastRow}>
             <td style={style.tableTextContrast}>Time contrast</td>
-            <td style={style.tableTextContrast}><Text type="time-contrast">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>
+              <Text type="time-contrast">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableTextContrast}>10pt Italic {colors.white}</td>
           </tr>
           <tr style={style.contrastRow}>
             <td style={style.tableTextContrast}>Avatar</td>
-            <td style={style.tableTextContrast}><Text type="avatar">The quick brown fox jumps over the lazy dog</Text></td>
+            <td style={style.tableTextContrast}>
+              <Text type="avatar">The quick brown fox jumps over the lazy dog</Text>
+            </td>
             <td style={style.tableTextContrast}>24pt Bold {colors.white}</td>
           </tr>
         </tbody>

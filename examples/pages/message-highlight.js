@@ -1,13 +1,23 @@
 /* eslint global-require: [0] */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, ScrollView, KeyboardAvoidingView, ImageBackground } from 'react-native';
-import { Text, MessageInput, withSafeArea, MessageHighlight } from '../anchor-ui-native';
-import Attachment from '../icons/attachment';
-import Send from '../icons/send';
-import Camera from '../icons/camera';
+import {
+  StyleSheet,
+  ScrollView,
+  KeyboardAvoidingView,
+  ImageBackground
+} from 'react-native';
+import {
+  Text,
+  MessageInput,
+  withSafeArea,
+  MessageHighlight
+} from '../anchor-ui-native';
+import Attachment from '../anchor-ui-native/icons/attachment';
+import Send from '../anchor-ui-native/icons/send';
+import Camera from '../anchor-ui-native/icons/camera';
 import { colors } from '../anchor-ui-native/config';
-import Close from '../icons/close';
+import Close from '../anchor-ui-native/icons/close';
 
 const propTypes = {
   safeArea: PropTypes.shape({
@@ -58,14 +68,22 @@ class MessageHighlightExample extends Component {
     const styles = getStyles(safeArea);
 
     return (
-      <ImageBackground source={require('../assets/images/background.jpg')} resizeMode="cover" style={{ flex: 1 }}>
-        <KeyboardAvoidingView style={styles.wrapper} behavior="padding" keyboardVerticalOffset={45 + safeArea.top}>
+      <ImageBackground
+        source={require('../assets/images/background.jpg')}
+        resizeMode="cover"
+        style={{ flex: 1 }}
+      >
+        <KeyboardAvoidingView
+          style={styles.wrapper}
+          behavior="padding"
+          keyboardVerticalOffset={45 + safeArea.top}
+        >
           <ScrollView contentContainerStyle={styles.content}>
             <Text type="heading" style={styles.headingLarge}>MessageHighlight</Text>
           </ScrollView>
           <MessageHighlight
             headerText="Christina Buchanan"
-            bodyText="Tremblant is based in Canada and has over 90 runs servicing millions of skiers each year."
+            bodyText="Tremblant is based in Canada and has over 90 runs servicing millions of skiers each year." // eslint-disable-line max-len
             closeIcon={<Close width={14} height={14} />}
           />
           <MessageInput

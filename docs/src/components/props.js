@@ -38,7 +38,7 @@ const createMarkup = (text) => {
 
   let parsedText = replace(escapedText, /\n/g, '<br />');
 
-  const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;';
+  const style = 'color: inherit; font-size: inherit; font-weight: inherit; text-decoration: underline;'; // eslint-disable-line max-len
 
   parsedText = replace(parsedText, urlRegex, (url) => {
     if (!urlSchemeRegex.test(url)) {
@@ -81,18 +81,30 @@ const Props = ({ props }) => {
       <Table style={style.table}>
         <TableHeader>
           <TableRow style={style.row}>
-            <TableHeaderColumn style={style.column}><Text type="body-contrast">Name</Text></TableHeaderColumn>
-            <TableHeaderColumn style={style.column}><Text type="body-contrast">Type</Text></TableHeaderColumn>
-            <TableHeaderColumn style={style.column}><Text type="body-contrast">Description</Text></TableHeaderColumn>
-            <TableHeaderColumn style={style.column}><Text type="body-contrast">Default value</Text></TableHeaderColumn>
-            <TableHeaderColumn style={style.column}><Text type="body-contrast">Required</Text></TableHeaderColumn>
+            <TableHeaderColumn style={style.column}>
+              <Text type="body-contrast">Name</Text>
+            </TableHeaderColumn>
+            <TableHeaderColumn style={style.column}>
+              <Text type="body-contrast">Type</Text>
+            </TableHeaderColumn>
+            <TableHeaderColumn style={style.column}>
+              <Text type="body-contrast">Description</Text>
+            </TableHeaderColumn>
+            <TableHeaderColumn style={style.column}>
+              <Text type="body-contrast">Default value</Text>
+            </TableHeaderColumn>
+            <TableHeaderColumn style={style.column}>
+              <Text type="body-contrast">Required</Text>
+            </TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody>
           {map(propsWithoutHocProps, (prop, name) => (
             <TableRow key={name} style={style.row}>
               <TableColumn style={style.column}><Text type="body-light">{name}</Text></TableColumn>
-              <TableColumn style={style.column}><Text type="body-accent">{getPropType(prop.type)}</Text></TableColumn>
+              <TableColumn style={style.column}>
+                <Text type="body-accent">{getPropType(prop.type)}</Text>
+              </TableColumn>
               <TableColumn style={style.column}>
                 <Text>
                   <span
@@ -100,8 +112,12 @@ const Props = ({ props }) => {
                   />
                 </Text>
               </TableColumn>
-              <TableColumn style={style.column}><Text type="body-accent">{get(prop, 'defaultValue.value') || ''}</Text></TableColumn>
-              <TableColumn style={style.column}><Text>{prop.required ? 'Yes' : 'No'}</Text></TableColumn>
+              <TableColumn style={style.column}>
+                <Text type="body-accent">{get(prop, 'defaultValue.value') || ''}</Text>
+              </TableColumn>
+              <TableColumn style={style.column}>
+                <Text>{prop.required ? 'Yes' : 'No'}</Text>
+              </TableColumn>
             </TableRow>
           ))}
         </TableBody>

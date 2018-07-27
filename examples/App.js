@@ -1,7 +1,7 @@
 /* eslint global-require: [0] */
 import React, { Component } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
-import { Font, Asset, AppLoading } from 'expo';
+import { Asset, AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
 import _ from 'lodash';
@@ -10,6 +10,7 @@ import { colors, fonts } from './anchor-ui-native/config';
 import Avatar from './pages/avatar';
 import Button from './pages/button';
 import ContentItem from './pages/content-item';
+import MessageSeparator from './pages/message-separator';
 import Divider from './pages/divider';
 import FullScreenImage from './pages/full-screen-image';
 import Home from './pages/home';
@@ -25,6 +26,7 @@ import ContextMenu from './pages/context-menu';
 import ContactList from './pages/contact-list';
 import Picker from './pages/picker';
 import Icons from './pages/icons';
+import Counter from './pages/counter';
 
 const cacheImages = images => (
   _.map(images, (image) => {
@@ -36,8 +38,6 @@ const cacheImages = images => (
   })
 );
 
-const cacheFonts = f => _.map(f, Font.loadAsync);
-
 const Navigator = createStackNavigator({
   drawerStack: createDrawerNavigator({
     Home: { screen: Home },
@@ -46,6 +46,7 @@ const Navigator = createStackNavigator({
     ContactList: { screen: ContactList },
     ContentItem: { screen: ContentItem },
     ContextMenu: { screen: ContextMenu },
+    Counter: { screen: Counter },
     Divider: { screen: Divider },
     FullScreenImage: { screen: FullScreenImage },
     Header: { screen: HeaderExample },
@@ -55,6 +56,7 @@ const Navigator = createStackNavigator({
     Message: { screen: Message },
     MessageHighlight: { screen: MessageHighlight },
     MessageInput: { screen: MessageInput },
+    MessageSeparator: { screen: MessageSeparator },
     Picker: { screen: Picker },
     Text: { screen: Text },
     TextInput: { screen: TextInput },
@@ -77,14 +79,14 @@ const Navigator = createStackNavigator({
       <Header
         primaryText="AnchorUI Native"
         secondaryText="UI kit for Chat Engines"
-        leftButton={
+        leftButton={(
           <TouchableOpacity
             onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
             style={{ marginLeft: 11 }}
           >
             <Ionicons name="md-menu" size={32} color={colors.gray} />
           </TouchableOpacity>
-        }
+        )}
       />
     )
   }),
@@ -97,20 +99,12 @@ class App extends Component {
   }
 
   loadAssetsAsync = async () => {
-    const fontAssets = cacheFonts([
-      {
-        'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
-        'nunito-italic': require('./assets/fonts/Nunito-Italic.ttf'),
-        'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
-        'nunito-semibold': require('./assets/fonts/Nunito-SemiBold.ttf'),
-      }
-    ]);
     const imageAssets = cacheImages([
       require('./assets/images/avatar.jpg'),
       require('./assets/images/background.jpg')
     ]);
 
-    return Promise.all([...imageAssets, ...fontAssets]);
+    return Promise.all([...imageAssets]);
   }
 
   render() {

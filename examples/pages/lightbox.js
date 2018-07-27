@@ -47,21 +47,32 @@ class LightboxExample extends Component {
   }
 
   render() {
+    const { visible } = this.state;
     return (
       <View>
         <Button labelText="Open Lightbox" onPress={this.showLightbox} />
         <Lightbox
           headerProps={{
             primaryText: '1 Of 1',
-            leftButton: <TouchableOpacity onPress={this.hideLightbox}><Text type="navigation-emphasized" style={styles.leftHeaderButton}>Done</Text></TouchableOpacity>
+            leftButton: (
+              <TouchableOpacity onPress={this.hideLightbox}>
+                <Text type="navigation-emphasized" style={styles.leftHeaderButton}>Done</Text>
+              </TouchableOpacity>
+            )
           }}
-          source={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?w=1500' }}
-          thumbnailSource={{ uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?&w=48' }}
-          visible={this.state.visible}
+          source={{
+            uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?w=1500'
+          }}
+          thumbnailSource={{
+            uri: 'https://images.pexels.com/photos/127902/pexels-photo-127902.jpeg?&w=48'
+          }}
+          visible={visible}
           onRequestClose={this.hideLightbox}
-          footer={
+          footer={(
             <View>
-              <Text type="body-contrast" style={styles.description}>House up in the mountains.</Text>
+              <Text type="body-contrast" style={styles.description}>
+                House up in the mountains.
+              </Text>
               <View style={styles.footer}>
                 <Ionicons name="ios-share-outline" size={32} color={colors.white} />
                 <View>
@@ -71,7 +82,7 @@ class LightboxExample extends Component {
                 <Ionicons name="ios-trash-outline" size={32} color={colors.white} />
               </View>
             </View>
-          }
+          )}
         />
       </View>
     );

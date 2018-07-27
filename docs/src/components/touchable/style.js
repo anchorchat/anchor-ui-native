@@ -1,10 +1,10 @@
 export default {
   container: {
+    maxWidth: '414px',
     display: 'flex',
-    flexWrap: 'wrap',
-    alignItems: 'flex-start'
+    flexDirection: 'column'
   },
   image: {
-    width: '236px'
+    width: '100%'
   }
 };
