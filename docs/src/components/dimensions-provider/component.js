@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import find from 'lodash/find';
 import Text from '../../anchor-ui-native/text';
 import components from '../../components.json';
+import Props from '../props';
 
 const componentData = find(components, { displayName: 'DimensionsProvider' });
 
@@ -21,6 +22,7 @@ const DimensionsProviderDoc = () => (
         Or use the DimensionsConsumer from 'anchor-ui-native/dimensions' to add dimensions to your components.
       </Text>
     </span>
+    <Props props={componentData.props} />
   </section>
 );
 
