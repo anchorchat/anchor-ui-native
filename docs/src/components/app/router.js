@@ -25,6 +25,8 @@ import Picker from '../picker';
 import Counter from '../counter';
 import MessageSeparator from '../message-separator';
 import Touchable from '../touchable';
+import UIProvider from '../ui-provider';
+import DimensionsProvider from '../dimensions-provider';
 
 const Router = () => (
   <Switch>
@@ -52,6 +54,8 @@ const Router = () => (
     <Route exact path="/counter" component={Counter} />
     <Route exact path="/message-separator" component={MessageSeparator} />
     <Route exact path="/touchable" component={Touchable} />
+    <Route exact path="/dimensions-provider" component={DimensionsProvider} />
+    <Route exact path="/ui-provider" component={UIProvider} />
     <Route exact path="/" component={Home} />
     <Redirect to={{ state: { notFound: true } }} />
   </Switch>

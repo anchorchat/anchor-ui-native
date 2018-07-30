@@ -11,15 +11,15 @@ npm i -S anchor-ui-native
 \`\`\`
 `;
 
-const theme = `
+const ui = `
 \`\`\`jsx
-import ThemeProvider from 'anchor-ui-native/theme-provider';
+import UIProvider from 'anchor-ui-native/ui-provider';
 import MyComponent from './my-component';
 
 const App = () => (
-  <ThemeProvider>
+  <UIProvider>
     <MyComponent />
-  </ThemeProvider>
+  </UIProvider>
 );
 
 export default App;
@@ -35,10 +35,10 @@ const Home = () => (
       <h2><Text type="heading">Theme</Text></h2>
       <span>
         <Text>
-          Your application needs to be wrapped in <Link to="/style-guide">ThemeProvider</Link> for the components to work. {/* eslint-disable-line max-len */}
+          Your application needs to be wrapped in <Link to="/ui-provider">UIProvider</Link> for the components to work. {/* eslint-disable-line max-len */}
         </Text>
       </span>
-      <Markdown markdown={theme} title="Using ThemeProvider" />
+      <Markdown markdown={ui} title="Using UIProvider" />
     </section>
   </section>
 );
