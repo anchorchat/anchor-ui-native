@@ -43,7 +43,7 @@ export default () => (
         <Text type="body-accent">Shake your phone to open the developer menu.</Text>
       </View>
       <View style={styles.item}>
-        <Text>body-contrast</Text>
+        <Text type="heading" style={styles.heading}>body-contrast</Text>
         <Text type="body-contrast" style={{ backgroundColor: colors.secondary }}>
           Shake your phone to open the developer menu.
         </Text>
