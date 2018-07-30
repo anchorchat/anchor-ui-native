@@ -2,12 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import find from 'lodash/find';
-import map from 'lodash/map';
 import Text from '../../anchor-ui-native/text';
-import style from './style';
 import components from '../../components.json';
-import Props from '../props';
-import { colors } from '../../anchor-ui-native/config';
 
 const componentData = find(components, { displayName: 'DimensionsProvider' });
 
