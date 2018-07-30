@@ -464,6 +464,13 @@
         "returns": null
       },
       {
+        "name": "getItemLayout",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
         "name": "keyExtractor",
         "docblock": null,
         "modifiers": [],
@@ -985,6 +992,66 @@
         },
         "required": true,
         "description": ""
+      }
+    }
+  },
+  "lib/dimensions/consumer.js": {
+    "description": "",
+    "methods": []
+  },
+  "lib/dimensions/provider.js": {
+    "description": "Provide dimensions to all children using context",
+    "displayName": "DimensionsProvider",
+    "methods": [
+      {
+        "name": "getDerivedStateFromProps",
+        "docblock": null,
+        "modifiers": [
+          "static"
+        ],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          },
+          {
+            "name": "state",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleDimensionsChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "dimensions",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "children": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "node"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "node"
+              }
+            }
+          ]
+        },
+        "required": true,
+        "description": "Children to apply dimensions to"
       }
     }
   },
@@ -1521,6 +1588,35 @@
       }
     }
   },
+  "lib/icons/compass.js": {
+    "description": "",
+    "displayName": "IconCompass",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/icons/compose.js": {
     "description": "",
     "displayName": "IconCompose",
@@ -1582,6 +1678,35 @@
   "lib/icons/delete.js": {
     "description": "",
     "displayName": "IconDelete",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/globe.js": {
+    "description": "",
+    "displayName": "IconGlobe",
     "methods": [],
     "props": {
       "color": {
@@ -1698,6 +1823,35 @@
   "lib/icons/people.js": {
     "description": "",
     "displayName": "IconPeople",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/refresh.js": {
+    "description": "",
+    "displayName": "IconRefresh",
     "methods": [],
     "props": {
       "color": {
@@ -4319,6 +4473,118 @@
           "value": "false",
           "computed": false
         }
+      }
+    }
+  },
+  "lib/ui-provider/index.js": {
+    "description": "Provide theme and dimensions to all children using context",
+    "displayName": "UIProvider",
+    "methods": [],
+    "props": {
+      "colors": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "primary": {
+              "name": "string",
+              "required": false
+            },
+            "secondary": {
+              "name": "string",
+              "required": false
+            },
+            "black": {
+              "name": "string",
+              "required": false
+            },
+            "white": {
+              "name": "string",
+              "required": false
+            },
+            "darkGray": {
+              "name": "string",
+              "required": false
+            },
+            "gray": {
+              "name": "string",
+              "required": false
+            },
+            "lightGray": {
+              "name": "string",
+              "required": false
+            },
+            "lighterGray": {
+              "name": "string",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Your theme's colors",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "fonts": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "regular": {
+              "name": "shape",
+              "value": {
+                "fontFamily": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              "required": false
+            },
+            "semiBold": {
+              "name": "shape",
+              "value": {
+                "fontFamily": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              "required": false
+            },
+            "bold": {
+              "name": "shape",
+              "value": {
+                "fontFamily": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              "required": false
+            },
+            "italic": {
+              "name": "shape",
+              "value": {
+                "fontFamily": {
+                  "name": "string",
+                  "required": false
+                }
+              },
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Your theme's fonts",
+        "defaultValue": {
+          "value": "undefined",
+          "computed": true
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "Children to apply theme and dimensions to"
       }
     }
   }
