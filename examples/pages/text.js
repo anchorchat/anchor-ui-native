@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   },
   headingLarge: {
     fontSize: 20,
+    lineHeight: 23,
     marginBottom: 16
   }
 });
