@@ -25,6 +25,10 @@ const Nav = ({ history }) => (
     <MenuItem text="ContentItem" onClick={() => pushRoute(history, '/content-item')} />
     <MenuItem text="ContextMenu" onClick={() => pushRoute(history, '/context-menu')} />
     <MenuItem text="Counter" onClick={() => pushRoute(history, '/counter')} />
+    <MenuItem
+      text="DimensionsProvider"
+      onClick={() => pushRoute(history, '/dimensions-provider')}
+    />
     <MenuItem text="Divider" onClick={() => pushRoute(history, '/divider')} />
     <MenuItem text="Header" onClick={() => pushRoute(history, '/header')} />
     <MenuItem text="Icons" onClick={() => pushRoute(history, '/icons')} />
@@ -41,6 +45,7 @@ const Nav = ({ history }) => (
     <MenuItem text="Touchable" onClick={() => pushRoute(history, '/touchable')} />
     <MenuItem text="withSafeArea" onClick={() => pushRoute(history, '/with-safe-area')} />
     <MenuItem text="withTheme" onClick={() => pushRoute(history, '/with-theme')} />
+    <MenuItem text="UIProvider" onClick={() => pushRoute(history, '/ui-provider')} />
   </Menu>
 );
 

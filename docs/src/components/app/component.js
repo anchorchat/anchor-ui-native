@@ -16,7 +16,7 @@ const App = () => (
         <AppHeader
           text="AnchorUI Native"
           icon={<img src={logo} alt="Anchor.Chat" style={{ height: '100%' }} />}
-          rightButton={
+          rightButton={(
             <a
               href="https://github.com/anchorchat/anchor-ui-native"
               target="_blank"
@@ -26,7 +26,7 @@ const App = () => (
                 <img style={{ width: 24, height: 24 }} src={github} alt="Github" />
               </Button>
             </a>
-          }
+          )}
         />
         <article>
           <Nav />

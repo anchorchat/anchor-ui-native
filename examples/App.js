@@ -5,7 +5,7 @@ import { Asset, AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
 import _ from 'lodash';
-import { ThemeProvider, Header } from './anchor-ui-native';
+import { UIProvider, Header } from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
 import Avatar from './pages/avatar';
 import Button from './pages/button';
@@ -77,14 +77,14 @@ const Navigator = createStackNavigator({
       <Header
         primaryText="AnchorUI Native"
         secondaryText="UI kit for Chat Engines"
-        leftButton={
+        leftButton={(
           <TouchableOpacity
             onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
             style={{ marginLeft: 11 }}
           >
             <Ionicons name="md-menu" size={32} color={colors.gray} />
           </TouchableOpacity>
-        }
+        )}
       />
     )
   }),
@@ -119,9 +119,9 @@ class App extends Component {
     }
 
     return (
-      <ThemeProvider>
+      <UIProvider>
         <Navigator />
-      </ThemeProvider>
+      </UIProvider>
     );
   }
 }
