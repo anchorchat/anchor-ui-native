@@ -4581,18 +4581,7 @@
       },
       "children": {
         "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "node"
-            },
-            {
-              "name": "arrayOf",
-              "value": {
-                "name": "node"
-              }
-            }
-          ]
+          "name": "node"
         },
         "required": true,
         "description": "Children to apply theme and dimensions to"
