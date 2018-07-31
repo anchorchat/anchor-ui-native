@@ -19,7 +19,7 @@ const DimensionsProviderDoc = () => (
     </span>
     <span>
       <Text type="body">
-        Or use the DimensionsConsumer from 'anchor-ui-native/dimensions' to add dimensions to your components.  {/* eslint-disable-line max-len */}
+        Or use the DimensionsConsumer from &apos;anchor-ui-native/dimensions&apos; to add dimensions to your components.  {/* eslint-disable-line max-len */}
       </Text>
     </span>
     <Props props={componentData.props} />
