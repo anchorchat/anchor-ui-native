@@ -25,7 +25,10 @@ const Nav = ({ history }) => (
     <MenuItem text="ContentItem" onClick={() => pushRoute(history, '/content-item')} />
     <MenuItem text="ContextMenu" onClick={() => pushRoute(history, '/context-menu')} />
     <MenuItem text="Counter" onClick={() => pushRoute(history, '/counter')} />
-    <MenuItem text="DimensionsProvider" onClick={() => pushRoute(history, '/dimensions-provider')} />  {/* eslint-disable-line max-len */}
+    <MenuItem
+      text="DimensionsProvider"
+      onClick={() => pushRoute(history, '/dimensions-provider')}
+    />
     <MenuItem text="Divider" onClick={() => pushRoute(history, '/divider')} />
     <MenuItem text="Header" onClick={() => pushRoute(history, '/header')} />
     <MenuItem text="Icons" onClick={() => pushRoute(history, '/icons')} />

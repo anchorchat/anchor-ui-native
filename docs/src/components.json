@@ -4522,8 +4522,8 @@
         "required": false,
         "description": "Your theme's colors",
         "defaultValue": {
-          "value": "null",
-          "computed": false
+          "value": "undefined",
+          "computed": true
         }
       },
       "fonts": {
@@ -4575,27 +4575,16 @@
         "required": false,
         "description": "Your theme's fonts",
         "defaultValue": {
-          "value": "null",
-          "computed": false
+          "value": "undefined",
+          "computed": true
         }
       },
       "children": {
         "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "node"
-            },
-            {
-              "name": "arrayOf",
-              "value": {
-                "name": "node"
-              }
-            }
-          ]
+          "name": "node"
         },
         "required": true,
-        "description": "Children to apply dimensions to"
+        "description": "Children to apply theme and dimensions to"
       }
     }
   }
