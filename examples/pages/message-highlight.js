@@ -84,7 +84,7 @@ class MessageHighlightExample extends Component {
           <MessageHighlight
             headerText="Christina Buchanan"
             bodyText="Tremblant is based in Canada and has over 90 runs servicing millions of skiers each year." // eslint-disable-line max-len
-            closeIcon={<Close width={14} height={14} />}
+            closeIcon={<Close size={14} />}
           />
           <MessageInput
             placeholder="Message..."

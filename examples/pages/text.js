@@ -1,7 +1,10 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
+import map from 'lodash/map';
+import includes from 'lodash/includes';
 import { Text } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
+import textTypes from '../anchor-ui-native/text/types';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -9,7 +12,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white
   },
   item: {
-    marginBottom: 8,
+    marginBottom: 16,
     alignItems: 'flex-start'
   },
   heading: {
@@ -17,89 +20,38 @@ const styles = StyleSheet.create({
   },
   headingLarge: {
     fontSize: 20,
+    lineHeight: 23,
     marginBottom: 16
+  },
+  contrast: {
+    backgroundColor: colors.secondary
   }
 });
 
-// TODO: Randomise text
 export default () => (
-  <ScrollView>
+  <ScrollView minimumZoomScale={1} maximumZoomScale={10}>
     <View style={styles.wrapper}>
       <Text type="heading" style={styles.headingLarge}>Text</Text>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>body (default)</Text>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>body-light</Text>
-        <Text type="body-light">Changes you make will automatically reload.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>body-lighter</Text>
-        <Text type="body-lighter">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>body-accent</Text>
-        <Text type="body-accent">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text>body-contrast</Text>
-        <Text type="body-contrast" style={{ backgroundColor: colors.secondary }}>
-          Shake your phone to open the developer menu.
-        </Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>button</Text>
-        <Text type="button">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>divider</Text>
-        <Text type="divider">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>heading</Text>
-        <Text type="heading">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>heading-light</Text>
-        <Text type="heading-light">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>heading-contrast</Text>
-        <Text type="heading-contrast" style={{ backgroundColor: colors.secondary }}>
-          Shake your phone to open the developer menu.
-        </Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>navigation</Text>
-        <Text type="navigation">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>navigation-emphasized</Text>
-        <Text type="navigation-emphasized">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>heading-secondary</Text>
-        <Text type="heading-secondary">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>tab</Text>
-        <Text type="tab">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>tab-active</Text>
-        <Text type="tab-active">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>time</Text>
-        <Text type="time">Shake your phone to open the developer menu.</Text>
-      </View>
-      <View style={styles.item}>
-        <Text type="heading" style={styles.heading}>time-contrast</Text>
-        <Text type="time-contrast" style={{ backgroundColor: colors.secondary }}>
-          Shake your phone to open the developer menu.
-        </Text>
-      </View>
+      {
+        map(textTypes, type => (
+          <View style={styles.item} key={type}>
+            <Text type="heading" style={styles.heading}>{type}</Text>
+            <Text
+              type={type}
+              style={
+                includes(type, 'contrast')
+                || type === 'avatar'
+                || type === 'counter'
+                || type === 'message-separator'
+                  ? styles.contrast
+                  : null
+              }
+            > {/* eslint-disable-line jsx-a11y/accessible-emoji, max-len */}
+              🐣🦊The quick brown fox jumps over the lazy dog.🐕
+            </Text>
+          </View>
+        ))
+      }
     </View>
   </ScrollView>
 );

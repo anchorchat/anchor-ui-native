@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import find from 'lodash/find';
 import Text from '../../anchor-ui-native/text';
 import components from '../../components.json';
+import Props from '../props';
 
 const componentData = find(components, { displayName: 'UIProvider' });
 
@@ -13,12 +14,10 @@ const UIProviderDoc = () => (
     <span><Text type="body-light">{componentData.description}</Text></span>
     <span>
       <Text type="body">
-        Adds the <Link to="/theme-provider">ThemeProvider</Link> to your app.
-      </Text>
-      <Text type="body">
-        Adds the <Link to="/dimensions-provider">DimensionsProvider</Link> to your app.
+        Adds <Link to="/theme-provider">ThemeProvider</Link> and <Link to="/dimensions-provider">DimensionsProvider</Link> to your app. {/* eslint-disable-line max-len */}
       </Text>
     </span>
+    <Props props={componentData.props} />
   </section>
 );
 
