@@ -995,10 +995,6 @@
       }
     }
   },
-  "lib/dimensions/consumer.js": {
-    "description": "",
-    "methods": []
-  },
   "lib/dimensions/provider.js": {
     "description": "Provide dimensions to all children using context",
     "displayName": "DimensionsProvider",
@@ -1477,6 +1473,17 @@
           "computed": false
         }
       },
+      "uncheckedColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Unchecked icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
       "checkColor": {
         "type": {
           "name": "string"
@@ -1496,6 +1503,17 @@
         "description": "Icon size",
         "defaultValue": {
           "value": "28",
+          "computed": false
+        }
+      },
+      "checked": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Checkmark checked",
+        "defaultValue": {
+          "value": "false",
           "computed": false
         }
       }
