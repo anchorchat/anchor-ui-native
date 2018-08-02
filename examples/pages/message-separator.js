@@ -149,7 +149,8 @@ const INITIAL_STATE = [
     body: 'Tremblant is based in Canada and has over 90 runs millions of skiers each year.',
     align: 'left'
   },
-  { date: format(subDays(new Date(), 32), 'MMMM D'), key: uuid.v4() }
+  { date: format(subDays(new Date(), 32), 'MMMM D'), key: uuid.v4() },
+  { date: 'Hank created the group \'(っ◔◡◔)っ 🍁🇨🇦\'', key: uuid.v4() }
 ];
 
 class MessageSeparatorExample extends Component {
