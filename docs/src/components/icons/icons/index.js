@@ -17,6 +17,7 @@ import Refresh from './refresh.svg';
 import Search from './search.svg';
 import Settings from './settings.svg';
 import Share from './share.svg';
+import Storage from './storage.svg';
 import Verified from './verified.svg';
 
 export {
@@ -39,5 +40,6 @@ export {
   Search,
   Settings,
   Share,
+  Storage,
   Verified
 };

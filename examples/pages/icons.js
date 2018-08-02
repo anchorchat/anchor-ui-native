@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import map from 'lodash/map';
 import { Text, withSafeArea } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
@@ -55,7 +55,8 @@ const getStyles = safeArea => (
 class IconExample extends Component {
   state = {
     size: 28,
-    checkColor: 'transparent'
+    checkColor: 'transparent',
+    checked: true
   };
 
   toggleSize = size => this.setState({
@@ -70,45 +71,71 @@ class IconExample extends Component {
     });
   };
 
+  toggleChecked = () => {
+    const { checked } = this.state;
+
+    return this.setState({
+      checked: !checked
+    });
+  };
+
   render() {
     const { safeArea } = this.props;
-    const { size, checkColor } = this.state;
+    const { size, checkColor, checked } = this.state;
     const styles = getStyles(safeArea);
 
     return (
-      <View style={styles.wrapper}>
-        <Text type="heading" style={styles.headingLarge}>Icons</Text>
-        <View style={styles.row}>
-          {map(icons, (Icon, name) => (
-            <View key={name} style={styles.icon}>
-              <Icon size={size} checkColor={checkColor} />
-              <Text type="body-lighter" style={styles.label}>{name}</Text>
-            </View>
-          ))}
+      <ScrollView>
+        <View style={styles.wrapper}>
+          <Text type="heading" style={styles.headingLarge}>Icons</Text>
+          <View style={styles.row}>
+            {map(icons, (Icon, name) => {
+              const iconProps = {
+                size,
+                checkColor
+              };
+
+              if (name === 'Checkmark') {
+                iconProps.checked = checked;
+              }
+
+              return (
+                <View key={name} style={styles.icon}>
+                  <Icon {...iconProps} />
+                  <Text type="body-lighter" style={styles.label}>{name}</Text>
+                </View>
+              );
+            })}
+          </View>
+          <View style={styles.buttons}>
+            <Button
+              style={styles.button}
+              labelText="Icons @ 14"
+              onPress={() => this.toggleSize(14)}
+            />
+            <Button
+              style={styles.button}
+              labelText="Icons @ 28"
+              onPress={() => this.toggleSize(28)}
+            />
+            <Button
+              style={styles.button}
+              labelText="Icons @ 56"
+              onPress={() => this.toggleSize(56)}
+            />
+            <Button
+              style={styles.button}
+              labelText={`CheckColor @ ${checkColor === 'transparent' ? '#3D3D46' : 'transparent'}`}
+              onPress={this.toggleCheckColor}
+            />
+            <Button
+              style={styles.button}
+              labelText={`Checkmark @ ${checked ? 'false' : 'true'}`}
+              onPress={this.toggleChecked}
+            />
+          </View>
         </View>
-        <View style={styles.buttons}>
-          <Button
-            style={styles.button}
-            labelText="Icons @ 14"
-            onPress={() => this.toggleSize(14)}
-          />
-          <Button
-            style={styles.button}
-            labelText="Icons @ 28"
-            onPress={() => this.toggleSize(28)}
-          />
-          <Button
-            style={styles.button}
-            labelText="Icons @ 56"
-            onPress={() => this.toggleSize(56)}
-          />
-          <Button
-            style={styles.button}
-            labelText={`CheckColor @ ${checkColor}`}
-            onPress={this.toggleCheckColor}
-          />
-        </View>
-      </View>
+      </ScrollView>
     );
   }
 }
