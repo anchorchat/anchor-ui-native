@@ -200,6 +200,15 @@ const StyleGuide = () => (
             </td>
             <td style={style.tableText}>14pt Regular {colors.darkGray}</td>
           </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Heading secondary contrast</td>
+            <td style={style.tableTextContrast}>
+              <Text type="heading-secondary-contrast">
+                The quick brown fox jumps over the lazy dog
+              </Text>
+            </td>
+            <td style={style.tableTextContrast}>14pt Regular {colors.white}</td>
+          </tr>
           <tr>
             <td style={style.tableText}>Navigation</td>
             <td style={style.tableText}>
@@ -207,12 +216,26 @@ const StyleGuide = () => (
             </td>
             <td style={style.tableText}>17pt Regular {colors.primary}</td>
           </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Navigation contrast</td>
+            <td style={style.tableTextContrast}>
+              <Text type="navigation-contrast">The quick brown fox jumps over the lazy dog</Text>
+            </td>
+            <td style={style.tableTextContrast}>17pt Regular {colors.white}</td>
+          </tr>
           <tr>
             <td style={style.tableText}>Navigation emphasized</td>
             <td style={style.tableText}>
               <Text type="navigation-emphasized">The quick brown fox jumps over the lazy dog</Text>
             </td>
             <td style={style.tableText}>17pt Bold {colors.primary}</td>
+          </tr>
+          <tr style={style.contrastRow}>
+            <td style={style.tableTextContrast}>Navigation emphasized contrast</td>
+            <td style={style.tableTextContrast}>
+              <Text type="navigation-contrast">The quick brown fox jumps over the lazy dog</Text>
+            </td>
+            <td style={style.tableTextContrast}>17pt Bold {colors.white}</td>
           </tr>
           <tr style={style.contrastRow}>
             <td style={style.tableTextContrast}>Message separator</td>
