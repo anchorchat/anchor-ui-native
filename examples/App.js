@@ -1,6 +1,6 @@
 /* eslint global-require: [0] */
 import React, { Component } from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity, Image, Platform } from 'react-native';
 import { Asset, AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
@@ -82,7 +82,11 @@ const Navigator = createStackNavigator({
             onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
             style={{ marginLeft: 11 }}
           >
-            <Ionicons name="md-menu" size={32} color={colors.gray} />
+            <Ionicons
+              name="md-menu"
+              size={32}
+              color={Platform.OS === 'ios' ? colors.gray : colors.white}
+            />
           </TouchableOpacity>
         )}
       />
