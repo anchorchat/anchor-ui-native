@@ -1,4 +1,5 @@
 import Attachment from './attachment.svg';
+import Brush from './brush.svg';
 import Camera from './camera.svg';
 import Chats from './chats.svg';
 import Checkmark from './checkmark.svg';
@@ -21,6 +22,7 @@ import Verified from './verified.svg';
 
 export {
   Attachment,
+  Brush,
   Camera,
   Chats,
   Checkmark,
