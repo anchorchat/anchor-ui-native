@@ -10,6 +10,7 @@ import Compass from './compass.svg';
 import Compose from './compose.svg';
 import Contacts from './contacts.svg';
 import Delete from './delete.svg';
+import Download from './download.svg';
 import Globe from './globe.svg';
 import Invite from './invite.svg';
 import Notifications from './notifications.svg';
@@ -33,6 +34,7 @@ export {
   Compose,
   Contacts,
   Delete,
+  Download,
   Globe,
   Invite,
   Notifications,
