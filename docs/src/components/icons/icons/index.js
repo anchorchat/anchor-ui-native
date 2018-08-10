@@ -12,6 +12,7 @@ import Contacts from './contacts.svg';
 import Delete from './delete.svg';
 import Download from './download.svg';
 import Globe from './globe.svg';
+import Hand from './hand.svg';
 import Invite from './invite.svg';
 import Notifications from './notifications.svg';
 import People from './people.svg';
@@ -37,6 +38,7 @@ export {
   Delete,
   Download,
   Globe,
+  Hand,
   Invite,
   Notifications,
   People,
