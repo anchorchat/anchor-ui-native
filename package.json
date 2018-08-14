@@ -5,6 +5,24 @@
   "files": [
     "/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anchorchat/anchor-ui-native.git"
+  },
+  "keywords": [
+    "react-native",
+    "ui kit",
+    "Anchor.CHAT"
+  ],
+  "author": "Ian Stewart <ian.stewart@anchor.chat>",
+  "contributors": [
+    "Sjaak Luthart <sjaak.luthart@anchor.chat>",
+    "Lars Tadema <lars.tadema@anchor.chat>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anchorchat/anchor-ui-native/issues"
+  },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
