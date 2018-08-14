@@ -383,6 +383,17 @@
           "computed": false
         }
       },
+      "labelTextStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Override the styles of the icon container",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "icon": {
         "type": {
           "name": "node"
@@ -400,7 +411,7 @@
           "raw": "ViewPropTypes.style"
         },
         "required": false,
-        "description": "Override the styles of the icon container",
+        "description": "Override the styles of the labelText container",
         "defaultValue": {
           "value": "{}",
           "computed": false
