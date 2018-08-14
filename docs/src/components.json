@@ -388,7 +388,7 @@
           "name": "object"
         },
         "required": false,
-        "description": "Override the styles of the icon container",
+        "description": "Override the styles of the labelText container",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -411,7 +411,7 @@
           "raw": "ViewPropTypes.style"
         },
         "required": false,
-        "description": "Override the styles of the labelText container",
+        "description": "Override the styles of the icon container",
         "defaultValue": {
           "value": "{}",
           "computed": false
