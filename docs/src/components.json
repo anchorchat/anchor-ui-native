@@ -2866,6 +2866,17 @@
           "computed": false
         }
       },
+      "onImageLongPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback fired when Message image is long pressed\n\nfunction(event: object) => void",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "imageStyle": {
         "type": {
           "name": "custom",
@@ -3214,6 +3225,17 @@
           "computed": false
         }
       },
+      "onImageLongPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "imageSize": {
         "type": {
           "name": "number"
@@ -3349,6 +3371,17 @@
         }
       },
       "onPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onLongPress": {
         "type": {
           "name": "func"
         },
