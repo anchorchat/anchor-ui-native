@@ -87,6 +87,16 @@ const getStyles = safeArea => (
 const INITIAL_STATE = [
   {
     key: uuid.v4(),
+    type: 'video',
+    time: subMinutes(new Date(), '1'),
+    align: 'right',
+    video: {
+      source: { uri: 'https://player.vimeo.com/external/274443403.hd.mp4?s=71a208a8f13ed5d7a4359a6837c18b2456001814&profile_id=175&oauth2_token_id=57447761' }, // eslint-disable-line max-len
+      ratio: 1920 / 1080
+    }
+  },
+  {
+    key: uuid.v4(),
     type: 'contact',
     time: subMinutes(new Date(), '1'),
     align: 'right',
@@ -222,6 +232,7 @@ class MessageExample extends Component {
       bodyText={item.body}
       align={item.align}
       image={item.image}
+      video={item.video}
       contact={item.contact}
       timeText={format(item.time, 'HH:mm')}
       headerText={item.username}
