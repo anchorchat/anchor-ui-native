@@ -132,6 +132,18 @@ const INITIAL_STATE = [
   },
   {
     key: uuid.v4(),
+    type: 'video',
+    time: subMinutes(new Date(), '1'),
+    body: 'The sunset looked amazing the other day!',
+    align: 'left',
+    video: {
+      source: { uri: 'https://player.vimeo.com/external/191379621.hd.mp4?s=e7018ac4d78f39204192fb7027910de6bb902d3b&profile_id=172&oauth2_token_id=57447761' }, // eslint-disable-line max-len
+      ratio: 1920 / 1080
+    },
+    avatar: <Avatar size={32} text="HB" textStyle={{ fontSize: 16 }} color="mediumvioletred" />
+  },
+  {
+    key: uuid.v4(),
     type: 'text',
     time: subMinutes(new Date(), '10'),
     body: 'It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds.', // eslint-disable-line max-len
