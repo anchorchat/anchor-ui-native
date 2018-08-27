@@ -16,6 +16,7 @@ import Hand from './hand.svg';
 import Invite from './invite.svg';
 import Notifications from './notifications.svg';
 import People from './people.svg';
+import Play from './play.svg';
 import Refresh from './refresh.svg';
 import Search from './search.svg';
 import Settings from './settings.svg';
@@ -42,6 +43,7 @@ export {
   Invite,
   Notifications,
   People,
+  Play,
   Refresh,
   Search,
   Settings,
