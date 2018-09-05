@@ -247,12 +247,12 @@
           "computed": false
         }
       },
-      "content": {
+      "icon": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "Custom content",
+        "description": "Avatar icon",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -385,7 +385,8 @@
       },
       "labelTextStyle": {
         "type": {
-          "name": "object"
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
         },
         "required": false,
         "description": "Override the styles of the labelText container",
@@ -1881,6 +1882,64 @@
   "lib/icons/lock.js": {
     "description": "",
     "displayName": "IconLock",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/mask.js": {
+    "description": "",
+    "displayName": "IconMask",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/megaphone.js": {
+    "description": "",
+    "displayName": "IconMegaphone",
     "methods": [],
     "props": {
       "color": {
@@ -4615,7 +4674,7 @@
         "required": false,
         "description": "Android ripple color. See https://facebook.github.io/react-native/docs/touchablenativefeedback#ripple",
         "defaultValue": {
-          "value": "'#B2B2B2'",
+          "value": "'#E6E6E6'",
           "computed": false
         }
       },
