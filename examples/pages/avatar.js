@@ -43,7 +43,7 @@ export default () => (
       <Text type="heading" style={styles.heading}>With text and gradient</Text>
       <Avatar
         text="LG"
-        linearGradientProps={{ colors: ['#FF9173', '#E57859'] }}
+        gradientColors={['#FF9173', '#E57859']}
       />
     </View>
     <View style={styles.item}>
@@ -63,7 +63,7 @@ export default () => (
       <Text type="heading" style={styles.heading}>With icon and gradient</Text>
       <Avatar
         icon={<IconMask color="#FFF" />}
-        linearGradientProps={{ colors: ['#FF9173', '#E57859'] }}
+        gradientColors={['#FF4F7B', '#E57859']}
       />
     </View>
   </View>
