@@ -331,9 +331,34 @@
           }
         },
         "required": false,
-        "description": "Renders a radial gradient if supplied",
+        "description": "Renders a radial gradient if supplied. Must be an array of colors.",
         "defaultValue": {
           "value": "[]",
+          "computed": false
+        }
+      },
+      "gradientOffsets": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "number"
+          }
+        },
+        "required": false,
+        "description": "Custom offsets for the gradient colors. Array length must equal gradientColors length",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "gradientProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the RadialGradient component\n\nhttps://github.com/react-native-community/react-native-svg#radialgradient",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
