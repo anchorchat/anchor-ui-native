@@ -323,12 +323,40 @@
           "computed": false
         }
       },
-      "linearGradientProps": {
+      "gradientColors": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "Renders a radial gradient if supplied. Must be an array of colors.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "gradientOffsets": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "number"
+          }
+        },
+        "required": false,
+        "description": "Custom offsets for the gradient colors. Array length must equal gradientColors length",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "gradientProps": {
         "type": {
           "name": "object"
         },
         "required": false,
-        "description": "Props for LinearGradient component. Passing this wil make the text avatar background a gradient\n\nSee https://docs.expo.io/versions/latest/sdk/linear-gradient#props for available props.",
+        "description": "Custom props for the RadialGradient component\n\nhttps://github.com/react-native-community/react-native-svg#radialgradient",
         "defaultValue": {
           "value": "{}",
           "computed": false
