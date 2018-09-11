@@ -247,12 +247,12 @@
           "computed": false
         }
       },
-      "content": {
+      "icon": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "Custom content",
+        "description": "Avatar icon",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -323,12 +323,40 @@
           "computed": false
         }
       },
-      "linearGradientProps": {
+      "gradientColors": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "Renders a radial gradient if supplied. Must be an array of colors.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "gradientOffsets": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "number"
+          }
+        },
+        "required": false,
+        "description": "Custom offsets for the gradient colors. Array length must equal gradientColors length",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "gradientProps": {
         "type": {
           "name": "object"
         },
         "required": false,
-        "description": "Props for LinearGradient component. Passing this wil make the text avatar background a gradient\n\nSee https://docs.expo.io/versions/latest/sdk/linear-gradient#props for available props.",
+        "description": "Custom props for the RadialGradient component\n\nhttps://github.com/react-native-community/react-native-svg#radialgradient",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -385,7 +413,8 @@
       },
       "labelTextStyle": {
         "type": {
-          "name": "object"
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
         },
         "required": false,
         "description": "Override the styles of the labelText container",
@@ -1881,6 +1910,64 @@
   "lib/icons/lock.js": {
     "description": "",
     "displayName": "IconLock",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/mask.js": {
+    "description": "",
+    "displayName": "IconMask",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/megaphone.js": {
+    "description": "",
+    "displayName": "IconMegaphone",
     "methods": [],
     "props": {
       "color": {
@@ -4615,7 +4702,7 @@
         "required": false,
         "description": "Android ripple color. See https://facebook.github.io/react-native/docs/touchablenativefeedback#ripple",
         "defaultValue": {
-          "value": "'#B2B2B2'",
+          "value": "'#E6E6E6'",
           "computed": false
         }
       },

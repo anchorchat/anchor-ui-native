@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Avatar, Text } from '../anchor-ui-native';
 import { colors } from '../anchor-ui-native/config';
+import IconMask from '../anchor-ui-native/icons/mask';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -42,7 +43,27 @@ export default () => (
       <Text type="heading" style={styles.heading}>With text and gradient</Text>
       <Avatar
         text="LG"
-        linearGradientProps={{ colors: ['#FF9173', '#E57859'] }}
+        gradientColors={['#FF9173', '#E57859']}
+      />
+    </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>With icon</Text>
+      <Avatar
+        icon={<IconMask color="#FFF" />}
+      />
+    </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>With icon and color</Text>
+      <Avatar
+        icon={<IconMask color="#FFF" />}
+        color="hotpink"
+      />
+    </View>
+    <View style={styles.item}>
+      <Text type="heading" style={styles.heading}>With icon and gradient</Text>
+      <Avatar
+        icon={<IconMask color="#FFF" />}
+        gradientColors={['#FF4F7B', '#E57859']}
       />
     </View>
   </View>

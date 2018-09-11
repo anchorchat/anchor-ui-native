@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui-native",
-  "version": "1.7.13",
+  "version": "2.0.1",
   "main": "index.js",
   "files": [
     "/*"
@@ -49,7 +49,6 @@
   },
   "dependencies": {
     "color": "^3.0.0",
-    "expo": "^28.0.0",
     "hoist-non-react-statics": "^2.5.5",
     "lodash": "^4.17.10",
     "react-native-hyperlink": "^0.0.14",
