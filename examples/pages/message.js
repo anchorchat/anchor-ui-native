@@ -87,6 +87,15 @@ const getStyles = safeArea => (
 const INITIAL_STATE = [
   {
     key: uuid.v4(),
+    type: 'audio',
+    time: subMinutes(new Date(), '1'),
+    align: 'right',
+    audio: {
+      source: require('../assets/sound.mp3')
+    }
+  },
+  {
+    key: uuid.v4(),
     type: 'contact',
     time: subMinutes(new Date(), '1'),
     align: 'right',
@@ -227,6 +236,7 @@ class MessageExample extends Component {
       headerText={item.username}
       onImagePress={() => this.showLightbox(item.key)}
       avatar={item.avatar}
+      audio={item.audio}
     />
   )
 
