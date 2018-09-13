@@ -89,6 +89,15 @@ const INITIAL_STATE = [
     key: uuid.v4(),
     type: 'audio',
     time: subMinutes(new Date(), '1'),
+    align: 'left',
+    audio: {
+      source: require('../assets/sound1.mp3')
+    }
+  },
+  {
+    key: uuid.v4(),
+    type: 'audio',
+    time: subMinutes(new Date(), '1'),
     align: 'right',
     audio: {
       source: require('../assets/sound.mp3')
