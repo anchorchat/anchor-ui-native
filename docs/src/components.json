@@ -2023,9 +2023,67 @@
       }
     }
   },
+  "lib/icons/pause.js": {
+    "description": "",
+    "displayName": "IconPause",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/icons/people.js": {
     "description": "",
     "displayName": "IconPeople",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/play.js": {
+    "description": "",
+    "displayName": "IconPlay",
     "methods": [],
     "props": {
       "color": {
@@ -2749,6 +2807,153 @@
       }
     }
   },
+  "lib/message/audio-message/component.js": {
+    "description": "",
+    "displayName": "AudioMessage",
+    "methods": [
+      {
+        "name": "handleUpdate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "status",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handlePlay",
+        "docblock": null,
+        "modifiers": [
+          "async"
+        ],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handlePause",
+        "docblock": null,
+        "modifiers": [
+          "async"
+        ],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "renderAudioTime",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "audio": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "source": {
+              "name": "any",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/message/component.js": {
     "description": "Message with three types",
     "displayName": "Message",
@@ -2781,11 +2986,15 @@
             {
               "value": "'contact'",
               "computed": false
+            },
+            {
+              "value": "'audio'",
+              "computed": false
             }
           ]
         },
         "required": true,
-        "description": "The type of message; 'text', 'image' or 'contact'"
+        "description": "The type of message; 'text', 'image', 'contact' or 'audio'"
       },
       "bodyText": {
         "type": {
@@ -3050,6 +3259,23 @@
         },
         "required": false,
         "description": "Props for the Hyperlink component, see https://github.com/obipawan/react-native-hyperlink#props for available props",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "audio": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "source": {
+              "name": "any",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "",
         "defaultValue": {
           "value": "{}",
           "computed": false
