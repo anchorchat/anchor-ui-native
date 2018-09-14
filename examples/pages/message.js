@@ -91,7 +91,11 @@ const INITIAL_STATE = [
     time: subMinutes(new Date(), '1'),
     align: 'left',
     audio: {
-      source: require('../assets/sound1.mp3')
+      onPlay: () => console.log('play'),
+      onPause: () => console.log('pause'),
+      progress: 0.5,
+      time: '13:37',
+      isPlaying: true
     }
   },
   {
@@ -100,7 +104,11 @@ const INITIAL_STATE = [
     time: subMinutes(new Date(), '1'),
     align: 'right',
     audio: {
-      source: require('../assets/sound.mp3')
+      onPlay: () => console.log('play'),
+      onPause: () => console.log('pause'),
+      progress: 0.3,
+      time: '01:42',
+      isPlaying: false
     }
   },
   {
