@@ -170,6 +170,10 @@ class MessageExample extends Component {
     }
   }
 
+  componentDidMount() {
+    this.animate();
+  }
+
   showLightbox = (key) => {
     const { messages } = this.state;
 
@@ -216,19 +220,42 @@ class MessageExample extends Component {
     });
   }
 
-  renderMessage = ({ item }) => (
-    <Message
-      type={item.type}
-      bodyText={item.body}
-      align={item.align}
-      image={item.image}
-      contact={item.contact}
-      timeText={format(item.time, 'HH:mm')}
-      headerText={item.username}
-      onImagePress={() => this.showLightbox(item.key)}
-      avatar={item.avatar}
-    />
-  )
+  animate() {
+    let progress = 0;
+
+    this.setState({ progress });
+
+    setTimeout(() => {
+      setInterval(() => {
+        progress += Math.random() / 10;
+
+        if (progress > 1) {
+          progress = 1;
+        }
+
+        this.setState({ progress });
+      }, 500);
+    }, 1500);
+  }
+
+  renderMessage = ({ item }) => {
+    const { progress } = this.state;
+
+    return (
+      <Message
+        type={item.type}
+        bodyText={item.body}
+        align={item.align}
+        image={item.image}
+        contact={item.contact}
+        timeText={format(item.time, 'HH:mm')}
+        headerText={item.username}
+        onImagePress={() => this.showLightbox(item.key)}
+        avatar={item.avatar}
+        progress={progress}
+      />
+    );
+  }
 
   render() {
     const { message, messages, lightbox } = this.state;
