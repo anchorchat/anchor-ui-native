@@ -3054,6 +3054,28 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "progress": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Display a progress indicator",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "progressProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the progress indicator\n\nSee https://github.com/oblador/react-native-progress for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -3191,7 +3213,15 @@
   "lib/message/image-message/component.js": {
     "description": "",
     "displayName": "ImageMessage",
-    "methods": [],
+    "methods": [
+      {
+        "name": "renderProgress",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "bodyText": {
         "type": {
@@ -3374,6 +3404,24 @@
       "enableHyperlinks": {
         "type": {
           "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      },
+      "progress": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "progressProps": {
+        "type": {
+          "name": "object"
         },
         "required": true,
         "description": ""
