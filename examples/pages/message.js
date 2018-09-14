@@ -91,8 +91,8 @@ const INITIAL_STATE = [
     time: subMinutes(new Date(), '1'),
     align: 'left',
     audio: {
-      onPlay: () => console.log('play'),
-      onPause: () => console.log('pause'),
+      onPlay: () => console.log('play'), // eslint-disable-line no-console
+      onPause: () => console.log('pause'), // eslint-disable-line no-console
       progress: 0.5,
       time: '13:37',
       isPlaying: true
@@ -104,8 +104,8 @@ const INITIAL_STATE = [
     time: subMinutes(new Date(), '1'),
     align: 'right',
     audio: {
-      onPlay: () => console.log('play'),
-      onPause: () => console.log('pause'),
+      onPlay: () => console.log('play'), // eslint-disable-line no-console
+      onPause: () => console.log('pause'), // eslint-disable-line no-console
       progress: 0.3,
       time: '01:42',
       isPlaying: false
