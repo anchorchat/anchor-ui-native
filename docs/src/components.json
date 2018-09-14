@@ -2810,45 +2810,7 @@
   "lib/message/audio-message/component.js": {
     "description": "",
     "displayName": "AudioMessage",
-    "methods": [
-      {
-        "name": "handleUpdate",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "status",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "handlePlay",
-        "docblock": null,
-        "modifiers": [
-          "async"
-        ],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "handlePause",
-        "docblock": null,
-        "modifiers": [
-          "async"
-        ],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "renderAudioTime",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
       "headerText": {
         "type": {
@@ -2943,8 +2905,24 @@
         "type": {
           "name": "shape",
           "value": {
-            "source": {
-              "name": "any",
+            "onPlay": {
+              "name": "func",
+              "required": true
+            },
+            "onPause": {
+              "name": "func",
+              "required": true
+            },
+            "isPlaying": {
+              "name": "bool",
+              "required": true
+            },
+            "progress": {
+              "name": "number",
+              "required": true
+            },
+            "time": {
+              "name": "node",
               "required": true
             }
           }
@@ -3268,14 +3246,30 @@
         "type": {
           "name": "shape",
           "value": {
-            "source": {
-              "name": "any",
+            "onPlay": {
+              "name": "func",
+              "required": false
+            },
+            "onPause": {
+              "name": "func",
+              "required": false
+            },
+            "isPlaying": {
+              "name": "bool",
+              "required": false
+            },
+            "progress": {
+              "name": "number",
+              "required": false
+            },
+            "time": {
+              "name": "node",
               "required": false
             }
           }
         },
         "required": false,
-        "description": "",
+        "description": "Audio object\n\n{\n  onPlay: function(event: object) => void,\n  onPause: function(event: object) => void,\n  isPlaying: Boolean,\n  progress: Number,\n  time: Node\n}",
         "defaultValue": {
           "value": "{}",
           "computed": false
