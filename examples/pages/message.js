@@ -97,6 +97,7 @@ const INITIAL_STATE = [
     }
   },
   {
+    key: uuid.v4(),
     type: 'audio',
     time: subMinutes(new Date(), '1'),
     align: 'left',
