@@ -19,6 +19,7 @@ import Mask from './mask.svg';
 import Megaphone from './megaphone.svg';
 import Notifications from './notifications.svg';
 import People from './people.svg';
+import Play from './play.svg';
 import Refresh from './refresh.svg';
 import Search from './search.svg';
 import Send from './send.svg';
@@ -49,6 +50,7 @@ export {
   Megaphone,
   Notifications,
   People,
+  Play,
   Refresh,
   Search,
   Send,
