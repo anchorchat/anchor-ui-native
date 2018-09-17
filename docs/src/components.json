@@ -1994,6 +1994,35 @@
       }
     }
   },
+  "lib/icons/microphone.js": {
+    "description": "",
+    "displayName": "IconMicrophone",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/icons/notifications.js": {
     "description": "",
     "displayName": "IconNotifications",
@@ -2023,9 +2052,67 @@
       }
     }
   },
+  "lib/icons/pause.js": {
+    "description": "",
+    "displayName": "IconPause",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/icons/people.js": {
     "description": "",
     "displayName": "IconPeople",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/play.js": {
+    "description": "",
+    "displayName": "IconPlay",
     "methods": [],
     "props": {
       "color": {
@@ -2749,74 +2836,31 @@
       }
     }
   },
-  "lib/message/component.js": {
-    "description": "Message with three types",
-    "displayName": "Message",
+  "lib/message/audio-message/component.js": {
+    "description": "",
+    "displayName": "AudioMessage",
     "methods": [],
     "props": {
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "style": {
         "type": {
           "name": "custom",
           "raw": "ViewPropTypes.style"
         },
         "required": false,
-        "description": "Override the styles of the root element",
+        "description": "",
         "defaultValue": {
           "value": "{}",
-          "computed": false
-        }
-      },
-      "type": {
-        "type": {
-          "name": "enum",
-          "value": [
-            {
-              "value": "'text'",
-              "computed": false
-            },
-            {
-              "value": "'image'",
-              "computed": false
-            },
-            {
-              "value": "'contact'",
-              "computed": false
-            }
-          ]
-        },
-        "required": true,
-        "description": "The type of message; 'text', 'image' or 'contact'"
-      },
-      "bodyText": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Message body text",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "bodyTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Custom props for the body Text component for 'text' and 'image' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "headerText": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Message header text, will only render in 'left' aligned messages",
-        "defaultValue": {
-          "value": "null",
           "computed": false
         }
       },
@@ -2824,57 +2868,22 @@
         "type": {
           "name": "object"
         },
-        "required": false,
-        "description": "Custom props for the header Text component for 'text', 'contact' and 'image' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
       },
       "timeText": {
         "type": {
           "name": "node"
         },
         "required": true,
-        "description": "Time the message was sent"
-      },
-      "timeTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Custom props for the time Text component\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "avatar": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "Message avatar, will only render in 'left' aligned messages",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "avatarStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the avatar element"
-      },
-      "avatarContainerStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the avatar container element"
+        "description": ""
       },
       "align": {
         "type": {
@@ -2890,170 +2899,65 @@
             }
           ]
         },
-        "required": false,
-        "description": "Side which the message is on",
-        "defaultValue": {
-          "value": "'left'",
-          "computed": false
-        }
+        "required": true,
+        "description": ""
       },
       "statusIcon": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "Icon to show whether a message is sent or read.\nThis icon renders on the right hand side of the time",
+        "description": "",
         "defaultValue": {
           "value": "null",
           "computed": false
         }
       },
-      "image": {
+      "theme": {
         "type": {
           "name": "shape",
           "value": {
-            "source": {
-              "name": "custom",
-              "raw": "Image.propTypes.source.isRequired",
+            "colors": {
+              "name": "object",
               "required": true
             },
-            "thumbnailSource": {
-              "name": "custom",
-              "raw": "Image.propTypes.source",
-              "required": false
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "audio": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "onPlay": {
+              "name": "func",
+              "required": true
             },
-            "ratio": {
+            "onPause": {
+              "name": "func",
+              "required": true
+            },
+            "isPlaying": {
+              "name": "bool",
+              "required": true
+            },
+            "progress": {
               "name": "number",
               "required": true
-            }
-          }
-        },
-        "required": false,
-        "description": "Message image; source, thumbnailSource and ratio"
-      },
-      "imageSize": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "Width for landscape images and height for portrait images",
-        "defaultValue": {
-          "value": "210",
-          "computed": false
-        }
-      },
-      "imageProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Custom props for the Image component for 'image' messages\n\nSee https://facebook.github.io/react-native/docs/image.html#props for available props.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "onImagePress": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback fired when Message image is pressed\n\nfunction(event: object) => void",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "onImageLongPress": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "Callback fired when Message image is long pressed\n\nfunction(event: object) => void",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "imageStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
-        },
-        "required": false,
-        "description": "Override the styles of the avatar element"
-      },
-      "imageComponent": {
-        "type": {
-          "name": "any"
-        },
-        "required": false,
-        "description": "Custom Image component"
-      },
-      "contact": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "avatar": {
-              "name": "node",
-              "required": true
             },
-            "primaryText": {
-              "name": "node",
-              "required": true
-            },
-            "secondaryText": {
+            "time": {
               "name": "node",
               "required": true
             }
           }
         },
-        "required": false,
-        "description": "Message contact; avatar, primaryText and secondaryText"
-      },
-      "primaryTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Custom props for the primary Text component for 'contact' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "secondaryTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Custom props for the secondary Text component for 'contact' messages\n\nSee https://facebook.github.io/react-native/docs/text.html#props for available props.",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "enableHyperlinks": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "Make urls, fuzzy links, emails etc. clickable using https://github.com/obipawan/react-native-hyperlink",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "hyperlinkProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": "Props for the Hyperlink component, see https://github.com/obipawan/react-native-hyperlink#props for available props",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
+        "required": true,
+        "description": ""
       }
     }
   },
@@ -3191,7 +3095,15 @@
   "lib/message/image-message/component.js": {
     "description": "",
     "displayName": "ImageMessage",
-    "methods": [],
+    "methods": [
+      {
+        "name": "renderProgress",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "bodyText": {
         "type": {
@@ -3374,6 +3286,24 @@
       "enableHyperlinks": {
         "type": {
           "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      },
+      "progress": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "progressProps": {
+        "type": {
+          "name": "object"
         },
         "required": true,
         "description": ""
@@ -3685,6 +3615,130 @@
               "required": true
             }
           }
+        },
+        "required": true,
+        "description": ""
+      },
+      "hyperlinkProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "enableHyperlinks": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message/video-message/component.js": {
+    "description": "",
+    "displayName": "VideoMessage",
+    "methods": [],
+    "props": {
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "video": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "videoSize": {
+        "type": {
+          "name": "number"
         },
         "required": true,
         "description": ""
