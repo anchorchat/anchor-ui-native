@@ -2995,13 +2995,17 @@
               "computed": false
             },
             {
+              "value": "'video'",
+              "computed": false
+            },
+            {
               "value": "'audio'",
               "computed": false
             }
           ]
         },
         "required": true,
-        "description": "The type of message; 'text', 'image', 'contact' or 'audio'"
+        "description": "The type of message; 'text', 'image', 'contact', 'video' or 'audio'"
       },
       "bodyText": {
         "type": {
@@ -3268,6 +3272,24 @@
         "description": "Props for the Hyperlink component, see https://github.com/obipawan/react-native-hyperlink#props for available props",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "video": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Message video; source, thumbnailSource and ratio"
+      },
+      "videoSize": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Width for landscape videos and height for portrait videos",
+        "defaultValue": {
+          "value": "210",
           "computed": false
         }
       },
@@ -3934,6 +3956,130 @@
               "required": true
             }
           }
+        },
+        "required": true,
+        "description": ""
+      },
+      "hyperlinkProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "enableHyperlinks": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message/video-message/component.js": {
+    "description": "",
+    "displayName": "VideoMessage",
+    "methods": [],
+    "props": {
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "video": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "videoSize": {
+        "type": {
+          "name": "number"
         },
         "required": true,
         "description": ""

@@ -26,6 +26,7 @@ import Attachment from '../anchor-ui-native/icons/attachment';
 import Send from '../anchor-ui-native/icons/send';
 import Camera from '../anchor-ui-native/icons/camera';
 import { colors } from '../anchor-ui-native/config';
+import Video from '../components/video';
 
 const propTypes = {
   safeArea: PropTypes.shape({
@@ -87,6 +88,15 @@ const getStyles = safeArea => (
 const INITIAL_STATE = [
   {
     key: uuid.v4(),
+    type: 'video',
+    time: subMinutes(new Date(), '1'),
+    align: 'right',
+    video: {
+      source: { uri: 'https://player.vimeo.com/external/274443403.hd.mp4?s=71a208a8f13ed5d7a4359a6837c18b2456001814&profile_id=175&oauth2_token_id=57447761' }, // eslint-disable-line max-len
+      ratio: 1920 / 1080
+    }
+  },
+  {
     type: 'audio',
     time: subMinutes(new Date(), '1'),
     align: 'left',
@@ -145,6 +155,18 @@ const INITIAL_STATE = [
     },
     username: 'Benjamin Grant',
     avatar: <Avatar size={32} text="BG" textStyle={{ fontSize: 16 }} color="lightsteelblue" />
+  },
+  {
+    key: uuid.v4(),
+    type: 'video',
+    time: subMinutes(new Date(), '1'),
+    body: 'The sunset looked amazing the other day!',
+    align: 'left',
+    video: {
+      source: { uri: 'https://player.vimeo.com/external/191379621.hd.mp4?s=e7018ac4d78f39204192fb7027910de6bb902d3b&profile_id=172&oauth2_token_id=57447761' }, // eslint-disable-line max-len
+      ratio: 1920 / 1080
+    },
+    avatar: <Avatar size={32} text="HB" textStyle={{ fontSize: 16 }} color="mediumvioletred" />
   },
   {
     key: uuid.v4(),
@@ -253,6 +275,17 @@ class MessageExample extends Component {
       headerText={item.username}
       onImagePress={() => this.showLightbox(item.key)}
       avatar={item.avatar}
+      video={
+        item.type === 'video'
+          ? (
+            <Video
+              {...item.video}
+              style={{ borderRadius: 4 }}
+              size={210}
+            />
+          )
+          : null
+      }
       audio={item.audio}
     />
   )
