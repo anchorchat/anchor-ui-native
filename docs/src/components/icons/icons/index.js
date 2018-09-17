@@ -17,7 +17,9 @@ import Invite from './invite.svg';
 import Lock from './lock.svg';
 import Mask from './mask.svg';
 import Megaphone from './megaphone.svg';
+import Microphone from './microphone.svg';
 import Notifications from './notifications.svg';
+import Pause from './pause.svg';
 import People from './people.svg';
 import Play from './play.svg';
 import Refresh from './refresh.svg';
@@ -48,7 +50,9 @@ export {
   Lock,
   Mask,
   Megaphone,
+  Microphone,
   Notifications,
+  Pause,
   People,
   Play,
   Refresh,

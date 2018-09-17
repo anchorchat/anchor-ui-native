@@ -1994,9 +1994,67 @@
       }
     }
   },
+  "lib/icons/microphone.js": {
+    "description": "",
+    "displayName": "IconMicrophone",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/icons/notifications.js": {
     "description": "",
     "displayName": "IconNotifications",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/pause.js": {
+    "description": "",
+    "displayName": "IconPause",
     "methods": [],
     "props": {
       "color": {
@@ -2065,17 +2123,6 @@
         "description": "Icon color",
         "defaultValue": {
           "value": "'#8E8E93'",
-          "computed": false
-        }
-      },
-      "checkColor": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "Check color",
-        "defaultValue": {
-          "value": "'transparent'",
           "computed": false
         }
       },
@@ -2789,6 +2836,131 @@
       }
     }
   },
+  "lib/message/audio-message/component.js": {
+    "description": "",
+    "displayName": "AudioMessage",
+    "methods": [],
+    "props": {
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "audio": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "onPlay": {
+              "name": "func",
+              "required": true
+            },
+            "onPause": {
+              "name": "func",
+              "required": true
+            },
+            "isPlaying": {
+              "name": "bool",
+              "required": true
+            },
+            "progress": {
+              "name": "number",
+              "required": true
+            },
+            "time": {
+              "name": "node",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/message/component.js": {
     "description": "Message with three types",
     "displayName": "Message",
@@ -2825,11 +2997,15 @@
             {
               "value": "'video'",
               "computed": false
+            },
+            {
+              "value": "'audio'",
+              "computed": false
             }
           ]
         },
         "required": true,
-        "description": "The type of message; 'text', 'image' or 'contact'"
+        "description": "The type of message; 'text', 'image', 'contact', 'video' or 'audio'"
       },
       "bodyText": {
         "type": {
@@ -3114,6 +3290,39 @@
         "description": "Width for landscape videos and height for portrait videos",
         "defaultValue": {
           "value": "210",
+          "computed": false
+        }
+      },
+      "audio": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "onPlay": {
+              "name": "func",
+              "required": false
+            },
+            "onPause": {
+              "name": "func",
+              "required": false
+            },
+            "isPlaying": {
+              "name": "bool",
+              "required": false
+            },
+            "progress": {
+              "name": "number",
+              "required": false
+            },
+            "time": {
+              "name": "node",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Audio object\n\n{\n  onPlay: function(event: object) => void,\n  onPause: function(event: object) => void,\n  isPlaying: Boolean,\n  progress: Number,\n  time: Node\n}",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       }
