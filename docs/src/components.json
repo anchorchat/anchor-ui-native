@@ -2052,6 +2052,46 @@
       }
     }
   },
+  "lib/icons/play.js": {
+    "description": "",
+    "displayName": "IconPlay",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "checkColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Check color",
+        "defaultValue": {
+          "value": "'transparent'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/icons/refresh.js": {
     "description": "",
     "displayName": "IconRefresh",
@@ -2781,6 +2821,10 @@
             {
               "value": "'contact'",
               "computed": false
+            },
+            {
+              "value": "'video'",
+              "computed": false
             }
           ]
         },
@@ -3052,6 +3096,24 @@
         "description": "Props for the Hyperlink component, see https://github.com/obipawan/react-native-hyperlink#props for available props",
         "defaultValue": {
           "value": "{}",
+          "computed": false
+        }
+      },
+      "video": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Message video; source, thumbnailSource and ratio"
+      },
+      "videoSize": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Width for landscape videos and height for portrait videos",
+        "defaultValue": {
+          "value": "210",
           "computed": false
         }
       }
@@ -3685,6 +3747,130 @@
               "required": true
             }
           }
+        },
+        "required": true,
+        "description": ""
+      },
+      "hyperlinkProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "enableHyperlinks": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message/video-message/component.js": {
+    "description": "",
+    "displayName": "VideoMessage",
+    "methods": [],
+    "props": {
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "video": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "videoSize": {
+        "type": {
+          "name": "number"
         },
         "required": true,
         "description": ""
