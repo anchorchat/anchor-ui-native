@@ -26,6 +26,7 @@ import Attachment from '../anchor-ui-native/icons/attachment';
 import Send from '../anchor-ui-native/icons/send';
 import Camera from '../anchor-ui-native/icons/camera';
 import { colors } from '../anchor-ui-native/config';
+import Video from '../components/video';
 
 const propTypes = {
   safeArea: PropTypes.shape({
@@ -244,12 +245,22 @@ class MessageExample extends Component {
       bodyText={item.body}
       align={item.align}
       image={item.image}
-      video={item.video}
       contact={item.contact}
       timeText={format(item.time, 'HH:mm')}
       headerText={item.username}
       onImagePress={() => this.showLightbox(item.key)}
       avatar={item.avatar}
+      video={
+        item.type === 'video'
+          ? (
+            <Video
+              {...item.video}
+              style={{ borderRadius: 4 }}
+              size={210}
+            />
+          )
+          : null
+      }
     />
   )
 
