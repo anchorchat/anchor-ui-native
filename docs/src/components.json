@@ -1994,6 +1994,35 @@
       }
     }
   },
+  "lib/icons/microphone.js": {
+    "description": "",
+    "displayName": "IconMicrophone",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/icons/notifications.js": {
     "description": "",
     "displayName": "IconNotifications",
