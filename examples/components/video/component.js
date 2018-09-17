@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, TouchableWithoutFeedback, ViewPropTypes } from 'react-native';
 import { Video as NativeVideo } from 'expo';
 import getStyles from './styles';
-import IconPlay from '../../../icons/play';
+import IconPlay from '../../anchor-ui-native/icons/play';
 
 const displayName = 'Video';
 
