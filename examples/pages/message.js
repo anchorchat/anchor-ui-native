@@ -88,6 +88,20 @@ const getStyles = safeArea => (
 const INITIAL_STATE = [
   {
     key: uuid.v4(),
+    type: 'audio',
+    time: subMinutes(new Date(), '1'),
+    align: 'left',
+    audio: {
+      onPlay: () => console.log('play'), // eslint-disable-line no-console
+      onPause: () => console.log('pause'), // eslint-disable-line no-console
+      progress: 0.5,
+      time: '00:42',
+      isPlaying: false,
+      isLoading: true
+    }
+  },
+  {
+    key: uuid.v4(),
     type: 'video',
     time: subMinutes(new Date(), '1'),
     align: 'right',
@@ -106,7 +120,8 @@ const INITIAL_STATE = [
       onPause: () => console.log('pause'), // eslint-disable-line no-console
       progress: 0.5,
       time: '13:37',
-      isPlaying: true
+      isPlaying: true,
+      isLoading: false
     }
   },
   {
@@ -119,7 +134,8 @@ const INITIAL_STATE = [
       onPause: () => console.log('pause'), // eslint-disable-line no-console
       progress: 0.3,
       time: '01:42',
-      isPlaying: false
+      isPlaying: false,
+      isLoading: false
     }
   },
   {
