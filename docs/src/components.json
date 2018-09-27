@@ -247,12 +247,12 @@
           "computed": false
         }
       },
-      "content": {
+      "icon": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "Custom content",
+        "description": "Avatar icon",
         "defaultValue": {
           "value": "null",
           "computed": false
@@ -323,12 +323,40 @@
           "computed": false
         }
       },
-      "linearGradientProps": {
+      "gradientColors": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "Renders a radial gradient if supplied. Must be an array of colors.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "gradientOffsets": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "number"
+          }
+        },
+        "required": false,
+        "description": "Custom offsets for the gradient colors. Array length must equal gradientColors length",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "gradientProps": {
         "type": {
           "name": "object"
         },
         "required": false,
-        "description": "Props for LinearGradient component. Passing this wil make the text avatar background a gradient\n\nSee https://docs.expo.io/versions/latest/sdk/linear-gradient#props for available props.",
+        "description": "Custom props for the RadialGradient component\n\nhttps://github.com/react-native-community/react-native-svg#radialgradient",
         "defaultValue": {
           "value": "{}",
           "computed": false
@@ -385,7 +413,8 @@
       },
       "labelTextStyle": {
         "type": {
-          "name": "object"
+          "name": "custom",
+          "raw": "NativeText.propTypes.style"
         },
         "required": false,
         "description": "Override the styles of the labelText container",
@@ -1907,6 +1936,93 @@
       }
     }
   },
+  "lib/icons/mask.js": {
+    "description": "",
+    "displayName": "IconMask",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/megaphone.js": {
+    "description": "",
+    "displayName": "IconMegaphone",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/microphone.js": {
+    "description": "",
+    "displayName": "IconMicrophone",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/icons/notifications.js": {
     "description": "",
     "displayName": "IconNotifications",
@@ -1936,9 +2052,67 @@
       }
     }
   },
+  "lib/icons/pause.js": {
+    "description": "",
+    "displayName": "IconPause",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
   "lib/icons/people.js": {
     "description": "",
     "displayName": "IconPeople",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/play.js": {
+    "description": "",
+    "displayName": "IconPlay",
     "methods": [],
     "props": {
       "color": {
@@ -2662,6 +2836,150 @@
       }
     }
   },
+  "lib/message/audio-message/component.js": {
+    "description": "",
+    "displayName": "AudioMessage",
+    "methods": [
+      {
+        "name": "renderButton",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "audio": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "onPlay": {
+              "name": "func",
+              "required": true
+            },
+            "onPause": {
+              "name": "func",
+              "required": true
+            },
+            "isPlaying": {
+              "name": "bool",
+              "required": true
+            },
+            "isLoading": {
+              "name": "bool",
+              "required": true
+            },
+            "progress": {
+              "name": "number",
+              "required": true
+            },
+            "time": {
+              "name": "node",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "progressProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
   "lib/message/component.js": {
     "description": "Message with three types",
     "displayName": "Message",
@@ -2694,11 +3012,19 @@
             {
               "value": "'contact'",
               "computed": false
+            },
+            {
+              "value": "'video'",
+              "computed": false
+            },
+            {
+              "value": "'audio'",
+              "computed": false
             }
           ]
         },
         "required": true,
-        "description": "The type of message; 'text', 'image' or 'contact'"
+        "description": "The type of message; 'text', 'image', 'contact', 'video' or 'audio'"
       },
       "bodyText": {
         "type": {
@@ -2967,6 +3293,83 @@
           "value": "{}",
           "computed": false
         }
+      },
+      "video": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Message video; source, thumbnailSource and ratio"
+      },
+      "videoSize": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Width for landscape videos and height for portrait videos",
+        "defaultValue": {
+          "value": "210",
+          "computed": false
+        }
+      },
+      "audio": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "onPlay": {
+              "name": "func",
+              "required": false
+            },
+            "onPause": {
+              "name": "func",
+              "required": false
+            },
+            "isPlaying": {
+              "name": "bool",
+              "required": false
+            },
+            "isLoading": {
+              "name": "bool",
+              "required": false
+            },
+            "progress": {
+              "name": "number",
+              "required": false
+            },
+            "time": {
+              "name": "node",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Audio object\n\n{\n  onPlay: function(event: object) => void,\n  onPause: function(event: object) => void,\n  isPlaying: Boolean,\n  isLoading: Boolean,\n  progress: Number,\n  time: Node\n}",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "progress": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Display a progress indicator",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "progressProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Custom props for the progress indicator\n\nSee https://github.com/oblador/react-native-progress for available props.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       }
     }
   },
@@ -3104,7 +3507,15 @@
   "lib/message/image-message/component.js": {
     "description": "",
     "displayName": "ImageMessage",
-    "methods": [],
+    "methods": [
+      {
+        "name": "renderProgress",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
     "props": {
       "bodyText": {
         "type": {
@@ -3287,6 +3698,24 @@
       "enableHyperlinks": {
         "type": {
           "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      },
+      "progress": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "progressProps": {
+        "type": {
+          "name": "object"
         },
         "required": true,
         "description": ""
@@ -3598,6 +4027,130 @@
               "required": true
             }
           }
+        },
+        "required": true,
+        "description": ""
+      },
+      "hyperlinkProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "enableHyperlinks": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message/video-message/component.js": {
+    "description": "",
+    "displayName": "VideoMessage",
+    "methods": [],
+    "props": {
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "align": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'right'",
+              "computed": false
+            },
+            {
+              "value": "'left'",
+              "computed": false
+            }
+          ]
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "video": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "videoSize": {
+        "type": {
+          "name": "number"
         },
         "required": true,
         "description": ""
@@ -4615,7 +5168,7 @@
         "required": false,
         "description": "Android ripple color. See https://facebook.github.io/react-native/docs/touchablenativefeedback#ripple",
         "defaultValue": {
-          "value": "'#B2B2B2'",
+          "value": "'#E6E6E6'",
           "computed": false
         }
       },

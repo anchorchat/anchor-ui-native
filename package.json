@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui-native",
-  "version": "1.7.13",
+  "version": "2.1.1",
   "main": "index.js",
   "files": [
     "/*"
@@ -49,10 +49,10 @@
   },
   "dependencies": {
     "color": "^3.0.0",
-    "expo": "^28.0.0",
     "hoist-non-react-statics": "^2.5.5",
     "lodash": "^4.17.10",
     "react-native-hyperlink": "^0.0.14",
+    "react-native-progress": "^3.5.0",
     "react-native-section-list-get-item-layout": "^2.2.3",
     "react-native-svg": "^6.3.1",
     "recompose": "^0.27.1"
