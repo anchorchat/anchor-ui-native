@@ -14,10 +14,12 @@ import Download from './download.svg';
 import Globe from './globe.svg';
 import Hand from './hand.svg';
 import Invite from './invite.svg';
+import List from './list.svg';
 import Lock from './lock.svg';
 import Mask from './mask.svg';
 import Megaphone from './megaphone.svg';
 import Microphone from './microphone.svg';
+import Newspaper from './newspaper.svg';
 import Notifications from './notifications.svg';
 import Pause from './pause.svg';
 import People from './people.svg';
@@ -47,10 +49,12 @@ export {
   Globe,
   Hand,
   Invite,
+  List,
   Lock,
   Mask,
   Megaphone,
   Microphone,
+  Newspaper,
   Notifications,
   Pause,
   People,
