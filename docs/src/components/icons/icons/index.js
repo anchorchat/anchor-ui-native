@@ -31,6 +31,7 @@ import Settings from './settings.svg';
 import Share from './share.svg';
 import Storage from './storage.svg';
 import Verified from './verified.svg';
+import Exit from './exit.svg';
 
 export {
   Attachment,
@@ -65,5 +66,6 @@ export {
   Settings,
   Share,
   Storage,
-  Verified
+  Verified,
+  Exit
 };
