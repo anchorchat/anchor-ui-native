@@ -69,7 +69,7 @@ const Navigator = createStackNavigator({
         color: colors.primary
       }
     },
-    initialRouteName: 'Home'
+    initialRouteName: 'Message'
   })
 }, {
   navigationOptions: ({ navigation }) => ({
