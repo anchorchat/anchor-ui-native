@@ -3115,7 +3115,7 @@
           ]
         },
         "required": true,
-        "description": "The type of message; 'text', 'image', 'contact', 'video' or 'audio'"
+        "description": "The type of message; 'text', 'image', 'contact', 'video', 'audio' or 'giphy'."
       },
       "bodyText": {
         "type": {
