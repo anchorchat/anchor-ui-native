@@ -151,6 +151,17 @@ const INITIAL_STATE = [
   },
   {
     key: uuid.v4(),
+    type: 'giphy',
+    time: subMinutes(new Date(), '3'),
+    align: 'right',
+    image: {
+      source: { uri: 'https://media.giphy.com/media/1AefIDWfAkcr9gVRYj/giphy.gif' },
+      thumbnailSource: { uri: 'https://media.giphy.com/media/1AefIDWfAkcr9gVRYj/giphy.gif' }, // eslint-disable-line max-len
+      ratio: 1
+    }
+  },
+  {
+    key: uuid.v4(),
     type: 'image',
     time: subMinutes(new Date(), '3'),
     align: 'right',

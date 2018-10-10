@@ -3107,6 +3107,10 @@
             {
               "value": "'audio'",
               "computed": false
+            },
+            {
+              "value": "'giphy'",
+              "computed": false
             }
           ]
         },
