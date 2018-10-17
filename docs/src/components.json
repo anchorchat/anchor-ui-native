@@ -1249,8 +1249,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "Header primary text"
+        "required": false,
+        "description": "Header primary text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "primaryTextStyle": {
         "type": {
@@ -1363,6 +1367,17 @@
         "description": "Remove safeArea padding for Android if Header is rendered inside a Modal",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Override primary and secondary text with an icon\n\nRecomended height of the icon is 22",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
