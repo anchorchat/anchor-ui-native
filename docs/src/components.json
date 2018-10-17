@@ -1375,7 +1375,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Override primary and secondary text with an icon/ image\n\nRecomended height of icon/ image is 22",
+        "description": "Override primary and secondary text with an icon\n\nRecomended height of the icon is 22",
         "defaultValue": {
           "value": "null",
           "computed": false
