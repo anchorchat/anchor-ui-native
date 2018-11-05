@@ -5,6 +5,7 @@ import Chats from './chats.svg';
 import Checkmark from './checkmark.svg';
 import ChevronLeft from './chevron-left.svg';
 import ChevronRight from './chevron-right.svg';
+import CloseCircle from './close-circle.svg';
 import Close from './close.svg';
 import Compass from './compass.svg';
 import Compose from './compose.svg';
@@ -19,6 +20,7 @@ import Lock from './lock.svg';
 import Mask from './mask.svg';
 import Megaphone from './megaphone.svg';
 import Microphone from './microphone.svg';
+import Mute from './mute.svg';
 import Newspaper from './newspaper.svg';
 import Notifications from './notifications.svg';
 import Pause from './pause.svg';
@@ -41,6 +43,7 @@ export {
   Checkmark,
   ChevronLeft,
   ChevronRight,
+  CloseCircle,
   Close,
   Compass,
   Compose,
@@ -55,6 +58,7 @@ export {
   Mask,
   Megaphone,
   Microphone,
+  Mute,
   Newspaper,
   Notifications,
   Pause,
