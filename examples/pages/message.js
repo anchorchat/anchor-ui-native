@@ -88,6 +88,24 @@ const getStyles = safeArea => (
 const INITIAL_STATE = [
   {
     key: uuid.v4(),
+    type: 'sticker',
+    time: subMinutes(new Date(), '3'),
+    align: 'left',
+    image: {
+      source: { uri: 'https://shop.anchor.fish/products/dfa4f7a4-fede-4298-bd9d-02ac129b8a68/data/pig.c495a694.png' } // eslint-disable-line max-len
+    }
+  },
+  {
+    key: uuid.v4(),
+    type: 'sticker',
+    time: subMinutes(new Date(), '3'),
+    align: 'right',
+    image: {
+      source: { uri: 'https://shop.anchor.fish/products/dfa4f7a4-fede-4298-bd9d-02ac129b8a68/data/deer.00c772d9.png' } // eslint-disable-line max-len
+    }
+  },
+  {
+    key: uuid.v4(),
     type: 'audio',
     time: subMinutes(new Date(), '1'),
     align: 'left',
