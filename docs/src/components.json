@@ -4132,17 +4132,6 @@
     "displayName": "StickerMessage",
     "methods": [],
     "props": {
-      "bodyText": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "style": {
         "type": {
           "name": "custom",
@@ -4154,13 +4143,6 @@
           "value": "{}",
           "computed": false
         }
-      },
-      "bodyTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
       },
       "timeTextProps": {
         "type": {
