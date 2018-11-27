@@ -92,8 +92,8 @@ const INITIAL_STATE = [
     time: subMinutes(new Date(), '3'),
     align: 'left',
     image: {
-      source: { uri: 'https://shop.anchor.fish/products/1c02c081-2f8f-4822-a142-25f526816b00/data/moustache.54ec78b7.svg' }, // eslint-disable-line max-len
-      thumbnailSource: { uri: 'https://shop.anchor.fish/products/1c02c081-2f8f-4822-a142-25f526816b00/data/moustache.54ec78b7.svg' }, // eslint-disable-line max-len
+      source: { uri: 'https://shop.anchor.fish/products/dfa4f7a4-fede-4298-bd9d-02ac129b8a68/data/pig.c495a694.png' }, // eslint-disable-line max-len
+      thumbnailSource: { uri: 'https://shop.anchor.fish/products/dfa4f7a4-fede-4298-bd9d-02ac129b8a68/data/pig.c495a694.png' }, // eslint-disable-line max-len
       ratio: 1.2
     }
   },
@@ -103,8 +103,8 @@ const INITIAL_STATE = [
     time: subMinutes(new Date(), '3'),
     align: 'right',
     image: {
-      source: { uri: 'https://shop.anchor.fish/products/1c02c081-2f8f-4822-a142-25f526816b00/data/party.e714ba38.svg' }, // eslint-disable-line max-len
-      thumbnailSource: { uri: 'https://shop.anchor.fish/products/1c02c081-2f8f-4822-a142-25f526816b00/data/party.e714ba38.svg' }, // eslint-disable-line max-len
+      source: { uri: 'https://shop.anchor.fish/products/dfa4f7a4-fede-4298-bd9d-02ac129b8a68/data/deer.00c772d9.png' }, // eslint-disable-line max-len
+      thumbnailSource: { uri: 'https://shop.anchor.fish/products/dfa4f7a4-fede-4298-bd9d-02ac129b8a68/data/deer.00c772d9.png' }, // eslint-disable-line max-len
       ratio: 1.2
     }
   },
@@ -169,6 +169,17 @@ const INITIAL_STATE = [
       avatar: <Avatar size={32} text="MT" textStyle={{ fontSize: 16 }} color="green" />,
       primaryText: 'Marvin Timothy',
       secondaryText: '+31 6 12345678'
+    }
+  },
+  {
+    key: uuid.v4(),
+    type: 'giphy',
+    time: subMinutes(new Date(), '3'),
+    align: 'right',
+    image: {
+      source: { uri: 'https://media.giphy.com/media/1AefIDWfAkcr9gVRYj/giphy.gif' },
+      thumbnailSource: { uri: 'https://media.giphy.com/media/1AefIDWfAkcr9gVRYj/giphy.gif' }, // eslint-disable-line max-len
+      ratio: 1
     }
   },
   {

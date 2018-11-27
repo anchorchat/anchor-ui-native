@@ -1249,8 +1249,12 @@
         "type": {
           "name": "node"
         },
-        "required": true,
-        "description": "Header primary text"
+        "required": false,
+        "description": "Header primary text",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       },
       "primaryTextStyle": {
         "type": {
@@ -1363,6 +1367,17 @@
         "description": "Remove safeArea padding for Android if Header is rendered inside a Modal",
         "defaultValue": {
           "value": "false",
+          "computed": false
+        }
+      },
+      "icon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Override primary and secondary text with an icon\n\nRecomended height of the icon is 22",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },
@@ -1620,6 +1635,35 @@
   "lib/icons/chevron-right.js": {
     "description": "",
     "displayName": "IconChevronRight",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/close-circle.js": {
+    "description": "",
+    "displayName": "IconCloseCircle",
     "methods": [],
     "props": {
       "color": {
@@ -2055,6 +2099,35 @@
   "lib/icons/microphone.js": {
     "description": "",
     "displayName": "IconMicrophone",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Icon color",
+        "defaultValue": {
+          "value": "'#8E8E93'",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Icon size",
+        "defaultValue": {
+          "value": "28",
+          "computed": false
+        }
+      }
+    }
+  },
+  "lib/icons/mute.js": {
+    "description": "",
+    "displayName": "IconMute",
     "methods": [],
     "props": {
       "color": {
@@ -2904,6 +2977,42 @@
           "computed": false
         }
       },
+      "textContainerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the textContainer component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "primaryTextContainerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the primaryTextContainer component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "secondaryTextContainerStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "Override the styles of the secondaryTextContainer component",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
       "theme": {
         "type": {
           "name": "shape",
@@ -2936,50 +3045,6 @@
       }
     ],
     "props": {
-      "headerText": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "headerTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "timeTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "timeText": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": ""
-      },
       "align": {
         "type": {
           "name": "enum",
@@ -2993,34 +3058,6 @@
               "computed": false
             }
           ]
-        },
-        "required": true,
-        "description": ""
-      },
-      "statusIcon": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "theme": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "colors": {
-              "name": "object",
-              "required": true
-            },
-            "fonts": {
-              "name": "object",
-              "required": true
-            }
-          }
         },
         "required": true,
         "description": ""
@@ -3058,7 +3095,79 @@
         "required": true,
         "description": ""
       },
+      "headerText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
       "progressProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
         "type": {
           "name": "object"
         },
@@ -3107,11 +3216,15 @@
             {
               "value": "'audio'",
               "computed": false
+            },
+            {
+              "value": "'giphy'",
+              "computed": false
             }
           ]
         },
         "required": true,
-        "description": "The type of message; 'text', 'image', 'contact', 'video' or 'audio'"
+        "description": "The type of message; 'text', 'image', 'contact', 'video', 'audio' or 'giphy'."
       },
       "bodyText": {
         "type": {
@@ -3465,32 +3578,6 @@
     "displayName": "ContactMessage",
     "methods": [],
     "props": {
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "timeTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "timeText": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": ""
-      },
       "align": {
         "type": {
           "name": "enum",
@@ -3508,17 +3595,6 @@
         "required": true,
         "description": ""
       },
-      "statusIcon": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
       "contact": {
         "type": {
           "name": "shape",
@@ -3533,37 +3609,6 @@
             },
             "secondaryText": {
               "name": "node",
-              "required": true
-            }
-          }
-        },
-        "required": true,
-        "description": ""
-      },
-      "primaryTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "secondaryTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "theme": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "colors": {
-              "name": "object",
-              "required": true
-            },
-            "fonts": {
-              "name": "object",
               "required": true
             }
           }
@@ -3588,23 +3633,22 @@
         },
         "required": true,
         "description": ""
-      }
-    }
-  },
-  "lib/message/image-message/component.js": {
-    "description": "",
-    "displayName": "ImageMessage",
-    "methods": [
-      {
-        "name": "renderProgress",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
-    "props": {
-      "bodyText": {
+      },
+      "primaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "secondaryTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
         "type": {
           "name": "node"
         },
@@ -3627,23 +3671,19 @@
           "computed": false
         }
       },
-      "bodyTextProps": {
+      "theme": {
         "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "timeTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "imageProps": {
-        "type": {
-          "name": "object"
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
         },
         "required": true,
         "description": ""
@@ -3655,6 +3695,28 @@
         "required": true,
         "description": ""
       },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "lib/message/image-message/component.js": {
+    "description": "",
+    "displayName": "ImageMessage",
+    "methods": [
+      {
+        "name": "renderProgress",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
       "align": {
         "type": {
           "name": "enum",
@@ -3672,6 +3734,138 @@
         "required": true,
         "description": ""
       },
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "enableHyperlinks": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      },
+      "hyperlinkProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "image": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "ratio": {
+              "name": "number",
+              "required": true
+            },
+            "source": {
+              "name": "custom",
+              "raw": "NativeImage.propTypes.source.isRequired",
+              "required": true
+            },
+            "thumbnailSource": {
+              "name": "custom",
+              "raw": "NativeImage.propTypes.source",
+              "required": false
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "imageComponent": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "imageProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "imageSize": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": ""
+      },
+      "imageStyle": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onImageLongPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "onImagePress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "progress": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "progressProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
       "statusIcon": {
         "type": {
           "name": "node"
@@ -3680,6 +3874,18 @@
         "description": "",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -3700,107 +3906,14 @@
         "required": true,
         "description": ""
       },
-      "image": {
+      "timeText": {
         "type": {
-          "name": "shape",
-          "value": {
-            "source": {
-              "name": "custom",
-              "raw": "NativeImage.propTypes.source.isRequired",
-              "required": true
-            },
-            "thumbnailSource": {
-              "name": "custom",
-              "raw": "NativeImage.propTypes.source",
-              "required": false
-            },
-            "ratio": {
-              "name": "number",
-              "required": true
-            }
-          }
+          "name": "node"
         },
         "required": true,
         "description": ""
       },
-      "onImagePress": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "onImageLongPress": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "imageSize": {
-        "type": {
-          "name": "number"
-        },
-        "required": true,
-        "description": ""
-      },
-      "imageComponent": {
-        "type": {
-          "name": "any"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "imageStyle": {
-        "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "hyperlinkProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "enableHyperlinks": {
-        "type": {
-          "name": "bool"
-        },
-        "required": true,
-        "description": ""
-      },
-      "progress": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "progressProps": {
+      "timeTextProps": {
         "type": {
           "name": "object"
         },
@@ -4015,64 +4128,6 @@
     "displayName": "TextMessage",
     "methods": [],
     "props": {
-      "bodyText": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": ""
-      },
-      "headerText": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "style": {
-        "type": {
-          "name": "custom",
-          "raw": "ViewPropTypes.style"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "bodyTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "headerTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "timeTextProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "timeText": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": ""
-      },
       "align": {
         "type": {
           "name": "enum",
@@ -4090,35 +4145,14 @@
         "required": true,
         "description": ""
       },
-      "statusIcon": {
+      "bodyText": {
         "type": {
-          "name": "node"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "null",
-          "computed": false
-        }
-      },
-      "theme": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "colors": {
-              "name": "object",
-              "required": true
-            },
-            "fonts": {
-              "name": "object",
-              "required": true
-            }
-          }
+          "name": "string"
         },
         "required": true,
         "description": ""
       },
-      "hyperlinkProps": {
+      "bodyTextProps": {
         "type": {
           "name": "object"
         },
@@ -4131,15 +4165,67 @@
         },
         "required": true,
         "description": ""
-      }
-    }
-  },
-  "lib/message/video-message/component.js": {
-    "description": "",
-    "displayName": "VideoMessage",
-    "methods": [],
-    "props": {
-      "bodyText": {
+      },
+      "headerText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "headerTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "hyperlinkProps": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "linkDefault": {
+              "name": "bool",
+              "required": false
+            },
+            "linkify": {
+              "name": "object",
+              "required": false
+            },
+            "linkStyle": {
+              "name": "object",
+              "required": false
+            },
+            "linkText": {
+              "name": "union",
+              "value": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "func"
+                }
+              ],
+              "required": false
+            },
+            "onPress": {
+              "name": "func",
+              "required": false
+            },
+            "onLongPress": {
+              "name": "func",
+              "required": false
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "statusIcon": {
         "type": {
           "name": "node"
         },
@@ -4162,9 +4248,26 @@
           "computed": false
         }
       },
-      "bodyTextProps": {
+      "theme": {
         "type": {
-          "name": "object"
+          "name": "shape",
+          "value": {
+            "colors": {
+              "name": "object",
+              "required": true
+            },
+            "fonts": {
+              "name": "object",
+              "required": true
+            }
+          }
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "string"
         },
         "required": true,
         "description": ""
@@ -4175,14 +4278,14 @@
         },
         "required": true,
         "description": ""
-      },
-      "timeText": {
-        "type": {
-          "name": "node"
-        },
-        "required": true,
-        "description": ""
-      },
+      }
+    }
+  },
+  "lib/message/video-message/component.js": {
+    "description": "",
+    "displayName": "VideoMessage",
+    "methods": [],
+    "props": {
       "align": {
         "type": {
           "name": "enum",
@@ -4200,6 +4303,38 @@
         "required": true,
         "description": ""
       },
+      "bodyText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "bodyTextProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "enableHyperlinks": {
+        "type": {
+          "name": "bool"
+        },
+        "required": true,
+        "description": ""
+      },
+      "hyperlinkProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
       "statusIcon": {
         "type": {
           "name": "node"
@@ -4208,6 +4343,18 @@
         "description": "",
         "defaultValue": {
           "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "custom",
+          "raw": "ViewPropTypes.style"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
           "computed": false
         }
       },
@@ -4224,6 +4371,20 @@
               "required": true
             }
           }
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeText": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": ""
+      },
+      "timeTextProps": {
+        "type": {
+          "name": "object"
         },
         "required": true,
         "description": ""
@@ -4238,20 +4399,6 @@
       "videoSize": {
         "type": {
           "name": "number"
-        },
-        "required": true,
-        "description": ""
-      },
-      "hyperlinkProps": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "enableHyperlinks": {
-        "type": {
-          "name": "bool"
         },
         "required": true,
         "description": ""
