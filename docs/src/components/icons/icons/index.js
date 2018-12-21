@@ -14,6 +14,7 @@ import Delete from './delete.svg';
 import Download from './download.svg';
 import Globe from './globe.svg';
 import Hand from './hand.svg';
+import Info from './info.svg';
 import Invite from './invite.svg';
 import List from './list.svg';
 import Lock from './lock.svg';
@@ -52,6 +53,7 @@ export {
   Download,
   Globe,
   Hand,
+  Info,
   Invite,
   List,
   Lock,
