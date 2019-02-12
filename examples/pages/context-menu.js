@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* global alert */
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
