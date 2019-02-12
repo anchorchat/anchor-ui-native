@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui-native",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "main": "index.js",
   "files": [
     "/*"
@@ -32,7 +32,8 @@
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
     "react-docgen": "^2.20.1",
-    "react-native": "^0.55.4"
+    "react-native": "^0.55.4",
+    "react-native-svg": "^6.3.1"
   },
   "scripts": {
     "eslint": "esw '{lib,docs/src,examples}/**/**/*.js'",
@@ -50,12 +51,12 @@
     "react-native-hyperlink": "^0.0.14",
     "react-native-progress": "^3.5.0",
     "react-native-section-list-get-item-layout": "^2.2.3",
-    "react-native-svg": "^6.3.1",
     "recompose": "^0.27.1"
   },
   "peerDependencies": {
     "prop-types": "^15.4.1",
     "react": "^16.3.0",
-    "react-native": "^0.50.0"
+    "react-native": "^0.50.0",
+    "react-native-svg": "^6.3.1"
   }
 }
