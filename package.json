@@ -36,7 +36,8 @@
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
     "react-docgen": "^2.20.1",
-    "react-native": "^0.55.4"
+    "react-native": "^0.55.4",
+    "react-native-svg": "^6.3.1"
   },
   "scripts": {
     "eslint": "esw '{lib,docs/src,examples}/**/**/*.js'",
