@@ -1,6 +1,6 @@
 {
   "name": "anchor-ui-native",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "main": "index.js",
   "files": [
     "/*"
@@ -14,11 +14,7 @@
     "ui kit",
     "Anchor.CHAT"
   ],
-  "author": "Ian Stewart <ian.stewart@anchor.chat>",
-  "contributors": [
-    "Sjaak Luthart <sjaak.luthart@anchor.chat>",
-    "Lars Tadema <lars.tadema@anchor.chat>"
-  ],
+  "author": "Peter Kuiper <peter.kuiper@anchor.chat>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/anchorchat/anchor-ui-native/issues"
