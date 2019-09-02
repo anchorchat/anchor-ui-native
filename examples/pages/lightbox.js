@@ -74,12 +74,12 @@ class LightboxExample extends Component {
                 House up in the mountains.
               </Text>
               <View style={styles.footer}>
-                <Ionicons name="ios-share-outline" size={32} color={colors.white} />
+                <Ionicons name="ios-share" size={32} color={colors.white} />
                 <View>
                   <Text type="heading-contrast" style={styles.lightboxHeading}>Sjaak Luthart</Text>
                   <Text type="heading-secondary" style={styles.time}>Today at 09:34</Text>
                 </View>
-                <Ionicons name="ios-trash-outline" size={32} color={colors.white} />
+                <Ionicons name="ios-trash" size={32} color={colors.white} />
               </View>
             </View>
           )}

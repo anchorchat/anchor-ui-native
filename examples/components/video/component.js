@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, TouchableWithoutFeedback, ViewPropTypes } from 'react-native';
-import { Video as NativeVideo } from 'expo';
+import { Video as NativeVideo } from 'expo-av';
 import getStyles from './styles';
 import IconPlay from '../../anchor-ui-native/icons/play';
 
@@ -136,7 +136,7 @@ class Video extends Component {
             onFullscreenUpdate={this.handleOnFullScreenUpdate}
             onPlaybackStatusUpdate={this.handleOnPlaybackStatusUpdate}
             ref={this.videoRef}
-            resizeMode={NativeVideo.RESIZE_MODE_COVER}
+            resizeMode="cover"
             {...custom}
           />
           <View style={playButtonStyle}>
