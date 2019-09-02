@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import uuid from 'uuid';
 import format from 'date-fns/format';
-import subMinutes from 'date-fns/sub_minutes';
+import subMinutes from 'date-fns/subMinutes';
 import _ from 'lodash';
 import { Ionicons } from '@expo/vector-icons';
 import {

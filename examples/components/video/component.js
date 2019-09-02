@@ -9,8 +9,8 @@ const displayName = 'Video';
 
 const propTypes = {
   style: ViewPropTypes.style,
-  source: NativeVideo.propTypes.source.isRequired,
-  posterSource: NativeVideo.propTypes.posterSource,
+  source: PropTypes.any.isRequired, // eslint-disable-line react/forbid-prop-types
+  posterSource: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   ratio: PropTypes.number.isRequired,
   fadeDuration: PropTypes.number,
   onPress: PropTypes.func,
