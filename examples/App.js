@@ -1,9 +1,12 @@
 /* eslint global-require: [0] */
 import React, { Component } from 'react';
 import { TouchableOpacity, Image, Platform } from 'react-native';
-import { Asset, AppLoading } from 'expo';
+import { AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
 import { Ionicons } from '@expo/vector-icons';
-import { createStackNavigator, createDrawerNavigator, DrawerActions } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createDrawerNavigator, DrawerActions } from 'react-navigation-drawer';
+import { createAppContainer } from 'react-navigation';
 import _ from 'lodash';
 import { UIProvider, Header } from './anchor-ui-native';
 import { colors, fonts } from './anchor-ui-native/config';
@@ -37,8 +40,8 @@ const cacheImages = images => (
   })
 );
 
-const Navigator = createStackNavigator({
-  drawerStack: createDrawerNavigator({
+const DrawerNavigator = createDrawerNavigator(
+  {
     Home: { screen: Home },
     Avatar: { screen: Avatar },
     Button: { screen: Button },
@@ -58,7 +61,8 @@ const Navigator = createStackNavigator({
     Picker: { screen: Picker },
     Text: { screen: Text },
     TextInput: { screen: TextInput },
-  }, {
+  },
+  {
     contentOptions: {
       labelStyle: {
         ...fonts.regular,
@@ -69,31 +73,40 @@ const Navigator = createStackNavigator({
         color: colors.primary
       }
     },
-    initialRouteName: 'Home'
-  })
-}, {
-  navigationOptions: ({ navigation }) => ({
-    header: (
-      <Header
-        primaryText="AnchorUI Native"
-        secondaryText="UI kit for Chat Engines"
-        leftButton={(
-          <TouchableOpacity
-            onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
-            style={{ marginLeft: 11 }}
-          >
-            <Ionicons
-              name="md-menu"
-              size={32}
-              color={Platform.OS === 'ios' ? colors.gray : colors.white}
-            />
-          </TouchableOpacity>
-        )}
-      />
-    )
-  }),
-  initialRouteName: 'drawerStack'
-});
+    initialRouteName: 'Home',
+    navigationOptions: ({ navigation }) => ({
+      header: (
+        <Header
+          primaryText="AnchorUI Native"
+          secondaryText="UI kit for Chat Engines"
+          leftButton={(
+            <TouchableOpacity
+              onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+              style={{ marginLeft: 11 }}
+            >
+              <Ionicons
+                name="md-menu"
+                size={32}
+                color={Platform.OS === 'ios' ? colors.gray : colors.white}
+              />
+            </TouchableOpacity>
+          )}
+        />
+      )
+    })
+  }
+);
+
+const StackNavigator = createStackNavigator(
+  {
+    drawerStack: DrawerNavigator
+  },
+  {
+    initialRouteName: 'drawerStack'
+  }
+);
+
+const AppContainer = createAppContainer(StackNavigator);
 
 class App extends Component {
   state = {
@@ -124,7 +137,7 @@ class App extends Component {
 
     return (
       <UIProvider>
-        <Navigator />
+        <AppContainer />
       </UIProvider>
     );
   }

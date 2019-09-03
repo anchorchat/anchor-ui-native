@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import uuid from 'uuid';
 import format from 'date-fns/format';
-import subDays from 'date-fns/sub_days';
-import subMinutes from 'date-fns/sub_minutes';
+import subDays from 'date-fns/subDays';
+import subMinutes from 'date-fns/subMinutes';
 import _ from 'lodash';
 import { Ionicons } from '@expo/vector-icons';
 import {
@@ -90,7 +90,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'contact',
-    time: subMinutes(new Date(), '1'),
+    time: subMinutes(new Date(), 1),
     align: 'right',
     contact: {
       avatar: <Avatar size={32} text="MT" textStyle={{ fontSize: 16 }} color="green" />,
@@ -101,7 +101,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'image',
-    time: subMinutes(new Date(), '3'),
+    time: subMinutes(new Date(), 3),
     body: 'The night sky looks amazing in this picture!',
     align: 'right',
     image: {
@@ -110,11 +110,11 @@ const INITIAL_STATE = [
       ratio: 2 / 3
     }
   },
-  { date: format(new Date(), 'MMMM D'), key: uuid.v4() },
+  { date: format(new Date(), 'MMMM d'), key: uuid.v4() },
   {
     key: uuid.v4(),
     type: 'contact',
-    time: subMinutes(new Date(), '5'),
+    time: subMinutes(new Date(), 5),
     align: 'left',
     contact: {
       avatar: <Avatar size={32} text="CA" textStyle={{ fontSize: 16 }} color="purple" />,
@@ -125,15 +125,15 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'text',
-    time: subMinutes(new Date(), '10'),
+    time: subMinutes(new Date(), 10),
     body: 'It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds.', // eslint-disable-line max-len
     align: 'right'
   },
-  { date: format(subDays(new Date(), 14), 'MMMM D'), key: uuid.v4() },
+  { date: format(subDays(new Date(), 14), 'MMMM d'), key: uuid.v4() },
   {
     key: uuid.v4(),
     type: 'image',
-    time: subMinutes(new Date(), '15'),
+    time: subMinutes(new Date(), 15),
     body: 'The weather was really nice yesterday!',
     align: 'left',
     image: {
@@ -145,11 +145,11 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'text',
-    time: subMinutes(new Date(), '20'),
+    time: subMinutes(new Date(), 20),
     body: 'Tremblant is based in Canada and has over 90 runs millions of skiers each year.',
     align: 'left'
   },
-  { date: format(subDays(new Date(), 32), 'MMMM D'), key: uuid.v4() },
+  { date: format(subDays(new Date(), 32), 'MMMM d'), key: uuid.v4() },
   { date: 'Hank created the group \'(っ◔◡◔)っ 🍁🇨🇦\'', key: uuid.v4() }
 ];
 
@@ -286,7 +286,7 @@ class MessageSeparatorExample extends Component {
               </Text>
               <View style={styles.footer}>
                 <Ionicons
-                  name="ios-share-outline"
+                  name="ios-share"
                   size={32}
                   color={colors.white}
                   style={styles.leftFooterButton}
@@ -296,11 +296,11 @@ class MessageSeparatorExample extends Component {
                     Christina Buchanan
                   </Text>
                   <Text type="heading-secondary" style={styles.time}>
-                    {lightbox.data && format(lightbox.data.time, 'HH:mm')}
+                    {lightbox.data && lightbox.data.time && format(lightbox.data.time, 'HH:mm')}
                   </Text>
                 </View>
                 <Ionicons
-                  name="ios-trash-outline"
+                  name="ios-trash"
                   size={32}
                   color={colors.white}
                   style={styles.rightFooterButton}

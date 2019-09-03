@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import uuid from 'uuid';
 import format from 'date-fns/format';
-import subMinutes from 'date-fns/sub_minutes';
+import subMinutes from 'date-fns/subMinutes';
 import _ from 'lodash';
 import { Ionicons } from '@expo/vector-icons';
 import {
@@ -89,7 +89,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'sticker',
-    time: subMinutes(new Date(), '3'),
+    time: subMinutes(new Date(), 3),
     align: 'left',
     image: {
       source: { uri: 'https://shop.anchor.fish/products/dfa4f7a4-fede-4298-bd9d-02ac129b8a68/data/pig.c495a694.png' } // eslint-disable-line max-len
@@ -98,7 +98,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'sticker',
-    time: subMinutes(new Date(), '3'),
+    time: subMinutes(new Date(), 3),
     align: 'right',
     image: {
       source: { uri: 'https://shop.anchor.fish/products/dfa4f7a4-fede-4298-bd9d-02ac129b8a68/data/deer.00c772d9.png' } // eslint-disable-line max-len
@@ -107,7 +107,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'audio',
-    time: subMinutes(new Date(), '1'),
+    time: subMinutes(new Date(), 1),
     align: 'left',
     audio: {
       onPlay: () => console.log('play'), // eslint-disable-line no-console
@@ -121,7 +121,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'video',
-    time: subMinutes(new Date(), '1'),
+    time: subMinutes(new Date(), 1),
     align: 'right',
     video: {
       source: { uri: 'https://player.vimeo.com/external/274443403.hd.mp4?s=71a208a8f13ed5d7a4359a6837c18b2456001814&profile_id=175&oauth2_token_id=57447761' }, // eslint-disable-line max-len
@@ -131,7 +131,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'audio',
-    time: subMinutes(new Date(), '1'),
+    time: subMinutes(new Date(), 1),
     align: 'left',
     audio: {
       onPlay: () => console.log('play'), // eslint-disable-line no-console
@@ -145,7 +145,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'audio',
-    time: subMinutes(new Date(), '1'),
+    time: subMinutes(new Date(), 1),
     align: 'right',
     audio: {
       onPlay: () => console.log('play'), // eslint-disable-line no-console
@@ -159,7 +159,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'contact',
-    time: subMinutes(new Date(), '1'),
+    time: subMinutes(new Date(), 1),
     align: 'right',
     contact: {
       avatar: <Avatar size={32} text="MT" textStyle={{ fontSize: 16 }} color="green" />,
@@ -170,7 +170,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'giphy',
-    time: subMinutes(new Date(), '3'),
+    time: subMinutes(new Date(), 3),
     align: 'right',
     image: {
       source: { uri: 'https://media.giphy.com/media/1AefIDWfAkcr9gVRYj/giphy.gif' },
@@ -181,7 +181,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'image',
-    time: subMinutes(new Date(), '3'),
+    time: subMinutes(new Date(), 3),
     align: 'right',
     image: {
       source: { uri: 'https://images.pexels.com/photos/412026/pexels-photo-412026.jpeg' },
@@ -192,7 +192,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'contact',
-    time: subMinutes(new Date(), '5'),
+    time: subMinutes(new Date(), 5),
     align: 'left',
     contact: {
       avatar: <Avatar size={32} text="CA" textStyle={{ fontSize: 16 }} color="mediumpurple" />,
@@ -205,7 +205,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'video',
-    time: subMinutes(new Date(), '1'),
+    time: subMinutes(new Date(), 1),
     body: 'The sunset looked amazing the other day!',
     align: 'left',
     video: {
@@ -217,14 +217,14 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'text',
-    time: subMinutes(new Date(), '10'),
+    time: subMinutes(new Date(), 10),
     body: 'It could also be lots of other people. It also could be a wordsmith sitting on their bed that weights 400 pounds.', // eslint-disable-line max-len
     align: 'right'
   },
   {
     key: uuid.v4(),
     type: 'image',
-    time: subMinutes(new Date(), '15'),
+    time: subMinutes(new Date(), 15),
     body: 'The weather was really nice yesterday!',
     align: 'left',
     image: {
@@ -237,7 +237,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'text',
-    time: subMinutes(new Date(), '20'),
+    time: subMinutes(new Date(), 20),
     body: 'Tremblant is based in Canada and has over 90 runs millions of skiers each year.',
     align: 'left',
     username: 'Christina Buchanan',
@@ -246,7 +246,7 @@ const INITIAL_STATE = [
   {
     key: uuid.v4(),
     type: 'text',
-    time: subMinutes(new Date(), '20'),
+    time: subMinutes(new Date(), 20),
     body: 'Hello!',
     align: 'left',
     username: 'Harvey Brock',
@@ -422,7 +422,7 @@ class MessageExample extends Component {
               </Text>
               <View style={styles.footer}>
                 <Ionicons
-                  name="ios-share-outline"
+                  name="ios-share"
                   size={32}
                   color={colors.white}
                   style={styles.leftFooterButton}
@@ -432,11 +432,11 @@ class MessageExample extends Component {
                     Christina Buchanan
                   </Text>
                   <Text type="heading-secondary" style={styles.time}>
-                    {lightbox.data && format(lightbox.data.time, 'HH:mm')}
+                    {lightbox.data && lightbox.data.time && format(lightbox.data.time, 'HH:mm')}
                   </Text>
                 </View>
                 <Ionicons
-                  name="ios-trash-outline"
+                  name="ios-trash"
                   size={32}
                   color={colors.white}
                   style={styles.rightFooterButton}
